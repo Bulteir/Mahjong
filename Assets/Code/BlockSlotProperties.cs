@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class GlobalVariables
+public class BlockSlotProperties : MonoBehaviour
 {
-    public const string TagBlock = "Block";
+    public Transform snappedBlock;
 }
