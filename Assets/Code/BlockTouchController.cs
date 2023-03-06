@@ -39,45 +39,11 @@ public class BlockTouchController : MonoBehaviour
                     && raycastHit.collider.gameObject.GetComponent<BlockProperties>().IsSnapped == false
                     )
                 {
-
                     transform.GetComponent<BlockBoardController>().PlaceBlock(raycastHit.collider.transform);
-                    //int avaibleSlotIndex = transform.GetComponent<BlockBoardController>().GetAvaibleBlockSlotIndex();
-                    //if (avaibleSlotIndex != -1) //bloklarý ýstakaya yerleþtir
-                    //{
-                    //    //seçilen blok ýskaya yerleþtirilir.
-                    //    //StartCoroutine(SmoothMoveToSnapPoint(raycastHit.collider.transform, transform.GetComponent<BlockBoardController>().BlockSlots[avaibleSlotIndex], avaibleSlotIndex));
-                    //}
                 }
             }
         }
     }
     #endregion
 
-    //IEnumerator SmoothMoveToSnapPoint(Transform block, Transform snapPoint, int avaibleSlotIndex)
-    //{
-    //    isSmoothMoveToSnapPointAnimationContinue = true;
-    //    block.GetComponent<Rigidbody>().detectCollisions = false;
-
-    //    while (Vector3.Distance(block.position, snapPoint.position) > 0.05f)
-    //    {
-    //        block.position = Vector3.MoveTowards(block.position, snapPoint.position, Time.deltaTime * 5);
-    //        yield return null;
-    //    }
-    //    block.position = snapPoint.position;
-
-    //    //ýstakada yer alan slota bloðun kendisi setlernir.
-    //    transform.GetComponent<BlockBoardController>().BlockSlots[avaibleSlotIndex].transform.GetComponent<BlockSlotProperties>().snappedBlock = block;
-    //    block.GetComponent<BlockProperties>().IsSnapped = true;
-
-    //    //ýstaka üzerine yerleþtirilen blocklar kontrol edilir/patlatýlýr vs...
-    //    transform.GetComponent<BlockBoardController>().FillBlockBoardStatus();
-
-    //    //ýstaka üzerinde kalan boþ slotlar aranýr
-    //    avaibleSlotIndex = transform.GetComponent<BlockBoardController>().GetAvaibleBlockSlotIndex();
-    //    if (avaibleSlotIndex == -1)//-1 ise slotlar dolmuþtur game over olur.
-    //    {
-    //        Debug.Log("Game Over");
-    //    }
-    //    isSmoothMoveToSnapPointAnimationContinue = false;
-    //}
 }
