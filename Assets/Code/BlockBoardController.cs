@@ -17,7 +17,8 @@ public class BlockBoardController : MonoBehaviour
 
     List<BlockSlotStruct> blockSlotsStruckList = new List<BlockSlotStruct>();
     public List<Transform> BlockSlots = new List<Transform>();
-    bool isSmoothMoveToSnapPointAnimationContinue = false;
+    public bool isSmoothMoveToSnapPointAnimationContinue = false;
+    public Transform blockBoard;
 
     public void PlaceBlock(Transform SelectedBlock)
     {
@@ -197,6 +198,7 @@ public class BlockBoardController : MonoBehaviour
         //ýstakada yer alan slota bloðun kendisi setlernir.
         transform.GetComponent<BlockBoardController>().BlockSlots[avaibleSlotIndex].transform.GetComponent<BlockSlotProperties>().snappedBlock = block;
         block.GetComponent<BlockProperties>().IsSnapped = true;
+        block.SetParent(blockBoard);
 
         //ýstaka üzerine yerleþtirilen blocklar kontrol edilir/patlatýlýr vs...
         transform.GetComponent<BlockBoardController>().FillBlockBoardStatus();
@@ -222,6 +224,7 @@ public class BlockBoardController : MonoBehaviour
         //ýstakada yer alan slota bloðun kendisi setlernir.
         transform.GetComponent<BlockBoardController>().BlockSlots[avaibleSlotIndex].transform.GetComponent<BlockSlotProperties>().snappedBlock = block;
         block.GetComponent<BlockProperties>().IsSnapped = true;
+        block.SetParent(blockBoard);
     }
 
     //seçilen bloðun yerleþmesi gerken index bulunduktan sonra o bloðun uygun indexe yerleþmesini saðlar. Gerekiyorsa diðer bloklarý birer kaydýrýr.

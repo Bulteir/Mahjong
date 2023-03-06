@@ -7,6 +7,7 @@ public class CameraControl : MonoBehaviour
     public Transform target;
     public float CameraDistance;
     public bool CameraMoving = false;
+    public Transform GeneralControllers;
 
     Vector3 prePosition;
     Vector3 startPosition;
@@ -30,7 +31,7 @@ public class CameraControl : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && GeneralControllers.GetComponent<BlockBoardController>().isSmoothMoveToSnapPointAnimationContinue == false)
         {
             RaycastHit raycastHit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
