@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BlockTouchController : MonoBehaviour
 {
-    //bool isSmoothMoveToSnapPointAnimationContinue = false;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +36,7 @@ public class BlockTouchController : MonoBehaviour
                 if (raycastHit.collider.gameObject.tag == GlobalVariables.TagBlock
                     && raycastHit.collider.gameObject.GetComponent<BlockProperties>().IsThereAnyBlockOnIt == false
                     && raycastHit.collider.gameObject.GetComponent<BlockProperties>().IsSnapped == false
+                    && Camera.main.GetComponent<CameraControl>().CameraMoving == false
                     )
                 {
                     transform.GetComponent<BlockBoardController>().PlaceBlock(raycastHit.collider.transform);
