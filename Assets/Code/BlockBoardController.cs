@@ -95,21 +95,6 @@ public class BlockBoardController : MonoBehaviour
     }
     #endregion
 
-    //ýstakadaki ilk boþ slotu döndürür. -1 ise ýstakada tamamen doludur.
-    int GetAvaibleBlockSlotIndex()
-    {
-        int index = -1;
-        for (int i = 0; i < BlockSlots.Count; i++)
-        {
-            if (BlockSlots[i].GetComponent<BlockSlotProperties>().snappedBlock == null)
-            {
-                index = i;
-                break;
-            }
-        }
-        return index;
-    }
-
     //ýstaka üzerindeki son durumu toplar
     void FillBlockBoardStatus()
     {
@@ -153,27 +138,28 @@ public class BlockBoardController : MonoBehaviour
 
                     #region patlamasý gereken bloklar patladýktan sonra geriye kalan bloklar aralarýnda boþluk kalmayacak þekilde tekrar yerleþtirilir.
 
-                    MatchedBlocks.Sort((x, y) => x.index.CompareTo(y.index));
-
-                    for (int x = 0; x < MatchedBlocks.Count; x++)
+                    for (int x = 0; x < blockSlotsStruckList.Count; x++)
                     {
-                        for (int y = MatchedBlocks[x].index; y < blockSlotsStruckList.Count; y++)
+                        if (blockSlotsStruckList[x].snappedBlock == null)
                         {
-                            if (blockSlotsStruckList[y].snappedBlock != null)
+                            for (int y = x; y < blockSlotsStruckList.Count; y++)
                             {
-                                StartCoroutine(SmoothMoveToSnapPointSimple(blockSlotsStruckList[y].snappedBlock, blockSlotsStruckList[MatchedBlocks[x].index].slot, MatchedBlocks[x].index));
-                                
-                                //bulunan dolu slotu boþalan sloata atýyoruz.
-                                blockSlotsStruckList[MatchedBlocks[x].index].snappedBlock = blockSlotsStruckList[y].snappedBlock;
-                                blockSlotsStruckList[MatchedBlocks[x].index].snappedBlockType = blockSlotsStruckList[y].snappedBlockType;
+                                if (blockSlotsStruckList[y].snappedBlock != null)
+                                {
+                                    StartCoroutine(SmoothMoveToSnapPointSimple(blockSlotsStruckList[y].snappedBlock, blockSlotsStruckList[x].slot, blockSlotsStruckList[x].index));
 
-                                blockSlotsStruckList[y].snappedBlock = null;
-                                BlockSlots[y].GetComponent<BlockSlotProperties>().snappedBlock = null;
-                                blockSlotsStruckList[y].snappedBlockType = -1;
-                                break;
+                                    //bulunan dolu slotu boþalan slota atýyoruz.
+                                    blockSlotsStruckList[blockSlotsStruckList[x].index].snappedBlock = blockSlotsStruckList[y].snappedBlock;
+                                    blockSlotsStruckList[blockSlotsStruckList[x].index].snappedBlockType = blockSlotsStruckList[y].snappedBlockType;
+
+                                    blockSlotsStruckList[y].snappedBlock = null;
+                                    BlockSlots[y].GetComponent<BlockSlotProperties>().snappedBlock = null;
+                                    blockSlotsStruckList[y].snappedBlockType = -1;
+                                    break;
+                                }
                             }
                         }
-                    }
+                    }    
 
                     #endregion
                     break;
@@ -196,16 +182,15 @@ public class BlockBoardController : MonoBehaviour
         block.position = snapPoint.position;
 
         //ýstakada yer alan slota bloðun kendisi setlernir.
-        transform.GetComponent<BlockBoardController>().BlockSlots[avaibleSlotIndex].transform.GetComponent<BlockSlotProperties>().snappedBlock = block;
+        BlockSlots[avaibleSlotIndex].transform.GetComponent<BlockSlotProperties>().snappedBlock = block;
         block.GetComponent<BlockProperties>().IsSnapped = true;
         block.SetParent(blockBoard);
 
-        //ýstaka üzerine yerleþtirilen blocklar kontrol edilir/patlatýlýr vs...
-        transform.GetComponent<BlockBoardController>().FillBlockBoardStatus();
+        ////ýstaka üzerine yerleþtirilen blocklar kontrol edilir/patlatýlýr vs...
+        FillBlockBoardStatus();
 
-        //ýstaka üzerinde kalan boþ slotlar aranýr
-        avaibleSlotIndex = transform.GetComponent<BlockBoardController>().GetAvaibleBlockSlotIndex();
-        if (avaibleSlotIndex == -1)//-1 ise slotlar dolmuþtur game over olur.
+        //her yerleþtirilen bloktan sonra oyununn bitip bitmedði kontrol edilir.
+        if (IsGameOver())
         {
             Debug.Log("Game Over");
         }
@@ -222,7 +207,7 @@ public class BlockBoardController : MonoBehaviour
         block.position = snapPoint.position;
 
         //ýstakada yer alan slota bloðun kendisi setlernir.
-        transform.GetComponent<BlockBoardController>().BlockSlots[avaibleSlotIndex].transform.GetComponent<BlockSlotProperties>().snappedBlock = block;
+        BlockSlots[avaibleSlotIndex].transform.GetComponent<BlockSlotProperties>().snappedBlock = block;
         block.GetComponent<BlockProperties>().IsSnapped = true;
         block.SetParent(blockBoard);
     }
@@ -245,5 +230,21 @@ public class BlockBoardController : MonoBehaviour
         {
             StartCoroutine(SmoothMoveToSnapPoint(SelectedBlock, BlockSlots[avaibleSlotIndex], avaibleSlotIndex));
         }
+    }
+
+    bool IsGameOver()
+    {
+        bool result = true;
+
+        foreach (BlockSlotStruct slot in blockSlotsStruckList)
+        {
+            if (slot.snappedBlock == null)
+            {
+                result = false;
+                break;
+            }
+        }
+
+        return result;
     }
 }
