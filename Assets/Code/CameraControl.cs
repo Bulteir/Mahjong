@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour
 {
+    /*
+     * Çok güzel bir kod. Ancak bu oyunda iþimize yaramayacak.
+     */
     public Transform target;
     public float CameraDistance;
     public bool CameraMoving = false;
@@ -85,7 +88,7 @@ public class CameraControl : MonoBehaviour
                 transform.position = target.position;
                 transform.rotation = Quaternion.Lerp(transform.rotation, startRotation, Time.deltaTime * 5);
                 //aþaðýdaki z deðeri editörde kameranýn canvasa olan uzaklýðý. Tüm rotation iþlemi sýrasýnda ayný mesafeyi korumasý için setlenir.
-                transform.Translate(new Vector3(0, 0, -4.01f));
+                transform.Translate(new Vector3(0, 0, CameraDistance));
             }
             else
             {

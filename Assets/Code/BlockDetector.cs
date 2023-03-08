@@ -34,7 +34,7 @@ public class BlockDetector : MonoBehaviour
         if (touchedBlocks.Count > 0)
         {
             result = true;
-            transform.parent.GetComponent<Renderer>().material.color = Color.gray;
+            transform.parent.GetComponent<Renderer>().material.color = new Color(97f/255f,97f/255f,97f/255f);
             transform.parent.GetComponent<BlockProperties>().IsThereAnyBlockOnIt = true;
         }
         else

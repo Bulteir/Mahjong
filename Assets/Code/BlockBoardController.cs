@@ -174,6 +174,7 @@ public class BlockBoardController : MonoBehaviour
         isSmoothMoveToSnapPointAnimationContinue = true;
         block.GetComponent<Rigidbody>().detectCollisions = false;
 
+        block.rotation = snapPoint.rotation;
         while (Vector3.Distance(block.position, snapPoint.position) > 0.05f)
         {
             block.position = Vector3.MoveTowards(block.position, snapPoint.position, Time.deltaTime * 5);
