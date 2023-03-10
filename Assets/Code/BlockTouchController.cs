@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BlockTouchController : MonoBehaviour
 {
-
+    public Transform BlockTable;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +36,7 @@ public class BlockTouchController : MonoBehaviour
                 if (raycastHit.collider.gameObject.tag == GlobalVariables.TagBlock
                     && raycastHit.collider.gameObject.GetComponent<BlockProperties>().IsThereAnyBlockOnIt == false
                     && raycastHit.collider.gameObject.GetComponent<BlockProperties>().IsSnapped == false
-                    && Camera.main.GetComponent<CameraControl>().CameraMoving == false
+                    && BlockTable.GetComponent<BlockTableControl>().BlocksRotating == false
                     )
                 {
                     transform.GetComponent<BlockBoardController>().PlaceBlock(raycastHit.collider.transform);
