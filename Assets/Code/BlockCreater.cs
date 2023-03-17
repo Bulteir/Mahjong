@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -41,40 +42,46 @@ public class BlockCreater : MonoBehaviour
             }
 
             //bölümde kaç farklý uv kullanýlacaðý verilen yüzdelik oranla hesaplanýr.
-            int usableUVCount = (int)((BlockParent.childCount / 3) * complexityPercentage / 100f);
-
-            //birden fazla list yapýsý kullanarak verilen oranda seçilen blok tiplerinin random fonksiyonunda üst üste seçilmesini engelleyerek verilen oraný yakalamak için kullanýyoruz.
-            List<int> avaibleUVIndexes = GetRandomUVIndexes(usableUVCount);
-            List<int> avaibleUVIndexesForCorrection = new List<int>(avaibleUVIndexes);
-
-            int randomUV = -1;
-            for (int i = 0; i < BlockParent.childCount; i++)
+            int usableUVCount = Convert.ToInt32(((BlockParent.childCount / 3) * complexityPercentage / 100f));
+            if (usableUVCount > 0)
             {
-                if (avaibleUVIndexesForCorrection.Count == 0)
+                //birden fazla list yapýsý kullanarak verilen oranda seçilen blok tiplerinin random fonksiyonunda üst üste seçilmesini engelleyerek verilen oraný yakalamak için kullanýyoruz.
+                List<int> avaibleUVIndexes = GetRandomUVIndexes(usableUVCount);
+                List<int> avaibleUVIndexesForCorrection = new List<int>(avaibleUVIndexes);
+
+                int randomUV = -1;
+                for (int i = 0; i < BlockParent.childCount; i++)
                 {
-                    avaibleUVIndexesForCorrection = new List<int>(avaibleUVIndexes);
+                    if (avaibleUVIndexesForCorrection.Count == 0)
+                    {
+                        avaibleUVIndexesForCorrection = new List<int>(avaibleUVIndexes);
+                    }
+
+                    //rastgele seçilen uvlerin her birinin 3 ve katlarý kadar atanmasýný saðlýyor
+                    if (i % 3 == 0)
+                    {
+                        randomUV = avaibleUVIndexesForCorrection[Random.Range(0, avaibleUVIndexesForCorrection.Count)];
+                        avaibleUVIndexesForCorrection.Remove(randomUV);
+                    }
+
+                    int randomBlockIndex = Random.Range(0, avaibleBlockIndexes.Count);
+                    CreateMaterial(BlockParent.GetChild(avaibleBlockIndexes[randomBlockIndex]), UVs[randomUV]);
+
+                    //bloðun type'ýna uv'nin indexini atýyoruz.
+                    BlockParent.GetChild(avaibleBlockIndexes[randomBlockIndex]).GetComponent<BlockProperties>().blockType = randomUV;
+
+                    //rastgele seçilen bloklar tekrar seçilmesin diye listeden çýkarýyoruz.
+                    avaibleBlockIndexes.RemoveAt(randomBlockIndex);
                 }
 
-                //rastgele seçilen uvlerin her birinin 3 ve katlarý kadar atanmasýný saðlýyor
-                if (i % 3 == 0)
-                {
-                    randomUV = avaibleUVIndexesForCorrection[Random.Range(0, avaibleUVIndexesForCorrection.Count)];
-                    avaibleUVIndexesForCorrection.Remove(randomUV);
-                }
-
-                int randomBlockIndex = Random.Range(0, avaibleBlockIndexes.Count);
-                CreateMaterial(BlockParent.GetChild(avaibleBlockIndexes[randomBlockIndex]), UVs[randomUV]);
-
-                //bloðun type'ýna uv'nin indexini atýyoruz.
-                BlockParent.GetChild(avaibleBlockIndexes[randomBlockIndex]).GetComponent<BlockProperties>().blockType = randomUV;
-
-                //rastgele seçilen bloklar tekrar seçilmesin diye listeden çýkarýyoruz.
-                avaibleBlockIndexes.RemoveAt(randomBlockIndex);
+                //maximum taþ sayýsý 144. Her blok tipinden en az 3 tane taþ olacak. En zor bölüm 144 taþ ve 144/3=48 farklý blok tipi yani %100 karmaþýklýk oraný ile oluþur.
+                float levelDifficultyRate = (((BlockParent.childCount / 3) * complexityPercentage) / (float)((144 / 3) * 100)) * 100;
+                Debug.Log("Bölüm " + BlockParent.childCount + " tane blok ve " + usableUVCount + " farklý blok tipi kullanýlarak oluþturuldu. \nBölümün toplam zorluk oraný: %" + levelDifficultyRate.ToString("#.00"));
             }
-
-            //maximum taþ sayýsý 144. Her blok tipinden en az 3 tane taþ olacak. En zor bölüm 144 taþ ve 144/3=48 farklý blok tipi yani %100 karmaþýklýk oraný ile oluþur.
-            float levelDifficultyRate = (((BlockParent.childCount / 3) * complexityPercentage) / (float)((144 / 3) * 100))*100;
-            Debug.Log("Bölüm " + BlockParent.childCount + " tane blok ve "+usableUVCount + " farklý blok tipi kullanýlarak oluþturuldu. \nBölümün toplam zorluk oraný: %"+levelDifficultyRate.ToString("#.00"));
+            else
+            {
+                Debug.LogWarning("Blok tipi oraný yeterli deðil.");
+            }
         }
         else
         {
