@@ -11,6 +11,7 @@ public class BlockCreater : MonoBehaviour
 {
     public List<Texture> UVs;
     public Transform BlockParent;
+    public float complexityPercentage;
 
     // Start is called before the first frame update
     void Start()
@@ -29,19 +30,33 @@ public class BlockCreater : MonoBehaviour
         //sahnedeki blokc sayýsý 0dan büyük ve 144'ten küçük olmalý ayrýca 3'e tam bölünmeli
         if (BlockParent.childCount > 0 && BlockParent.childCount <= 144 && BlockParent.childCount % 3 == 0)
         {
+
             List<int> avaibleBlockIndexes = new List<int>();
             for (int i = 0; i < BlockParent.childCount; i++)
             {
                 avaibleBlockIndexes.Add(i);
             }
 
-            int randomUV = Random.Range(0, UVs.Count);
+            //bölümde kaç farklý uv kullanýlacaðý verilen yüzdelik oranla hesaplanýr.
+            int usableUVCount = (int)((BlockParent.childCount / 3) * complexityPercentage / 100f);
+
+            //birden fazla list yapýsý kullanarak verilen oranda seçilen blok tiplerinin random fonksiyonunda üst üste seçilmesini engelleyerek verilen oraný yakalamak için kullanýyoruz.
+            List<int> avaibleUVIndexes = GetRandomUVIndexes(usableUVCount);
+            List<int> avaibleUVIndexesForCorrection = new List<int>(avaibleUVIndexes);
+
+            int randomUV = -1;
             for (int i = 0; i < BlockParent.childCount; i++)
             {
+                if (avaibleUVIndexesForCorrection.Count == 0)
+                {
+                    avaibleUVIndexesForCorrection = new List<int>(avaibleUVIndexes);
+                }
+
                 //rastgele seçilen uvlerin her birinin 3 ve katlarý kadar atanmasýný saðlýyor
                 if (i % 3 == 0)
                 {
-                    randomUV = Random.Range(0, UVs.Count);
+                    randomUV = avaibleUVIndexesForCorrection[Random.Range(0, avaibleUVIndexesForCorrection.Count)];
+                    avaibleUVIndexesForCorrection.Remove(randomUV);
                 }
 
                 int randomBlockIndex = Random.Range(0, avaibleBlockIndexes.Count);
@@ -53,10 +68,14 @@ public class BlockCreater : MonoBehaviour
                 //rastgele seçilen bloklar tekrar seçilmesin diye listeden çýkarýyoruz.
                 avaibleBlockIndexes.RemoveAt(randomBlockIndex);
             }
+
+            //maximum taþ sayýsý 144. Her blok tipinden en az 3 tane taþ olacak. En zor bölüm 144 taþ ve 144/3=48 farklý blok tipi yani %100 karmaþýklýk oraný ile oluþur.
+            float levelDifficultyRate = (((BlockParent.childCount / 3) * complexityPercentage) / (float)((144 / 3) * 100))*100;
+            Debug.Log("Bölüm " + BlockParent.childCount + " tane blok ve "+usableUVCount + " farklý blok tipi kullanýlarak oluþturuldu. \nBölümün toplam zorluk oraný: %"+levelDifficultyRate.ToString("#.00"));
         }
         else
         {
-            Debug.LogWarning("Sahnedeki blok sayýsý oyun için uygun deðil.");
+            Debug.LogWarning("Bölümdeki blok sayýsý oyun için uygun deðil.");
         }
     }
 
@@ -66,5 +85,27 @@ public class BlockCreater : MonoBehaviour
         rend.material = new Material(Shader.Find("Mobile/VertexLitWithColor"));
         rend.material.mainTexture = uv;
         rend.material.color = UnityEngine.Color.white;
+    }
+
+    //bölüm içerisinde yer alan bloklara arayüzden veridðimiz karþýklýk yüzdesine göre kaç farklý blok tipi olmasý gerektiðinin atamasý
+    List<int> GetRandomUVIndexes(int usableUVCount)
+    {
+        List<int> UVIndex = new List<int>();
+        //geçici olarak tüm uvlerin indexini alýyoruz.
+        List<int> avaibleTextureIndexes = new List<int>();
+        for (int i = 0; i < UVs.Count; i++)
+        {
+            avaibleTextureIndexes.Add(i);
+        }
+
+        //kaç farklý uv seçilmeli ise burada random þekilde seçtiriyoruz. Seçilenin tekrar seçilmemesini garanti ediyoruz.
+        for (int i = 0; i < usableUVCount; i++)
+        {
+            int randomUVIndex = Random.Range(0, avaibleTextureIndexes.Count);
+            UVIndex.Add(avaibleTextureIndexes[randomUVIndex]);
+            avaibleTextureIndexes.RemoveAt(randomUVIndex);
+        }
+
+        return UVIndex;
     }
 }
