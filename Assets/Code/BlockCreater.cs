@@ -11,6 +11,9 @@ public class BlockCreater : MonoBehaviour
 {
     public List<Texture> UVs;
     public Transform BlockParent;
+
+    [Tooltip("Bölümde yer alan bloklara yüzdesel olarak kaç farklý blok tipi atamasý yapýlsýn.")]
+    [Range(0, 100)]
     public float complexityPercentage;
 
     // Start is called before the first frame update

@@ -4382,7 +4382,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 92cdb81d91a87a74ea6450f14c3c0a19, type: 3}
   - {fileID: 2800000, guid: 4461891f2911dda42ba7079045a58a55, type: 3}
   BlockParent: {fileID: 1318437585}
-  complexityPercentage: 70
+  complexityPercentage: 100
 --- !u!1 &1991091535
 GameObject:
   m_ObjectHideFlags: 0
