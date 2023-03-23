@@ -14,13 +14,16 @@ public class BlockTouchController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Application.isEditor)
+        if (GlobalVariables.gameState == GlobalVariables.gameState_inGame)
         {
-            ControlWithMouse();
-        }
-        else
-        {
-            //ControlWithTouch();
+            if (Application.isEditor)
+            {
+                ControlWithMouse();
+            }
+            else
+            {
+                //ControlWithTouch();
+            }
         }
     }
 

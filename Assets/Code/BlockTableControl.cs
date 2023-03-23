@@ -30,7 +30,14 @@ public class BlockTableControl : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        
+        if (GlobalVariables.gameState == GlobalVariables.gameState_inGame)
+        {
+            BlockTableControlWithMouse();
+        }
+    }
+
+    void BlockTableControlWithMouse ()
+    {
         if (Input.GetMouseButtonDown(0) && GeneralControllers.GetComponent<BlockBoardController>().isSmoothMoveToSnapPointAnimationContinue == false)
         {
             RaycastHit raycastHit;
@@ -86,7 +93,6 @@ public class BlockTableControl : MonoBehaviour
             }
 
             prePosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
-            
         }
 
         if (Input.GetMouseButtonUp(0) && cameraStatus == cameraStatus_Dragging)
@@ -108,7 +114,5 @@ public class BlockTableControl : MonoBehaviour
             }
 
         }
-
-
     }
 }
