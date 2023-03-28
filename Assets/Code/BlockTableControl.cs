@@ -7,6 +7,7 @@ using UnityEditor;
 public class BlockTableControl : MonoBehaviour
 {
     public Transform GeneralControllers;
+    [HideInInspector]
     public bool BlocksRotating = false;
 
     Vector3 prePosition;
@@ -38,7 +39,7 @@ public class BlockTableControl : MonoBehaviour
 
     void BlockTableControlWithMouse ()
     {
-        if (Input.GetMouseButtonDown(0) && GeneralControllers.GetComponent<BlockBoardController>().isSmoothMoveToSnapPointAnimationContinue == false)
+        if (Input.GetMouseButtonDown(0) && GeneralControllers.GetComponent<BlockBoardController>().isSmoothMoveToSnapPointAnimationContinue == false && BlocksRotating == false)
         {
             RaycastHit raycastHit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -74,23 +75,45 @@ public class BlockTableControl : MonoBehaviour
             transform.Rotate(new Vector3(0, 0, -1), -direction.x * 180, Space.World);
             transform.Rotate(new Vector3(-1, 0, 0), direction.y * 180);
 
-            if (TransformUtils.GetInspectorRotation(transform).x >= 90)
+
+            if (transform.localEulerAngles.z > 170 && transform.localEulerAngles.x < 90)
             {
-                transform.localRotation = Quaternion.Euler(new Vector3(90, TransformUtils.GetInspectorRotation(transform).y, TransformUtils.GetInspectorRotation(transform).z));
+                transform.localRotation = Quaternion.Euler(new Vector3(90, transform.localEulerAngles.y, transform.localEulerAngles.z));
             }
-            else if (TransformUtils.GetInspectorRotation(transform).x <= -90)
+            else if (transform.localEulerAngles.z > 170 && transform.localEulerAngles.x >= 270)
             {
-                transform.localRotation = Quaternion.Euler(new Vector3(-90, TransformUtils.GetInspectorRotation(transform).y, TransformUtils.GetInspectorRotation(transform).z));
+                transform.localRotation = Quaternion.Euler(new Vector3(270, transform.localEulerAngles.y, transform.localEulerAngles.z));
             }
 
-            if (TransformUtils.GetInspectorRotation(transform).y >= 90)
+            if (transform.localEulerAngles.y >= 90 && transform.localEulerAngles.y < 180)
             {
-                transform.localRotation = Quaternion.Euler(new Vector3(TransformUtils.GetInspectorRotation(transform).x, 90, TransformUtils.GetInspectorRotation(transform).z));
+                transform.localRotation = Quaternion.Euler(new Vector3(transform.localEulerAngles.x, 90, 0));
             }
-            else if (TransformUtils.GetInspectorRotation(transform).y <= -90)
+            else if (transform.localEulerAngles.y < 270 && transform.localEulerAngles.y > 90)
             {
-                transform.localRotation = Quaternion.Euler(new Vector3(TransformUtils.GetInspectorRotation(transform).x, -90, TransformUtils.GetInspectorRotation(transform).z));
+                transform.localRotation = Quaternion.Euler(new Vector3(transform.localEulerAngles.x, 270, 0));
             }
+
+            #region çok iyi çalýþmasýna raðmen build edilmiyor. Mobilde çalýþacak þekilde inspectördeki açýlarý tam oalrak bulamýyoruz bir türlü
+
+            //if (TransformUtils.GetInspectorRotation(transform).x >= 90)
+            //{
+            //    transform.localRotation = Quaternion.Euler(new Vector3(90, TransformUtils.GetInspectorRotation(transform).y, TransformUtils.GetInspectorRotation(transform).z));
+            //}
+            //else if (TransformUtils.GetInspectorRotation(transform).x <= -90)
+            //{
+            //    transform.localRotation = Quaternion.Euler(new Vector3(-90, TransformUtils.GetInspectorRotation(transform).y, TransformUtils.GetInspectorRotation(transform).z));
+            //}
+
+            //if (TransformUtils.GetInspectorRotation(transform).y >= 90)
+            //{
+            //    transform.localRotation = Quaternion.Euler(new Vector3(TransformUtils.GetInspectorRotation(transform).x, 90, TransformUtils.GetInspectorRotation(transform).z));
+            //}
+            //else if (TransformUtils.GetInspectorRotation(transform).y <= -90)
+            //{
+            //    transform.localRotation = Quaternion.Euler(new Vector3(TransformUtils.GetInspectorRotation(transform).x, -90, TransformUtils.GetInspectorRotation(transform).z));
+            //}
+            #endregion
 
             prePosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
         }
@@ -115,4 +138,5 @@ public class BlockTableControl : MonoBehaviour
 
         }
     }
+
 }

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class LevelSelectMenu : MonoBehaviour
 {
@@ -11,12 +13,13 @@ public class LevelSelectMenu : MonoBehaviour
     public int unlockedLevel = 1;
     [Tooltip("Bir sayfada kaç bölüm gösteriliyor.")]
     public int pageItem = 15;
-    public GameObject nextButton;
-    public GameObject backButton;
+    public TMP_Text pageNumberText;
 
     LevelButton[] levelButtons;
     int totalPage = 0;
     int page = 0;  //þuanki sayfa sayýsý
+    bool nextPageAvaible = false;
+    bool previousPageAvaible = false;
 
     void Start()
     {
@@ -24,22 +27,11 @@ public class LevelSelectMenu : MonoBehaviour
         Refresh();
     }
 
-    public void  ClickNext ()
-    {
-        page++;
-        Refresh();
-    }
-
-    public void ClickBack()
-    {
-        page--;
-        Refresh();
-    }
-
     public void Refresh ()
     {
         totalPage = (totalLevel-1) / pageItem;
         int index = page * pageItem;
+        pageNumberText.text = (page+1) + "/" + (totalPage+1);
         for (int i = 0; i < levelButtons.Length; i++)
         {
             int level = index + i + 1;
@@ -54,20 +46,43 @@ public class LevelSelectMenu : MonoBehaviour
                 levelButtons[i].gameObject.SetActive(false);
             }
         }
-        CheckButton();
-    }
-
-    void CheckButton()
-    {
-        backButton.SetActive(page > 0);
-        nextButton.SetActive(page < totalPage);
+        CheckPagesAvailability();
     }
 
     public void StartLevel(int level)
     {
-        if (level == unlockedLevel)
+        ////týklanýlan bölüm kilitli olmayan son bölüm ise
+        //if (level == unlockedLevel)
+        //{
+        //    unlockedLevel++;
+        //    Refresh();
+        //}
+
+        SceneManager.LoadScene("level"+level, LoadSceneMode.Single);
+        //unlockedLevel++;
+
+    }
+
+    void CheckPagesAvailability()
+    {
+        nextPageAvaible = page < totalPage;
+        previousPageAvaible = page > 0;
+    }
+
+    public void NextPage()
+    {
+        if (nextPageAvaible)
         {
-            unlockedLevel++;
+            page++;
+            Refresh();
+        }
+    }
+
+    public void PreviousPage()
+    {
+        if (previousPageAvaible)
+        {
+            page--;
             Refresh();
         }
     }
