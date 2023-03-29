@@ -23,12 +23,6 @@ public class BlockCreater : MonoBehaviour
         CreateBlocks();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void CreateBlocks()
     {
         //sahnedeki blokc sayýsý 0dan büyük ve 144'ten küçük olmalý ayrýca 3'e tam bölünmeli
