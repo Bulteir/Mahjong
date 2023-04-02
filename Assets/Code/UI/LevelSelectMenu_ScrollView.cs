@@ -12,46 +12,50 @@ public class LevelSelectMenu_ScrollView : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pos = new float[transform.childCount];
-        float distance = 1f / (pos.Length - 1);
-        for (int i = 0; i < pos.Length; i++) 
+        if (GlobalVariables.gameState == GlobalVariables.gameState_LevelSelectmenu)
         {
-            pos[i] = distance * i;        
-        }
 
-        if (Input.GetMouseButton(0))
-        {
-            scrollPos = scrollbar.GetComponent<Scrollbar>().value;
-        }
-        else
-        {
+            pos = new float[transform.childCount];
+            float distance = 1f / (pos.Length - 1);
             for (int i = 0; i < pos.Length; i++)
             {
-                if (scrollPos < pos[i] + (distance / 2) && scrollPos > pos[i] - (distance/2))
+                pos[i] = distance * i;
+            }
+
+            if (Input.GetMouseButton(0))
+            {
+                scrollPos = scrollbar.GetComponent<Scrollbar>().value;
+            }
+            else
+            {
+                for (int i = 0; i < pos.Length; i++)
                 {
-                    scrollbar.GetComponent<Scrollbar>().value = Mathf.Lerp(scrollbar.GetComponent<Scrollbar>().value, pos[i], 0.1f);
+                    if (scrollPos < pos[i] + (distance / 2) && scrollPos > pos[i] - (distance / 2))
+                    {
+                        scrollbar.GetComponent<Scrollbar>().value = Mathf.Lerp(scrollbar.GetComponent<Scrollbar>().value, pos[i], 0.1f);
+                    }
                 }
             }
+
+            #region bu kýsým seçili olan item dýþýndaki itemlerý smooth þekilde küçültür. Ekranýn ortasýna geleni büyütür.
+            //for (int i = 0; i < pos.Length; i++)
+            //{
+            //    if (scrollPos < pos[i] + (distance / 2) && scrollPos > pos[i] - (distance / 2))
+            //    {
+            //        transform.GetChild(i).localScale = Vector2.Lerp(transform.GetChild(i).localScale, new Vector2(1f, 1f), 0.1f);
+            //        for (int j = 0; j < pos.Length; j++)
+            //        {
+            //            if (j != i)
+            //            {
+            //                transform.GetChild(j).localScale = Vector2.Lerp(transform.GetChild(j).localScale, new Vector2(0.8f, 0.8f), 0.1f);
+
+            //            }
+            //        }
+
+            //    }
+            //}
+            #endregion
         }
-
-        #region bu kýsým seçili olan item dýþýndaki itemlerý smooth þekilde küçültür. Ekranýn ortasýna geleni büyütür.
-        //for (int i = 0; i < pos.Length; i++)
-        //{
-        //    if (scrollPos < pos[i] + (distance / 2) && scrollPos > pos[i] - (distance / 2))
-        //    {
-        //        transform.GetChild(i).localScale = Vector2.Lerp(transform.GetChild(i).localScale, new Vector2(1f, 1f), 0.1f);
-        //        for (int j = 0; j < pos.Length; j++)
-        //        {
-        //            if (j != i)
-        //            {
-        //                transform.GetChild(j).localScale = Vector2.Lerp(transform.GetChild(j).localScale, new Vector2(0.8f, 0.8f), 0.1f);
-
-        //            }
-        //        }
-
-        //    }
-        //}
-        #endregion
 
     }
 }
