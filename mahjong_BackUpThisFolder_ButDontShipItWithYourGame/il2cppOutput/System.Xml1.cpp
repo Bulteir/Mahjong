@@ -3118,7 +3118,7 @@ CATCH_0114:
 	{
 		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_43 = V_0;
 		NullCheck(L_43);
-		VirtualActionInvoker0::Invoke(18, L_43);
+		VirtualActionInvoker0::Invoke(19, L_43);
 		IL2CPP_RETHROW_MANAGED_EXCEPTION(IL2CPP_GET_ACTIVE_EXCEPTION(Exception_t*));
 	}
 
@@ -7657,7 +7657,7 @@ IL_00e4:
 		int32_t L_43 = L_42->___bytesUsed_9;
 		NullCheck(L_35);
 		int32_t L_44;
-		L_44 = VirtualFuncInvoker3< int32_t, ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t, int32_t >::Invoke(31, L_35, L_37, L_39, ((int32_t)il2cpp_codegen_subtract(((int32_t)(((RuntimeArray*)L_41)->max_length)), L_43)));
+		L_44 = VirtualFuncInvoker3< int32_t, ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t, int32_t >::Invoke(32, L_35, L_37, L_39, ((int32_t)il2cpp_codegen_subtract(((int32_t)(((RuntimeArray*)L_41)->max_length)), L_43)));
 		V_4 = L_44;
 		int32_t L_45 = V_4;
 		if (L_45)
@@ -9538,7 +9538,7 @@ IL_0312:
 		int32_t L_141 = L_140->___bytesUsed_9;
 		NullCheck(L_133);
 		int32_t L_142;
-		L_142 = VirtualFuncInvoker3< int32_t, ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t, int32_t >::Invoke(31, L_133, L_135, L_137, ((int32_t)il2cpp_codegen_subtract(((int32_t)(((RuntimeArray*)L_139)->max_length)), L_141)));
+		L_142 = VirtualFuncInvoker3< int32_t, ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t, int32_t >::Invoke(32, L_133, L_135, L_137, ((int32_t)il2cpp_codegen_subtract(((int32_t)(((RuntimeArray*)L_139)->max_length)), L_141)));
 		V_10 = L_142;
 		int32_t L_143 = V_10;
 		if (L_143)
@@ -24832,7 +24832,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlTextReaderImpl_PopEntity_m3F59397F938
 		ParsingState_tF0FABA16483FCC2DB710460D11CD79D35C4E2886* L_2 = (&__this->___ps_6);
 		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_3 = L_2->___stream_5;
 		NullCheck(L_3);
-		VirtualActionInvoker0::Invoke(18, L_3);
+		VirtualActionInvoker0::Invoke(19, L_3);
 	}
 
 IL_001d:

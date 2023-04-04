@@ -1939,14 +1939,17 @@ struct Char_t521A6F19B456D956AF452D926C32709DC03D6B17
 };
 struct DataContractAttribute_tD065D7D14CC8AA548815166AB8B8210D1B3C699F  : public Attribute_tFDA8EFEFB0711976D22474794576DAF28F7440AA
 {
-	bool ___isReference_0;
+	String_t* ___name_0;
+	bool ___isNameSetExplicitly_1;
+	bool ___isReference_2;
 };
 struct DataMemberAttribute_t8AE446BE9032B9BC8E7B2EDC785F5C6FA0E5BB73  : public Attribute_tFDA8EFEFB0711976D22474794576DAF28F7440AA
 {
 	String_t* ___name_0;
-	int32_t ___order_1;
-	bool ___isRequired_2;
-	bool ___emitDefaultValue_3;
+	bool ___isNameSetExplicitly_1;
+	int32_t ___order_2;
+	bool ___isRequired_3;
+	bool ___emitDefaultValue_4;
 };
 struct DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D 
 {
