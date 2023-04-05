@@ -68,15 +68,16 @@ extern void U3CLogInUnityCloudSaveServiceWithGooglePlayU3Ed__1_SetStateMachine_m
 extern void GooglePlayGameSignIn_Awake_mFC3DAB0055A16C40564330CD97019C7700565822 (void);
 extern void GooglePlayGameSignIn_Start_mEE44E57AC726B25EF840FCB8A8018DD2EDA910DF (void);
 extern void GooglePlayGameSignIn_LoginGooglePlayGames_m7FCBB9675F3E34A6A23F804A8E52E6C449C9A749 (void);
-extern void GooglePlayGameSignIn_SignInWithGooglePlayGamesAsync_m4AD5FE85E2F37434CDBB266B54B11462EEA842B0 (void);
 extern void GooglePlayGameSignIn__ctor_m63670E954A44BE7A7E925A3677CC01BE5E1C8BEC (void);
 extern void U3CU3Ec__DisplayClass4_0__ctor_mCD990FFF1BD81CEEFCCC2054E41882BD242CF5B2 (void);
 extern void U3CU3Ec__DisplayClass4_0_U3CLoginGooglePlayGamesU3Eb__0_m55D663B672AC1FCFB5C8CC2327529D59EA7D4FCD (void);
 extern void U3CU3Ec__DisplayClass4_0_U3CLoginGooglePlayGamesU3Eb__1_m89DBD903408439E20EF7C5EC55378895F0A5F233 (void);
-extern void U3CSignInWithGooglePlayGamesAsyncU3Ed__5_MoveNext_m6D76FD29E742DCE625B69F73176F0AD34BA23529 (void);
-extern void U3CSignInWithGooglePlayGamesAsyncU3Ed__5_SetStateMachine_mC8062F70B47A04F59AC8883B23899C1F55499F6B (void);
 extern void U3CStartU3Ed__3_MoveNext_m7B23A7506FDA6347D32314FC1F5DE7CA5B6271D1 (void);
 extern void U3CStartU3Ed__3_SetStateMachine_m46AE398AC146FB5C64EB7907EFE018934B97907D (void);
+extern void GlobalVariables__cctor_m81016ACD22301EB549A5646D88D2C0BE69A383F5 (void);
+extern void InternetAvailabilityController_Start_m825DB6FA706AE897C12FB9B9C6A823E2D472BBD6 (void);
+extern void InternetAvailabilityController_CheckNetwork_m1A4C760B5D9ED032403AEF5C743864C68F5D0359 (void);
+extern void InternetAvailabilityController__ctor_m95B503377D91B6292905651586969D30AAD0D3FE (void);
 extern void JsonDataService__ctor_m90EBBC5109D810D6168D2A01145462FF3FACECA8 (void);
 extern void LocalSaveLoadController_SerializeJson_m45922D161F87DAFFFF12B02F1A3115411D92C2C1 (void);
 extern void LocalSaveLoadController_SaveGame_m849CF5CC6214052DBBCF0A092DB7B4D9486F54C4 (void);
@@ -121,7 +122,7 @@ extern void SafeArea_Refresh_m2EB186CFFCAB2AB7E5B57A46A2A57D14493FD8EA (void);
 extern void SafeArea_GetSafeArea_m4B6B53C8ED0A4B2F5DBC404E2F208E6A71411815 (void);
 extern void SafeArea_ApplySafeArea_m19691250ABEE5AFFA7F793548BCCE402CCF38548 (void);
 extern void SafeArea__ctor_mC10940463499A1652DEC94CACFCB811ADA5CD6FF (void);
-static Il2CppMethodPointer s_methodPointers[115] = 
+static Il2CppMethodPointer s_methodPointers[116] = 
 {
 	BlockBoardController_PlaceBlock_m13A017BCDE9E31A054F0375197628787D19D5BB5,
 	BlockBoardController_GetAvaibleBlockSlotIndex_mEEFF78E09B33354ADAE72359256818C867C828F4,
@@ -179,15 +180,16 @@ static Il2CppMethodPointer s_methodPointers[115] =
 	GooglePlayGameSignIn_Awake_mFC3DAB0055A16C40564330CD97019C7700565822,
 	GooglePlayGameSignIn_Start_mEE44E57AC726B25EF840FCB8A8018DD2EDA910DF,
 	GooglePlayGameSignIn_LoginGooglePlayGames_m7FCBB9675F3E34A6A23F804A8E52E6C449C9A749,
-	GooglePlayGameSignIn_SignInWithGooglePlayGamesAsync_m4AD5FE85E2F37434CDBB266B54B11462EEA842B0,
 	GooglePlayGameSignIn__ctor_m63670E954A44BE7A7E925A3677CC01BE5E1C8BEC,
 	U3CU3Ec__DisplayClass4_0__ctor_mCD990FFF1BD81CEEFCCC2054E41882BD242CF5B2,
 	U3CU3Ec__DisplayClass4_0_U3CLoginGooglePlayGamesU3Eb__0_m55D663B672AC1FCFB5C8CC2327529D59EA7D4FCD,
 	U3CU3Ec__DisplayClass4_0_U3CLoginGooglePlayGamesU3Eb__1_m89DBD903408439E20EF7C5EC55378895F0A5F233,
-	U3CSignInWithGooglePlayGamesAsyncU3Ed__5_MoveNext_m6D76FD29E742DCE625B69F73176F0AD34BA23529,
-	U3CSignInWithGooglePlayGamesAsyncU3Ed__5_SetStateMachine_mC8062F70B47A04F59AC8883B23899C1F55499F6B,
 	U3CStartU3Ed__3_MoveNext_m7B23A7506FDA6347D32314FC1F5DE7CA5B6271D1,
 	U3CStartU3Ed__3_SetStateMachine_m46AE398AC146FB5C64EB7907EFE018934B97907D,
+	GlobalVariables__cctor_m81016ACD22301EB549A5646D88D2C0BE69A383F5,
+	InternetAvailabilityController_Start_m825DB6FA706AE897C12FB9B9C6A823E2D472BBD6,
+	InternetAvailabilityController_CheckNetwork_m1A4C760B5D9ED032403AEF5C743864C68F5D0359,
+	InternetAvailabilityController__ctor_m95B503377D91B6292905651586969D30AAD0D3FE,
 	NULL,
 	NULL,
 	NULL,
@@ -241,20 +243,16 @@ static Il2CppMethodPointer s_methodPointers[115] =
 };
 extern void U3CLogInUnityCloudSaveServiceWithGooglePlayU3Ed__1_MoveNext_m29F0F53B0FAA198D3AB6D707A64EA22843C3DB6E_AdjustorThunk (void);
 extern void U3CLogInUnityCloudSaveServiceWithGooglePlayU3Ed__1_SetStateMachine_m8666C037ED5965E2835B7D86708A88DFBAA0F00A_AdjustorThunk (void);
-extern void U3CSignInWithGooglePlayGamesAsyncU3Ed__5_MoveNext_m6D76FD29E742DCE625B69F73176F0AD34BA23529_AdjustorThunk (void);
-extern void U3CSignInWithGooglePlayGamesAsyncU3Ed__5_SetStateMachine_mC8062F70B47A04F59AC8883B23899C1F55499F6B_AdjustorThunk (void);
 extern void U3CStartU3Ed__3_MoveNext_m7B23A7506FDA6347D32314FC1F5DE7CA5B6271D1_AdjustorThunk (void);
 extern void U3CStartU3Ed__3_SetStateMachine_m46AE398AC146FB5C64EB7907EFE018934B97907D_AdjustorThunk (void);
-static Il2CppTokenAdjustorThunkPair s_adjustorThunks[6] = 
+static Il2CppTokenAdjustorThunkPair s_adjustorThunks[4] = 
 {
 	{ 0x06000034, U3CLogInUnityCloudSaveServiceWithGooglePlayU3Ed__1_MoveNext_m29F0F53B0FAA198D3AB6D707A64EA22843C3DB6E_AdjustorThunk },
 	{ 0x06000035, U3CLogInUnityCloudSaveServiceWithGooglePlayU3Ed__1_SetStateMachine_m8666C037ED5965E2835B7D86708A88DFBAA0F00A_AdjustorThunk },
-	{ 0x0600003E, U3CSignInWithGooglePlayGamesAsyncU3Ed__5_MoveNext_m6D76FD29E742DCE625B69F73176F0AD34BA23529_AdjustorThunk },
-	{ 0x0600003F, U3CSignInWithGooglePlayGamesAsyncU3Ed__5_SetStateMachine_mC8062F70B47A04F59AC8883B23899C1F55499F6B_AdjustorThunk },
-	{ 0x06000040, U3CStartU3Ed__3_MoveNext_m7B23A7506FDA6347D32314FC1F5DE7CA5B6271D1_AdjustorThunk },
-	{ 0x06000041, U3CStartU3Ed__3_SetStateMachine_m46AE398AC146FB5C64EB7907EFE018934B97907D_AdjustorThunk },
+	{ 0x0600003D, U3CStartU3Ed__3_MoveNext_m7B23A7506FDA6347D32314FC1F5DE7CA5B6271D1_AdjustorThunk },
+	{ 0x0600003E, U3CStartU3Ed__3_SetStateMachine_m46AE398AC146FB5C64EB7907EFE018934B97907D_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[115] = 
+static const int32_t s_InvokerIndices[116] = 
 {
 	4775,
 	3989,
@@ -312,15 +310,16 @@ static const int32_t s_InvokerIndices[115] =
 	5919,
 	5919,
 	5798,
-	4239,
 	5919,
 	5919,
 	4745,
 	4775,
 	5919,
 	4775,
+	8724,
 	5919,
-	4775,
+	5919,
+	5919,
 	0,
 	0,
 	0,
@@ -374,10 +373,10 @@ static const int32_t s_InvokerIndices[115] =
 };
 static const Il2CppTokenRangePair s_rgctxIndices[4] = 
 {
-	{ 0x06000044, { 0, 2 } },
-	{ 0x06000045, { 2, 1 } },
-	{ 0x06000046, { 3, 3 } },
-	{ 0x06000047, { 6, 2 } },
+	{ 0x06000045, { 0, 2 } },
+	{ 0x06000046, { 2, 1 } },
+	{ 0x06000047, { 3, 3 } },
+	{ 0x06000048, { 6, 2 } },
 };
 extern const uint32_t g_rgctx_T_t0366F1B63C657EE8CC73890E702804C9C5ADC46C;
 extern const uint32_t g_rgctx_JsonDataService_WriteEncryptedData_TisT_t0366F1B63C657EE8CC73890E702804C9C5ADC46C_m6B8D256AAACB9A3E3C08EEC1F7FBEA01420C0CA8;
@@ -402,9 +401,9 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	115,
+	116,
 	s_methodPointers,
-	6,
+	4,
 	s_adjustorThunks,
 	s_InvokerIndices,
 	0,

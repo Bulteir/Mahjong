@@ -7892,11 +7892,9 @@ struct U3CLogInUnityCloudSaveServiceWithGooglePlayU3Ed__1_t08D982CB968EE16B25B73
 {
 	int32_t ___U3CU3E1__state_0;
 	AsyncVoidMethodBuilder_t253E37B63E7E7B504878AE6563347C147F98EF2D ___U3CU3Et__builder_1;
-	CloudSaveController_tEB0B3E073147D1E14521D2FB9F17169DC8CB2467* ___U3CU3E4__this_2;
-	String_t* ___code_3;
-	RuntimeObject* ___U3CU3E7__wrap1_4;
-	int32_t ___U3CU3E7__wrap2_5;
-	TaskAwaiter_t9B661AC8C2EFA6BAB94C77BB24A5DDA82D61F833 ___U3CU3Eu__1_6;
+	String_t* ___code_2;
+	CloudSaveController_tEB0B3E073147D1E14521D2FB9F17169DC8CB2467* ___U3CU3E4__this_3;
+	TaskAwaiter_t9B661AC8C2EFA6BAB94C77BB24A5DDA82D61F833 ___U3CU3Eu__1_4;
 };
 struct U3CGetOrCreateDiagnosticsAsyncU3Ed__26_tAB11C3722F9B7391AAF98FE98D8F1770EBA1E4E5 
 {
@@ -8622,13 +8620,6 @@ struct U3CInitializeProjectConfigAsyncU3Ed__45_tF9945325F457BFED42903FD9A342EAAF
 	CorePackageInitializer_tB06E53DC37B7383143EC96623CD1EB50AE1F2CF6* ___U3CU3E4__this_2;
 	InitializationOptions_t51AA79A729CADA6922543A7A47F1E87A09DBD17A* ___options_3;
 	TaskAwaiter_1_t665C5D28EB1D56850B9357FC3AD1DD171C694C92 ___U3CU3Eu__1_4;
-};
-struct U3CSignInWithGooglePlayGamesAsyncU3Ed__5_tCA00A8A7F14EF8AE162284A48C5C2657325BD167 
-{
-	int32_t ___U3CU3E1__state_0;
-	AsyncTaskMethodBuilder_t7A5128C134547B5918EB1AA24FE47ED4C1DF3F06 ___U3CU3Et__builder_1;
-	String_t* ___authCode_2;
-	TaskAwaiter_t9B661AC8C2EFA6BAB94C77BB24A5DDA82D61F833 ___U3CU3Eu__1_3;
 };
 struct U3CForceDeleteAsyncU3Ed__2_tCD4D2413AED6981814A44172E8302B626E3480BC 
 {
@@ -9695,7 +9686,8 @@ struct GetKeys400OneOf_tCF55E71F0C80F555C35AF68EBC9BE02A5A9C0B6A_StaticFields
 };
 struct GlobalVariables_tBB007C5C9EF320ABB21DA70F60975762475CB26E_StaticFields
 {
-	int32_t ___gameState_1;
+	bool ___internetAvaible_0;
+	int32_t ___gameState_2;
 };
 struct GraphicRegistry_t374118CCD6DBB47209C783A4BF2F4EF9EA78A326_StaticFields
 {
@@ -13146,24 +13138,21 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7305[1] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7306[12] = 
 {
 	static_cast<int32_t>(offsetof(CameraControl_t09E601D2B49C96754BE5AE22FCFFB94F7F4C06DE, ___target_5)),static_cast<int32_t>(offsetof(CameraControl_t09E601D2B49C96754BE5AE22FCFFB94F7F4C06DE, ___CameraDistance_6)),static_cast<int32_t>(offsetof(CameraControl_t09E601D2B49C96754BE5AE22FCFFB94F7F4C06DE, ___CameraMoving_7)),static_cast<int32_t>(offsetof(CameraControl_t09E601D2B49C96754BE5AE22FCFFB94F7F4C06DE, ___GeneralControllers_8)),static_cast<int32_t>(offsetof(CameraControl_t09E601D2B49C96754BE5AE22FCFFB94F7F4C06DE, ___prePosition_9)),static_cast<int32_t>(offsetof(CameraControl_t09E601D2B49C96754BE5AE22FCFFB94F7F4C06DE, ___startPosition_10)),static_cast<int32_t>(offsetof(CameraControl_t09E601D2B49C96754BE5AE22FCFFB94F7F4C06DE, ___startRotation_11)),static_cast<int32_t>(offsetof(CameraControl_t09E601D2B49C96754BE5AE22FCFFB94F7F4C06DE, ___cameraStatus_12)),static_cast<int32_t>(offsetof(CameraControl_t09E601D2B49C96754BE5AE22FCFFB94F7F4C06DE, ___cameraStatus_idle_13)),static_cast<int32_t>(offsetof(CameraControl_t09E601D2B49C96754BE5AE22FCFFB94F7F4C06DE, ___cameraStatus_DragBegin_14)),static_cast<int32_t>(offsetof(CameraControl_t09E601D2B49C96754BE5AE22FCFFB94F7F4C06DE, ___cameraStatus_Dragging_15)),static_cast<int32_t>(offsetof(CameraControl_t09E601D2B49C96754BE5AE22FCFFB94F7F4C06DE, ___cameraStatus_DragEnd_16)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7307[7] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7307[5] = 
 {
-	static_cast<int32_t>(offsetof(U3CLogInUnityCloudSaveServiceWithGooglePlayU3Ed__1_t08D982CB968EE16B25B73CEA57C05D206E25BB5C, ___U3CU3E1__state_0)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(U3CLogInUnityCloudSaveServiceWithGooglePlayU3Ed__1_t08D982CB968EE16B25B73CEA57C05D206E25BB5C, ___U3CU3Et__builder_1)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(U3CLogInUnityCloudSaveServiceWithGooglePlayU3Ed__1_t08D982CB968EE16B25B73CEA57C05D206E25BB5C, ___U3CU3E4__this_2)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(U3CLogInUnityCloudSaveServiceWithGooglePlayU3Ed__1_t08D982CB968EE16B25B73CEA57C05D206E25BB5C, ___code_3)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(U3CLogInUnityCloudSaveServiceWithGooglePlayU3Ed__1_t08D982CB968EE16B25B73CEA57C05D206E25BB5C, ___U3CU3E7__wrap1_4)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(U3CLogInUnityCloudSaveServiceWithGooglePlayU3Ed__1_t08D982CB968EE16B25B73CEA57C05D206E25BB5C, ___U3CU3E7__wrap2_5)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(U3CLogInUnityCloudSaveServiceWithGooglePlayU3Ed__1_t08D982CB968EE16B25B73CEA57C05D206E25BB5C, ___U3CU3Eu__1_6)) + static_cast<int32_t>(sizeof(RuntimeObject)),};
+	static_cast<int32_t>(offsetof(U3CLogInUnityCloudSaveServiceWithGooglePlayU3Ed__1_t08D982CB968EE16B25B73CEA57C05D206E25BB5C, ___U3CU3E1__state_0)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(U3CLogInUnityCloudSaveServiceWithGooglePlayU3Ed__1_t08D982CB968EE16B25B73CEA57C05D206E25BB5C, ___U3CU3Et__builder_1)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(U3CLogInUnityCloudSaveServiceWithGooglePlayU3Ed__1_t08D982CB968EE16B25B73CEA57C05D206E25BB5C, ___code_2)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(U3CLogInUnityCloudSaveServiceWithGooglePlayU3Ed__1_t08D982CB968EE16B25B73CEA57C05D206E25BB5C, ___U3CU3E4__this_3)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(U3CLogInUnityCloudSaveServiceWithGooglePlayU3Ed__1_t08D982CB968EE16B25B73CEA57C05D206E25BB5C, ___U3CU3Eu__1_4)) + static_cast<int32_t>(sizeof(RuntimeObject)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7309[3] = 
 {
 	static_cast<int32_t>(offsetof(U3CU3Ec__DisplayClass4_0_tDFAF27DF2E903E89B74BBB26D65C166D2636259B, ___U3CU3E4__this_0)),static_cast<int32_t>(offsetof(U3CU3Ec__DisplayClass4_0_tDFAF27DF2E903E89B74BBB26D65C166D2636259B, ___tcs_1)),static_cast<int32_t>(offsetof(U3CU3Ec__DisplayClass4_0_tDFAF27DF2E903E89B74BBB26D65C166D2636259B, ___U3CU3E9__1_2)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7310[4] = 
 {
-	static_cast<int32_t>(offsetof(U3CSignInWithGooglePlayGamesAsyncU3Ed__5_tCA00A8A7F14EF8AE162284A48C5C2657325BD167, ___U3CU3E1__state_0)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(U3CSignInWithGooglePlayGamesAsyncU3Ed__5_tCA00A8A7F14EF8AE162284A48C5C2657325BD167, ___U3CU3Et__builder_1)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(U3CSignInWithGooglePlayGamesAsyncU3Ed__5_tCA00A8A7F14EF8AE162284A48C5C2657325BD167, ___authCode_2)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(U3CSignInWithGooglePlayGamesAsyncU3Ed__5_tCA00A8A7F14EF8AE162284A48C5C2657325BD167, ___U3CU3Eu__1_3)) + static_cast<int32_t>(sizeof(RuntimeObject)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7311[4] = 
-{
 	static_cast<int32_t>(offsetof(U3CStartU3Ed__3_tF1BC9B03578752F03BD5B1126D43CE775243D6B2, ___U3CU3E1__state_0)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(U3CStartU3Ed__3_tF1BC9B03578752F03BD5B1126D43CE775243D6B2, ___U3CU3Et__builder_1)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(U3CStartU3Ed__3_tF1BC9B03578752F03BD5B1126D43CE775243D6B2, ___U3CU3E4__this_2)) + static_cast<int32_t>(sizeof(RuntimeObject)),static_cast<int32_t>(offsetof(U3CStartU3Ed__3_tF1BC9B03578752F03BD5B1126D43CE775243D6B2, ___U3CU3Eu__1_3)) + static_cast<int32_t>(sizeof(RuntimeObject)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7312[2] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7311[2] = 
 {
 	static_cast<int32_t>(offsetof(GooglePlayGameSignIn_t23890483617CE4436E23D8BB5003DB54622C8CFC, ___Token_5)),static_cast<int32_t>(offsetof(GooglePlayGameSignIn_t23890483617CE4436E23D8BB5003DB54622C8CFC, ___Error_6)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7313[9] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7312[10] = 
 {
-	0,static_cast<int32_t>(offsetof(GlobalVariables_tBB007C5C9EF320ABB21DA70F60975762475CB26E_StaticFields, ___gameState_1)),0,0,0,0,0,0,0,};
+	static_cast<int32_t>(offsetof(GlobalVariables_tBB007C5C9EF320ABB21DA70F60975762475CB26E_StaticFields, ___internetAvaible_0)),0,static_cast<int32_t>(offsetof(GlobalVariables_tBB007C5C9EF320ABB21DA70F60975762475CB26E_StaticFields, ___gameState_2)),0,0,0,0,0,0,0,};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7315[2] = 
 {
 	0,0,};

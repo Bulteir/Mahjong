@@ -4,7 +4,10 @@ using UnityEngine;
 
 public static class GlobalVariables
 {
+    public static bool internetAvaible = true;
+    public static bool cloudSaveSystemIsReady = false;
     public const string TagBlock = "Block";
+
 
     public static int gameState = gameState_MainMenu;
     public const int gameState_MainMenu = 0;

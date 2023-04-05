@@ -11,57 +11,69 @@ public class CloudSaveController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
 
-        /*
-        //3 aþama 
-        //1.servislerin aktif hale gelmesini bekliyoruz
-        await UnityServices.InitializeAsync();
-        //2.kullanýcýnýn login olmasýný bekliyoz
-        await AuthenticationService.Instance.SignInAnonymouslyAsync();
-
-        //istediðimiz verileri kaydediyoruz
-        var data = new Dictionary<string, object> { { "MySaveKey", "HelloWorld" } };
-        await CloudSaveService.Instance.Data.ForceSaveAsync(data);
-        */
     }
 
-async public void LogInUnityCloudSaveServiceWithGooglePlay(string code)
+    async public void LogInUnityCloudSaveServiceWithGooglePlay(string code)
     {
         try
         {
-            Debug.Log("Süreç baþladý.");
-            await UnityServices.InitializeAsync();
-
-            // Check that scene has not been unloaded while processing async wait to prevent throw.
-            if (this == null) return;
-
-            //kullanýcý sign in olmadýysa
-            if (!AuthenticationService.Instance.IsSignedIn)
+            if (GlobalVariables.internetAvaible == false)
             {
-                //await AuthenticationService.Instance.SignInAnonymouslyAsync();
-                await AuthenticationService.Instance.SignInWithGooglePlayGamesAsync(code);
-                if (this == null) return;
+                Debug.Log("Ýnternet baðlantýsý yok.");
             }
+            else
+            {
+                if (code == null || code == "")
+                {
+                    Debug.Log("Google Play Game autjentication kodu boþ geldi.");
+                }
+                else
+                {
+                    //unity servislerini baþlatýr. Ancak biz google vb. ile giriþ yapacaðýmýz için o tarafta baþlatýlýyor.
 
-            Debug.Log($"Player id: {AuthenticationService.Instance.PlayerId}");
+                    await UnityServices.InitializeAsync();
 
+                    // Check that scene has not been unloaded while processing async wait to prevent throw.
+                    if (this == null) return;
+
+
+                    //kullanýcý sign in olmadýysa
+                    if (!AuthenticationService.Instance.IsSignedIn)
+                    {
+                        //anonim olarak giriþ yapmayý saðlar ancak uygulama silinip yüklendiðinde kullanýcýnýn kodu deðiþeceði için save dosyasýný kaybeder.
+                        //await AuthenticationService.Instance.SignInAnonymouslyAsync();
+                        Debug.Log("Unit cloud Authentication baþladý. google code:" + code);
+                        await AuthenticationService.Instance.SignInWithGooglePlayGamesAsync(code);
+                        if (this == null) return;
+                    }
+                    Debug.Log($"Player id: {AuthenticationService.Instance.PlayerId}");
+
+                    GlobalVariables.cloudSaveSystemIsReady = true;
+
+                    SaveData();
+
+                }
+            }
         }
         catch (Exception e)
         {
             Debug.LogException(e);
         }
-        finally
-        {
-            if (this != null)
-            {
-                //artýk iþlem bitti herþeyi aktif yap manasýnda
-                Debug.Log("baþarý ile bitti");
-
-                var data = new Dictionary<string, object> { { "unlockedLevelCount", "99" } };
-                await CloudSaveService.Instance.Data.ForceSaveAsync(data);
-            }
-        }
     }
 
+    async void SaveData()
+    {
+        if (GlobalVariables.cloudSaveSystemIsReady)
+        {
+            //authentication sonrasý Unity cloud save servisine veri kaydetme örneði
+            var data = new Dictionary<string, object> { { "unlockedLevelCount", "99.8" } };
+            await CloudSaveService.Instance.Data.ForceSaveAsync(data);
+        }
+        else
+        {
+            Debug.Log("Unity Cloud Save sistemi Hazýr deðil. Veri kaydedilemedi.");
+        }
+
+    }
 }

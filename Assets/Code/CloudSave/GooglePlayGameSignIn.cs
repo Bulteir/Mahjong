@@ -20,12 +20,10 @@ public class GooglePlayGameSignIn : MonoBehaviour
 
     async void Start()
     {
-        await UnityServices.InitializeAsync();
         await LoginGooglePlayGames();
-        await SignInWithGooglePlayGamesAsync(Token);
     }
 
-    //Fetch the Token / Auth code
+    //Google Play Game Servisine baðlanarak kullanýcýya özel token getirir.
     public Task LoginGooglePlayGames()
     {
         var tcs = new TaskCompletionSource<object>();
@@ -39,7 +37,8 @@ public class GooglePlayGameSignIn : MonoBehaviour
                     Debug.Log("Authorization code: " + code);
                     Token = code;
 
-                    //GetComponent<CloudSaveController>().LogInUnityCloudSaveServiceWithGooglePlay(code);
+                    //Unity Authentication Servisini çaðýrýyoruz. Google'dan aldýðýmýz kodla giriþ yapsýn diye.
+                    GetComponent<CloudSaveController>().LogInUnityCloudSaveServiceWithGooglePlay(code);
                     // This token serves as an example to be used for SignInWithGooglePlayGames
                     tcs.SetResult(null);
                 });
@@ -53,61 +52,4 @@ public class GooglePlayGameSignIn : MonoBehaviour
         });
         return tcs.Task;
     }
-
-
-    async Task SignInWithGooglePlayGamesAsync(string authCode)
-    {
-        try
-        {
-            Debug.Log("Unit cloud Authentication baþladý. google code:" + authCode);
-            await AuthenticationService.Instance.SignInWithGooglePlayGamesAsync(authCode);
-            Debug.Log($"PlayerID: {AuthenticationService.Instance.PlayerId}"); //Display the Unity Authentication PlayerID
-            Debug.Log("SignIn is successful.");
-
-            var data = new Dictionary<string, object> { { "unlockedLevelCount", "70" } };
-            await CloudSaveService.Instance.Data.ForceSaveAsync(data);
-        }
-        catch (AuthenticationException ex)
-        {
-            // Compare error code to AuthenticationErrorCodes
-            // Notify the player with the proper error message
-            Debug.LogException(ex);
-        }
-        catch (RequestFailedException ex)
-        {
-            // Compare error code to CommonErrorCodes
-            // Notify the player with the proper error message
-            Debug.LogException(ex);
-        }
-    }
-
-    //void Awake()
-    //{
-    //    //Initialize PlayGamesPlatform
-    //    PlayGamesPlatform.Activate();
-    //    LoginGooglePlayGames();
-    //}
-
-    //public void LoginGooglePlayGames()
-    //{
-    //    PlayGamesPlatform.Instance.Authenticate((success) =>
-    //    {
-    //        if (success == SignInStatus.Success)
-    //        {
-    //            Debug.Log("Login with Google Play games successful.");
-
-    //            PlayGamesPlatform.Instance.RequestServerSideAccess(true, code =>
-    //            {
-    //                Debug.Log("Authorization code: " + code);
-    //                Token = code;
-    //                // This token serves as an example to be used for SignInWithGooglePlayGames
-    //            });
-    //        }
-    //        else
-    //        {
-    //            Error = "Failed to retrieve Google play games authorization code";
-    //            Debug.Log("Login Unsuccessful");
-    //        }
-    //    });
-    //}
 }
