@@ -1483,13 +1483,13 @@ struct UnityTlsConversions_t3991B29084849AD5549D32D78DEB714EF888A518  : public R
 };
 struct Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E  : public RuntimeObject
 {
-	String_t* ___m_String_13;
-	String_t* ___m_originalUnicodeString_14;
-	UriParser_t920B0868286118827C08B08A15A9456AF6C19D81* ___m_Syntax_15;
-	String_t* ___m_DnsSafeHost_16;
-	uint64_t ___m_Flags_17;
-	UriInfo_t5F91F77A93545DDDA6BB24A609BAF5E232CC1A09* ___m_Info_18;
-	bool ___m_iriParsing_19;
+	String_t* ___m_String_16;
+	String_t* ___m_originalUnicodeString_17;
+	UriParser_t920B0868286118827C08B08A15A9456AF6C19D81* ___m_Syntax_18;
+	String_t* ___m_DnsSafeHost_19;
+	uint64_t ___m_Flags_20;
+	UriInfo_t5F91F77A93545DDDA6BB24A609BAF5E232CC1A09* ___m_Info_21;
+	bool ___m_iriParsing_22;
 };
 struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F  : public RuntimeObject
 {
@@ -3127,15 +3127,15 @@ struct Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E_StaticFields
 	String_t* ___UriSchemeNetTcp_10;
 	String_t* ___UriSchemeNetPipe_11;
 	String_t* ___SchemeDelimiter_12;
-	bool ___s_ConfigInitialized_20;
-	bool ___s_ConfigInitializing_21;
-	int32_t ___s_IdnScope_22;
-	bool ___s_IriParsing_23;
-	bool ___useDotNetRelativeOrAbsolute_24;
-	bool ___IsWindowsFileSystem_25;
-	RuntimeObject* ___s_initLock_26;
-	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ___HexLowerChars_27;
-	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ____WSchars_28;
+	bool ___s_ConfigInitialized_23;
+	bool ___s_ConfigInitializing_24;
+	int32_t ___s_IdnScope_25;
+	bool ___s_IriParsing_26;
+	bool ___useDotNetRelativeOrAbsolute_27;
+	bool ___IsWindowsFileSystem_29;
+	RuntimeObject* ___s_initLock_30;
+	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ___HexLowerChars_34;
+	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ____WSchars_35;
 };
 struct X509PalImpl_tF6062DC7B58B15FE20029E03CB3642384FB80E86_StaticFields
 {
@@ -5254,7 +5254,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A8261
 		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_1 = ___1_data;
 		NullCheck(L_0);
 		String_t* L_2;
-		L_2 = VirtualFuncInvoker1< String_t*, ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* >::Invoke(34, L_0, L_1);
+		L_2 = VirtualFuncInvoker1< String_t*, ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* >::Invoke(35, L_0, L_1);
 		String_t* L_3 = ___0_type;
 		String_t* L_4;
 		L_4 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteral3A22B1A23BFA90B6648AA767270477E8532F4379, L_3, NULL);
@@ -5702,7 +5702,7 @@ IL_00d6:
 		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_40 = ___0_rawData;
 		NullCheck(L_39);
 		String_t* L_41;
-		L_41 = VirtualFuncInvoker1< String_t*, ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* >::Invoke(34, L_39, L_40);
+		L_41 = VirtualFuncInvoker1< String_t*, ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* >::Invoke(35, L_39, L_40);
 		NullCheck(L_41);
 		int32_t L_42;
 		L_42 = String_IndexOf_m69E9BDAFD93767C85A7FF861B453415D3B4A200F(L_41, _stringLiteral473BE997FD82CA373BC40BEC46E737A81D8B16EA, NULL);
@@ -9760,7 +9760,7 @@ IL_01d7:
 		L_66 = VirtualFuncInvoker0< String_t* >::Invoke(9, L_65);
 		NullCheck(L_64);
 		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_67;
-		L_67 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, String_t* >::Invoke(17, L_64, L_66);
+		L_67 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, String_t* >::Invoke(18, L_64, L_66);
 		V_11 = L_67;
 		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_68 = V_11;
 		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_69 = L_68;
@@ -12516,7 +12516,7 @@ IL_00fc_2:
 					String_t* L_53 = ___1_targetHost;
 					NullCheck(L_52);
 					ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_54;
-					L_54 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, String_t* >::Invoke(17, L_52, L_53);
+					L_54 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, String_t* >::Invoke(18, L_52, L_53);
 					V_8 = L_54;
 					ChainValidationHelper_t5BAFD168AF916EAD45963A656515931724328755* L_55 = ___0_validator;
 					NullCheck(L_55);

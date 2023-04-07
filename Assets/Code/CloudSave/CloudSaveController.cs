@@ -5,9 +5,13 @@ using Unity.Services.Core;
 using Unity.Services.Authentication;
 using Unity.Services.CloudSave;
 using System;
+using System.Linq;
+using UnityEngine.UI;
 
 public class CloudSaveController : MonoBehaviour
 {
+    public Button GoogleLogin_Btn;
+    public Button FacebookLogin_Btn;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,32 +30,36 @@ public class CloudSaveController : MonoBehaviour
             {
                 if (code == null || code == "")
                 {
-                    Debug.Log("Google Play Game autjentication kodu boþ geldi.");
+                    Debug.Log("Google Play Game authentication kodu boþ geldi.");
                 }
                 else
                 {
-                    //unity servislerini baþlatýr. Ancak biz google vb. ile giriþ yapacaðýmýz için o tarafta baþlatýlýyor.
 
                     await UnityServices.InitializeAsync();
-
-                    // Check that scene has not been unloaded while processing async wait to prevent throw.
                     if (this == null) return;
-
 
                     //kullanýcý sign in olmadýysa
                     if (!AuthenticationService.Instance.IsSignedIn)
                     {
-                        //anonim olarak giriþ yapmayý saðlar ancak uygulama silinip yüklendiðinde kullanýcýnýn kodu deðiþeceði için save dosyasýný kaybeder.
-                        //await AuthenticationService.Instance.SignInAnonymouslyAsync();
-                        Debug.Log("Unit cloud Authentication baþladý. google code:" + code);
+                        Debug.Log("Unit cloud Authentication baþladý. Google code:" + code);
                         await AuthenticationService.Instance.SignInWithGooglePlayGamesAsync(code);
                         if (this == null) return;
                     }
+                    else if (AuthenticationService.Instance.PlayerInfo.Identities.Where(i => i.TypeId.Contains("google-play-games")).ToList().Count == 0)//kullanýcýnýn hesabýna google baðlanmamýþtýr
+                    {
+                        Debug.Log("kullanýcýnýn hesabýna Google Play baðlanmamýþ. Google Play hesabý baðlanýyor. Google code:" + code);
+                        await AuthenticationService.Instance.LinkWithGoogleAsync(code);
+                        if (this == null) return;
+                    }
+
                     Debug.Log($"Player id: {AuthenticationService.Instance.PlayerId}");
 
                     GlobalVariables.cloudSaveSystemIsReady = true;
 
-                    SaveData();
+                    GoogleLogin_Btn.interactable = false;
+                    GoogleLogin_Btn.image.color = Color.blue;
+
+                    //SaveData("google");
 
                 }
             }
@@ -62,12 +70,66 @@ public class CloudSaveController : MonoBehaviour
         }
     }
 
-    async void SaveData()
+    async public void LogInUnityCloudSaveServiceWithFacebook(string code)
+    {
+        try
+        {
+            if (GlobalVariables.internetAvaible == false)
+            {
+                Debug.Log("Ýnternet baðlantýsý yok.");
+            }
+            else
+            {
+                if (code == null || code == "")
+                {
+                    Debug.Log("Facebook authentication kodu boþ geldi.");
+                }
+                else
+                {
+
+                    await UnityServices.InitializeAsync();
+                    if (this == null) return;
+
+                    //kullanýcý sign in olmadýysa
+                    if (!AuthenticationService.Instance.IsSignedIn)
+                    {
+                        Debug.Log("Unit cloud Authentication baþladý. facebook code:" + code);
+                        await AuthenticationService.Instance.SignInWithFacebookAsync(code);
+                        if (this == null) return;
+                    }
+                    else if (AuthenticationService.Instance.PlayerInfo.Identities.Where(i => i.TypeId.Contains("facebook.com")).ToList().Count == 0)//kullanýnýn hesabýna facebook kaðlanmamýþtýr
+                    {
+                        Debug.Log("kullanýcýnýn hesabýna Facebook baðlanmamýþ. Facebook hesabý baðlanýyor. Facebook code:" + code);
+                        await AuthenticationService.Instance.LinkWithFacebookAsync(code);
+                        if (this == null) return;
+                    }
+
+                    Debug.Log($"Player id: {AuthenticationService.Instance.PlayerId}");
+
+                    GlobalVariables.cloudSaveSystemIsReady = true;
+
+                    FacebookLogin_Btn.interactable = false;
+                    FacebookLogin_Btn.image.color = Color.blue;
+
+                    PlayerPrefs.SetString("FacebookAutoLogin", "true");
+                    PlayerPrefs.Save();
+                    //SaveData("facebook");
+
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogException(e);
+        }
+    }
+
+    async void SaveData(string value)
     {
         if (GlobalVariables.cloudSaveSystemIsReady)
         {
             //authentication sonrasý Unity cloud save servisine veri kaydetme örneði
-            var data = new Dictionary<string, object> { { "unlockedLevelCount", "99.8" } };
+            var data = new Dictionary<string, object> { { "unlockedLevelCount", value } };
             await CloudSaveService.Instance.Data.ForceSaveAsync(data);
         }
         else

@@ -1251,13 +1251,13 @@ struct TaskScheduler_t3F0550EBEF7C41F74EC8C08FF4BED0D8CE66006E  : public Runtime
 };
 struct Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E  : public RuntimeObject
 {
-	String_t* ___m_String_13;
-	String_t* ___m_originalUnicodeString_14;
-	UriParser_t920B0868286118827C08B08A15A9456AF6C19D81* ___m_Syntax_15;
-	String_t* ___m_DnsSafeHost_16;
-	uint64_t ___m_Flags_17;
-	UriInfo_t5F91F77A93545DDDA6BB24A609BAF5E232CC1A09* ___m_Info_18;
-	bool ___m_iriParsing_19;
+	String_t* ___m_String_16;
+	String_t* ___m_originalUnicodeString_17;
+	UriParser_t920B0868286118827C08B08A15A9456AF6C19D81* ___m_Syntax_18;
+	String_t* ___m_DnsSafeHost_19;
+	uint64_t ___m_Flags_20;
+	UriInfo_t5F91F77A93545DDDA6BB24A609BAF5E232CC1A09* ___m_Info_21;
+	bool ___m_iriParsing_22;
 };
 struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F  : public RuntimeObject
 {
@@ -2825,15 +2825,15 @@ struct Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E_StaticFields
 	String_t* ___UriSchemeNetTcp_10;
 	String_t* ___UriSchemeNetPipe_11;
 	String_t* ___SchemeDelimiter_12;
-	bool ___s_ConfigInitialized_20;
-	bool ___s_ConfigInitializing_21;
-	int32_t ___s_IdnScope_22;
-	bool ___s_IriParsing_23;
-	bool ___useDotNetRelativeOrAbsolute_24;
-	bool ___IsWindowsFileSystem_25;
-	RuntimeObject* ___s_initLock_26;
-	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ___HexLowerChars_27;
-	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ____WSchars_28;
+	bool ___s_ConfigInitialized_23;
+	bool ___s_ConfigInitializing_24;
+	int32_t ___s_IdnScope_25;
+	bool ___s_IriParsing_26;
+	bool ___useDotNetRelativeOrAbsolute_27;
+	bool ___IsWindowsFileSystem_29;
+	RuntimeObject* ___s_initLock_30;
+	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ___HexLowerChars_34;
+	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ____WSchars_35;
 };
 struct ConnectionGroup_tCCD63C39E616C7AA50A627F059CF0ED69D58C037_StaticFields
 {
@@ -19392,7 +19392,7 @@ IL_0263_1:
 			L_124 = VirtualFuncInvoker0< String_t* >::Invoke(3, L_123);
 			NullCheck(L_122);
 			ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_125;
-			L_125 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, String_t* >::Invoke(17, L_122, L_124);
+			L_125 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, String_t* >::Invoke(18, L_122, L_124);
 			V_6 = L_125;
 			Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_126 = __this->___stream_3;
 			ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_127 = V_6;
@@ -24426,7 +24426,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CProcessWriteU3Ed__34_MoveNext_m02C529
 			String_t* L_14 = V_2;
 			NullCheck(L_13);
 			ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_15;
-			L_15 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, String_t* >::Invoke(17, L_13, L_14);
+			L_15 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, String_t* >::Invoke(18, L_13, L_14);
 			V_3 = L_15;
 			int32_t L_16 = __this->___size_4;
 			ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_17 = V_3;
@@ -26061,7 +26061,7 @@ IL_0028_1:
 			L_9 = Encoding_get_ASCII_mCC61B512D320FD4E2E71CC0DFDF8DDF3CD215C65(NULL);
 			NullCheck(L_9);
 			ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_10;
-			L_10 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, String_t* >::Invoke(17, L_9, _stringLiteralDD3801545A8B81C67750760498AFF9CFC986D3E0);
+			L_10 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, String_t* >::Invoke(18, L_9, _stringLiteralDD3801545A8B81C67750760498AFF9CFC986D3E0);
 			V_2 = L_10;
 			WebRequestStream_t731AE4852452BAA73C240BDC7DCBA42ADAD2BAAB* L_11 = V_1;
 			NullCheck(L_11);

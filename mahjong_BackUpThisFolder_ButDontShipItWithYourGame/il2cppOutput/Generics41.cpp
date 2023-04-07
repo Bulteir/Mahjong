@@ -350,6 +350,8 @@ struct EqualityComparer_1_t92563A67F1C1ECDC3FE387C46498E2E56B59F3C2;
 struct EqualityComparer_1_t458C8DC3748A89A213F4738B57D3742C4896ABE9;
 struct EqualityComparer_1_t974B6EF56BCA01CA6AD3434C04A3F054C43783CC;
 struct EventBase_1_t2B9B970022841F58172C0C783B7E1040BEF85AC1;
+struct FacebookDelegate_1_tC3557293F9F4D8302666EA5C4874312230B814C9;
+struct FacebookDelegate_1_tD1807783089B792E699E44D15AC100DDA47754B8;
 struct Func_2_t35DD71324A8010FB3BCC6561F0D37C3E0C61AD58;
 struct Grouping_tA77BA10F6914B0E3DE1904821D54E559FC104F44;
 struct Grouping_tA7D79A8DCF5DF54971F5E38E3B02BC390C7F93C2;
@@ -358,6 +360,7 @@ struct ICollection_1_tB388ED908E2D241F56264CA971F25D9ADC1ADEC3;
 struct IComparer_1_tC0A12A847AF97F369A5CE9A0CCE71CE18EE1440E;
 struct IComparer_1_tCA720E7837F12C38065A4AB632B5FAAD19EC30AA;
 struct IComparer_1_t5F5F74D8A6A81A5419C8BC0B5DE122391A31B11D;
+struct IDictionary_2_t79D4ADB15B238AC117DF72982FEA3C42EF5AFA19;
 struct IEnumerable_1_tF95C9E01A913DD50575531C8305932628663D9E9;
 struct IEnumerable_1_t29E7244AE33B71FA0981E50D5BC73B7938F35C66;
 struct IEnumerable_1_t79775EFE60AA7D93DB0348D80A17E5CB5AAD4F69;
@@ -411,6 +414,8 @@ struct LowLevelList_1_tFA10A51C575F28B96FF2E2E7FB3740E48546A1E0;
 struct MemoryManager_1_tB90442C8E0A1B9C0F8A3B603FD50501A1BADAC6E;
 struct MemoryManager_1_t9E713A8E4F8473E685FE4A73C98D29C9DB1EE583;
 struct MemoryManager_1_tED55276A18D77758B15A7A09B9C0D4DB79480487;
+struct MethodCall_1_tBE309A8BE882A6A1F80E42A8EE1493B9CB4FBBC8;
+struct MethodCall_1_tB6A106F2C645B9321B5FE5BC97A60AD3966CEB1E;
 struct MethodCall_2_t442B9ECE1B9ABC22BDFC90B2BB9048805D1D2270;
 struct MethodCall_2_t6F0B468D208A254B1132895278B24899F2A0AB91;
 struct MinimumBinaryHeap_1_tEE553DEE7A9880C6DB0CD490BFE9F1B9FC502EC2;
@@ -476,6 +481,7 @@ struct BaseVisualElementPanel_tE3811F3D1474B72CB6CD5BCEECFF5B5CBEC1E303;
 struct BatchDrawCommand_t9DAB9B739DA9EBC6B1BB0D2DD51AF65B12F66BF0;
 struct BatchDrawRange_t736D745E918A629658B80A0F7D2D17DAFBA6172F;
 struct Binder_t91BFCE95A7057FADF4D8A1A342AFE52872246235;
+struct CallbackManager_t3B9141B4E44116445C556786C02DEDA7CE612749;
 struct ContextualMenuManager_tEE3B1F33FFFD180705467CA625AEBA0F5D63154B;
 struct Delegate_t;
 struct DelegateData_t9B286B493293CD2D23A5B2B5EF0E5B1324C2B77E;
@@ -484,6 +490,7 @@ struct Event_tEBC6F24B56CE22B9C9AD1AC6C24A6B83BC3860CB;
 struct EventBase_tD7F89B936EB8074AE31E7B15976C072277371F7C;
 struct EventCallbackRegistry_tE18297C3F7E535BD82EDA83EC6D6DAA386226B85;
 struct EventSource_tA86759A1E6F272632C299AAC181C0A67E5C52F25;
+struct FacebookBase_tF5635ED76AFFFA9234A516FCD6AAF6C6B55B5865;
 struct HierarchyEvent_tB23E4347BC47656A014CA104A5B1DDC172A2A705;
 struct IAsyncResult_t7B9B5A0ECB35DCEC31B8A8122C37D687369253B5;
 struct ICursorManager_t78B026DED2559C62810B21C54C5F882457073A8B;
@@ -495,12 +502,14 @@ struct IMouseEvent_tF59A3DD3CA593DB23B47764DF0521996D509A59E;
 struct IPanel_tAD0F3807B6DE2ECA557380E7DB5F3A179BE5A7A5;
 struct IPinnable_tA3989EA495C0118966BAAF8848C0009947BB49C0;
 struct IPointerEvent_t934940574FFC2D6D155265ACC6D78BC48174D9B7;
+struct InitDelegate_t880BF96D9E733404D1E36BF894DDA83C1B9A1A9F;
 struct InlineStyleAccess_t5CA7877999C9442491A220AE50D605C84D09A165;
 struct Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C;
 struct InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB;
 struct Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3;
 struct MemberFilter_tF644F1AE82F611B677CE1964D5A3277DDA21D553;
 struct MeshHandle_tC1E9A7ECCFDAEFDE064B8D58B35B9CEE5A70A22E;
+struct MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD;
 struct MethodInfo_t;
 struct MinimumBinaryHeap_tA55F58E6B1D3F482C11529BAB4C1D56F5BF745FE;
 struct ObjectDisposedException_tC5FB29E8E980E2010A2F6A5B9B791089419F89EB;
@@ -542,6 +551,7 @@ IL2CPP_EXTERN_C RuntimeClass* Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il
 IL2CPP_EXTERN_C RuntimeClass* InvalidCastException_t47FC62F21A3937E814D20381DDACEF240E95AC2E_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* InvalidOperationException_t5DDE4D49B7405FAAB1E4576F4715A42A3FAD4BAB_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* Math_tEB65DE7CA8B083C412C969C92981C030865486CE_il2cpp_TypeInfo_var;
+IL2CPP_EXTERN_C RuntimeClass* MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* ObjectDisposedException_tC5FB29E8E980E2010A2F6A5B9B791089419F89EB_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* OutOfMemoryException_tE6DC2F937EC4A8699271D5151C4DF83BDE99EE7F_il2cpp_TypeInfo_var;
 IL2CPP_EXTERN_C RuntimeClass* PointerDeviceState_tD94EF3C9710026DE8B7E83B6C842524C7C6EBA8C_il2cpp_TypeInfo_var;
@@ -769,6 +779,20 @@ struct MemoryManager_1_t9E713A8E4F8473E685FE4A73C98D29C9DB1EE583  : public Runti
 struct MemoryManager_1_tED55276A18D77758B15A7A09B9C0D4DB79480487  : public RuntimeObject
 {
 };
+struct MethodCall_1_tBE309A8BE882A6A1F80E42A8EE1493B9CB4FBBC8  : public RuntimeObject
+{
+	String_t* ___U3CMethodNameU3Ek__BackingField_0;
+	FacebookDelegate_1_tC3557293F9F4D8302666EA5C4874312230B814C9* ___U3CCallbackU3Ek__BackingField_1;
+	FacebookBase_tF5635ED76AFFFA9234A516FCD6AAF6C6B55B5865* ___U3CFacebookImplU3Ek__BackingField_2;
+	MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD* ___U3CParametersU3Ek__BackingField_3;
+};
+struct MethodCall_1_tB6A106F2C645B9321B5FE5BC97A60AD3966CEB1E  : public RuntimeObject
+{
+	String_t* ___U3CMethodNameU3Ek__BackingField_0;
+	FacebookDelegate_1_tD1807783089B792E699E44D15AC100DDA47754B8* ___U3CCallbackU3Ek__BackingField_1;
+	FacebookBase_tF5635ED76AFFFA9234A516FCD6AAF6C6B55B5865* ___U3CFacebookImplU3Ek__BackingField_2;
+	MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD* ___U3CParametersU3Ek__BackingField_3;
+};
 struct NativeArrayDebugView_1_t822A40A26B069D94A4D21875C23D557566F1CBB1  : public RuntimeObject
 {
 };
@@ -784,8 +808,18 @@ struct EventSource_tA86759A1E6F272632C299AAC181C0A67E5C52F25  : public RuntimeOb
 {
 	String_t* ___U3CNameU3Ek__BackingField_0;
 };
+struct FacebookBase_tF5635ED76AFFFA9234A516FCD6AAF6C6B55B5865  : public RuntimeObject
+{
+	InitDelegate_t880BF96D9E733404D1E36BF894DDA83C1B9A1A9F* ___onInitCompleteDelegate_0;
+	bool ___U3CInitializedU3Ek__BackingField_1;
+	CallbackManager_t3B9141B4E44116445C556786C02DEDA7CE612749* ___U3CCallbackManagerU3Ek__BackingField_2;
+};
 struct MemberInfo_t  : public RuntimeObject
 {
+};
+struct MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD  : public RuntimeObject
+{
+	RuntimeObject* ___arguments_0;
 };
 struct MinimumBinaryHeap_tA55F58E6B1D3F482C11529BAB4C1D56F5BF745FE  : public RuntimeObject
 {
@@ -2207,6 +2241,12 @@ struct Action_1_t2518DEA327D7ACE4C30B14D8AFF5D4CFF5221B6F  : public MulticastDel
 struct Comparison_1_t9B7FBDDC31C2B4C836D05D7AB3126CC41FEA3F95  : public MulticastDelegate_t
 {
 };
+struct FacebookDelegate_1_tC3557293F9F4D8302666EA5C4874312230B814C9  : public MulticastDelegate_t
+{
+};
+struct FacebookDelegate_1_tD1807783089B792E699E44D15AC100DDA47754B8  : public MulticastDelegate_t
+{
+};
 struct Func_2_t35DD71324A8010FB3BCC6561F0D37C3E0C61AD58  : public MulticastDelegate_t
 {
 };
@@ -3516,6 +3556,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D06
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Memory_1_Equals_m03AA1FCD0E395B27BD53551C06FDC8ED34F10A9A_gshared (Memory_1_t762D61B435521D1706EEDC25CA8C8EA1AE19AFEA* __this, RuntimeObject* ___0_obj, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Memory_1_Equals_m2F882A89DBD535FFE48B39EBAF2626BA2AD36DA0_gshared (Memory_1_t762D61B435521D1706EEDC25CA8C8EA1AE19AFEA* __this, Memory_1_t762D61B435521D1706EEDC25CA8C8EA1AE19AFEA ___0_other, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Memory_1_GetHashCode_m7A4C30D97D133B153A50D638A7D596CDA1BD11B5_gshared (Memory_1_t762D61B435521D1706EEDC25CA8C8EA1AE19AFEA* __this, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void MethodCall_1_set_Parameters_m034C1ED1F0BD52D046FD0ACD629766CC9DEF652C_gshared_inline (MethodCall_1_tBE309A8BE882A6A1F80E42A8EE1493B9CB4FBBC8* __this, MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD* ___0_value, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void MethodCall_1_set_FacebookImpl_mE0D837B9F52E157FF2EA5FDA7810736E3551F5F1_gshared_inline (MethodCall_1_tBE309A8BE882A6A1F80E42A8EE1493B9CB4FBBC8* __this, FacebookBase_tF5635ED76AFFFA9234A516FCD6AAF6C6B55B5865* ___0_value, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void MethodCall_1_set_MethodName_mADE7056ADE590F1429F8A8752DDC124AF05067AE_gshared_inline (MethodCall_1_tBE309A8BE882A6A1F80E42A8EE1493B9CB4FBBC8* __this, String_t* ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MinimumBinaryHeap_1__ctor_mA0F6385B56BC13A6C165B3D26F124A05B3E0892E_gshared (MinimumBinaryHeap_1_tEE553DEE7A9880C6DB0CD490BFE9F1B9FC502EC2* __this, RuntimeObject* ___0_collection, RuntimeObject* ___1_comparer, int32_t ___2_minimumCapacity, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void MinimumBinaryHeap_1_set_Count_m3C1F3B3E03C669AFC616AE9ECC3F5A02BBFCFD4F_gshared_inline (MinimumBinaryHeap_1_tEE553DEE7A9880C6DB0CD490BFE9F1B9FC502EC2* __this, int32_t ___0_value, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t MinimumBinaryHeap_1_get_Count_m502FCC9FFA768AF2759A364F3A8DE12A687FE49E_gshared_inline (MinimumBinaryHeap_1_tEE553DEE7A9880C6DB0CD490BFE9F1B9FC502EC2* __this, const RuntimeMethod* method) ;
@@ -4426,6 +4469,19 @@ inline bool Memory_1_Equals_m2F882A89DBD535FFE48B39EBAF2626BA2AD36DA0 (Memory_1_
 inline int32_t Memory_1_GetHashCode_m7A4C30D97D133B153A50D638A7D596CDA1BD11B5 (Memory_1_t762D61B435521D1706EEDC25CA8C8EA1AE19AFEA* __this, const RuntimeMethod* method)
 {
 	return ((  int32_t (*) (Memory_1_t762D61B435521D1706EEDC25CA8C8EA1AE19AFEA*, const RuntimeMethod*))Memory_1_GetHashCode_m7A4C30D97D133B153A50D638A7D596CDA1BD11B5_gshared)(__this, method);
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MethodArguments__ctor_mF01989BE91F2F4509868A8937EE825C89D072974 (MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD* __this, const RuntimeMethod* method) ;
+inline void MethodCall_1_set_Parameters_m034C1ED1F0BD52D046FD0ACD629766CC9DEF652C_inline (MethodCall_1_tBE309A8BE882A6A1F80E42A8EE1493B9CB4FBBC8* __this, MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD* ___0_value, const RuntimeMethod* method)
+{
+	((  void (*) (MethodCall_1_tBE309A8BE882A6A1F80E42A8EE1493B9CB4FBBC8*, MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD*, const RuntimeMethod*))MethodCall_1_set_Parameters_m034C1ED1F0BD52D046FD0ACD629766CC9DEF652C_gshared_inline)(__this, ___0_value, method);
+}
+inline void MethodCall_1_set_FacebookImpl_mE0D837B9F52E157FF2EA5FDA7810736E3551F5F1_inline (MethodCall_1_tBE309A8BE882A6A1F80E42A8EE1493B9CB4FBBC8* __this, FacebookBase_tF5635ED76AFFFA9234A516FCD6AAF6C6B55B5865* ___0_value, const RuntimeMethod* method)
+{
+	((  void (*) (MethodCall_1_tBE309A8BE882A6A1F80E42A8EE1493B9CB4FBBC8*, FacebookBase_tF5635ED76AFFFA9234A516FCD6AAF6C6B55B5865*, const RuntimeMethod*))MethodCall_1_set_FacebookImpl_mE0D837B9F52E157FF2EA5FDA7810736E3551F5F1_gshared_inline)(__this, ___0_value, method);
+}
+inline void MethodCall_1_set_MethodName_mADE7056ADE590F1429F8A8752DDC124AF05067AE_inline (MethodCall_1_tBE309A8BE882A6A1F80E42A8EE1493B9CB4FBBC8* __this, String_t* ___0_value, const RuntimeMethod* method)
+{
+	((  void (*) (MethodCall_1_tBE309A8BE882A6A1F80E42A8EE1493B9CB4FBBC8*, String_t*, const RuntimeMethod*))MethodCall_1_set_MethodName_mADE7056ADE590F1429F8A8752DDC124AF05067AE_gshared_inline)(__this, ___0_value, method);
 }
 inline void MinimumBinaryHeap_1__ctor_mA0F6385B56BC13A6C165B3D26F124A05B3E0892E (MinimumBinaryHeap_1_tEE553DEE7A9880C6DB0CD490BFE9F1B9FC502EC2* __this, RuntimeObject* ___0_collection, RuntimeObject* ___1_comparer, int32_t ___2_minimumCapacity, const RuntimeMethod* method)
 {
@@ -15968,6 +16024,190 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Memory_1_CombineHashCodes_mAF5A2B5782
 		int32_t L_4;
 		L_4 = ((  int32_t (*) (int32_t, int32_t, const RuntimeMethod*))il2cpp_codegen_get_direct_method_pointer(il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 27)))(L_2, L_3, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 27));
 		return L_4;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MethodCall_1__ctor_m366307FE4C6FC6CB506D0E4E25BCA1A430D10D8E_gshared (MethodCall_1_tBE309A8BE882A6A1F80E42A8EE1493B9CB4FBBC8* __this, FacebookBase_tF5635ED76AFFFA9234A516FCD6AAF6C6B55B5865* ___0_facebookImpl, String_t* ___1_methodName, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2((RuntimeObject*)__this, NULL);
+		MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD* L_0 = (MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD*)il2cpp_codegen_object_new(MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD_il2cpp_TypeInfo_var);
+		MethodArguments__ctor_mF01989BE91F2F4509868A8937EE825C89D072974(L_0, NULL);
+		MethodCall_1_set_Parameters_m034C1ED1F0BD52D046FD0ACD629766CC9DEF652C_inline(__this, L_0, il2cpp_rgctx_method(method->klass->rgctx_data, 0));
+		FacebookBase_tF5635ED76AFFFA9234A516FCD6AAF6C6B55B5865* L_1 = ___0_facebookImpl;
+		MethodCall_1_set_FacebookImpl_mE0D837B9F52E157FF2EA5FDA7810736E3551F5F1_inline(__this, L_1, il2cpp_rgctx_method(method->klass->rgctx_data, 1));
+		String_t* L_2 = ___1_methodName;
+		MethodCall_1_set_MethodName_mADE7056ADE590F1429F8A8752DDC124AF05067AE_inline(__this, L_2, il2cpp_rgctx_method(method->klass->rgctx_data, 2));
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* MethodCall_1_get_MethodName_mA0DE29675A056BD38301EA7B091B09A4E2304FD3_gshared (MethodCall_1_tBE309A8BE882A6A1F80E42A8EE1493B9CB4FBBC8* __this, const RuntimeMethod* method) 
+{
+	{
+		String_t* L_0 = (String_t*)__this->___U3CMethodNameU3Ek__BackingField_0;
+		return L_0;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MethodCall_1_set_MethodName_mADE7056ADE590F1429F8A8752DDC124AF05067AE_gshared (MethodCall_1_tBE309A8BE882A6A1F80E42A8EE1493B9CB4FBBC8* __this, String_t* ___0_value, const RuntimeMethod* method) 
+{
+	{
+		String_t* L_0 = ___0_value;
+		__this->___U3CMethodNameU3Ek__BackingField_0 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CMethodNameU3Ek__BackingField_0), (void*)L_0);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR FacebookDelegate_1_tC3557293F9F4D8302666EA5C4874312230B814C9* MethodCall_1_get_Callback_mA2782322EC0CE77EDB16B97D37058F72136A7D37_gshared (MethodCall_1_tBE309A8BE882A6A1F80E42A8EE1493B9CB4FBBC8* __this, const RuntimeMethod* method) 
+{
+	{
+		FacebookDelegate_1_tC3557293F9F4D8302666EA5C4874312230B814C9* L_0 = (FacebookDelegate_1_tC3557293F9F4D8302666EA5C4874312230B814C9*)__this->___U3CCallbackU3Ek__BackingField_1;
+		return L_0;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MethodCall_1_set_Callback_mA74BB403FFEBB049BA981D103C39772844B08762_gshared (MethodCall_1_tBE309A8BE882A6A1F80E42A8EE1493B9CB4FBBC8* __this, FacebookDelegate_1_tC3557293F9F4D8302666EA5C4874312230B814C9* ___0_value, const RuntimeMethod* method) 
+{
+	{
+		FacebookDelegate_1_tC3557293F9F4D8302666EA5C4874312230B814C9* L_0 = ___0_value;
+		__this->___U3CCallbackU3Ek__BackingField_1 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CCallbackU3Ek__BackingField_1), (void*)L_0);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR FacebookBase_tF5635ED76AFFFA9234A516FCD6AAF6C6B55B5865* MethodCall_1_get_FacebookImpl_mD12AD542E2790833565E5E808CB41E0D05FA16ED_gshared (MethodCall_1_tBE309A8BE882A6A1F80E42A8EE1493B9CB4FBBC8* __this, const RuntimeMethod* method) 
+{
+	{
+		FacebookBase_tF5635ED76AFFFA9234A516FCD6AAF6C6B55B5865* L_0 = (FacebookBase_tF5635ED76AFFFA9234A516FCD6AAF6C6B55B5865*)__this->___U3CFacebookImplU3Ek__BackingField_2;
+		return L_0;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MethodCall_1_set_FacebookImpl_mE0D837B9F52E157FF2EA5FDA7810736E3551F5F1_gshared (MethodCall_1_tBE309A8BE882A6A1F80E42A8EE1493B9CB4FBBC8* __this, FacebookBase_tF5635ED76AFFFA9234A516FCD6AAF6C6B55B5865* ___0_value, const RuntimeMethod* method) 
+{
+	{
+		FacebookBase_tF5635ED76AFFFA9234A516FCD6AAF6C6B55B5865* L_0 = ___0_value;
+		__this->___U3CFacebookImplU3Ek__BackingField_2 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CFacebookImplU3Ek__BackingField_2), (void*)L_0);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD* MethodCall_1_get_Parameters_m1D2A01B90405FFFFFA83DC08CBF575384A5E43E2_gshared (MethodCall_1_tBE309A8BE882A6A1F80E42A8EE1493B9CB4FBBC8* __this, const RuntimeMethod* method) 
+{
+	{
+		MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD* L_0 = (MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD*)__this->___U3CParametersU3Ek__BackingField_3;
+		return L_0;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MethodCall_1_set_Parameters_m034C1ED1F0BD52D046FD0ACD629766CC9DEF652C_gshared (MethodCall_1_tBE309A8BE882A6A1F80E42A8EE1493B9CB4FBBC8* __this, MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD* ___0_value, const RuntimeMethod* method) 
+{
+	{
+		MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD* L_0 = ___0_value;
+		__this->___U3CParametersU3Ek__BackingField_3 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CParametersU3Ek__BackingField_3), (void*)L_0);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MethodCall_1__ctor_mFC52E8F2F8D23318F8A03557F0A265137185B957_gshared (MethodCall_1_tB6A106F2C645B9321B5FE5BC97A60AD3966CEB1E* __this, FacebookBase_tF5635ED76AFFFA9234A516FCD6AAF6C6B55B5865* ___0_facebookImpl, String_t* ___1_methodName, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2((RuntimeObject*)__this, NULL);
+		MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD* L_0 = (MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD*)il2cpp_codegen_object_new(MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD_il2cpp_TypeInfo_var);
+		MethodArguments__ctor_mF01989BE91F2F4509868A8937EE825C89D072974(L_0, NULL);
+		((  void (*) (MethodCall_1_tB6A106F2C645B9321B5FE5BC97A60AD3966CEB1E*, MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD*, const RuntimeMethod*))il2cpp_codegen_get_direct_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 0)))(__this, L_0, il2cpp_rgctx_method(method->klass->rgctx_data, 0));
+		FacebookBase_tF5635ED76AFFFA9234A516FCD6AAF6C6B55B5865* L_1 = ___0_facebookImpl;
+		((  void (*) (MethodCall_1_tB6A106F2C645B9321B5FE5BC97A60AD3966CEB1E*, FacebookBase_tF5635ED76AFFFA9234A516FCD6AAF6C6B55B5865*, const RuntimeMethod*))il2cpp_codegen_get_direct_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 1)))(__this, L_1, il2cpp_rgctx_method(method->klass->rgctx_data, 1));
+		String_t* L_2 = ___1_methodName;
+		((  void (*) (MethodCall_1_tB6A106F2C645B9321B5FE5BC97A60AD3966CEB1E*, String_t*, const RuntimeMethod*))il2cpp_codegen_get_direct_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 2)))(__this, L_2, il2cpp_rgctx_method(method->klass->rgctx_data, 2));
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* MethodCall_1_get_MethodName_m4CD1F447B4BF0B7D2F3DB3F874C5D410E1E6D2B6_gshared (MethodCall_1_tB6A106F2C645B9321B5FE5BC97A60AD3966CEB1E* __this, const RuntimeMethod* method) 
+{
+	{
+		String_t* L_0 = (String_t*)__this->___U3CMethodNameU3Ek__BackingField_0;
+		return L_0;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MethodCall_1_set_MethodName_mC238B42C1428C6F9433025A87BFB5F61C4E50B78_gshared (MethodCall_1_tB6A106F2C645B9321B5FE5BC97A60AD3966CEB1E* __this, String_t* ___0_value, const RuntimeMethod* method) 
+{
+	{
+		String_t* L_0 = ___0_value;
+		__this->___U3CMethodNameU3Ek__BackingField_0 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CMethodNameU3Ek__BackingField_0), (void*)L_0);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR FacebookDelegate_1_tD1807783089B792E699E44D15AC100DDA47754B8* MethodCall_1_get_Callback_m3FED66F450E1A88CA27DD19F0856A188B9DD552E_gshared (MethodCall_1_tB6A106F2C645B9321B5FE5BC97A60AD3966CEB1E* __this, const RuntimeMethod* method) 
+{
+	{
+		FacebookDelegate_1_tD1807783089B792E699E44D15AC100DDA47754B8* L_0 = (FacebookDelegate_1_tD1807783089B792E699E44D15AC100DDA47754B8*)__this->___U3CCallbackU3Ek__BackingField_1;
+		return L_0;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MethodCall_1_set_Callback_m8023B55DF7FC1AFAFBAA483B69A7E682D4DEF4CD_gshared (MethodCall_1_tB6A106F2C645B9321B5FE5BC97A60AD3966CEB1E* __this, FacebookDelegate_1_tD1807783089B792E699E44D15AC100DDA47754B8* ___0_value, const RuntimeMethod* method) 
+{
+	{
+		FacebookDelegate_1_tD1807783089B792E699E44D15AC100DDA47754B8* L_0 = ___0_value;
+		__this->___U3CCallbackU3Ek__BackingField_1 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CCallbackU3Ek__BackingField_1), (void*)L_0);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR FacebookBase_tF5635ED76AFFFA9234A516FCD6AAF6C6B55B5865* MethodCall_1_get_FacebookImpl_mEA0981A5FA52CF84082F8D2AC2C79A3ABA2572CF_gshared (MethodCall_1_tB6A106F2C645B9321B5FE5BC97A60AD3966CEB1E* __this, const RuntimeMethod* method) 
+{
+	{
+		FacebookBase_tF5635ED76AFFFA9234A516FCD6AAF6C6B55B5865* L_0 = (FacebookBase_tF5635ED76AFFFA9234A516FCD6AAF6C6B55B5865*)__this->___U3CFacebookImplU3Ek__BackingField_2;
+		return L_0;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MethodCall_1_set_FacebookImpl_m0F5C2BF484CB7B866CED8A531A5AD1C099341F53_gshared (MethodCall_1_tB6A106F2C645B9321B5FE5BC97A60AD3966CEB1E* __this, FacebookBase_tF5635ED76AFFFA9234A516FCD6AAF6C6B55B5865* ___0_value, const RuntimeMethod* method) 
+{
+	{
+		FacebookBase_tF5635ED76AFFFA9234A516FCD6AAF6C6B55B5865* L_0 = ___0_value;
+		__this->___U3CFacebookImplU3Ek__BackingField_2 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CFacebookImplU3Ek__BackingField_2), (void*)L_0);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD* MethodCall_1_get_Parameters_m15DC06FEC407E68494A5963C1335999D9C3170F9_gshared (MethodCall_1_tB6A106F2C645B9321B5FE5BC97A60AD3966CEB1E* __this, const RuntimeMethod* method) 
+{
+	{
+		MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD* L_0 = (MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD*)__this->___U3CParametersU3Ek__BackingField_3;
+		return L_0;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MethodCall_1_set_Parameters_m4586EAA45374CACF76F7662E0DE8BA84E92B2F8C_gshared (MethodCall_1_tB6A106F2C645B9321B5FE5BC97A60AD3966CEB1E* __this, MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD* ___0_value, const RuntimeMethod* method) 
+{
+	{
+		MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD* L_0 = ___0_value;
+		__this->___U3CParametersU3Ek__BackingField_3 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CParametersU3Ek__BackingField_3), (void*)L_0);
+		return;
 	}
 }
 #ifdef __clang__
@@ -29827,6 +30067,33 @@ IL_00b4:
 		il2cpp_codegen_initobj((&V_0), sizeof(Span_1_tDEB40BEFA77B5E4BB49B058CD3050EEA4DD36C54));
 		Span_1_tDEB40BEFA77B5E4BB49B058CD3050EEA4DD36C54 L_27 = V_0;
 		return L_27;
+	}
+}
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void MethodCall_1_set_Parameters_m034C1ED1F0BD52D046FD0ACD629766CC9DEF652C_gshared_inline (MethodCall_1_tBE309A8BE882A6A1F80E42A8EE1493B9CB4FBBC8* __this, MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD* ___0_value, const RuntimeMethod* method) 
+{
+	{
+		MethodArguments_tE5E9B6635A357E451FF2324D5BE816910F0074BD* L_0 = ___0_value;
+		__this->___U3CParametersU3Ek__BackingField_3 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CParametersU3Ek__BackingField_3), (void*)L_0);
+		return;
+	}
+}
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void MethodCall_1_set_FacebookImpl_mE0D837B9F52E157FF2EA5FDA7810736E3551F5F1_gshared_inline (MethodCall_1_tBE309A8BE882A6A1F80E42A8EE1493B9CB4FBBC8* __this, FacebookBase_tF5635ED76AFFFA9234A516FCD6AAF6C6B55B5865* ___0_value, const RuntimeMethod* method) 
+{
+	{
+		FacebookBase_tF5635ED76AFFFA9234A516FCD6AAF6C6B55B5865* L_0 = ___0_value;
+		__this->___U3CFacebookImplU3Ek__BackingField_2 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CFacebookImplU3Ek__BackingField_2), (void*)L_0);
+		return;
+	}
+}
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void MethodCall_1_set_MethodName_mADE7056ADE590F1429F8A8752DDC124AF05067AE_gshared_inline (MethodCall_1_tBE309A8BE882A6A1F80E42A8EE1493B9CB4FBBC8* __this, String_t* ___0_value, const RuntimeMethod* method) 
+{
+	{
+		String_t* L_0 = ___0_value;
+		__this->___U3CMethodNameU3Ek__BackingField_0 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CMethodNameU3Ek__BackingField_0), (void*)L_0);
+		return;
 	}
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void MinimumBinaryHeap_1_set_Count_m3C1F3B3E03C669AFC616AE9ECC3F5A02BBFCFD4F_gshared_inline (MinimumBinaryHeap_1_tEE553DEE7A9880C6DB0CD490BFE9F1B9FC502EC2* __this, int32_t ___0_value, const RuntimeMethod* method) 

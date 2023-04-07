@@ -783,13 +783,13 @@ struct String_t  : public RuntimeObject
 };
 struct Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E  : public RuntimeObject
 {
-	String_t* ___m_String_13;
-	String_t* ___m_originalUnicodeString_14;
-	UriParser_t920B0868286118827C08B08A15A9456AF6C19D81* ___m_Syntax_15;
-	String_t* ___m_DnsSafeHost_16;
-	uint64_t ___m_Flags_17;
-	UriInfo_t5F91F77A93545DDDA6BB24A609BAF5E232CC1A09* ___m_Info_18;
-	bool ___m_iriParsing_19;
+	String_t* ___m_String_16;
+	String_t* ___m_originalUnicodeString_17;
+	UriParser_t920B0868286118827C08B08A15A9456AF6C19D81* ___m_Syntax_18;
+	String_t* ___m_DnsSafeHost_19;
+	uint64_t ___m_Flags_20;
+	UriInfo_t5F91F77A93545DDDA6BB24A609BAF5E232CC1A09* ___m_Info_21;
+	bool ___m_iriParsing_22;
 };
 struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F  : public RuntimeObject
 {
@@ -1727,15 +1727,15 @@ struct Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E_StaticFields
 	String_t* ___UriSchemeNetTcp_10;
 	String_t* ___UriSchemeNetPipe_11;
 	String_t* ___SchemeDelimiter_12;
-	bool ___s_ConfigInitialized_20;
-	bool ___s_ConfigInitializing_21;
-	int32_t ___s_IdnScope_22;
-	bool ___s_IriParsing_23;
-	bool ___useDotNetRelativeOrAbsolute_24;
-	bool ___IsWindowsFileSystem_25;
-	RuntimeObject* ___s_initLock_26;
-	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ___HexLowerChars_27;
-	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ____WSchars_28;
+	bool ___s_ConfigInitialized_23;
+	bool ___s_ConfigInitializing_24;
+	int32_t ___s_IdnScope_25;
+	bool ___s_IriParsing_26;
+	bool ___useDotNetRelativeOrAbsolute_27;
+	bool ___IsWindowsFileSystem_29;
+	RuntimeObject* ___s_initLock_30;
+	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ___HexLowerChars_34;
+	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ____WSchars_35;
 };
 struct XmlReader_t4C709DEF5F01606ECB60B638F1BD6F6E0A9116FD_StaticFields
 {

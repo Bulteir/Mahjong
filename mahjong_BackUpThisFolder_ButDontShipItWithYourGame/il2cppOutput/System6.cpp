@@ -1521,13 +1521,13 @@ struct UnsafeNclNativeMethods_tD620C50E814B76FA81ED2850DDB680ED7AC5AEC6  : publi
 };
 struct Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E  : public RuntimeObject
 {
-	String_t* ___m_String_13;
-	String_t* ___m_originalUnicodeString_14;
-	UriParser_t920B0868286118827C08B08A15A9456AF6C19D81* ___m_Syntax_15;
-	String_t* ___m_DnsSafeHost_16;
-	uint64_t ___m_Flags_17;
-	UriInfo_t5F91F77A93545DDDA6BB24A609BAF5E232CC1A09* ___m_Info_18;
-	bool ___m_iriParsing_19;
+	String_t* ___m_String_16;
+	String_t* ___m_originalUnicodeString_17;
+	UriParser_t920B0868286118827C08B08A15A9456AF6C19D81* ___m_Syntax_18;
+	String_t* ___m_DnsSafeHost_19;
+	uint64_t ___m_Flags_20;
+	UriInfo_t5F91F77A93545DDDA6BB24A609BAF5E232CC1A09* ___m_Info_21;
+	bool ___m_iriParsing_22;
 };
 struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F  : public RuntimeObject
 {
@@ -3043,15 +3043,15 @@ struct Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E_StaticFields
 	String_t* ___UriSchemeNetTcp_10;
 	String_t* ___UriSchemeNetPipe_11;
 	String_t* ___SchemeDelimiter_12;
-	bool ___s_ConfigInitialized_20;
-	bool ___s_ConfigInitializing_21;
-	int32_t ___s_IdnScope_22;
-	bool ___s_IriParsing_23;
-	bool ___useDotNetRelativeOrAbsolute_24;
-	bool ___IsWindowsFileSystem_25;
-	RuntimeObject* ___s_initLock_26;
-	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ___HexLowerChars_27;
-	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ____WSchars_28;
+	bool ___s_ConfigInitialized_23;
+	bool ___s_ConfigInitializing_24;
+	int32_t ___s_IdnScope_25;
+	bool ___s_IriParsing_26;
+	bool ___useDotNetRelativeOrAbsolute_27;
+	bool ___IsWindowsFileSystem_29;
+	RuntimeObject* ___s_initLock_30;
+	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ___HexLowerChars_34;
+	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ____WSchars_35;
 };
 struct PathListComparer_t851D05E79B8FC8A3ED26213AD18DF67EECE295D8_StaticFields
 {
@@ -24512,7 +24512,7 @@ IL_000a:
 		String_t* L_4 = ___0_toBeHashed;
 		NullCheck(L_3);
 		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_5;
-		L_5 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, String_t* >::Invoke(17, L_3, L_4);
+		L_5 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, String_t* >::Invoke(18, L_3, L_4);
 		NullCheck(L_2);
 		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_6;
 		L_6 = HashAlgorithm_ComputeHash_mC9CD24714D75A8D61F12509BF952A26347FF22FB(L_2, L_5, NULL);
@@ -29613,7 +29613,7 @@ IL_0095:
 		String_t* L_44 = V_2;
 		NullCheck(L_43);
 		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_45;
-		L_45 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, String_t* >::Invoke(17, L_43, L_44);
+		L_45 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, String_t* >::Invoke(18, L_43, L_44);
 		return L_45;
 	}
 }

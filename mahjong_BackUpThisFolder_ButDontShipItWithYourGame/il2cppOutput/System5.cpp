@@ -1306,13 +1306,13 @@ struct TcpValidationHelpers_tA2808470409DB4454859E6494FCE76D077FF7335  : public 
 };
 struct Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E  : public RuntimeObject
 {
-	String_t* ___m_String_13;
-	String_t* ___m_originalUnicodeString_14;
-	UriParser_t920B0868286118827C08B08A15A9456AF6C19D81* ___m_Syntax_15;
-	String_t* ___m_DnsSafeHost_16;
-	uint64_t ___m_Flags_17;
-	UriInfo_t5F91F77A93545DDDA6BB24A609BAF5E232CC1A09* ___m_Info_18;
-	bool ___m_iriParsing_19;
+	String_t* ___m_String_16;
+	String_t* ___m_originalUnicodeString_17;
+	UriParser_t920B0868286118827C08B08A15A9456AF6C19D81* ___m_Syntax_18;
+	String_t* ___m_DnsSafeHost_19;
+	uint64_t ___m_Flags_20;
+	UriInfo_t5F91F77A93545DDDA6BB24A609BAF5E232CC1A09* ___m_Info_21;
+	bool ___m_iriParsing_22;
 };
 struct UriBuilder_t7931690A4195FCF7400D95D3107C3FB1D55A1C72  : public RuntimeObject
 {
@@ -2321,15 +2321,15 @@ struct Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E_StaticFields
 	String_t* ___UriSchemeNetTcp_10;
 	String_t* ___UriSchemeNetPipe_11;
 	String_t* ___SchemeDelimiter_12;
-	bool ___s_ConfigInitialized_20;
-	bool ___s_ConfigInitializing_21;
-	int32_t ___s_IdnScope_22;
-	bool ___s_IriParsing_23;
-	bool ___useDotNetRelativeOrAbsolute_24;
-	bool ___IsWindowsFileSystem_25;
-	RuntimeObject* ___s_initLock_26;
-	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ___HexLowerChars_27;
-	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ____WSchars_28;
+	bool ___s_ConfigInitialized_23;
+	bool ___s_ConfigInitializing_24;
+	int32_t ___s_IdnScope_25;
+	bool ___s_IriParsing_26;
+	bool ___useDotNetRelativeOrAbsolute_27;
+	bool ___IsWindowsFileSystem_29;
+	RuntimeObject* ___s_initLock_30;
+	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ___HexLowerChars_34;
+	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ____WSchars_35;
 };
 struct ValidationHelper_tA6AE681FCDFA9BE8E3EF31C28A624AADF973A25C_StaticFields
 {
@@ -7773,7 +7773,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CommandStream__ctor_mDC3049BB71D0C9B1479
 		Encoding_t65CDEF28CF20A7B8C92E85A4E808920C2465F095* L_3 = __this->____encoding_19;
 		NullCheck(L_3);
 		Decoder_tE16E789E38B25DD304004FC630EA8B21000ECBBC* L_4;
-		L_4 = VirtualFuncInvoker0< Decoder_tE16E789E38B25DD304004FC630EA8B21000ECBBC* >::Invoke(30, L_3);
+		L_4 = VirtualFuncInvoker0< Decoder_tE16E789E38B25DD304004FC630EA8B21000ECBBC* >::Invoke(31, L_3);
 		__this->____decoder_20 = L_4;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____decoder_20), (void*)L_4);
 		return;
@@ -8216,7 +8216,7 @@ IL_0026:
 		String_t* L_9 = L_8->___Command_0;
 		NullCheck(L_4);
 		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_10;
-		L_10 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, String_t* >::Invoke(17, L_4, L_9);
+		L_10 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, String_t* >::Invoke(18, L_4, L_9);
 		V_2 = L_10;
 		il2cpp_codegen_runtime_class_init_inline(NetEventSource_tCFE66E755A29D53FCCB21E599710B768BA6E0282_il2cpp_TypeInfo_var);
 		NetEventSource_tCFE66E755A29D53FCCB21E599710B768BA6E0282* L_11 = ((NetEventSource_tCFE66E755A29D53FCCB21E599710B768BA6E0282_StaticFields*)il2cpp_codegen_static_fields_for(NetEventSource_tCFE66E755A29D53FCCB21E599710B768BA6E0282_il2cpp_TypeInfo_var))->___Log_1;
@@ -9035,7 +9035,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CommandStream_set_Encoding_mE530EE55B344
 		Encoding_t65CDEF28CF20A7B8C92E85A4E808920C2465F095* L_1 = __this->____encoding_19;
 		NullCheck(L_1);
 		Decoder_tE16E789E38B25DD304004FC630EA8B21000ECBBC* L_2;
-		L_2 = VirtualFuncInvoker0< Decoder_tE16E789E38B25DD304004FC630EA8B21000ECBBC* >::Invoke(30, L_1);
+		L_2 = VirtualFuncInvoker0< Decoder_tE16E789E38B25DD304004FC630EA8B21000ECBBC* >::Invoke(31, L_1);
 		__this->____decoder_20 = L_2;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____decoder_20), (void*)L_2);
 		return;

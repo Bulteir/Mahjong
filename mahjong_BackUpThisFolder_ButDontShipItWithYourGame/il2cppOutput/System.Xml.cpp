@@ -10396,7 +10396,7 @@ IL_0036:
 			IL2CPP_RAISE_MANAGED_EXCEPTION(il2cpp_codegen_get_overflow_exception(), XmlSqlBinaryReader_GetString_m665229A8DFDB0D00DEEE73827E3B001B51711D4B_RuntimeMethod_var);
 		NullCheck(L_11);
 		String_t* L_15;
-		L_15 = VirtualFuncInvoker3< String_t*, ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t, int32_t >::Invoke(35, L_11, L_12, L_13, ((int32_t)il2cpp_codegen_multiply(L_14, 2)));
+		L_15 = VirtualFuncInvoker3< String_t*, ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t, int32_t >::Invoke(36, L_11, L_12, L_13, ((int32_t)il2cpp_codegen_multiply(L_14, 2)));
 		return L_15;
 	}
 }
@@ -16436,7 +16436,7 @@ IL_0292_1:
 			int32_t L_80 = __this->___tokLen_39;
 			NullCheck(L_77);
 			String_t* L_81;
-			L_81 = VirtualFuncInvoker3< String_t*, ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t, int32_t >::Invoke(35, L_77, L_78, ((int32_t)il2cpp_codegen_add(L_79, 4)), ((int32_t)il2cpp_codegen_subtract(L_80, 4)));
+			L_81 = VirtualFuncInvoker3< String_t*, ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t, int32_t >::Invoke(36, L_77, L_78, ((int32_t)il2cpp_codegen_add(L_79, 4)), ((int32_t)il2cpp_codegen_subtract(L_80, 4)));
 			V_0 = L_81;
 			goto IL_039a;
 		}
@@ -19755,7 +19755,7 @@ IL_001e:
 		Encoding_t65CDEF28CF20A7B8C92E85A4E808920C2465F095* L_2 = ((XmlEncodedRawTextWriter_t555452A93F2FEFE35034BD8B5D65E979E729E1D4*)__this)->___encoding_6;
 		NullCheck(L_2);
 		String_t* L_3;
-		L_3 = VirtualFuncInvoker0< String_t* >::Invoke(9, L_2);
+		L_3 = VirtualFuncInvoker0< String_t* >::Invoke(10, L_2);
 		XmlEncodedRawTextWriter_RawText_mC84BDBEA6E407E60868A66C643A352ECB575610C(__this, L_3, NULL);
 		XmlEncodedRawTextWriter_RawText_mC84BDBEA6E407E60868A66C643A352ECB575610C(__this, _stringLiteral6C2E3DACDCD262BC3809A6E68DFA4CEFE02982EB, NULL);
 		return;
@@ -21946,7 +21946,7 @@ IL_001e:
 		Encoding_t65CDEF28CF20A7B8C92E85A4E808920C2465F095* L_2 = ((XmlUtf8RawTextWriter_t509951DC424E22E80C9848992ACC324E94E264FB*)__this)->___encoding_6;
 		NullCheck(L_2);
 		String_t* L_3;
-		L_3 = VirtualFuncInvoker0< String_t* >::Invoke(9, L_2);
+		L_3 = VirtualFuncInvoker0< String_t* >::Invoke(10, L_2);
 		XmlUtf8RawTextWriter_RawText_m197BC9FFA1D58F16EEF25C7C133B803E40B7EF80(__this, L_3, NULL);
 		XmlUtf8RawTextWriter_RawText_m197BC9FFA1D58F16EEF25C7C133B803E40B7EF80(__this, _stringLiteral6C2E3DACDCD262BC3809A6E68DFA4CEFE02982EB, NULL);
 		return;

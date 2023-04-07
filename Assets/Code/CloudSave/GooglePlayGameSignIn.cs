@@ -2,16 +2,16 @@ using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using System.Threading.Tasks;
 using System;
-using Unity.Services.Authentication;
-using Unity.Services.Core;
 using UnityEngine;
-using System.Collections.Generic;
-using Unity.Services.CloudSave;
+using UnityEngine.UI;
+using Unity.Services.Authentication;
+using System.Linq;
 
 public class GooglePlayGameSignIn : MonoBehaviour
 {
     public string Token;
     public string Error;
+    public Button GoogleLogin_Btn;
 
     void Awake()
     {
@@ -51,5 +51,41 @@ public class GooglePlayGameSignIn : MonoBehaviour
             }
         });
         return tcs.Task;
+    }
+
+    public void ClickLoginButton()
+    {
+        GoogleLogin_Btn.interactable = false;
+        PlayGamesPlatform.Activate();
+        LoginGooglePlayGames();
+    }
+
+    public void CheckLoginButtonStatus ()
+    {
+        if(GlobalVariables.internetAvaible == false)
+        {
+            GoogleLogin_Btn.interactable = false;
+            GoogleLogin_Btn.image.color = Color.white;
+        }
+        else
+        {
+            //hiçbir hesapla giriþ yapýlmadýysa
+            if (!AuthenticationService.Instance.IsSignedIn)
+            {
+                GoogleLogin_Btn.interactable = true;
+                GoogleLogin_Btn.image.color = Color.white;
+
+            }//bir hesapla giriþ yapýlmýþ ve google hesabý baðlanmýþ
+            else if (AuthenticationService.Instance.PlayerInfo.Identities.Where(i => i.TypeId.Contains("google-play-games")).ToList().Count > 0)
+            {
+                GoogleLogin_Btn.interactable = false;
+                GoogleLogin_Btn.image.color = Color.blue;
+            }
+            else//bir hesapla giriþ yapýlmý ancak google hesabý baðlanmamýþ.
+            {
+                GoogleLogin_Btn.interactable = true;
+                GoogleLogin_Btn.image.color = Color.white;
+            }
+        }
     }
 }

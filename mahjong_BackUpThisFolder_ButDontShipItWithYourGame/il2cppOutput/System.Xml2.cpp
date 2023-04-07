@@ -877,13 +877,13 @@ struct TernaryTreeReadOnly_tD06A8A7750282A366E59B387CAD80E8C606F0608  : public R
 };
 struct Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E  : public RuntimeObject
 {
-	String_t* ___m_String_13;
-	String_t* ___m_originalUnicodeString_14;
-	UriParser_t920B0868286118827C08B08A15A9456AF6C19D81* ___m_Syntax_15;
-	String_t* ___m_DnsSafeHost_16;
-	uint64_t ___m_Flags_17;
-	UriInfo_t5F91F77A93545DDDA6BB24A609BAF5E232CC1A09* ___m_Info_18;
-	bool ___m_iriParsing_19;
+	String_t* ___m_String_16;
+	String_t* ___m_originalUnicodeString_17;
+	UriParser_t920B0868286118827C08B08A15A9456AF6C19D81* ___m_Syntax_18;
+	String_t* ___m_DnsSafeHost_19;
+	uint64_t ___m_Flags_20;
+	UriInfo_t5F91F77A93545DDDA6BB24A609BAF5E232CC1A09* ___m_Info_21;
+	bool ___m_iriParsing_22;
 };
 struct ValidatingReaderNodeData_tAE18697DFADC58A9898DF8421118BB1754A7C13C  : public RuntimeObject
 {
@@ -2187,15 +2187,15 @@ struct Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E_StaticFields
 	String_t* ___UriSchemeNetTcp_10;
 	String_t* ___UriSchemeNetPipe_11;
 	String_t* ___SchemeDelimiter_12;
-	bool ___s_ConfigInitialized_20;
-	bool ___s_ConfigInitializing_21;
-	int32_t ___s_IdnScope_22;
-	bool ___s_IriParsing_23;
-	bool ___useDotNetRelativeOrAbsolute_24;
-	bool ___IsWindowsFileSystem_25;
-	RuntimeObject* ___s_initLock_26;
-	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ___HexLowerChars_27;
-	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ____WSchars_28;
+	bool ___s_ConfigInitialized_23;
+	bool ___s_ConfigInitializing_24;
+	int32_t ___s_IdnScope_25;
+	bool ___s_IriParsing_26;
+	bool ___useDotNetRelativeOrAbsolute_27;
+	bool ___IsWindowsFileSystem_29;
+	RuntimeObject* ___s_initLock_30;
+	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ___HexLowerChars_34;
+	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ____WSchars_35;
 };
 struct XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9_StaticFields
 {
@@ -8426,7 +8426,7 @@ IL_002d:
 		L_14 = XmlWriterSettings_get_Encoding_mC4E1AB9D49553D659321B2BEEA46AE5D343BCBEE_inline(L_13, NULL);
 		NullCheck(L_14);
 		RuntimeObject* L_15;
-		L_15 = VirtualFuncInvoker0< RuntimeObject* >::Invoke(10, L_14);
+		L_15 = VirtualFuncInvoker0< RuntimeObject* >::Invoke(11, L_14);
 		__this->___encoding_6 = ((Encoding_t65CDEF28CF20A7B8C92E85A4E808920C2465F095*)CastclassClass((RuntimeObject*)L_15, Encoding_t65CDEF28CF20A7B8C92E85A4E808920C2465F095_il2cpp_TypeInfo_var));
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___encoding_6), (void*)((Encoding_t65CDEF28CF20A7B8C92E85A4E808920C2465F095*)CastclassClass((RuntimeObject*)L_15, Encoding_t65CDEF28CF20A7B8C92E85A4E808920C2465F095_il2cpp_TypeInfo_var)));
 		Encoding_t65CDEF28CF20A7B8C92E85A4E808920C2465F095* L_16 = __this->___encoding_6;
@@ -8436,7 +8436,7 @@ IL_002d:
 		Encoding_t65CDEF28CF20A7B8C92E85A4E808920C2465F095* L_18 = __this->___encoding_6;
 		NullCheck(L_18);
 		Encoder_tAF9067231A76315584BDF4CD27990E2F485A78FA* L_19;
-		L_19 = VirtualFuncInvoker0< Encoder_tAF9067231A76315584BDF4CD27990E2F485A78FA* >::Invoke(31, L_18);
+		L_19 = VirtualFuncInvoker0< Encoder_tAF9067231A76315584BDF4CD27990E2F485A78FA* >::Invoke(32, L_18);
 		__this->___encoder_19 = L_19;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___encoder_19), (void*)L_19);
 		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_20 = ___0_stream;
@@ -8569,7 +8569,7 @@ IL_002d:
 		Encoding_t65CDEF28CF20A7B8C92E85A4E808920C2465F095* L_5 = __this->___encoding_6;
 		NullCheck(L_5);
 		String_t* L_6;
-		L_6 = VirtualFuncInvoker0< String_t* >::Invoke(9, L_5);
+		L_6 = VirtualFuncInvoker0< String_t* >::Invoke(10, L_5);
 		XmlEncodedRawTextWriter_RawText_mC84BDBEA6E407E60868A66C643A352ECB575610C(__this, L_6, NULL);
 	}
 

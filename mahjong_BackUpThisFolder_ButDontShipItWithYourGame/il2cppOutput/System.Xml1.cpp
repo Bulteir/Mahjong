@@ -715,13 +715,13 @@ struct Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572  : public RuntimeObject
 };
 struct Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E  : public RuntimeObject
 {
-	String_t* ___m_String_13;
-	String_t* ___m_originalUnicodeString_14;
-	UriParser_t920B0868286118827C08B08A15A9456AF6C19D81* ___m_Syntax_15;
-	String_t* ___m_DnsSafeHost_16;
-	uint64_t ___m_Flags_17;
-	UriInfo_t5F91F77A93545DDDA6BB24A609BAF5E232CC1A09* ___m_Info_18;
-	bool ___m_iriParsing_19;
+	String_t* ___m_String_16;
+	String_t* ___m_originalUnicodeString_17;
+	UriParser_t920B0868286118827C08B08A15A9456AF6C19D81* ___m_Syntax_18;
+	String_t* ___m_DnsSafeHost_19;
+	uint64_t ___m_Flags_20;
+	UriInfo_t5F91F77A93545DDDA6BB24A609BAF5E232CC1A09* ___m_Info_21;
+	bool ___m_iriParsing_22;
 };
 struct ValueType_t6D9B272BD21782F0A9A14F2E41F85A50E97A986F  : public RuntimeObject
 {
@@ -1391,15 +1391,15 @@ struct Uri_t1500A52B5F71A04F5D05C0852D0F2A0941842A0E_StaticFields
 	String_t* ___UriSchemeNetTcp_10;
 	String_t* ___UriSchemeNetPipe_11;
 	String_t* ___SchemeDelimiter_12;
-	bool ___s_ConfigInitialized_20;
-	bool ___s_ConfigInitializing_21;
-	int32_t ___s_IdnScope_22;
-	bool ___s_IriParsing_23;
-	bool ___useDotNetRelativeOrAbsolute_24;
-	bool ___IsWindowsFileSystem_25;
-	RuntimeObject* ___s_initLock_26;
-	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ___HexLowerChars_27;
-	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ____WSchars_28;
+	bool ___s_ConfigInitialized_23;
+	bool ___s_ConfigInitializing_24;
+	int32_t ___s_IdnScope_25;
+	bool ___s_IriParsing_26;
+	bool ___useDotNetRelativeOrAbsolute_27;
+	bool ___IsWindowsFileSystem_29;
+	RuntimeObject* ___s_initLock_30;
+	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ___HexLowerChars_34;
+	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ____WSchars_35;
 };
 struct XmlQualifiedName_t2794880B373257E4108CC3F36D7373A343ACC5B9_StaticFields
 {
@@ -8702,7 +8702,7 @@ IL_0024:
 		Encoding_t65CDEF28CF20A7B8C92E85A4E808920C2465F095* L_8 = L_7->___encoding_3;
 		NullCheck(L_8);
 		String_t* L_9;
-		L_9 = VirtualFuncInvoker0< String_t* >::Invoke(9, L_8);
+		L_9 = VirtualFuncInvoker0< String_t* >::Invoke(10, L_8);
 		V_0 = L_9;
 		String_t* L_10 = V_0;
 		bool L_11;
@@ -8751,7 +8751,7 @@ IL_0081:
 		Encoding_t65CDEF28CF20A7B8C92E85A4E808920C2465F095* L_19 = ___0_encoding;
 		NullCheck(L_19);
 		Decoder_tE16E789E38B25DD304004FC630EA8B21000ECBBC* L_20;
-		L_20 = VirtualFuncInvoker0< Decoder_tE16E789E38B25DD304004FC630EA8B21000ECBBC* >::Invoke(30, L_19);
+		L_20 = VirtualFuncInvoker0< Decoder_tE16E789E38B25DD304004FC630EA8B21000ECBBC* >::Invoke(31, L_19);
 		L_18->___decoder_6 = L_20;
 		Il2CppCodeGenWriteBarrier((void**)(&L_18->___decoder_6), (void*)L_20);
 		return;
@@ -8769,12 +8769,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void XmlTextReaderImpl_SwitchEncoding_mC73EB1
 		Encoding_t65CDEF28CF20A7B8C92E85A4E808920C2465F095* L_0 = ___0_newEncoding;
 		NullCheck(L_0);
 		String_t* L_1;
-		L_1 = VirtualFuncInvoker0< String_t* >::Invoke(9, L_0);
+		L_1 = VirtualFuncInvoker0< String_t* >::Invoke(10, L_0);
 		ParsingState_tF0FABA16483FCC2DB710460D11CD79D35C4E2886* L_2 = (&__this->___ps_6);
 		Encoding_t65CDEF28CF20A7B8C92E85A4E808920C2465F095* L_3 = L_2->___encoding_3;
 		NullCheck(L_3);
 		String_t* L_4;
-		L_4 = VirtualFuncInvoker0< String_t* >::Invoke(9, L_3);
+		L_4 = VirtualFuncInvoker0< String_t* >::Invoke(10, L_3);
 		bool L_5;
 		L_5 = String_op_Inequality_m8C940F3CFC42866709D7CA931B3D77B4BE94BCB6(L_1, L_4, NULL);
 		if (L_5)
@@ -8892,7 +8892,7 @@ IL_0051:
 		Encoding_t65CDEF28CF20A7B8C92E85A4E808920C2465F095* L_13 = L_12->___encoding_3;
 		NullCheck(L_13);
 		String_t* L_14;
-		L_14 = VirtualFuncInvoker0< String_t* >::Invoke(9, L_13);
+		L_14 = VirtualFuncInvoker0< String_t* >::Invoke(10, L_13);
 		bool L_15;
 		L_15 = String_op_Inequality_m8C940F3CFC42866709D7CA931B3D77B4BE94BCB6(L_14, _stringLiteralC32EB74E6CF2D3CD9BDC7BEEB45FE8C6413C1E6E, NULL);
 		if (!L_15)
@@ -8905,7 +8905,7 @@ IL_0051:
 		Encoding_t65CDEF28CF20A7B8C92E85A4E808920C2465F095* L_17 = L_16->___encoding_3;
 		NullCheck(L_17);
 		String_t* L_18;
-		L_18 = VirtualFuncInvoker0< String_t* >::Invoke(9, L_17);
+		L_18 = VirtualFuncInvoker0< String_t* >::Invoke(10, L_17);
 		bool L_19;
 		L_19 = String_op_Inequality_m8C940F3CFC42866709D7CA931B3D77B4BE94BCB6(L_18, _stringLiteral3915A096ACD919832A1C4E84ABDC7D6F6B72630D, NULL);
 		if (!L_19)
@@ -9024,11 +9024,11 @@ IL_0108:
 		Encoding_t65CDEF28CF20A7B8C92E85A4E808920C2465F095* L_37 = L_36->___encoding_3;
 		NullCheck(L_37);
 		String_t* L_38;
-		L_38 = VirtualFuncInvoker0< String_t* >::Invoke(9, L_37);
+		L_38 = VirtualFuncInvoker0< String_t* >::Invoke(10, L_37);
 		Encoding_t65CDEF28CF20A7B8C92E85A4E808920C2465F095* L_39 = V_0;
 		NullCheck(L_39);
 		String_t* L_40;
-		L_40 = VirtualFuncInvoker0< String_t* >::Invoke(9, L_39);
+		L_40 = VirtualFuncInvoker0< String_t* >::Invoke(10, L_39);
 		bool L_41;
 		L_41 = String_op_Inequality_m8C940F3CFC42866709D7CA931B3D77B4BE94BCB6(L_38, L_40, NULL);
 		if (!L_41)
@@ -9115,7 +9115,7 @@ IL_0066:
 		int32_t L_26 = L_25->___charPos_1;
 		NullCheck(L_22);
 		int32_t L_27;
-		L_27 = VirtualFuncInvoker3< int32_t, CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB*, int32_t, int32_t >::Invoke(12, L_22, L_24, 0, L_26);
+		L_27 = VirtualFuncInvoker3< int32_t, CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB*, int32_t, int32_t >::Invoke(13, L_22, L_24, 0, L_26);
 		*((int32_t*)L_19) = (int32_t)((int32_t)il2cpp_codegen_add(L_20, L_27));
 	}
 
@@ -10258,7 +10258,7 @@ IL_019a:
 		Encoding_t65CDEF28CF20A7B8C92E85A4E808920C2465F095* L_68 = L_67->___encoding_3;
 		NullCheck(L_68);
 		String_t* L_69;
-		L_69 = VirtualFuncInvoker0< String_t* >::Invoke(9, L_68);
+		L_69 = VirtualFuncInvoker0< String_t* >::Invoke(10, L_68);
 		V_10 = L_69;
 		String_t* L_70 = V_10;
 		bool L_71;
@@ -10299,7 +10299,7 @@ IL_019a:
 		Encoding_t65CDEF28CF20A7B8C92E85A4E808920C2465F095* L_79 = L_78->___encoding_3;
 		NullCheck(L_79);
 		int32_t L_80;
-		L_80 = VirtualFuncInvoker1< int32_t, String_t* >::Invoke(11, L_79, _stringLiteralEF420ABFDDBDA7B9EE665D85EF62E4A437554003);
+		L_80 = VirtualFuncInvoker1< int32_t, String_t* >::Invoke(12, L_79, _stringLiteralEF420ABFDDBDA7B9EE665D85EF62E4A437554003);
 		if ((((int32_t)L_80) == ((int32_t)1)))
 		{
 			G_B33_0 = _stringLiteralE1A5710D77750DE15143DC722BD4D7F361D7E8BD;
@@ -11143,7 +11143,7 @@ IL_07ef:
 		Encoding_t65CDEF28CF20A7B8C92E85A4E808920C2465F095* L_322 = L_321->___encoding_3;
 		NullCheck(L_322);
 		String_t* L_323;
-		L_323 = VirtualFuncInvoker0< String_t* >::Invoke(9, L_322);
+		L_323 = VirtualFuncInvoker0< String_t* >::Invoke(10, L_322);
 		V_14 = L_323;
 		String_t* L_324 = V_14;
 		bool L_325;
@@ -11184,7 +11184,7 @@ IL_07ef:
 		Encoding_t65CDEF28CF20A7B8C92E85A4E808920C2465F095* L_333 = L_332->___encoding_3;
 		NullCheck(L_333);
 		int32_t L_334;
-		L_334 = VirtualFuncInvoker1< int32_t, String_t* >::Invoke(11, L_333, _stringLiteralEF420ABFDDBDA7B9EE665D85EF62E4A437554003);
+		L_334 = VirtualFuncInvoker1< int32_t, String_t* >::Invoke(12, L_333, _stringLiteralEF420ABFDDBDA7B9EE665D85EF62E4A437554003);
 		if ((((int32_t)L_334) == ((int32_t)1)))
 		{
 			G_B124_0 = _stringLiteralE1A5710D77750DE15143DC722BD4D7F361D7E8BD;
