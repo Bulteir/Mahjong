@@ -1,5 +1,3 @@
-using GooglePlayGames;
-using GooglePlayGames.BasicApi;
 using System.Threading.Tasks;
 using System;
 using UnityEngine;
@@ -7,12 +5,18 @@ using UnityEngine.UI;
 using Unity.Services.Authentication;
 using System.Linq;
 
+#if UNITY_ANDROID
+using GooglePlayGames;
+using GooglePlayGames.BasicApi;
+#endif
+
 public class GooglePlayGameSignIn : MonoBehaviour
 {
     public string Token;
     public string Error;
     public Button GoogleLogin_Btn;
 
+#if UNITY_ANDROID
     void Awake()
     {
         PlayGamesPlatform.Activate();
@@ -88,4 +92,5 @@ public class GooglePlayGameSignIn : MonoBehaviour
             }
         }
     }
+#endif
 }
