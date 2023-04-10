@@ -49,9 +49,15 @@ public class GooglePlayGameSignIn : MonoBehaviour
             }
             else
             {
+                //Daha önce facebook ile giriþ yapýlmýþsa. google ile giriþte herhangibir hata alýrsak facebook ile giriþ yapmayý dene.
+                if (PlayerPrefs.GetString("FacebookAutoLogin") == "true")
+                {   
+                    GetComponent<FacebookLogIn>().LoginFacebook();
+                }
                 Error = "Failed to retrieve Google play games authorization code";
                 Debug.Log("Login Unsuccessful");
                 tcs.SetException(new Exception("Failed"));
+               
             }
         });
         return tcs.Task;

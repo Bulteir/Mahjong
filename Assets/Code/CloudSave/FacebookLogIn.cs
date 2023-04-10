@@ -43,8 +43,12 @@ public class FacebookLogIn : MonoBehaviour
             //kullanýcý birkez facebookla giriþ yaptýysa baþlangýçta otomatik giriþ yapar. Google için yapmýyoruz çünkü zaten otomatik en baþta açýlýyor.
             if (PlayerPrefs.GetString("FacebookAutoLogin") == "true")
             {
-                Debug.Log("girdi");
+                //burada google ile giriþ yaptýysa üzerine birde facebook giriþi için beklemesin. Bu yüzden androidde facebook authentication google ile giriþte sýkýntý olursa yapýlsýn.
+                FacebookLogin_Btn.interactable = false;
+                FacebookLogin_Btn.image.color = Color.blue;
+#if UNITY_iOS
                 LoginFacebook();
+#endif
             }
         }
         else

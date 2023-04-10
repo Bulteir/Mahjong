@@ -64,11 +64,14 @@ extern void CloudSaveController_Start_m7A0DA4252C0D58E448BC4AC7445EC6E939943B89 
 extern void CloudSaveController_LogInUnityCloudSaveServiceWithGooglePlay_m7C87B99BED8A2FCEEEA39D92C70C44036609E331 (void);
 extern void CloudSaveController_LogInUnityCloudSaveServiceWithFacebook_mB328DEDFE3CD461F9D7F15CE7E56F736A8A1C5E0 (void);
 extern void CloudSaveController_SaveData_mD1591BAE6610818909F3E9BCFB301170DFFECB91 (void);
+extern void CloudSaveController_LoadData_m7C3778D2613C0BF252B44CE10C407E5641725338 (void);
 extern void CloudSaveController__ctor_m16C5DB62C43BD5D8B64A6E998DF6D5EE8F2F52F5 (void);
 extern void U3CU3Ec__cctor_mF8C95C8279B5F0B230D51C5E04070A7009AF2F4F (void);
 extern void U3CU3Ec__ctor_mB5C63F186E5BAC311FAED27DBDF26FFF31C7D002 (void);
 extern void U3CU3Ec_U3CLogInUnityCloudSaveServiceWithGooglePlayU3Eb__3_0_m5D67D2B8B3BCC7D3EC8ABDD6C037C21432BC96C1 (void);
 extern void U3CU3Ec_U3CLogInUnityCloudSaveServiceWithFacebookU3Eb__4_0_mD4639B3E1E4BFC1BCD08F3679BD4A478445BA908 (void);
+extern void U3CLoadDataU3Ed__6_MoveNext_mF773FC3AFC48B9AF81C3FF14876F3A346014CBF0 (void);
+extern void U3CLoadDataU3Ed__6_SetStateMachine_m464C8FE4A976C83120E9AA96518F6C654B5E58F3 (void);
 extern void U3CLogInUnityCloudSaveServiceWithFacebookU3Ed__4_MoveNext_mA445C95536B32F665415534D0C07243DAEE54092 (void);
 extern void U3CLogInUnityCloudSaveServiceWithFacebookU3Ed__4_SetStateMachine_mAC9CD0CE13D62D8ED4AC4AA24ADABC4246E42087 (void);
 extern void U3CLogInUnityCloudSaveServiceWithGooglePlayU3Ed__3_MoveNext_mE2C63FA6822DD49CE1DC123FE2CE07B1CF4BCFDC (void);
@@ -104,10 +107,20 @@ extern void InternetAvailabilityController_Start_m825DB6FA706AE897C12FB9B9C6A823
 extern void InternetAvailabilityController_CheckNetwork_m1A4C760B5D9ED032403AEF5C743864C68F5D0359 (void);
 extern void InternetAvailabilityController__ctor_m95B503377D91B6292905651586969D30AAD0D3FE (void);
 extern void GlobalVariables__cctor_m81016ACD22301EB549A5646D88D2C0BE69A383F5 (void);
+extern void GameSaveLoadController_Start_m7C83CBFA0CC0C8C0018CD0AEAB8FE0441B5974A6 (void);
+extern void GameSaveLoadController_SaveGameLocal_m8C3CC7EF01FAFC798BC28F2C68E13CDBE0B50E9D (void);
+extern void GameSaveLoadController_SaveGameCloud_m642E673AF43043D6571EEAD8E3584D5581CFC176 (void);
+extern void GameSaveLoadController_LoadGameLocal_m5732AECEBF285CA3CAD15CE85376D7CA0C34577C (void);
+extern void GameSaveLoadController_LoadGameCloud_m1849DD3E1C3D9688D21F1D13444ED46FA9B2B803 (void);
+extern void GameSaveLoadController_TempLocalSaveClick_m66A296BF57AC6B3235A204ACDAAA2571125977F4 (void);
+extern void GameSaveLoadController_TempCloudSaveClick_m8DD5302FA4F97F5CF6134DEDFB7BE952C60936D4 (void);
+extern void GameSaveLoadController_TempLocalLoadClick_m258B31F01C0B2CAA4E6AD59F38FDAE95472CB01E (void);
+extern void GameSaveLoadController__ctor_m371318FB34942FC0E947B40A73E45FF255B99DE1 (void);
+extern void U3CLoadGameCloudU3Ed__5_MoveNext_m6D51EED656599B425B0C50540B38A90E6725A1DB (void);
+extern void U3CLoadGameCloudU3Ed__5_SetStateMachine_m45ED1A047909CC976EEFBF29A924D45BDE5D488B (void);
 extern void JsonDataService__ctor_m90EBBC5109D810D6168D2A01145462FF3FACECA8 (void);
-extern void LocalSaveLoadController_SerializeJson_m45922D161F87DAFFFF12B02F1A3115411D92C2C1 (void);
-extern void LocalSaveLoadController_SaveGame_m849CF5CC6214052DBBCF0A092DB7B4D9486F54C4 (void);
-extern void LocalSaveLoadController_LoadGame_m5F16D26A56CFE5539309B7D1C1C9EACE8F7848F5 (void);
+extern void LocalSaveLoadController_SaveGame_m3ED4085E3004A9A28C4C3706B98C18F4770DC46D (void);
+extern void LocalSaveLoadController_LoadGame_m1E5B45E412B996B7F509A48467DB3F403E0E1A03 (void);
 extern void LocalSaveLoadController__ctor_m7085F79C3416966CD47E746BCB45FD615ED8F26A (void);
 extern void SaveDataFormat__ctor_mD744AAD5CE7F1BC4EEEE0289E3D96689CB65AD02 (void);
 extern void Timer_Start_m6820D211A06B2E5E24795D7EBE67EE865F39BC43 (void);
@@ -148,7 +161,7 @@ extern void SafeArea_Refresh_m2EB186CFFCAB2AB7E5B57A46A2A57D14493FD8EA (void);
 extern void SafeArea_GetSafeArea_m4B6B53C8ED0A4B2F5DBC404E2F208E6A71411815 (void);
 extern void SafeArea_ApplySafeArea_m19691250ABEE5AFFA7F793548BCCE402CCF38548 (void);
 extern void SafeArea__ctor_mC10940463499A1652DEC94CACFCB811ADA5CD6FF (void);
-static Il2CppMethodPointer s_methodPointers[142] = 
+static Il2CppMethodPointer s_methodPointers[155] = 
 {
 	BlockBoardController_PlaceBlock_m13A017BCDE9E31A054F0375197628787D19D5BB5,
 	BlockBoardController_GetAvaibleBlockSlotIndex_mEEFF78E09B33354ADAE72359256818C867C828F4,
@@ -202,11 +215,14 @@ static Il2CppMethodPointer s_methodPointers[142] =
 	CloudSaveController_LogInUnityCloudSaveServiceWithGooglePlay_m7C87B99BED8A2FCEEEA39D92C70C44036609E331,
 	CloudSaveController_LogInUnityCloudSaveServiceWithFacebook_mB328DEDFE3CD461F9D7F15CE7E56F736A8A1C5E0,
 	CloudSaveController_SaveData_mD1591BAE6610818909F3E9BCFB301170DFFECB91,
+	CloudSaveController_LoadData_m7C3778D2613C0BF252B44CE10C407E5641725338,
 	CloudSaveController__ctor_m16C5DB62C43BD5D8B64A6E998DF6D5EE8F2F52F5,
 	U3CU3Ec__cctor_mF8C95C8279B5F0B230D51C5E04070A7009AF2F4F,
 	U3CU3Ec__ctor_mB5C63F186E5BAC311FAED27DBDF26FFF31C7D002,
 	U3CU3Ec_U3CLogInUnityCloudSaveServiceWithGooglePlayU3Eb__3_0_m5D67D2B8B3BCC7D3EC8ABDD6C037C21432BC96C1,
 	U3CU3Ec_U3CLogInUnityCloudSaveServiceWithFacebookU3Eb__4_0_mD4639B3E1E4BFC1BCD08F3679BD4A478445BA908,
+	U3CLoadDataU3Ed__6_MoveNext_mF773FC3AFC48B9AF81C3FF14876F3A346014CBF0,
+	U3CLoadDataU3Ed__6_SetStateMachine_m464C8FE4A976C83120E9AA96518F6C654B5E58F3,
 	U3CLogInUnityCloudSaveServiceWithFacebookU3Ed__4_MoveNext_mA445C95536B32F665415534D0C07243DAEE54092,
 	U3CLogInUnityCloudSaveServiceWithFacebookU3Ed__4_SetStateMachine_mAC9CD0CE13D62D8ED4AC4AA24ADABC4246E42087,
 	U3CLogInUnityCloudSaveServiceWithGooglePlayU3Ed__3_MoveNext_mE2C63FA6822DD49CE1DC123FE2CE07B1CF4BCFDC,
@@ -242,6 +258,17 @@ static Il2CppMethodPointer s_methodPointers[142] =
 	InternetAvailabilityController_CheckNetwork_m1A4C760B5D9ED032403AEF5C743864C68F5D0359,
 	InternetAvailabilityController__ctor_m95B503377D91B6292905651586969D30AAD0D3FE,
 	GlobalVariables__cctor_m81016ACD22301EB549A5646D88D2C0BE69A383F5,
+	GameSaveLoadController_Start_m7C83CBFA0CC0C8C0018CD0AEAB8FE0441B5974A6,
+	GameSaveLoadController_SaveGameLocal_m8C3CC7EF01FAFC798BC28F2C68E13CDBE0B50E9D,
+	GameSaveLoadController_SaveGameCloud_m642E673AF43043D6571EEAD8E3584D5581CFC176,
+	GameSaveLoadController_LoadGameLocal_m5732AECEBF285CA3CAD15CE85376D7CA0C34577C,
+	GameSaveLoadController_LoadGameCloud_m1849DD3E1C3D9688D21F1D13444ED46FA9B2B803,
+	GameSaveLoadController_TempLocalSaveClick_m66A296BF57AC6B3235A204ACDAAA2571125977F4,
+	GameSaveLoadController_TempCloudSaveClick_m8DD5302FA4F97F5CF6134DEDFB7BE952C60936D4,
+	GameSaveLoadController_TempLocalLoadClick_m258B31F01C0B2CAA4E6AD59F38FDAE95472CB01E,
+	GameSaveLoadController__ctor_m371318FB34942FC0E947B40A73E45FF255B99DE1,
+	U3CLoadGameCloudU3Ed__5_MoveNext_m6D51EED656599B425B0C50540B38A90E6725A1DB,
+	U3CLoadGameCloudU3Ed__5_SetStateMachine_m45ED1A047909CC976EEFBF29A924D45BDE5D488B,
 	NULL,
 	NULL,
 	NULL,
@@ -249,9 +276,8 @@ static Il2CppMethodPointer s_methodPointers[142] =
 	NULL,
 	NULL,
 	JsonDataService__ctor_m90EBBC5109D810D6168D2A01145462FF3FACECA8,
-	LocalSaveLoadController_SerializeJson_m45922D161F87DAFFFF12B02F1A3115411D92C2C1,
-	LocalSaveLoadController_SaveGame_m849CF5CC6214052DBBCF0A092DB7B4D9486F54C4,
-	LocalSaveLoadController_LoadGame_m5F16D26A56CFE5539309B7D1C1C9EACE8F7848F5,
+	LocalSaveLoadController_SaveGame_m3ED4085E3004A9A28C4C3706B98C18F4770DC46D,
+	LocalSaveLoadController_LoadGame_m1E5B45E412B996B7F509A48467DB3F403E0E1A03,
 	LocalSaveLoadController__ctor_m7085F79C3416966CD47E746BCB45FD615ED8F26A,
 	SaveDataFormat__ctor_mD744AAD5CE7F1BC4EEEE0289E3D96689CB65AD02,
 	Timer_Start_m6820D211A06B2E5E24795D7EBE67EE865F39BC43,
@@ -293,6 +319,8 @@ static Il2CppMethodPointer s_methodPointers[142] =
 	SafeArea_ApplySafeArea_m19691250ABEE5AFFA7F793548BCCE402CCF38548,
 	SafeArea__ctor_mC10940463499A1652DEC94CACFCB811ADA5CD6FF,
 };
+extern void U3CLoadDataU3Ed__6_MoveNext_mF773FC3AFC48B9AF81C3FF14876F3A346014CBF0_AdjustorThunk (void);
+extern void U3CLoadDataU3Ed__6_SetStateMachine_m464C8FE4A976C83120E9AA96518F6C654B5E58F3_AdjustorThunk (void);
 extern void U3CLogInUnityCloudSaveServiceWithFacebookU3Ed__4_MoveNext_mA445C95536B32F665415534D0C07243DAEE54092_AdjustorThunk (void);
 extern void U3CLogInUnityCloudSaveServiceWithFacebookU3Ed__4_SetStateMachine_mAC9CD0CE13D62D8ED4AC4AA24ADABC4246E42087_AdjustorThunk (void);
 extern void U3CLogInUnityCloudSaveServiceWithGooglePlayU3Ed__3_MoveNext_mE2C63FA6822DD49CE1DC123FE2CE07B1CF4BCFDC_AdjustorThunk (void);
@@ -301,18 +329,24 @@ extern void U3CSaveDataU3Ed__5_MoveNext_mD44C7EC3E923C05EA39FF73FB7D2490048A4C9D
 extern void U3CSaveDataU3Ed__5_SetStateMachine_m0AF7B9C5BAF235429D4637DE658AC8FB049117AD_AdjustorThunk (void);
 extern void U3CStartU3Ed__4_MoveNext_mB6E9C17B5F3CC7AA7B52E18AF2F933791624CE9C_AdjustorThunk (void);
 extern void U3CStartU3Ed__4_SetStateMachine_m4736686888966B2D1F828E070F2A29D964979942_AdjustorThunk (void);
-static Il2CppTokenAdjustorThunkPair s_adjustorThunks[8] = 
+extern void U3CLoadGameCloudU3Ed__5_MoveNext_m6D51EED656599B425B0C50540B38A90E6725A1DB_AdjustorThunk (void);
+extern void U3CLoadGameCloudU3Ed__5_SetStateMachine_m45ED1A047909CC976EEFBF29A924D45BDE5D488B_AdjustorThunk (void);
+static Il2CppTokenAdjustorThunkPair s_adjustorThunks[12] = 
 {
-	{ 0x0600003A, U3CLogInUnityCloudSaveServiceWithFacebookU3Ed__4_MoveNext_mA445C95536B32F665415534D0C07243DAEE54092_AdjustorThunk },
-	{ 0x0600003B, U3CLogInUnityCloudSaveServiceWithFacebookU3Ed__4_SetStateMachine_mAC9CD0CE13D62D8ED4AC4AA24ADABC4246E42087_AdjustorThunk },
-	{ 0x0600003C, U3CLogInUnityCloudSaveServiceWithGooglePlayU3Ed__3_MoveNext_mE2C63FA6822DD49CE1DC123FE2CE07B1CF4BCFDC_AdjustorThunk },
-	{ 0x0600003D, U3CLogInUnityCloudSaveServiceWithGooglePlayU3Ed__3_SetStateMachine_mAB20C39D97075F21A04DBD42AE2BB8921C84FD12_AdjustorThunk },
-	{ 0x0600003E, U3CSaveDataU3Ed__5_MoveNext_mD44C7EC3E923C05EA39FF73FB7D2490048A4C9DE_AdjustorThunk },
-	{ 0x0600003F, U3CSaveDataU3Ed__5_SetStateMachine_m0AF7B9C5BAF235429D4637DE658AC8FB049117AD_AdjustorThunk },
-	{ 0x06000057, U3CStartU3Ed__4_MoveNext_mB6E9C17B5F3CC7AA7B52E18AF2F933791624CE9C_AdjustorThunk },
-	{ 0x06000058, U3CStartU3Ed__4_SetStateMachine_m4736686888966B2D1F828E070F2A29D964979942_AdjustorThunk },
+	{ 0x0600003B, U3CLoadDataU3Ed__6_MoveNext_mF773FC3AFC48B9AF81C3FF14876F3A346014CBF0_AdjustorThunk },
+	{ 0x0600003C, U3CLoadDataU3Ed__6_SetStateMachine_m464C8FE4A976C83120E9AA96518F6C654B5E58F3_AdjustorThunk },
+	{ 0x0600003D, U3CLogInUnityCloudSaveServiceWithFacebookU3Ed__4_MoveNext_mA445C95536B32F665415534D0C07243DAEE54092_AdjustorThunk },
+	{ 0x0600003E, U3CLogInUnityCloudSaveServiceWithFacebookU3Ed__4_SetStateMachine_mAC9CD0CE13D62D8ED4AC4AA24ADABC4246E42087_AdjustorThunk },
+	{ 0x0600003F, U3CLogInUnityCloudSaveServiceWithGooglePlayU3Ed__3_MoveNext_mE2C63FA6822DD49CE1DC123FE2CE07B1CF4BCFDC_AdjustorThunk },
+	{ 0x06000040, U3CLogInUnityCloudSaveServiceWithGooglePlayU3Ed__3_SetStateMachine_mAB20C39D97075F21A04DBD42AE2BB8921C84FD12_AdjustorThunk },
+	{ 0x06000041, U3CSaveDataU3Ed__5_MoveNext_mD44C7EC3E923C05EA39FF73FB7D2490048A4C9DE_AdjustorThunk },
+	{ 0x06000042, U3CSaveDataU3Ed__5_SetStateMachine_m0AF7B9C5BAF235429D4637DE658AC8FB049117AD_AdjustorThunk },
+	{ 0x0600005A, U3CStartU3Ed__4_MoveNext_mB6E9C17B5F3CC7AA7B52E18AF2F933791624CE9C_AdjustorThunk },
+	{ 0x0600005B, U3CStartU3Ed__4_SetStateMachine_m4736686888966B2D1F828E070F2A29D964979942_AdjustorThunk },
+	{ 0x06000069, U3CLoadGameCloudU3Ed__5_MoveNext_m6D51EED656599B425B0C50540B38A90E6725A1DB_AdjustorThunk },
+	{ 0x0600006A, U3CLoadGameCloudU3Ed__5_SetStateMachine_m45ED1A047909CC976EEFBF29A924D45BDE5D488B_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[142] = 
+static const int32_t s_InvokerIndices[155] = 
 {
 	4814,
 	4028,
@@ -366,11 +400,14 @@ static const int32_t s_InvokerIndices[142] =
 	4814,
 	4814,
 	4814,
+	5837,
 	5958,
 	8801,
 	5958,
 	3450,
 	3450,
+	5958,
+	4814,
 	5958,
 	4814,
 	5958,
@@ -406,6 +443,17 @@ static const int32_t s_InvokerIndices[142] =
 	5958,
 	5958,
 	8801,
+	5958,
+	4814,
+	4814,
+	5837,
+	5958,
+	5958,
+	5958,
+	5958,
+	5958,
+	5958,
+	4814,
 	0,
 	0,
 	0,
@@ -413,9 +461,8 @@ static const int32_t s_InvokerIndices[142] =
 	0,
 	0,
 	5958,
-	5958,
-	5958,
-	5958,
+	4814,
+	5837,
 	5958,
 	5958,
 	5958,
@@ -459,10 +506,10 @@ static const int32_t s_InvokerIndices[142] =
 };
 static const Il2CppTokenRangePair s_rgctxIndices[4] = 
 {
-	{ 0x0600005F, { 0, 2 } },
-	{ 0x06000060, { 2, 1 } },
-	{ 0x06000061, { 3, 3 } },
-	{ 0x06000062, { 6, 2 } },
+	{ 0x0600006D, { 0, 2 } },
+	{ 0x0600006E, { 2, 1 } },
+	{ 0x0600006F, { 3, 3 } },
+	{ 0x06000070, { 6, 2 } },
 };
 extern const uint32_t g_rgctx_T_t0366F1B63C657EE8CC73890E702804C9C5ADC46C;
 extern const uint32_t g_rgctx_JsonDataService_WriteEncryptedData_TisT_t0366F1B63C657EE8CC73890E702804C9C5ADC46C_m6B8D256AAACB9A3E3C08EEC1F7FBEA01420C0CA8;
@@ -487,9 +534,9 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	142,
+	155,
 	s_methodPointers,
-	8,
+	12,
 	s_adjustorThunks,
 	s_InvokerIndices,
 	0,

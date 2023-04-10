@@ -7,6 +7,7 @@ using Unity.Services.CloudSave;
 using System;
 using System.Linq;
 using UnityEngine.UI;
+using System.Threading.Tasks;
 
 public class CloudSaveController : MonoBehaviour
 {
@@ -114,7 +115,6 @@ public class CloudSaveController : MonoBehaviour
                     PlayerPrefs.SetString("FacebookAutoLogin", "true");
                     PlayerPrefs.Save();
                     //SaveData("facebook");
-
                 }
             }
         }
@@ -124,12 +124,12 @@ public class CloudSaveController : MonoBehaviour
         }
     }
 
-    async void SaveData(string value)
+    public async void SaveData(string value)
     {
         if (GlobalVariables.cloudSaveSystemIsReady)
         {
             //authentication sonrasý Unity cloud save servisine veri kaydetme örneði
-            var data = new Dictionary<string, object> { { "unlockedLevelCount", value } };
+            var data = new Dictionary<string, object> { { "save", value } };
             await CloudSaveService.Instance.Data.ForceSaveAsync(data);
         }
         else
@@ -137,5 +137,20 @@ public class CloudSaveController : MonoBehaviour
             Debug.Log("Unity Cloud Save sistemi Hazýr deðil. Veri kaydedilemedi.");
         }
 
+    }
+
+    public async Task<string> LoadData()
+    {
+        string json = "";
+        if (GlobalVariables.cloudSaveSystemIsReady)
+        {
+            Dictionary<string, string> savedData = await CloudSaveService.Instance.Data.LoadAsync(new HashSet<string> { "save" });
+            json = savedData["save"];
+        }
+        else
+        {
+            Debug.Log("Unity Cloud Save sistemi Hazýr deðil. Veri getirilemedi.");
+        }
+        return json;
     }
 }
