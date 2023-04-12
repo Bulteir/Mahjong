@@ -6,6 +6,7 @@ public class MainMenu_MenuController : MonoBehaviour
 {
     public GameObject mainMenu;
     public GameObject levelSelectMenu;
+    public GameObject settingsMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -37,11 +38,19 @@ public class MainMenu_MenuController : MonoBehaviour
         {
             mainMenu.SetActive(true);
             levelSelectMenu.SetActive(false);
+            settingsMenu.SetActive(false);
         }
         else if (GlobalVariables.gameState == GlobalVariables.gameState_LevelSelectmenu && levelSelectMenu.activeSelf == false)
         {
             mainMenu.SetActive(false);
             levelSelectMenu.SetActive(true);
+            settingsMenu.SetActive(false);
+        }
+        else if (GlobalVariables.gameState == GlobalVariables.gameState_SettingsMenu && settingsMenu.activeSelf == false)
+        {
+            mainMenu.SetActive(false);
+            levelSelectMenu.SetActive(false);
+            settingsMenu.SetActive(true);
         }
     }
 }

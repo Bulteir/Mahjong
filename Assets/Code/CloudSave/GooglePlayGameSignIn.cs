@@ -16,7 +16,7 @@ public class GooglePlayGameSignIn : MonoBehaviour
     public string Error;
     public Button GoogleLogin_Btn;
 
-#if UNITY_ANDROID
+#if UNITY_ANDROID && !UNITY_EDITOR
     void Awake()
     {
         PlayGamesPlatform.Activate();
@@ -97,6 +97,10 @@ public class GooglePlayGameSignIn : MonoBehaviour
                 GoogleLogin_Btn.image.color = Color.white;
             }
         }
+    }
+#elif UNITY_EDITOR
+    public void CheckLoginButtonStatus()
+    {
     }
 #endif
 }

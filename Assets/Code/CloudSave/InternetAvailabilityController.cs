@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InternetAvailabilityController : MonoBehaviour
 {
+#if !UNITY_EDITOR
     private void Start()
     {
         InvokeRepeating(nameof(CheckNetwork), 5f, 30.0f);
@@ -26,4 +27,15 @@ public class InternetAvailabilityController : MonoBehaviour
         GetComponent<FacebookLogIn>().CheckLoginButtonStatus();
 
     }
+#elif UNITY_EDITOR
+    private void Start()
+    {
+
+    }
+
+    public void CheckNetwork()
+    {
+    }
+
+#endif
 }
