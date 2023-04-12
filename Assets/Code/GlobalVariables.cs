@@ -4,6 +4,7 @@ using UnityEngine;
 
 public static class GlobalVariables
 {
+    public static bool firstSynchronisationOfGame = true;
     public static bool internetAvaible = true;
     public static bool cloudSaveSystemIsReady = false;
     public const string TagBlock = "Block";

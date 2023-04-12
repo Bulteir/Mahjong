@@ -60,8 +60,7 @@ public class CloudSaveController : MonoBehaviour
                     GoogleLogin_Btn.interactable = false;
                     GoogleLogin_Btn.image.color = Color.blue;
 
-                    //SaveData("google");
-
+                    GetComponent<GameSaveLoadController>().GameSaveDataSynchronization();
                 }
             }
         }
@@ -98,7 +97,7 @@ public class CloudSaveController : MonoBehaviour
                         await AuthenticationService.Instance.SignInWithFacebookAsync(code);
                         if (this == null) return;
                     }
-                    else if (AuthenticationService.Instance.PlayerInfo.Identities.Where(i => i.TypeId.Contains("facebook.com")).ToList().Count == 0)//kullanýnýn hesabýna facebook kaðlanmamýþtýr
+                    else if (AuthenticationService.Instance.PlayerInfo.Identities.Where(i => i.TypeId.Contains("facebook.com")).ToList().Count == 0)//kullanýcýnýn hesabýna facebook baðlanmamýþtýr
                     {
                         Debug.Log("kullanýcýnýn hesabýna Facebook baðlanmamýþ. Facebook hesabý baðlanýyor. Facebook code:" + code);
                         await AuthenticationService.Instance.LinkWithFacebookAsync(code);
@@ -114,7 +113,8 @@ public class CloudSaveController : MonoBehaviour
 
                     PlayerPrefs.SetString("FacebookAutoLogin", "true");
                     PlayerPrefs.Save();
-                    //SaveData("facebook");
+                    GetComponent<GameSaveLoadController>().GameSaveDataSynchronization();
+
                 }
             }
         }
@@ -145,7 +145,11 @@ public class CloudSaveController : MonoBehaviour
         if (GlobalVariables.cloudSaveSystemIsReady)
         {
             Dictionary<string, string> savedData = await CloudSaveService.Instance.Data.LoadAsync(new HashSet<string> { "save" });
-            json = savedData["save"];
+            Debug.Log("bulut veri çekme:" + savedData.Count);
+            if (savedData.Count > 0)
+            {
+                json = savedData["save"];
+            }
         }
         else
         {

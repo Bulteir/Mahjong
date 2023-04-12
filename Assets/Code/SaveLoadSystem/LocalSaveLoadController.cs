@@ -73,12 +73,13 @@ public class LocalSaveLoadController : MonoBehaviour
             //string gameData = JsonConvert.SerializeObject(data, Formatting.Indented);
 
             Debug.Log("Game Loaded");
+            return data;
         }
         catch (Exception e)
         {
             Debug.LogError($"Could not Load Game!");
-            throw e;
+            //throw e;
+            return data;
         }
-        return data;
     }
 }
