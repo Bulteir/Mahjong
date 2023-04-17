@@ -2555,9 +2555,10 @@ struct ActivationServices_t688315315A97608B7C0ACD314FCECFD6ED5AE2CF_StaticFields
 struct AppContextSwitches_t542F10E9BE2333B7BE24C8858C8A24EFA6C06D38_StaticFields
 {
 	bool ___SetActorAsReferenceWhenCopyingClaimsIdentity_0;
-	bool ___EnforceJapaneseEraYearRanges_1;
-	bool ___FormatJapaneseFirstYearAsANumber_2;
-	bool ___EnforceLegacyJapaneseDateParsing_3;
+	bool ___NoAsyncCurrentCulture_1;
+	bool ___EnforceJapaneseEraYearRanges_2;
+	bool ___FormatJapaneseFirstYearAsANumber_3;
+	bool ___EnforceLegacyJapaneseDateParsing_4;
 };
 struct ChannelServices_t7892AD29816C874462159101B299713604D1A637_StaticFields
 {

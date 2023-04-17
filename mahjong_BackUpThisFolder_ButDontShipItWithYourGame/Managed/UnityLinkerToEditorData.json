@@ -401,6 +401,7 @@
           {
             "name": "Sprite",
             "scenes": [
+              "Assets/Scenes/level1.unity",
               "Assets/Scenes/MainMenu.unity"
             ],
             "dependencyType": 0,
@@ -511,6 +512,12 @@
             "icon": "package/com.unity.modules.jsonserialize"
           },
           {
+            "name": "Required by PerformanceReporting Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.performancereporting"
+          },
+          {
             "name": "Required by Physics Module",
             "scenes": [],
             "dependencyType": 2,
@@ -557,6 +564,24 @@
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.uielements"
+          },
+          {
+            "name": "Required by UnityAnalytics Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.unityanalytics"
+          },
+          {
+            "name": "Required by UnityAnalyticsCommon Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.unityanalyticscommon"
+          },
+          {
+            "name": "Required by UnityConnect Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.unityconnect"
           },
           {
             "name": "Required by UnityWebRequest Module",
@@ -615,6 +640,12 @@
         "name": "JSONSerialize",
         "dependencies": [
           {
+            "name": "Required by PerformanceReporting Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.performancereporting"
+          },
+          {
             "name": "Required by RuntimeInitializeOnLoadManagerInitializer Module",
             "scenes": [],
             "dependencyType": 2,
@@ -625,6 +656,29 @@
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.uielements"
+          },
+          {
+            "name": "Required by UnityAnalytics Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.unityanalytics"
+          }
+        ]
+      },
+      {
+        "name": "PerformanceReporting",
+        "dependencies": [
+          {
+            "name": "Required by Analytics Performance Reporting (See Analytics Services Window)",
+            "scenes": [],
+            "dependencyType": 3,
+            "icon": "class/PlayerSettings"
+          },
+          {
+            "name": "Required by UnityAnalytics Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.unityanalytics"
           }
         ]
       },
@@ -724,6 +778,12 @@
             "icon": "package/com.unity.modules.jsonserialize"
           },
           {
+            "name": "Required by PerformanceReporting Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.performancereporting"
+          },
+          {
             "name": "Required by Physics Module",
             "scenes": [],
             "dependencyType": 2,
@@ -770,6 +830,24 @@
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.uielements"
+          },
+          {
+            "name": "Required by UnityAnalytics Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.unityanalytics"
+          },
+          {
+            "name": "Required by UnityAnalyticsCommon Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.unityanalyticscommon"
+          },
+          {
+            "name": "Required by UnityConnect Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.unityconnect"
           },
           {
             "name": "Required by UnityWebRequest Module",
@@ -836,6 +914,7 @@
           {
             "name": "Font",
             "scenes": [
+              "Assets/Scenes/level1.unity",
               "Assets/Scenes/MainMenu.unity"
             ],
             "dependencyType": 0,
@@ -913,8 +992,77 @@
         "dependencies": []
       },
       {
+        "name": "UnityAnalytics",
+        "dependencies": [
+          {
+            "name": "Required by Analytics Performance Reporting (See Analytics Services Window)",
+            "scenes": [],
+            "dependencyType": 3,
+            "icon": "class/PlayerSettings"
+          },
+          {
+            "name": "Required by PerformanceReporting Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.performancereporting"
+          },
+          {
+            "name": "Required by UnityAnalytics (See Services Window)",
+            "scenes": [],
+            "dependencyType": 3,
+            "icon": "class/PlayerSettings"
+          }
+        ]
+      },
+      {
+        "name": "UnityAnalyticsCommon",
+        "dependencies": [
+          {
+            "name": "Required by UnityAnalytics Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.unityanalytics"
+          }
+        ]
+      },
+      {
+        "name": "UnityConnect",
+        "dependencies": [
+          {
+            "name": "UnityConnectSettings",
+            "scenes": [],
+            "dependencyType": 1,
+            "icon": null
+          },
+          {
+            "name": "Required by PerformanceReporting Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.performancereporting"
+          },
+          {
+            "name": "Required by UnityAnalytics (See Services Window)",
+            "scenes": [],
+            "dependencyType": 3,
+            "icon": "class/PlayerSettings"
+          },
+          {
+            "name": "Required by UnityAnalytics Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.unityanalytics"
+          }
+        ]
+      },
+      {
         "name": "UnityWebRequest",
         "dependencies": [
+          {
+            "name": "Required by UnityAnalytics Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.unityanalytics"
+          },
           {
             "name": "Required by UnityWebRequestTexture Module",
             "scenes": [],

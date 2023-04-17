@@ -2042,9 +2042,10 @@ struct List_1_t4B77DB8D00EC6CC4705EB5F2FCC506472734EA72_StaticFields
 struct AppContextSwitches_t542F10E9BE2333B7BE24C8858C8A24EFA6C06D38_StaticFields
 {
 	bool ___SetActorAsReferenceWhenCopyingClaimsIdentity_0;
-	bool ___EnforceJapaneseEraYearRanges_1;
-	bool ___FormatJapaneseFirstYearAsANumber_2;
-	bool ___EnforceLegacyJapaneseDateParsing_3;
+	bool ___NoAsyncCurrentCulture_1;
+	bool ___EnforceJapaneseEraYearRanges_2;
+	bool ___FormatJapaneseFirstYearAsANumber_3;
+	bool ___EnforceLegacyJapaneseDateParsing_4;
 };
 struct Comparer_t489050BA9C6F7C6808A60F16D392DCB237050653_StaticFields
 {

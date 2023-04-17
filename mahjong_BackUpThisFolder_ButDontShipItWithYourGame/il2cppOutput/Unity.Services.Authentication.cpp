@@ -14902,7 +14902,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Logger_Log_m8A66EADCC18729652C2186FF04B0
 		L_0 = Debug_get_unityLogger_m4FDE4D41C187123244FE13124DA636BB50C9C1E1_inline(NULL);
 		RuntimeObject* L_1 = ___0_message;
 		NullCheck(L_0);
-		InterfaceActionInvoker2< String_t*, RuntimeObject* >::Invoke(5, ILogger_tD1F573C6DC829FBA987FA1EBA0A5FA64E0C2BC42_il2cpp_TypeInfo_var, L_0, _stringLiteral043E18C57EC839C385CDC2FA4FBC63FC3F4F1922, L_1);
+		InterfaceActionInvoker2< String_t*, RuntimeObject* >::Invoke(6, ILogger_tD1F573C6DC829FBA987FA1EBA0A5FA64E0C2BC42_il2cpp_TypeInfo_var, L_0, _stringLiteral043E18C57EC839C385CDC2FA4FBC63FC3F4F1922, L_1);
 		return;
 	}
 }
@@ -14922,7 +14922,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Logger_LogWarning_mE0A74606514DA618868A2
 		L_0 = Debug_get_unityLogger_m4FDE4D41C187123244FE13124DA636BB50C9C1E1_inline(NULL);
 		RuntimeObject* L_1 = ___0_message;
 		NullCheck(L_0);
-		InterfaceActionInvoker2< String_t*, RuntimeObject* >::Invoke(6, ILogger_tD1F573C6DC829FBA987FA1EBA0A5FA64E0C2BC42_il2cpp_TypeInfo_var, L_0, _stringLiteral043E18C57EC839C385CDC2FA4FBC63FC3F4F1922, L_1);
+		InterfaceActionInvoker2< String_t*, RuntimeObject* >::Invoke(7, ILogger_tD1F573C6DC829FBA987FA1EBA0A5FA64E0C2BC42_il2cpp_TypeInfo_var, L_0, _stringLiteral043E18C57EC839C385CDC2FA4FBC63FC3F4F1922, L_1);
 		return;
 	}
 }
@@ -14942,7 +14942,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Logger_LogError_m698CECF45EB6570E4C933F9
 		L_0 = Debug_get_unityLogger_m4FDE4D41C187123244FE13124DA636BB50C9C1E1_inline(NULL);
 		RuntimeObject* L_1 = ___0_message;
 		NullCheck(L_0);
-		InterfaceActionInvoker2< String_t*, RuntimeObject* >::Invoke(7, ILogger_tD1F573C6DC829FBA987FA1EBA0A5FA64E0C2BC42_il2cpp_TypeInfo_var, L_0, _stringLiteral043E18C57EC839C385CDC2FA4FBC63FC3F4F1922, L_1);
+		InterfaceActionInvoker2< String_t*, RuntimeObject* >::Invoke(8, ILogger_tD1F573C6DC829FBA987FA1EBA0A5FA64E0C2BC42_il2cpp_TypeInfo_var, L_0, _stringLiteral043E18C57EC839C385CDC2FA4FBC63FC3F4F1922, L_1);
 		return;
 	}
 }
@@ -15002,7 +15002,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Logger_LogVerbose_m20AC067B645553CD16424
 		L_0 = Debug_get_unityLogger_m4FDE4D41C187123244FE13124DA636BB50C9C1E1_inline(NULL);
 		RuntimeObject* L_1 = ___0_message;
 		NullCheck(L_0);
-		InterfaceActionInvoker2< String_t*, RuntimeObject* >::Invoke(5, ILogger_tD1F573C6DC829FBA987FA1EBA0A5FA64E0C2BC42_il2cpp_TypeInfo_var, L_0, _stringLiteral043E18C57EC839C385CDC2FA4FBC63FC3F4F1922, L_1);
+		InterfaceActionInvoker2< String_t*, RuntimeObject* >::Invoke(6, ILogger_tD1F573C6DC829FBA987FA1EBA0A5FA64E0C2BC42_il2cpp_TypeInfo_var, L_0, _stringLiteral043E18C57EC839C385CDC2FA4FBC63FC3F4F1922, L_1);
 		return;
 	}
 }

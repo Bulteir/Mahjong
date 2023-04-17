@@ -14,4 +14,5 @@ public static class GlobalVariables
     public const int gameState_gamePaused = 4;
     public const int gameState_gameOver = 5;
     public const int gameState_LevelSelectmenu = 6;
+    public const int gameState_StoreMenu = 7;
 }
