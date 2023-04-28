@@ -105,13 +105,13 @@ public class FacebookLogIn : MonoBehaviour
                 FacebookLogin_Btn.interactable = true;
                 FacebookLogin_Btn.image.color = Color.white;
 
-            }//bir hesapla giriþ yapýlmýþ ve google hesabý baðlanmýþ
+            }//bir hesapla giriþ yapýlmýþ ve facebook hesabý baðlanmýþ
             else if (AuthenticationService.Instance.PlayerInfo.Identities.Where(i => i.TypeId.Contains("facebook.com")).ToList().Count > 0)
             {
                 FacebookLogin_Btn.interactable = false;
                 FacebookLogin_Btn.image.color = Color.blue;
             }
-            else//bir hesapla giriþ yapýlmý ancak google hesabý baðlanmamýþ.
+            else//bir hesapla giriþ yapýlmýþ ancak facebook hesabý baðlanmamýþ.
             {
                 FacebookLogin_Btn.interactable = true;
                 FacebookLogin_Btn.image.color = Color.white;

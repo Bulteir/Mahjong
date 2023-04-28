@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Unity.Services.Authentication;
 using System.Linq;
+using Unity.Services.Core;
 
 #if UNITY_ANDROID
 using GooglePlayGames;
@@ -17,6 +18,7 @@ public class GooglePlayGameSignIn : MonoBehaviour
     public Button GoogleLogin_Btn;
 
 #if UNITY_ANDROID && !UNITY_EDITOR
+//#if UNITY_ANDROID
     void Awake()
     {
         PlayGamesPlatform.Activate();
@@ -24,15 +26,18 @@ public class GooglePlayGameSignIn : MonoBehaviour
 
     async void Start()
     {
-        await LoginGooglePlayGames();
+        await LoginGooglePlayGamesStart();
     }
 
     //Google Play Game Servisine baðlanarak kullanýcýya özel token getirir.
-    public Task LoginGooglePlayGames()
+    public Task LoginGooglePlayGamesStart()
     {
         var tcs = new TaskCompletionSource<object>();
+
         PlayGamesPlatform.Instance.Authenticate((success) =>
         {
+            Debug.Log("Success:" + success.ToString());
+            //kullanýcý google ile giriþ yapmayý birkez reddetmiþse yada herþey normalse ilk kez karþýlaþýlýyorsa
             if (success == SignInStatus.Success)
             {
                 Debug.Log("Login with Google Play games successful.");
@@ -51,13 +56,70 @@ public class GooglePlayGameSignIn : MonoBehaviour
             {
                 //Daha önce facebook ile giriþ yapýlmýþsa. google ile giriþte herhangibir hata alýrsak facebook ile giriþ yapmayý dene.
                 if (PlayerPrefs.GetString("FacebookAutoLogin") == "true")
-                {   
+                {
                     GetComponent<FacebookLogIn>().LoginFacebook();
                 }
+                else //anonim olarak giriþ yapmayý dene
+                {
+                    GetComponent<CloudSaveController>().LogInUnityCloudSaveServiceAnonymously();
+                }
+
                 Error = "Failed to retrieve Google play games authorization code";
                 Debug.Log("Login Unsuccessful");
-                tcs.SetException(new Exception("Failed"));
-               
+                tcs.SetResult("Login Unsuccessful");
+
+            }
+        });
+        return tcs.Task;
+    }
+
+    public Task LoginGooglePlayGamesFromLoginButton()
+    {
+        var tcs = new TaskCompletionSource<object>();
+
+        PlayGamesPlatform.Instance.Authenticate((success) =>
+        {
+            Debug.Log("Success:" + success.ToString());
+            //kullanýcý google ile giriþ yapmayý birkez reddetmiþse yad aherþey normalse ilk kez karþýlaþýlýyorsa
+            if (success == SignInStatus.Success)
+            {
+                Debug.Log("Login with Google Play games successful.");
+                PlayGamesPlatform.Instance.RequestServerSideAccess(true, code =>
+                {
+                    Debug.Log("Authorization code: " + code);
+                    Token = code;
+
+                    //Unity Authentication Servisini çaðýrýyoruz. Google'dan aldýðýmýz kodla giriþ yapsýn diye.
+                    GetComponent<CloudSaveController>().LogInUnityCloudSaveServiceWithGooglePlay(code);
+                    // This token serves as an example to be used for SignInWithGooglePlayGames
+                    tcs.SetResult(null);
+                });
+            }
+            else if (success == SignInStatus.Canceled)
+            {
+ 
+                PlayGamesPlatform.Instance.ManuallyAuthenticate((success2) =>
+                {
+                    Debug.Log("Success2:" + success2.ToString());
+                    if (success2 == SignInStatus.Success)
+                    {
+                        PlayGamesPlatform.Instance.RequestServerSideAccess(true, code =>
+                        {
+                            
+                            Debug.Log("manuel authenticate sonrasý Authorization code: " + code);
+                            Token = code;
+
+                            //Unity Authentication Servisini çaðýrýyoruz. Google'dan aldýðýmýz kodla giriþ yapsýn diye.
+                            GetComponent<CloudSaveController>().LogInUnityCloudSaveServiceWithGooglePlay(code);
+                            // This token serves as an example to be used for SignInWithGooglePlayGames
+                            tcs.SetResult(null);
+                        });
+                    }
+                    else //anonim olarak giriþ yapmayý dene
+                    {
+                        GetComponent<CloudSaveController>().LogInUnityCloudSaveServiceAnonymously();
+                    }
+                });
             }
         });
         return tcs.Task;
@@ -67,12 +129,12 @@ public class GooglePlayGameSignIn : MonoBehaviour
     {
         GoogleLogin_Btn.interactable = false;
         PlayGamesPlatform.Activate();
-        LoginGooglePlayGames();
+        LoginGooglePlayGamesFromLoginButton();
     }
 
-    public void CheckLoginButtonStatus ()
+    public void CheckLoginButtonStatus()
     {
-        if(GlobalVariables.internetAvaible == false)
+        if (GlobalVariables.internetAvaible == false)
         {
             GoogleLogin_Btn.interactable = false;
             GoogleLogin_Btn.image.color = Color.white;

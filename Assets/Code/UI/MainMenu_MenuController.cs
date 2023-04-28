@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainMenu_MenuController : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class MainMenu_MenuController : MonoBehaviour
     public GameObject levelSelectMenu;
     public GameObject settingsMenu;
     public GameObject storeMenu;
+    public GameObject leaderboardMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +43,7 @@ public class MainMenu_MenuController : MonoBehaviour
             levelSelectMenu.SetActive(false);
             settingsMenu.SetActive(false);
             storeMenu.SetActive(false);
-
+            leaderboardMenu.SetActive(false);
         }
         else if (GlobalVariables.gameState == GlobalVariables.gameState_LevelSelectmenu && levelSelectMenu.activeSelf == false)
         {
@@ -49,7 +51,7 @@ public class MainMenu_MenuController : MonoBehaviour
             levelSelectMenu.SetActive(true);
             settingsMenu.SetActive(false);
             storeMenu.SetActive(false);
-
+            leaderboardMenu.SetActive(false);
         }
         else if (GlobalVariables.gameState == GlobalVariables.gameState_SettingsMenu && settingsMenu.activeSelf == false)
         {
@@ -57,7 +59,7 @@ public class MainMenu_MenuController : MonoBehaviour
             levelSelectMenu.SetActive(false);
             settingsMenu.SetActive(true);
             storeMenu.SetActive(false);
-
+            leaderboardMenu.SetActive(false);
         }
         else if (GlobalVariables.gameState == GlobalVariables.gameState_StoreMenu && storeMenu.activeSelf == false)
         {
@@ -65,6 +67,18 @@ public class MainMenu_MenuController : MonoBehaviour
             levelSelectMenu.SetActive(false);
             settingsMenu.SetActive(false);
             storeMenu.SetActive(true);
+            //store sayfasý açýldýðýnda scroll en baþta çýksýn diye
+            storeMenu.GetComponentInChildren<Scrollbar>().value = 1;
+            leaderboardMenu.SetActive(false);
+        }
+        else if (GlobalVariables.gameState == GlobalVariables.gameState_LeaderboardMenu && leaderboardMenu.activeSelf == false)
+        {
+            mainMenu.SetActive(false);
+            levelSelectMenu.SetActive(false);
+            settingsMenu.SetActive(false);
+            storeMenu.SetActive(false);
+            leaderboardMenu.SetActive(true);
+
         }
     }
 }

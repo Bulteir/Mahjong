@@ -349,6 +349,8 @@ struct HashSet_1_t5DD20B42149A11AEBF12A75505306E6EFC34943A;
 struct HashSet_1_t2E820DA94CC6D5A61CA29EBD9BE297C43D691C87;
 struct HttpException_1_t990D2C612544F91072B9719F9DDD5D8A097A69FF;
 struct HttpException_1_tC90E887314A7A7516564D44C9925159E591B8F06;
+struct HttpException_1_t98276B404500FA156BB796371F58FE6C3047EB88;
+struct HttpException_1_t500CFB7D4BCE86F0593B93A52CA6A2F7C99DECD5;
 struct HybridReferenceDictionary_2_t48D2908883930ADB16D28272C8EB2E7B4EB05C74;
 struct IEnumerable_1_tCE758D940790D6D0D56B457E522C195F8C413AF2;
 struct IEnumerable_1_t71A46277DBD73BD4009B2B20885D2B7057593A1A;
@@ -445,7 +447,9 @@ struct Font_tC95270EA3198038970422D78B74A7F2E218A96B6;
 struct FontAsset_t61A6446D934E582651044E33D250EA8D306AB958;
 struct GetMemberBinder_t8D02CC2255370A525D6657487C0A7EB1DDD225B3;
 struct HttpClientResponse_t929A5E9D1E14D6F619B042D793A983F2FF3B3FE8;
+struct HttpClientResponse_tBCA0CAFCB508AE135AF27A75C55F13B45F7EC52A;
 struct HttpException_t704C0551F9450B9019041AC534987388DFDD8CB7;
+struct HttpException_t3181A7586FA2B0BC8336CF7AC93E37972F1DABD1;
 struct IDictionary_t6D03155AF1FA9083817AA5B6AD7DEEACC26AB220;
 struct IEnumerator_t7B609C2FFA6EB5167D9C62A0C32A21DE2F666DAA;
 struct IFormatterConverter_t726606DAC82C384B08C82471313C340968DDB609;
@@ -816,6 +820,15 @@ struct DynamicMetaObject_tD1405F56818181F9ED29E520D40F2837B73EF825  : public Run
 	BindingRestrictions_t82F6450C15BA76194E37B20305C3C2932527C424* ___U3CRestrictionsU3Ek__BackingField_4;
 };
 struct HttpClientResponse_t929A5E9D1E14D6F619B042D793A983F2FF3B3FE8  : public RuntimeObject
+{
+	Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83* ___U3CHeadersU3Ek__BackingField_0;
+	int64_t ___U3CStatusCodeU3Ek__BackingField_1;
+	bool ___U3CIsHttpErrorU3Ek__BackingField_2;
+	bool ___U3CIsNetworkErrorU3Ek__BackingField_3;
+	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___U3CDataU3Ek__BackingField_4;
+	String_t* ___U3CErrorMessageU3Ek__BackingField_5;
+};
+struct HttpClientResponse_tBCA0CAFCB508AE135AF27A75C55F13B45F7EC52A  : public RuntimeObject
 {
 	Dictionary_2_t46B2DB028096FA2B828359E52F37F3105A83AD83* ___U3CHeadersU3Ek__BackingField_0;
 	int64_t ___U3CStatusCodeU3Ek__BackingField_1;
@@ -1607,6 +1620,10 @@ struct HttpException_t704C0551F9450B9019041AC534987388DFDD8CB7  : public Excepti
 {
 	HttpClientResponse_t929A5E9D1E14D6F619B042D793A983F2FF3B3FE8* ___Response_18;
 };
+struct HttpException_t3181A7586FA2B0BC8336CF7AC93E37972F1DABD1  : public Exception_t
+{
+	HttpClientResponse_tBCA0CAFCB508AE135AF27A75C55F13B45F7EC52A* ___Response_18;
+};
 struct MulticastDelegate_t  : public Delegate_t
 {
 	DelegateU5BU5D_tC5AB7E8F745616680F337909D3A8E6C722CDF771* ___delegates_13;
@@ -1646,6 +1663,11 @@ struct HttpException_1_t990D2C612544F91072B9719F9DDD5D8A097A69FF  : public HttpE
 	RuntimeObject* ___ActualError_19;
 };
 struct HttpException_1_tC90E887314A7A7516564D44C9925159E591B8F06 : public HttpException_t704C0551F9450B9019041AC534987388DFDD8CB7 {};
+struct HttpException_1_t98276B404500FA156BB796371F58FE6C3047EB88  : public HttpException_t3181A7586FA2B0BC8336CF7AC93E37972F1DABD1
+{
+	RuntimeObject* ___ActualError_19;
+};
+struct HttpException_1_t500CFB7D4BCE86F0593B93A52CA6A2F7C99DECD5 : public HttpException_t3181A7586FA2B0BC8336CF7AC93E37972F1DABD1 {};
 struct Predicate_1_t6CDE3111264F492F4F13277756366A07CA78A4C3  : public MulticastDelegate_t
 {
 };
@@ -4282,6 +4304,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HttpException__ctor_m026D17145150DD369A2
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HttpException__ctor_m2C3482B99917BEF2E019DD1FCF5025B3C017B625 (HttpException_t704C0551F9450B9019041AC534987388DFDD8CB7* __this, String_t* ___0_message, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HttpException__ctor_mEFEA5ADABD0DF8E4FF8386B2B85E5D1336D487D9 (HttpException_t704C0551F9450B9019041AC534987388DFDD8CB7* __this, String_t* ___0_message, Exception_t* ___1_inner, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HttpException__ctor_m611E3D9B39F2CB7573111F54830CEA2D5C7F2C02 (HttpException_t704C0551F9450B9019041AC534987388DFDD8CB7* __this, HttpClientResponse_t929A5E9D1E14D6F619B042D793A983F2FF3B3FE8* ___0_response, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HttpException__ctor_m873FABD311889F90DAF197962B36849CE30BA0ED (HttpException_t3181A7586FA2B0BC8336CF7AC93E37972F1DABD1* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HttpException__ctor_m22514E7B2CF79ACE36134F5DC082D09A177B1998 (HttpException_t3181A7586FA2B0BC8336CF7AC93E37972F1DABD1* __this, String_t* ___0_message, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HttpException__ctor_m21EE124B229CFAEAAE04D1ACCDC98AE2ADFCD74E (HttpException_t3181A7586FA2B0BC8336CF7AC93E37972F1DABD1* __this, String_t* ___0_message, Exception_t* ___1_inner, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HttpException__ctor_m091A502A0BC79BB7C8BC353CA811DA5C27042375 (HttpException_t3181A7586FA2B0BC8336CF7AC93E37972F1DABD1* __this, HttpClientResponse_tBCA0CAFCB508AE135AF27A75C55F13B45F7EC52A* ___0_response, const RuntimeMethod* method) ;
 inline bool Dictionary_2_TryGetValue_mD15380A4ED7CDEE99EA45881577D26BA9CE1B849 (Dictionary_2_t14FE4A752A83D53771C584E4C8D14E01F2AFD7BA* __this, RuntimeObject* ___0_key, RuntimeObject** ___1_value, const RuntimeMethod* method)
 {
 	return ((  bool (*) (Dictionary_2_t14FE4A752A83D53771C584E4C8D14E01F2AFD7BA*, RuntimeObject*, RuntimeObject**, const RuntimeMethod*))Dictionary_2_TryGetValue_mD15380A4ED7CDEE99EA45881577D26BA9CE1B849_gshared)(__this, ___0_key, ___1_value, method);
@@ -22625,6 +22651,93 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HttpException_1__ctor_m2CA9DFADEB7E60040
 		HttpException__ctor_m611E3D9B39F2CB7573111F54830CEA2D5C7F2C02((HttpException_t704C0551F9450B9019041AC534987388DFDD8CB7*)__this, L_0, NULL);
 		il2cpp_codegen_memcpy(L_1, (il2cpp_codegen_class_is_value_type(il2cpp_rgctx_data_no_init(method->klass->rgctx_data, 0)) ? ___1_actualError : &___1_actualError), SizeOf_T_t615B08C97E3F885746BB534A9946F88DD56B6017);
 		il2cpp_codegen_write_instance_field_data(__this, il2cpp_rgctx_field(il2cpp_rgctx_data_no_init(method->klass->rgctx_data, 1),0), L_1, SizeOf_T_t615B08C97E3F885746BB534A9946F88DD56B6017);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HttpException_1__ctor_mE742BD2E12B7FB80B1D4CFDD13E3875FAA43D35A_gshared (HttpException_1_t98276B404500FA156BB796371F58FE6C3047EB88* __this, const RuntimeMethod* method) 
+{
+	{
+		HttpException__ctor_m873FABD311889F90DAF197962B36849CE30BA0ED((HttpException_t3181A7586FA2B0BC8336CF7AC93E37972F1DABD1*)__this, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HttpException_1__ctor_m81953C284A60330768537B27976811D640EA6887_gshared (HttpException_1_t98276B404500FA156BB796371F58FE6C3047EB88* __this, String_t* ___0_message, const RuntimeMethod* method) 
+{
+	{
+		String_t* L_0 = ___0_message;
+		HttpException__ctor_m22514E7B2CF79ACE36134F5DC082D09A177B1998((HttpException_t3181A7586FA2B0BC8336CF7AC93E37972F1DABD1*)__this, L_0, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HttpException_1__ctor_mE92FE0208F6F4DD8D4A58FFF28275B53FB577B82_gshared (HttpException_1_t98276B404500FA156BB796371F58FE6C3047EB88* __this, String_t* ___0_message, Exception_t* ___1_inner, const RuntimeMethod* method) 
+{
+	{
+		String_t* L_0 = ___0_message;
+		Exception_t* L_1 = ___1_inner;
+		HttpException__ctor_m21EE124B229CFAEAAE04D1ACCDC98AE2ADFCD74E((HttpException_t3181A7586FA2B0BC8336CF7AC93E37972F1DABD1*)__this, L_0, L_1, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HttpException_1__ctor_m4DF28374B82D9E23D29845226460073B2F9DB5F2_gshared (HttpException_1_t98276B404500FA156BB796371F58FE6C3047EB88* __this, HttpClientResponse_tBCA0CAFCB508AE135AF27A75C55F13B45F7EC52A* ___0_response, RuntimeObject* ___1_actualError, const RuntimeMethod* method) 
+{
+	{
+		HttpClientResponse_tBCA0CAFCB508AE135AF27A75C55F13B45F7EC52A* L_0 = ___0_response;
+		HttpException__ctor_m091A502A0BC79BB7C8BC353CA811DA5C27042375((HttpException_t3181A7586FA2B0BC8336CF7AC93E37972F1DABD1*)__this, L_0, NULL);
+		RuntimeObject* L_1 = ___1_actualError;
+		__this->___ActualError_19 = L_1;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___ActualError_19), (void*)L_1);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HttpException_1__ctor_mDBD2C1BABE098035E1A4E12B5FA92A5888E4DAB6_gshared (HttpException_1_t500CFB7D4BCE86F0593B93A52CA6A2F7C99DECD5* __this, const RuntimeMethod* method) 
+{
+	{
+		HttpException__ctor_m873FABD311889F90DAF197962B36849CE30BA0ED((HttpException_t3181A7586FA2B0BC8336CF7AC93E37972F1DABD1*)__this, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HttpException_1__ctor_mA8C7FEF1DCA332BF7D146615372BD43F3E95F07F_gshared (HttpException_1_t500CFB7D4BCE86F0593B93A52CA6A2F7C99DECD5* __this, String_t* ___0_message, const RuntimeMethod* method) 
+{
+	{
+		String_t* L_0 = ___0_message;
+		HttpException__ctor_m22514E7B2CF79ACE36134F5DC082D09A177B1998((HttpException_t3181A7586FA2B0BC8336CF7AC93E37972F1DABD1*)__this, L_0, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HttpException_1__ctor_mEF81A7538E8BC83A9B23BADF41CFB741B6C3AD35_gshared (HttpException_1_t500CFB7D4BCE86F0593B93A52CA6A2F7C99DECD5* __this, String_t* ___0_message, Exception_t* ___1_inner, const RuntimeMethod* method) 
+{
+	{
+		String_t* L_0 = ___0_message;
+		Exception_t* L_1 = ___1_inner;
+		HttpException__ctor_m21EE124B229CFAEAAE04D1ACCDC98AE2ADFCD74E((HttpException_t3181A7586FA2B0BC8336CF7AC93E37972F1DABD1*)__this, L_0, L_1, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HttpException_1__ctor_mEB947F48D9FD285454DCC5B956F640121CC99D41_gshared (HttpException_1_t500CFB7D4BCE86F0593B93A52CA6A2F7C99DECD5* __this, HttpClientResponse_tBCA0CAFCB508AE135AF27A75C55F13B45F7EC52A* ___0_response, Il2CppFullySharedGenericAny ___1_actualError, const RuntimeMethod* method) 
+{
+	const uint32_t SizeOf_T_tEE440BCD76E79A0DCD47551556E3CAB59C7F1072 = il2cpp_codegen_sizeof(il2cpp_rgctx_data_no_init(method->klass->rgctx_data, 0));
+	const Il2CppFullySharedGenericAny L_1 = alloca(SizeOf_T_tEE440BCD76E79A0DCD47551556E3CAB59C7F1072);
+	{
+		HttpClientResponse_tBCA0CAFCB508AE135AF27A75C55F13B45F7EC52A* L_0 = ___0_response;
+		HttpException__ctor_m091A502A0BC79BB7C8BC353CA811DA5C27042375((HttpException_t3181A7586FA2B0BC8336CF7AC93E37972F1DABD1*)__this, L_0, NULL);
+		il2cpp_codegen_memcpy(L_1, (il2cpp_codegen_class_is_value_type(il2cpp_rgctx_data_no_init(method->klass->rgctx_data, 0)) ? ___1_actualError : &___1_actualError), SizeOf_T_tEE440BCD76E79A0DCD47551556E3CAB59C7F1072);
+		il2cpp_codegen_write_instance_field_data(__this, il2cpp_rgctx_field(il2cpp_rgctx_data_no_init(method->klass->rgctx_data, 1),0), L_1, SizeOf_T_tEE440BCD76E79A0DCD47551556E3CAB59C7F1072);
 		return;
 	}
 }

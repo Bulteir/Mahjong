@@ -20,9 +20,9 @@ public class InternetAvailabilityController : MonoBehaviour
         }
         else
         {
+            Debug.Log("internetiniz var.");
             GlobalVariables.internetAvaible = true;
         }
-
         GetComponent<GooglePlayGameSignIn>().CheckLoginButtonStatus();
         GetComponent<FacebookLogIn>().CheckLoginButtonStatus();
 

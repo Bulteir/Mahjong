@@ -6,22 +6,26 @@ using Unity.Services.Core.Environments;
 using UnityEngine;
 using UnityEngine.Purchasing;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 public class StoreController : MonoBehaviour, IStoreListener
 {
     public GameObject PurchasingMask;
     public List<GameObject> StoreItems;
     private IStoreController storeController;
+    private IExtensionProvider storeExtensions;
     private Button purchaseButton;
 
 
-    // Start is called before the first frame update
-    async void Start()
+    void Start()
+    {
+        UnityServicesInitial();
+    }
+
+    async void UnityServicesInitial()
     {
         InitializationOptions options = new InitializationOptions()
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
-    .SetEnvironmentName("Test");
+.SetEnvironmentName("Test");
 #else
             .SetEnvironmentName("Production");
 #endif
@@ -36,8 +40,8 @@ public class StoreController : MonoBehaviour, IStoreListener
     {
         ProductCatalog catalog = JsonUtility.FromJson<ProductCatalog>((Resources.LoadAsync<TextAsset>("IAPProductCatalog").asset as TextAsset).text);
 
-        StandardPurchasingModule.Instance().useFakeStoreUIMode = FakeStoreUIMode.StandardUser;
-        StandardPurchasingModule.Instance().useFakeStoreAlways = true;
+        //StandardPurchasingModule.Instance().useFakeStoreUIMode = FakeStoreUIMode.StandardUser;
+        //StandardPurchasingModule.Instance().useFakeStoreAlways = true;
 
 #if UNITY_ANDROID
         ConfigurationBuilder builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance(AppStore.GooglePlay));
@@ -59,6 +63,7 @@ public class StoreController : MonoBehaviour, IStoreListener
     public void OnInitialized(IStoreController controller, IExtensionProvider extensions)
     {
         this.storeController = controller;
+        this.storeExtensions = extensions;
         foreach (GameObject item in StoreItems)
         {
             //ProductCatalogItem itemData = catalog.allProducts.Where(i => i.id == item.GetComponent<StoreItem>().Item_Id).FirstOrDefault();
@@ -114,4 +119,27 @@ public class StoreController : MonoBehaviour, IStoreListener
     {
         purchaseButton.enabled = true;
     }
+
+    public string RestorePurchase()
+    {
+        string result = "sonuç yok";
+        if (UnityServices.State != ServicesInitializationState.Initialized || UnityServices.State != ServicesInitializationState.Initializing)
+            UnityServicesInitial();
+
+        Product product = storeController.products.all.Where(i => i.definition.id == "no_ads").FirstOrDefault();
+
+        if (product.hasReceipt)
+        {
+            Debug.Log("Daha önce satýn aldýðýnýz reklam yok ürünü geri getirildi.");
+            result = "Daha önce satýn aldýðýnýz reklam yok ürünü geri getirildi.";
+        }
+        else
+        {
+            Debug.Log("Reklam yok ürünü satýn alýnmamýþ");
+            result = "Reklam yok ürünü satýn alýnmamýþ";
+
+        }
+        return result;
+    }
+
 }

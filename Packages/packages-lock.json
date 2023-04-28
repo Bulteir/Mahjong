@@ -103,7 +103,7 @@
     },
     "com.unity.services.authentication": {
       "version": "2.4.0",
-      "depth": 0,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.nuget.newtonsoft-json": "3.0.2",
@@ -133,6 +133,15 @@
         "com.unity.modules.androidjni": "1.0.0"
       },
       "url": "https://packages.unity.com"
+    },
+    "com.unity.services.leaderboards": {
+      "version": "file:C:/Users/Talha/Desktop/com.unity.services.leaderboards-1.0.0-exp.tar.gz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {
+        "com.unity.services.authentication": "2.3.1",
+        "com.unity.services.core": "1.5.2"
+      }
     },
     "com.unity.settings-manager": {
       "version": "2.0.1",

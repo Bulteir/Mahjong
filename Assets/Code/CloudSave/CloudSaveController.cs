@@ -8,15 +8,17 @@ using System;
 using System.Linq;
 using UnityEngine.UI;
 using System.Threading.Tasks;
+using GooglePlayGames;
 
 public class CloudSaveController : MonoBehaviour
 {
     public Button GoogleLogin_Btn;
     public Button FacebookLogin_Btn;
-    // Start is called before the first frame update
-    void Start()
-    {
 
+    // Start is called before the first frame update
+    async void Start()
+    {
+        await UnityServices.InitializeAsync();
     }
 
     async public void LogInUnityCloudSaveServiceWithGooglePlay(string code)
@@ -36,9 +38,6 @@ public class CloudSaveController : MonoBehaviour
                 else
                 {
 
-                    await UnityServices.InitializeAsync();
-                    if (this == null) return;
-
                     //kullanýcý sign in olmadýysa
                     if (!AuthenticationService.Instance.IsSignedIn)
                     {
@@ -49,8 +48,9 @@ public class CloudSaveController : MonoBehaviour
                     else if (AuthenticationService.Instance.PlayerInfo.Identities.Where(i => i.TypeId.Contains("google-play-games")).ToList().Count == 0)//kullanýcýnýn hesabýna google baðlanmamýþtýr
                     {
                         Debug.Log("kullanýcýnýn hesabýna Google Play baðlanmamýþ. Google Play hesabý baðlanýyor. Google code:" + code);
-                        await AuthenticationService.Instance.LinkWithGoogleAsync(code);
+                        await AuthenticationService.Instance.LinkWithGooglePlayGamesAsync(code);
                         if (this == null) return;
+
                     }
 
                     Debug.Log($"Player id: {AuthenticationService.Instance.PlayerId}");
@@ -86,10 +86,6 @@ public class CloudSaveController : MonoBehaviour
                 }
                 else
                 {
-
-                    await UnityServices.InitializeAsync();
-                    if (this == null) return;
-
                     //kullanýcý sign in olmadýysa
                     if (!AuthenticationService.Instance.IsSignedIn)
                     {
@@ -100,8 +96,18 @@ public class CloudSaveController : MonoBehaviour
                     else if (AuthenticationService.Instance.PlayerInfo.Identities.Where(i => i.TypeId.Contains("facebook.com")).ToList().Count == 0)//kullanýcýnýn hesabýna facebook baðlanmamýþtýr
                     {
                         Debug.Log("kullanýcýnýn hesabýna Facebook baðlanmamýþ. Facebook hesabý baðlanýyor. Facebook code:" + code);
-                        await AuthenticationService.Instance.LinkWithFacebookAsync(code);
-                        if (this == null) return;
+
+                        try
+                        {
+                            await AuthenticationService.Instance.LinkWithFacebookAsync(code);
+                        }
+                        catch (AuthenticationException ex) when (ex.ErrorCode == AuthenticationErrorCodes.AccountAlreadyLinked)
+                        {
+                            Debug.LogError("Kullanýcnýn facebook hesabý baþka bir hesap ile iliþkilendirilmiþ.");
+
+                            await AuthenticationService.Instance.DeleteAccountAsync();
+                            await AuthenticationService.Instance.SignInWithFacebookAsync(code);
+                        }
                     }
 
                     Debug.Log($"Player id: {AuthenticationService.Instance.PlayerId}");
@@ -124,6 +130,19 @@ public class CloudSaveController : MonoBehaviour
         }
     }
 
+    async public void LogInUnityCloudSaveServiceAnonymously()
+    {
+        if (!AuthenticationService.Instance.IsSignedIn)
+        {
+            await AuthenticationService.Instance.SignInAnonymouslyAsync();
+            Debug.Log("Anonim olarak giriþ yapýldý. PlayerID:" + AuthenticationService.Instance.PlayerId);
+        }
+        else
+        {
+            Debug.Log("Unity servislerine giriþ yapýlmýþ. PlayerID:" + AuthenticationService.Instance.PlayerId);
+        }
+    }
+
     public async void SaveData(string value)
     {
         if (GlobalVariables.cloudSaveSystemIsReady)
@@ -136,7 +155,6 @@ public class CloudSaveController : MonoBehaviour
         {
             Debug.Log("Unity Cloud Save sistemi Hazýr deðil. Veri kaydedilemedi.");
         }
-
     }
 
     public async Task<string> LoadData()

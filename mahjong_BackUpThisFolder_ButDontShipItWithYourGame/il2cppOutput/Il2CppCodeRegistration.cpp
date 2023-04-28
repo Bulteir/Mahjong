@@ -83,11 +83,12 @@ IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Unity_Services_Core_Registration_Cod
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Unity_Services_Core_Scheduler_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Unity_Services_Core_Telemetry_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Unity_Services_Core_Threading_CodeGenModule;
+IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Unity_Services_Leaderboards_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Unity_TextMeshPro_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g___Generated_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_mscorlib_CodeGenModule;
 IL2CPP_EXTERN_C const Il2CppCodeGenModule* g_CodeGenModules[];
-const Il2CppCodeGenModule* g_CodeGenModules[66] = 
+const Il2CppCodeGenModule* g_CodeGenModules[67] = 
 {
 	(&g_AssemblyU2DCSharp_CodeGenModule),
 	(&g_Facebook_Unity_Android_CodeGenModule),
@@ -152,6 +153,7 @@ const Il2CppCodeGenModule* g_CodeGenModules[66] =
 	(&g_Unity_Services_Core_Scheduler_CodeGenModule),
 	(&g_Unity_Services_Core_Telemetry_CodeGenModule),
 	(&g_Unity_Services_Core_Threading_CodeGenModule),
+	(&g_Unity_Services_Leaderboards_CodeGenModule),
 	(&g_Unity_TextMeshPro_CodeGenModule),
 	(&g___Generated_CodeGenModule),
 	(&g_mscorlib_CodeGenModule),
@@ -161,20 +163,20 @@ const Il2CppCodeRegistration g_CodeRegistration =
 {
 	10,
 	g_ReversePInvokeWrapperPointers,
-	45943,
+	46194,
 	g_Il2CppGenericMethodPointers,
 	g_Il2CppGenericAdjustorThunks,
-	9045,
+	9076,
 	g_Il2CppInvokerPointers,
-	1878,
+	1883,
 	g_UnresolvedVirtualMethodPointers,
 	g_UnresolvedInstanceMethodPointers,
 	g_UnresolvedStaticMethodPointers,
-	519,
+	521,
 	g_Il2CppInteropData,
 	0,
 	NULL,
-	66,
+	67,
 	g_CodeGenModules,
 };
 IL2CPP_EXTERN_C_CONST Il2CppMetadataRegistration g_MetadataRegistration;
