@@ -6,6 +6,8 @@ using Newtonsoft.Json;
 using Unity.Services.Core;
 using Unity.Services.Authentication;
 using System.Threading.Tasks;
+using GooglePlayGames;
+using Facebook.Unity;
 
 public class LeaderboardController : MonoBehaviour
 {
@@ -17,17 +19,19 @@ public class LeaderboardController : MonoBehaviour
 
 
     // Start is called before the first frame update
-    async void Start()
+    void Start()
     {
-        if (UnityServices.State != ServicesInitializationState.Initializing || UnityServices.State != ServicesInitializationState.Initialized)
-        {
-            await UnityServices.InitializeAsync();
-        }
+        //editörde test yapmak için
+        //if (UnityServices.State != ServicesInitializationState.Initializing || UnityServices.State != ServicesInitializationState.Initialized)
+        //{
+        //    await UnityServices.InitializeAsync();
+        //}
 
-        if (AuthenticationService.Instance.IsAuthorized == false)
-        {
-            await SignInAnonymously();
-        }
+        //if (AuthenticationService.Instance.IsAuthorized == false)
+        //{
+        //    await SignInAnonymously();
+        //}
+
     }
 
     async Task SignInAnonymously()
@@ -45,9 +49,36 @@ public class LeaderboardController : MonoBehaviour
         await AuthenticationService.Instance.SignInAnonymouslyAsync();
     }
 
+    public async void SetPlayerName()
+    {
+        string playerName = "";
+        //google ile giriþ yapmýþtýr
+        if (PlayGamesPlatform.Instance.IsAuthenticated())
+        {
+            playerName = PlayGamesPlatform.Instance.GetUserDisplayName();
+            Debug.Log("Google ile giriþ yapýlmýþ. Oyuncu ismi:" + playerName);
+        }
+        else if(FB.IsLoggedIn) //facebook ile giriþ yapmýþsa
+        {
+            playerName = FB.Mobile.CurrentProfile().Name;
+            Debug.Log("Facebook ile giriþ yapýlmýþ. Oyuncu ismi:" + playerName);
+        }
+
+        playerName = playerName.Replace(" ", "_");
+        Debug.Log("Oyuncu adý güncelleniyor");
+        await AuthenticationService.Instance.UpdatePlayerNameAsync(playerName);
+    }
+
+    public async void SetFalsePlayerName()
+    {
+        string playerName = "Deneme";
+        Debug.Log("Oyuncu adý güncelleniyor");
+        await AuthenticationService.Instance.UpdatePlayerNameAsync(playerName);
+    }
+
     public async void AddScore()
     {
-        var scoreResponse = await LeaderboardsService.Instance.AddPlayerScoreAsync(LeaderboardId, 101);
+        var scoreResponse = await LeaderboardsService.Instance.AddPlayerScoreAsync(LeaderboardId, 105);
         Debug.Log(JsonConvert.SerializeObject(scoreResponse));
     }
 

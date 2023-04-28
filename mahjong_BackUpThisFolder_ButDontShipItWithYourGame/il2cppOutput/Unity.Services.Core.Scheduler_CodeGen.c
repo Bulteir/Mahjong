@@ -17,7 +17,7 @@ extern void ActionScheduler__ctor_m3F34A80C3965C10463085599131EA2A7A488C0AF (voi
 extern void ActionScheduler_ScheduleAction_m6D586ADFCCA974FEBA1D7E23AA3D3DBBA517F8CD (void);
 extern void ActionScheduler_CancelAction_mDC93985AECBE933318100A3BC5530E1D63F37875 (void);
 extern void ActionScheduler_ExecuteExpiredActions_mB683F55950DD543D90A479DF7E68539969F2B48C (void);
-extern void ActionScheduler_UpdateSubSystemList_m6ADBF46147851853585D17ADB4F6524389B836C1 (void);
+extern void ActionScheduler_UpdateCurrentPlayerLoopWith_m32DBF6F37F3D8776484265E95830FEFA40C6A230 (void);
 extern void ActionScheduler_JoinPlayerLoopSystem_mB998001E51285B4DF2406DE197A3A5377BD62892 (void);
 extern void MinimumBinaryHeap__ctor_mC63658A36EB912677E6346A2991932B83CED0B5F (void);
 extern void ScheduledInvocation__ctor_mB7D79780A933DBF3A750A1FABB2DAA45852513BD (void);
@@ -32,7 +32,7 @@ static Il2CppMethodPointer s_methodPointers[32] =
 	ActionScheduler_ScheduleAction_m6D586ADFCCA974FEBA1D7E23AA3D3DBBA517F8CD,
 	ActionScheduler_CancelAction_mDC93985AECBE933318100A3BC5530E1D63F37875,
 	ActionScheduler_ExecuteExpiredActions_mB683F55950DD543D90A479DF7E68539969F2B48C,
-	ActionScheduler_UpdateSubSystemList_m6ADBF46147851853585D17ADB4F6524389B836C1,
+	ActionScheduler_UpdateCurrentPlayerLoopWith_m32DBF6F37F3D8776484265E95830FEFA40C6A230,
 	ActionScheduler_JoinPlayerLoopSystem_mB998001E51285B4DF2406DE197A3A5377BD62892,
 	MinimumBinaryHeap__ctor_mC63658A36EB912677E6346A2991932B83CED0B5F,
 	NULL,
@@ -62,14 +62,14 @@ static Il2CppMethodPointer s_methodPointers[32] =
 };
 static const int32_t s_InvokerIndices[32] = 
 {
-	6178,
-	4977,
-	2104,
-	4948,
-	6178,
-	8283,
-	6178,
-	6178,
+	6182,
+	4981,
+	2106,
+	4952,
+	6182,
+	8288,
+	6182,
+	6182,
 	0,
 	0,
 	0,
@@ -88,12 +88,12 @@ static const int32_t s_InvokerIndices[32] =
 	0,
 	0,
 	0,
-	6178,
-	1980,
-	6178,
+	6182,
+	1982,
+	6182,
 	0,
-	5982,
-	6178,
+	5986,
+	6182,
 };
 static const Il2CppTokenRangePair s_rgctxIndices[1] = 
 {

@@ -14,6 +14,7 @@ public class CloudSaveController : MonoBehaviour
 {
     public Button GoogleLogin_Btn;
     public Button FacebookLogin_Btn;
+    public GameObject LeaderBoardController;
 
     // Start is called before the first frame update
     async void Start()
@@ -61,6 +62,7 @@ public class CloudSaveController : MonoBehaviour
                     GoogleLogin_Btn.image.color = Color.blue;
 
                     GetComponent<GameSaveLoadController>().GameSaveDataSynchronization();
+                    LeaderBoardController.GetComponent<LeaderboardController>().SetPlayerName();
                 }
             }
         }
@@ -120,7 +122,7 @@ public class CloudSaveController : MonoBehaviour
                     PlayerPrefs.SetString("FacebookAutoLogin", "true");
                     PlayerPrefs.Save();
                     GetComponent<GameSaveLoadController>().GameSaveDataSynchronization();
-
+                    LeaderBoardController.GetComponent<LeaderboardController>().SetPlayerName();
                 }
             }
         }
