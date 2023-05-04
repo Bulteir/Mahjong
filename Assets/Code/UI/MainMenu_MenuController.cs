@@ -78,7 +78,9 @@ public class MainMenu_MenuController : MonoBehaviour
             settingsMenu.SetActive(false);
             storeMenu.SetActive(false);
             leaderboardMenu.SetActive(true);
-
+            leaderboardMenu.GetComponent<LeaderboardController>().FillLeaderboardList();
+            //Leaderboard sayfasý açýldýðýnda scroll en baþta çýksýn diye
+            leaderboardMenu.GetComponentInChildren<Scrollbar>().value = 1;
         }
     }
 }

@@ -1,3 +1,5 @@
+using System;
+
 public static class GlobalVariables
 {
     public static bool firstSynchronisationOfGame = true;
@@ -15,4 +17,7 @@ public static class GlobalVariables
     public const int gameState_gameOver = 5;
     public const int gameState_LevelSelectmenu = 6;
     public const int gameState_StoreMenu = 7;
+
+    public const string LeaderboardId_BestTimes = "BestTimes";
+
 }
