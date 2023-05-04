@@ -10,12 +10,15 @@ public class MainMenu_MenuController : MonoBehaviour
     public GameObject settingsMenu;
     public GameObject storeMenu;
     public GameObject leaderboardMenu;
+    
+    public GameObject RateBox;
 
     // Start is called before the first frame update
     void Start()
     {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         menuActiveControl();
+        RateBox.GetComponent<RateBoxController>().RateBoxControlAtStartGame();
 
         //burada amacýmýz kulklanýcý ana menüye geldiðinde verilerini buluta senkronize etmek. Levelden ana menüye geldiðinde de çalýþýr.
         //oyun ilk açýldýðýnda çalýþmaz. Ýstediðimzide bu. Oyun ilk açýldýðýnda authantication iþlemlerinin bitiminde otomatik çaðrýlýr.
