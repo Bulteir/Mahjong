@@ -77,8 +77,7 @@ public class LocalSaveLoadController : MonoBehaviour
         }
         catch (Exception e)
         {
-            Debug.LogError($"Could not Load Game! " + e.Message);
-            //throw e;
+            Debug.Log($"Could not Load Game! " + e.Message);
             return data;
         }
     }
