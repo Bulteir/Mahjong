@@ -29,23 +29,23 @@ public class LeaderboardController : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    { 
-    //async void Start()
-    //{
-    //    //editörde test yapmak için
-    //    if (UnityServices.State != ServicesInitializationState.Initializing || UnityServices.State != ServicesInitializationState.Initialized)
-    //    {
-    //        await UnityServices.InitializeAsync();
-    //    }
+    {
+        //async void Start()
+        //{
+        //    //editörde test yapmak için
+        //    if (UnityServices.State != ServicesInitializationState.Initializing || UnityServices.State != ServicesInitializationState.Initialized)
+        //    {
+        //        await UnityServices.InitializeAsync();
+        //    }
 
-    //    //AuthenticationService.Instance.ClearSessionToken();
-    //    if (AuthenticationService.Instance.IsAuthorized == false)
-    //    {
-    //        await SignInAnonymously();
-    //    }
-    //    //await AuthenticationService.Instance.UpdatePlayerNameAsync("Özlem");
+        //    //AuthenticationService.Instance.ClearSessionToken();
+        //    if (AuthenticationService.Instance.IsAuthorized == false)
+        //    {
+        //        await SignInAnonymously();
+        //    }
+        //    //await AuthenticationService.Instance.UpdatePlayerNameAsync("Özlem");
 
-    //    //FillLeaderboardList();
+        //    //FillLeaderboardList();
     }
 
     //editörde test etmek için
@@ -143,7 +143,7 @@ public class LeaderboardController : MonoBehaviour
                 LastRowIndex = 0;
                 nextPosY = 0;
                 rowGroupSpacing = 0;
-                
+
                 LoadAnimation.GetComponent<LoadSaveAnimationController>().StartAnimation(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Loading"));
                 LeaderboardEntry scoreResponse;
                 //kullanýcýnýn kayýtlý puaný varmý kontrol ediyoruz. Puaný varsa sýralamasýna göre farklý þekilde gösterim yapýyoruz.
@@ -160,7 +160,7 @@ public class LeaderboardController : MonoBehaviour
                 //bu durumda ilk 30 kaydý göster
                 if (scoreResponse == null)
                 {
-                    
+
                     int Limit = 30;
                     int page = 0;
                     int Offset = Limit * page;
