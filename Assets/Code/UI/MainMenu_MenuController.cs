@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
 public class MainMenu_MenuController : MonoBehaviour
@@ -20,7 +21,13 @@ public class MainMenu_MenuController : MonoBehaviour
         menuActiveControl();
         RateBox.GetComponent<RateBoxController>().RateBoxControlAtStartGame();
 
-        //burada amacýmýz kulklanýcý ana menüye geldiðinde verilerini buluta senkronize etmek. Levelden ana menüye geldiðinde de çalýþýr.
+        string selectedLangVal = PlayerPrefs.GetString("SelectedLang");
+        if (selectedLangVal != "")
+        {
+            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[int.Parse(selectedLangVal)];
+        }
+
+        //burada amacýmýz kullanýcý ana menüye geldiðinde verilerini buluta senkronize etmek. Levelden ana menüye geldiðinde de çalýþýr.
         //oyun ilk açýldýðýnda çalýþmaz. Ýstediðimzide bu. Oyun ilk açýldýðýnda authantication iþlemlerinin bitiminde otomatik çaðrýlýr.
         //Ayrýca bulut hizmetlerinine okuma yazma yükünü hafifletmek için oyun açýldýktan sonra otantike olduðunda bir kez senkronize olur.
         //Bu senkronizasyon haricinde ana menüye bir kez daha geldiðinde son bir kez daha senkronize olur.

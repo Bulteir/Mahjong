@@ -17,7 +17,121 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 3efb08f1c92d8c7428b8b503baca83a3, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 342451421184
+    m_Localized: Spiel Starten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 375557062656
+    m_Localized: Rangliste
+    m_Metadata:
+      m_Items: []
+  - m_Id: 423338573824
+    m_Localized: Laden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 449863352320
+    m_Localized: "Einstellungen\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 476358770688
+    m_Localized: "Beenden\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365011452166144
+    m_Localized: "Zur\xFCck\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365028074192896
+    m_Localized: "Pause\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365323625824256
+    m_Localized: "Spiel bewerten\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365466332823552
+    m_Localized: "Wenn Sie dieses Spiel spielen, nehmen Sie bitte einen Moment Zeit,
+      um es zu bewerten. Danke f\xFCr Ihre Unterst\xFCtzung.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365595655798784
+    m_Localized: "Kein Danke\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365646792753152
+    m_Localized: "Sp\xE4ter"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365675695702016
+    m_Localized: Jetzt bewerten!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365870193967104
+    m_Localized: Spiel bewerten!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366086645219328
+    m_Localized: Monatliche Bestleistungen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366252202786816
+    m_Localized: Rang
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366268346662912
+    m_Localized: Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366281122512896
+    m_Localized: "Punktzahl\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366348692750336
+    m_Localized: Gesamt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366437284839424
+    m_Localized: Anmeldung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366503462567936
+    m_Localized: "K\xE4ufe wiederherstellen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 367167634800640
+    m_Localized: Melden Sie sich an, um Ihren Fortschritt in der Cloud im Spiel zu
+      speichern.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1376227272294400
+    m_Localized: Abmelden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1385107419168768
+    m_Localized: Kaufvorgang
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1391740966797312
+    m_Localized: Sprache
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1391809539473408
+    m_Localized: "Sprache ausw\xE4hlen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1457640705228800
+    m_Localized: "Lade\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1457670887440384
+    m_Localized: "Speichern\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1457690818772992
+    m_Localized: Synchronisieren
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

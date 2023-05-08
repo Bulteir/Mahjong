@@ -5,6 +5,7 @@ using UnityEngine;
 using Newtonsoft.Json;
 using UnityEngine.UIElements;
 using System.IO;
+using UnityEngine.Localization.Settings;
 
 public class GameSaveLoadController : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class GameSaveLoadController : MonoBehaviour
 
     IEnumerator SaveGameLocal(SaveDataFormat data)
     {
-        LoadAnimation.GetComponent<LoadSaveAnimationController>().StartAnimation("Kaydediliyor");
+        LoadAnimation.GetComponent<LoadSaveAnimationController>().StartAnimation(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Saving"));
         yield return null;
         GetComponent<LocalSaveLoadController>().SaveGame(data);
         yield return null;
@@ -36,7 +37,7 @@ public class GameSaveLoadController : MonoBehaviour
 
     IEnumerator SaveGameCloud(SaveDataFormat data)
     {
-        LoadAnimation.GetComponent<LoadSaveAnimationController>().StartAnimation("Kaydediliyor");
+        LoadAnimation.GetComponent<LoadSaveAnimationController>().StartAnimation(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Saving"));
         yield return null;
         if (GlobalVariables.cloudSaveSystemIsReady == true)
         {
@@ -58,7 +59,7 @@ public class GameSaveLoadController : MonoBehaviour
 
     IEnumerator LoadGameLocalCorroutine()
     {
-        LoadAnimation.GetComponent<LoadSaveAnimationController>().StartAnimation("Yükleniyor");
+        LoadAnimation.GetComponent<LoadSaveAnimationController>().StartAnimation(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Loading"));
         yield return null;
         SaveDataFormat data = LoadGameLocal();
         Debug.Log("Local Load data:"+(data.saveTime==null?false:data.saveTime)+" unlockedLevelNumber:" + data.unlockedLevelNumber + " test:" + data.test + " SaveTime:" + data.saveTime);
@@ -75,7 +76,7 @@ public class GameSaveLoadController : MonoBehaviour
 
     IEnumerator LoadGameCloudCorroutine()
     {
-        LoadAnimation.GetComponent<LoadSaveAnimationController>().StartAnimation("Yükleniyor");
+        LoadAnimation.GetComponent<LoadSaveAnimationController>().StartAnimation(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Loading"));
         yield return null;
         LoadGameCloud();
         yield return null;
@@ -87,7 +88,7 @@ public class GameSaveLoadController : MonoBehaviour
     {
         if (GlobalVariables.cloudSaveSystemIsReady == true)
         {
-            LoadAnimation.GetComponent<LoadSaveAnimationController>().StartAnimation("Senkronize ediliyor.");
+            LoadAnimation.GetComponent<LoadSaveAnimationController>().StartAnimation(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Syncing"));
             string data = await GetComponent<CloudSaveController>().LoadData();
 
             //local save dosyasýný okuyoruz.

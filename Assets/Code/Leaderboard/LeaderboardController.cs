@@ -11,6 +11,7 @@ using Facebook.Unity;
 using Unity.Services.Leaderboards.Models;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Localization.Settings;
 
 public class LeaderboardController : MonoBehaviour
 {
@@ -28,21 +29,23 @@ public class LeaderboardController : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        //editörde test yapmak için
-        //if (UnityServices.State != ServicesInitializationState.Initializing || UnityServices.State != ServicesInitializationState.Initialized)
-        //{
-        //    await UnityServices.InitializeAsync();
-        //}
+    { 
+    //async void Start()
+    //{
+    //    //editörde test yapmak için
+    //    if (UnityServices.State != ServicesInitializationState.Initializing || UnityServices.State != ServicesInitializationState.Initialized)
+    //    {
+    //        await UnityServices.InitializeAsync();
+    //    }
 
-        ////AuthenticationService.Instance.ClearSessionToken();
-        //if (AuthenticationService.Instance.IsAuthorized == false)
-        //{
-        //    await SignInAnonymously();
-        //}
-        ////await AuthenticationService.Instance.UpdatePlayerNameAsync("Özlem");
+    //    //AuthenticationService.Instance.ClearSessionToken();
+    //    if (AuthenticationService.Instance.IsAuthorized == false)
+    //    {
+    //        await SignInAnonymously();
+    //    }
+    //    //await AuthenticationService.Instance.UpdatePlayerNameAsync("Özlem");
 
-        //FillLeaderboardList();
+    //    //FillLeaderboardList();
     }
 
     //editörde test etmek için
@@ -140,8 +143,8 @@ public class LeaderboardController : MonoBehaviour
                 LastRowIndex = 0;
                 nextPosY = 0;
                 rowGroupSpacing = 0;
-
-                LoadAnimation.GetComponent<LoadSaveAnimationController>().StartAnimation("Yükleniyor");
+                
+                LoadAnimation.GetComponent<LoadSaveAnimationController>().StartAnimation(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Loading"));
                 LeaderboardEntry scoreResponse;
                 //kullanýcýnýn kayýtlý puaný varmý kontrol ediyoruz. Puaný varsa sýralamasýna göre farklý þekilde gösterim yapýyoruz.
                 try
@@ -181,7 +184,7 @@ public class LeaderboardController : MonoBehaviour
 
                     //toplam kayýt sayýsý Text'i
                     TotalRecordText.SetActive(true);
-                    TotalRecordText.GetComponent<TMP_Text>().text = "Total: " + topScores.Total.ToString();
+                    TotalRecordText.GetComponent<TMP_Text>().text = LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Total") + ": " + topScores.Total.ToString();
                     TotalRecordText.GetComponent<RectTransform>().anchoredPosition = new Vector2(TotalRecordText.GetComponent<RectTransform>().anchoredPosition.x, (topScores.Results.Count * -1 * (TemplateRow.GetComponent<RectTransform>().sizeDelta.y + LineSpacing)) - newBraceSpacing);
                 }
                 else//kullanýcýnýn leaderboarda kayýtlý puaný varsa
@@ -238,7 +241,7 @@ public class LeaderboardController : MonoBehaviour
                         //toplam kayýt sayýsý Text'i
                         LastRowIndex++;
                         TotalRecordText.SetActive(true);
-                        TotalRecordText.GetComponent<TMP_Text>().text = "Total: " + topScores.Total.ToString();
+                        TotalRecordText.GetComponent<TMP_Text>().text = LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Total") + ": " + topScores.Total.ToString();
                         TotalRecordText.GetComponent<RectTransform>().anchoredPosition = new Vector2(TotalRecordText.GetComponent<RectTransform>().anchoredPosition.x, nextPosY + -1 * (TemplateRow.GetComponent<RectTransform>().sizeDelta.y + LineSpacing) + rowGroupSpacing);
                     }
                     else//oyuncu puan olarak ilk 10'da ise
@@ -273,7 +276,7 @@ public class LeaderboardController : MonoBehaviour
 
                         //toplam kayýt sayýsý Text'i
                         TotalRecordText.SetActive(true);
-                        TotalRecordText.GetComponent<TMP_Text>().text = "Total: " + topScores.Total.ToString();
+                        TotalRecordText.GetComponent<TMP_Text>().text = LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Total") + ": " + topScores.Total.ToString();
                         TotalRecordText.GetComponent<RectTransform>().anchoredPosition = new Vector2(TotalRecordText.GetComponent<RectTransform>().anchoredPosition.x, (topScores.Results.Count * -1 * (TemplateRow.GetComponent<RectTransform>().sizeDelta.y + LineSpacing)) - newBraceSpacing);
                     }
                 }

@@ -1205,8 +1205,8 @@ struct Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572  : public RuntimeObject
 	TaskScheduler_t3F0550EBEF7C41F74EC8C08FF4BED0D8CE66006E* ___m_taskScheduler_4;
 	Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572* ___m_parent_5;
 	int32_t ___m_stateFlags_6;
-	RuntimeObject* ___m_continuationObject_7;
-	ContingentProperties_t3FA59480914505CEA917B1002EC675F29D0CB540* ___m_contingentProperties_10;
+	RuntimeObject* ___m_continuationObject_23;
+	ContingentProperties_t3FA59480914505CEA917B1002EC675F29D0CB540* ___m_contingentProperties_26;
 };
 struct TypeConverter_t5257E1653EB845D0044BBEDEB7B8AED7A061592C  : public RuntimeObject
 {
@@ -1453,31 +1453,31 @@ struct Nullable_1_tF8BFF19FF240C9F0A45168187CD7106BAA146A99
 };
 struct Task_1_t824317F4B958F7512E8F7300511752937A6C6043  : public Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572
 {
-	bool ___m_result_22;
+	bool ___m_result_38;
 };
 struct Task_1_tD173F7E3B6D3C9AD9603E3515BCC90C6A7C192EF  : public Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572
 {
-	JArray_t1FFDF36566B9E8C56F36AB22701C1BA9DC2CBFF8* ___m_result_22;
+	JArray_t1FFDF36566B9E8C56F36AB22701C1BA9DC2CBFF8* ___m_result_38;
 };
 struct Task_1_tB805F29A0042DC624AF474792E4B641B4727DE37  : public Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572
 {
-	JConstructor_t38B522C7E328E2EE5EC2BA71A250A41C7D4D4D12* ___m_result_22;
+	JConstructor_t38B522C7E328E2EE5EC2BA71A250A41C7D4D4D12* ___m_result_38;
 };
 struct Task_1_t76B45DDE4610CC32D6CD17E75523E3B2385DC5EA  : public Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572
 {
-	JObject_t22BBBA7A90517B7E66E8C9D8D16DE84CB5054DE1* ___m_result_22;
+	JObject_t22BBBA7A90517B7E66E8C9D8D16DE84CB5054DE1* ___m_result_38;
 };
 struct Task_1_t5130ADE04AF3B240E24CFA27F0B9C8E5A7BF1311  : public Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572
 {
-	JProperty_t1B8E99236F2BD537EC4A7A63ACDB60D7C709C5F4* ___m_result_22;
+	JProperty_t1B8E99236F2BD537EC4A7A63ACDB60D7C709C5F4* ___m_result_38;
 };
 struct Task_1_t3625E07574F0A4DF2B024A22017BAC0153DFB5FD  : public Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572
 {
-	JRaw_t2F9CE4F6B8BD2A02A0F2F1BF082F79D4CEAFCD1F* ___m_result_22;
+	JRaw_t2F9CE4F6B8BD2A02A0F2F1BF082F79D4CEAFCD1F* ___m_result_38;
 };
 struct Task_1_t159C8F03B438E9C2F2B848CB31C329E119864DB1  : public Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572
 {
-	JToken_tFD7D9015F3F97A09AD93E439ACE894D12C06E8B3* ___m_result_22;
+	JToken_tFD7D9015F3F97A09AD93E439ACE894D12C06E8B3* ___m_result_38;
 };
 struct AddingNewEventArgs_tEC40338DEDF3AC333B90EB75744CF5C4C9A0EE4A  : public EventArgs_t37273F03EAC87217701DD431B190FBD84AD7C377
 {
@@ -2562,22 +2562,22 @@ struct StringComparer_t6268F19CA34879176651429C0D8A3D0002BB8E06_StaticFields
 struct Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572_StaticFields
 {
 	int32_t ___s_taskIdCounter_0;
-	RuntimeObject* ___s_taskCompletionSentinel_8;
-	bool ___s_asyncDebuggingEnabled_9;
-	Action_1_t6F9EB113EB3F16226AEF811A2744F4111C116C87* ___s_taskCancelCallback_11;
-	Func_1_tD59A12717D79BFB403BF973694B1BE5B85474BD1* ___s_createContingentProperties_14;
-	TaskFactory_tF781BD37BE23917412AD83424D1497C7C1509DF0* ___U3CFactoryU3Ek__BackingField_15;
-	Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572* ___U3CCompletedTaskU3Ek__BackingField_16;
-	Predicate_1_t7F48518B008C1472339EEEBABA3DE203FE1F26ED* ___s_IsExceptionObservedByParentPredicate_17;
-	ContextCallback_tE8AFBDBFCC040FDA8DA8C1EEFE9BD66B16BDA007* ___s_ecCallback_18;
-	Predicate_1_t8342C85FF4E41CD1F7024AC0CDC3E5312A32CB12* ___s_IsTaskContinuationNullPredicate_19;
-	Dictionary_2_t403063CE4960B4F46C688912237C6A27E550FF55* ___s_currentActiveTasks_20;
-	RuntimeObject* ___s_activeTasksLock_21;
+	RuntimeObject* ___s_taskCompletionSentinel_24;
+	bool ___s_asyncDebuggingEnabled_25;
+	Action_1_t6F9EB113EB3F16226AEF811A2744F4111C116C87* ___s_taskCancelCallback_27;
+	Func_1_tD59A12717D79BFB403BF973694B1BE5B85474BD1* ___s_createContingentProperties_30;
+	TaskFactory_tF781BD37BE23917412AD83424D1497C7C1509DF0* ___U3CFactoryU3Ek__BackingField_31;
+	Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572* ___U3CCompletedTaskU3Ek__BackingField_32;
+	Predicate_1_t7F48518B008C1472339EEEBABA3DE203FE1F26ED* ___s_IsExceptionObservedByParentPredicate_33;
+	ContextCallback_tE8AFBDBFCC040FDA8DA8C1EEFE9BD66B16BDA007* ___s_ecCallback_34;
+	Predicate_1_t8342C85FF4E41CD1F7024AC0CDC3E5312A32CB12* ___s_IsTaskContinuationNullPredicate_35;
+	Dictionary_2_t403063CE4960B4F46C688912237C6A27E550FF55* ___s_currentActiveTasks_36;
+	RuntimeObject* ___s_activeTasksLock_37;
 };
 struct Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572_ThreadStaticFields
 {
-	Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572* ___t_currentTask_12;
-	StackGuard_tACE063A1B7374BDF4AD472DE4585D05AD8745352* ___t_stackGuard_13;
+	Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572* ___t_currentTask_28;
+	StackGuard_tACE063A1B7374BDF4AD472DE4585D05AD8745352* ___t_stackGuard_29;
 };
 struct TypeConverter_t5257E1653EB845D0044BBEDEB7B8AED7A061592C_StaticFields
 {
@@ -2628,31 +2628,31 @@ struct JEnumerable_1_t3B25D0E67A0BA251980CEF1E7E15E21C611B3BB5_StaticFields
 };
 struct Task_1_t824317F4B958F7512E8F7300511752937A6C6043_StaticFields
 {
-	TaskFactory_1_tFAEAC22A1E986463E6956C344A78A7C7197288E0* ___s_defaultFactory_23;
+	TaskFactory_1_tFAEAC22A1E986463E6956C344A78A7C7197288E0* ___s_defaultFactory_39;
 };
 struct Task_1_tD173F7E3B6D3C9AD9603E3515BCC90C6A7C192EF_StaticFields
 {
-	TaskFactory_1_tB0875F7E13F38D69343ECBA65091C754BA5F5C31* ___s_defaultFactory_23;
+	TaskFactory_1_tB0875F7E13F38D69343ECBA65091C754BA5F5C31* ___s_defaultFactory_39;
 };
 struct Task_1_tB805F29A0042DC624AF474792E4B641B4727DE37_StaticFields
 {
-	TaskFactory_1_tFCA00D0F1F4E715E98D23DDE621B55C95B3F0947* ___s_defaultFactory_23;
+	TaskFactory_1_tFCA00D0F1F4E715E98D23DDE621B55C95B3F0947* ___s_defaultFactory_39;
 };
 struct Task_1_t76B45DDE4610CC32D6CD17E75523E3B2385DC5EA_StaticFields
 {
-	TaskFactory_1_t7570FE870BEE670B68C5A285F95DAC15766FBFB2* ___s_defaultFactory_23;
+	TaskFactory_1_t7570FE870BEE670B68C5A285F95DAC15766FBFB2* ___s_defaultFactory_39;
 };
 struct Task_1_t5130ADE04AF3B240E24CFA27F0B9C8E5A7BF1311_StaticFields
 {
-	TaskFactory_1_t0497500BB844367463122EFC71AF10639FFC87CD* ___s_defaultFactory_23;
+	TaskFactory_1_t0497500BB844367463122EFC71AF10639FFC87CD* ___s_defaultFactory_39;
 };
 struct Task_1_t3625E07574F0A4DF2B024A22017BAC0153DFB5FD_StaticFields
 {
-	TaskFactory_1_t4CC1A974D05BAD745498641F468CFA3A409501F3* ___s_defaultFactory_23;
+	TaskFactory_1_t4CC1A974D05BAD745498641F468CFA3A409501F3* ___s_defaultFactory_39;
 };
 struct Task_1_t159C8F03B438E9C2F2B848CB31C329E119864DB1_StaticFields
 {
-	TaskFactory_1_t757FCF345577D9AE6007BFE91C910BF4454B1A36* ___s_defaultFactory_23;
+	TaskFactory_1_t757FCF345577D9AE6007BFE91C910BF4454B1A36* ___s_defaultFactory_39;
 };
 struct BigInteger_tF7779A0AA6D6B9BE0E0C1C293E7708765DEF7D0F_StaticFields
 {
@@ -26510,7 +26510,7 @@ IL_0014:
 		RuntimeObject* L_7 = __this->____annotations_4;
 		NullCheck(L_6);
 		bool L_8;
-		L_8 = VirtualFuncInvoker1< bool, RuntimeObject* >::Invoke(118, L_6, L_7);
+		L_8 = VirtualFuncInvoker1< bool, RuntimeObject* >::Invoke(119, L_6, L_7);
 		if (!L_8)
 		{
 			goto IL_0060;
@@ -26546,7 +26546,7 @@ IL_0044:
 		RuntimeObject* L_16 = V_2;
 		NullCheck(L_15);
 		bool L_17;
-		L_17 = VirtualFuncInvoker1< bool, RuntimeObject* >::Invoke(118, L_15, L_16);
+		L_17 = VirtualFuncInvoker1< bool, RuntimeObject* >::Invoke(119, L_15, L_16);
 		if (!L_17)
 		{
 			goto IL_0056;
@@ -26653,7 +26653,7 @@ IL_0014:
 		RuntimeObject* L_7 = __this->____annotations_4;
 		NullCheck(L_6);
 		bool L_8;
-		L_8 = VirtualFuncInvoker1< bool, RuntimeObject* >::Invoke(118, L_6, L_7);
+		L_8 = VirtualFuncInvoker1< bool, RuntimeObject* >::Invoke(119, L_6, L_7);
 		if (!L_8)
 		{
 			goto IL_0082;
@@ -26691,7 +26691,7 @@ IL_0047:
 		RuntimeObject* L_15 = V_3;
 		NullCheck(L_14);
 		bool L_16;
-		L_16 = VirtualFuncInvoker1< bool, RuntimeObject* >::Invoke(118, L_14, L_15);
+		L_16 = VirtualFuncInvoker1< bool, RuntimeObject* >::Invoke(119, L_14, L_15);
 		if (L_16)
 		{
 			goto IL_005f;
@@ -27246,7 +27246,7 @@ IL_0070:
 		RuntimeObject* L_18 = V_3;
 		NullCheck(L_17);
 		bool L_19;
-		L_19 = VirtualFuncInvoker1< bool, RuntimeObject* >::Invoke(118, L_17, L_18);
+		L_19 = VirtualFuncInvoker1< bool, RuntimeObject* >::Invoke(119, L_17, L_18);
 		if (!L_19)
 		{
 			goto IL_00a6;
@@ -27297,7 +27297,7 @@ IL_00ca:
 		RuntimeObject* L_27 = L_26->____annotations_4;
 		NullCheck(L_25);
 		bool L_28;
-		L_28 = VirtualFuncInvoker1< bool, RuntimeObject* >::Invoke(118, L_25, L_27);
+		L_28 = VirtualFuncInvoker1< bool, RuntimeObject* >::Invoke(119, L_25, L_27);
 		if (L_28)
 		{
 			goto IL_00df;

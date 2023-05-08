@@ -17,7 +17,120 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 3efb08f1c92d8c7428b8b503baca83a3, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 342451421184
+    m_Localized: Iniciar juego
+    m_Metadata:
+      m_Items: []
+  - m_Id: 375557062656
+    m_Localized: "Tabla de clasificaci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 423338573824
+    m_Localized: Tienda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 449863352320
+    m_Localized: "Configuraci\xF3n\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 476358770688
+    m_Localized: "Salir\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365011452166144
+    m_Localized: "Atr\xE1s\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365028074192896
+    m_Localized: "Pausar\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365323625824256
+    m_Localized: "Calificar juego\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365466332823552
+    m_Localized: "Si disfrutas jugando este juego, por favor toma un momento para
+      calificarlo. Gracias por tu apoyo.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365595655798784
+    m_Localized: No gracias
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365646792753152
+    m_Localized: "M\xE1s tarde"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365675695702016
+    m_Localized: "\xA1Califica ahora!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365870193967104
+    m_Localized: Calificar juego!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366086645219328
+    m_Localized: Mejores Puntuaciones Mensuales
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366252202786816
+    m_Localized: Rango
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366268346662912
+    m_Localized: Nombre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366281122512896
+    m_Localized: "Puntuaci\xF3n\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366348692750336
+    m_Localized: Total
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366437284839424
+    m_Localized: "Iniciar sesi\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366503462567936
+    m_Localized: Restaurar compra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 367167634800640
+    m_Localized: "Inicia sesi\xF3n para guardar tu progreso en la nube del juego"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1376227272294400
+    m_Localized: "Cerrar sesi\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1385107419168768
+    m_Localized: Comprando
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1391740966797312
+    m_Localized: "Idioma\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1391809539473408
+    m_Localized: Seleccionar idioma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1457640705228800
+    m_Localized: "Cargando\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1457670887440384
+    m_Localized: "Guardando\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1457690818772992
+    m_Localized: Sincronizando
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

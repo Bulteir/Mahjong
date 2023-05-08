@@ -17,7 +17,121 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 3efb08f1c92d8c7428b8b503baca83a3, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 342451421184
+    m_Localized: "Oyuna Ba\u015Fla"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 375557062656
+    m_Localized: Liderlik Tablosu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 423338573824
+    m_Localized: "Ma\u011Faza"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 449863352320
+    m_Localized: "Ayarlar\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 476358770688
+    m_Localized: "\xC7\u0131k\u0131\u015F"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365011452166144
+    m_Localized: "Geri\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365028074192896
+    m_Localized: Duraklat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365323625824256
+    m_Localized: "Oyunu Puanlay\u0131n\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365466332823552
+    m_Localized: "E\u011Fer bu oyunu oynarken e\u011Flendiyseniz, l\xFCtfen birka\xE7
+      dakikan\u0131z\u0131 ay\u0131rarak oyunu puanlay\u0131n. Deste\u011Finiz i\xE7in
+      te\u015Fekk\xFCrler."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365595655798784
+    m_Localized: "Hay\u0131r, Te\u015Fekk\xFCrler"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365646792753152
+    m_Localized: Daha Sonra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365675695702016
+    m_Localized: "\u015Eimdi Puanla!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365870193967104
+    m_Localized: "Oyunu Puanlay\u0131n!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366086645219328
+    m_Localized: "Ayl\u0131k En \u0130yi Skorlar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366252202786816
+    m_Localized: "S\u0131ralama"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366268346662912
+    m_Localized: Ad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366281122512896
+    m_Localized: "Skor\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366348692750336
+    m_Localized: Toplam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366437284839424
+    m_Localized: "Giri\u015F yap"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 367167634800640
+    m_Localized: "Oyundaki ilerlemenizi buluta kaydetmek i\xE7in giri\u015F yap\u0131n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366503462567936
+    m_Localized: "Sat\u0131n Al\u0131mlar\u0131 Geri Y\xFCkle"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1376227272294400
+    m_Localized: "\xC7\u0131k\u0131\u015F yap"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1385107419168768
+    m_Localized: "Sat\u0131n Al\u0131n\u0131yor"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1391740966797312
+    m_Localized: Dil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1391809539473408
+    m_Localized: "Dil Se\xE7in"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1457640705228800
+    m_Localized: "Y\xFCkleniyor\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1457670887440384
+    m_Localized: "Kay\u0131t ediliyor\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1457690818772992
+    m_Localized: Senkronize ediliyor
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

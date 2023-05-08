@@ -17,7 +17,120 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 3efb08f1c92d8c7428b8b503baca83a3, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 342451421184
+    m_Localized: Iniciar Jogo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 375557062656
+    m_Localized: "Tabela de classifica\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 423338573824
+    m_Localized: Loja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 449863352320
+    m_Localized: "Configura\xE7\xF5es\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 476358770688
+    m_Localized: "Sair\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365011452166144
+    m_Localized: Voltar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365028074192896
+    m_Localized: "Pausa\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365323625824256
+    m_Localized: "Avaliar jogo\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365466332823552
+    m_Localized: "Se voc\xEA gosta de jogar este jogo, por favor, tire um momento
+      para avali\xE1-lo. Obrigado pelo seu apoio.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365595655798784
+    m_Localized: "N\xE3o, obrigado"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365646792753152
+    m_Localized: Mais tarde
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365675695702016
+    m_Localized: Avaliar agora!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 365870193967104
+    m_Localized: Avaliar jogo!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366086645219328
+    m_Localized: "Melhores Pontua\xE7\xF5es Mensais"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366252202786816
+    m_Localized: "Classifica\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366268346662912
+    m_Localized: Nome
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366281122512896
+    m_Localized: "Pontua\xE7\xE3o\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366348692750336
+    m_Localized: Total
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366437284839424
+    m_Localized: Login
+    m_Metadata:
+      m_Items: []
+  - m_Id: 366503462567936
+    m_Localized: Restaurar compra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 367167634800640
+    m_Localized: "Fa\xE7a login para salvar seu progresso na nuvem do jogo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1376227272294400
+    m_Localized: Sair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1385107419168768
+    m_Localized: Comprando
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1391740966797312
+    m_Localized: "Linguagem\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1391809539473408
+    m_Localized: Selecionar idioma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1457640705228800
+    m_Localized: Carregando
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1457670887440384
+    m_Localized: Salvando
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1457690818772992
+    m_Localized: Sincronizando
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
