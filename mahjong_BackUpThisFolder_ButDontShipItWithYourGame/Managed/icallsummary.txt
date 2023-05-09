@@ -208,6 +208,7 @@ UnityEngine.Application::get_dataPath
 UnityEngine.Application::get_persistentDataPath
 UnityEngine.Application::get_productName
 UnityEngine.Application::get_streamingAssetsPath
+UnityEngine.Application::get_temporaryCachePath
 UnityEngine.Application::get_unityVersion
 UnityEngine.Application::get_version
 UnityEngine.Application::OpenURL
@@ -427,6 +428,7 @@ UnityEngine.Gradient::Internal_Equals
 UnityEngine.Gradient::Init
 UnityEngine.Gradient::Cleanup
 UnityEngine.Graphics::Internal_GetMaxDrawMeshInstanceCount
+UnityEngine.Graphics::Blit2
 UnityEngine.Graphics::Internal_SetNullRT
 UnityEngine.Graphics::Internal_SetRTSimple_Injected
 UnityEngine.GUI::HasMouseControl

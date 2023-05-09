@@ -26,6 +26,7 @@ IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Facebook_Unity_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Facebook_Unity_Settings_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Google_Play_Games_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Mono_Security_CodeGenModule;
+IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_NativeShare_Runtime_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Newtonsoft_Json_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Purchasing_Common_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_System_CodeGenModule;
@@ -93,7 +94,7 @@ IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_Unity_TextMeshPro_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g___Generated_CodeGenModule;
 IL2CPP_EXTERN_C_CONST Il2CppCodeGenModule g_mscorlib_CodeGenModule;
 IL2CPP_EXTERN_C const Il2CppCodeGenModule* g_CodeGenModules[];
-const Il2CppCodeGenModule* g_CodeGenModules[72] = 
+const Il2CppCodeGenModule* g_CodeGenModules[73] = 
 {
 	(&g_AssemblyU2DCSharp_CodeGenModule),
 	(&g_Facebook_Unity_Android_CodeGenModule),
@@ -101,6 +102,7 @@ const Il2CppCodeGenModule* g_CodeGenModules[72] =
 	(&g_Facebook_Unity_Settings_CodeGenModule),
 	(&g_Google_Play_Games_CodeGenModule),
 	(&g_Mono_Security_CodeGenModule),
+	(&g_NativeShare_Runtime_CodeGenModule),
 	(&g_Newtonsoft_Json_CodeGenModule),
 	(&g_Purchasing_Common_CodeGenModule),
 	(&g_System_CodeGenModule),
@@ -173,20 +175,20 @@ const Il2CppCodeRegistration g_CodeRegistration =
 {
 	10,
 	g_ReversePInvokeWrapperPointers,
-	52481,
+	52527,
 	g_Il2CppGenericMethodPointers,
 	g_Il2CppGenericAdjustorThunks,
-	9930,
+	9943,
 	g_Il2CppInvokerPointers,
-	2091,
+	2092,
 	g_UnresolvedVirtualMethodPointers,
 	g_UnresolvedInstanceMethodPointers,
 	g_UnresolvedStaticMethodPointers,
-	556,
+	559,
 	g_Il2CppInteropData,
 	0,
 	NULL,
-	72,
+	73,
 	g_CodeGenModules,
 };
 IL2CPP_EXTERN_C_CONST Il2CppMetadataRegistration g_MetadataRegistration;

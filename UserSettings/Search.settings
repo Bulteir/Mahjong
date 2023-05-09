@@ -8,8 +8,8 @@ showPackageIndexes = false
 showStatusBar = false
 scopes = {
 	"picker_window_position_offset.45F317DD" = "57,59998;192,8;320;550,4"
-	"picker_search_text.45F317DD" = "st: select"
-	"last_search.45F317DD" = "st: select"
+	"picker_search_text.45F317DD" = "st: share"
+	"last_search.45F317DD" = "st: share"
 	"OpenInspectorPreview.45F317DD" = "0"
 	"currentGroup.45F317DD" = "all"
 }

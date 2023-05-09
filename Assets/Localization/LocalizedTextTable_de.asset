@@ -132,6 +132,10 @@ MonoBehaviour:
     m_Localized: Synchronisieren
     m_Metadata:
       m_Items: []
+  - m_Id: 1749177137758208
+    m_Localized: Teilen
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
