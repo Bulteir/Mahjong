@@ -135,6 +135,18 @@ MonoBehaviour:
     m_Localized: Compartir
     m_Metadata:
       m_Items: []
+  - m_Id: 1789916009857024
+    m_Localized: "Continuar\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1790015020597248
+    m_Localized: "Men\xFA Principal\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1790042375847936
+    m_Localized: "Reiniciar\r"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -135,6 +135,18 @@ MonoBehaviour:
     m_Localized: Share
     m_Metadata:
       m_Items: []
+  - m_Id: 1789916009857024
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1790015020597248
+    m_Localized: "Main Menu\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1790042375847936
+    m_Localized: Restart
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

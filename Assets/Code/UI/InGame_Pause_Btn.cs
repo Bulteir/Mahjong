@@ -7,8 +7,6 @@ public class InGame_Pause_Btn : MonoBehaviour
 {
     public void OnClick()
     {
-        GlobalVariables.gameState = GlobalVariables.gameState_MainMenu;
-        //geçiçi
-        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+        GlobalVariables.gameState = GlobalVariables.gameState_gamePaused;
     }
 }

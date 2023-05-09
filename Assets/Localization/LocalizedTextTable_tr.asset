@@ -136,6 +136,18 @@ MonoBehaviour:
     m_Localized: "Payla\u015F"
     m_Metadata:
       m_Items: []
+  - m_Id: 1789916009857024
+    m_Localized: "Devam et\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1790042375847936
+    m_Localized: "Yeniden Ba\u015Flat\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1790015020597248
+    m_Localized: "Ana Men\xFC\r"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
