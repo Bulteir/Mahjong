@@ -25,7 +25,7 @@ public class BlockCreater : MonoBehaviour
 
     void CreateBlocks()
     {
-        //sahnedeki blokc sayýsý 0dan büyük ve 144'ten küçük olmalý ayrýca 3'e tam bölünmeli
+        //sahnedeki block sayýsý 0'dan büyük ve 144'ten küçük olmalý ayrýca 3'e tam bölünmeli
         if (BlockParent.childCount > 0 && BlockParent.childCount <= 144 && BlockParent.childCount % 3 == 0)
         {
 

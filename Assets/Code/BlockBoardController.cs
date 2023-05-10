@@ -20,6 +20,7 @@ public class BlockBoardController : MonoBehaviour
     public bool isSmoothMoveToSnapPointAnimationContinue = false;
     public Transform blockBoard;
     public Transform blockParent;
+    public Transform blockCounter;
 
     public void PlaceBlock(Transform SelectedBlock)
     {
@@ -111,7 +112,7 @@ public class BlockBoardController : MonoBehaviour
             };
             blockSlotsStruckList.Add(slot);
         }
-
+        
         BlockMatchControl();
     }
 
@@ -160,8 +161,7 @@ public class BlockBoardController : MonoBehaviour
                                 }
                             }
                         }
-                    }    
-
+                    }
                     #endregion
                     break;
                 }
@@ -190,6 +190,8 @@ public class BlockBoardController : MonoBehaviour
 
         ////ýstaka üzerine yerleþtirilen blocklar kontrol edilir/patlatýlýr vs...
         FillBlockBoardStatus();
+        yield return null;
+        blockCounter.GetComponent<BlockCounterController>().RefreshBlockCount();
 
         //her yerleþtirilen bloktan sonra oyununn bitip bitmedði kontrol edilir.
         if (IsGameOver())
@@ -202,6 +204,7 @@ public class BlockBoardController : MonoBehaviour
             GlobalVariables.gameState = GlobalVariables.gameState_gameOver;
             Debug.Log("You Won");
         }
+        
         isSmoothMoveToSnapPointAnimationContinue = false;
     }
 
