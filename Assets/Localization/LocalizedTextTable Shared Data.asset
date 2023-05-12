@@ -143,6 +143,30 @@ MonoBehaviour:
     m_Key: Restart
     m_Metadata:
       m_Items: []
+  - m_Id: 2174930992103424
+    m_Key: Congratulations
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2179803905130496
+    m_Key: NextLevel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2195846262292480
+    m_Key: Reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2197167124119552
+    m_Key: Time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2205187317039104
+    m_Key: Failed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2211590089867264
+    m_Key: TryAgain
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

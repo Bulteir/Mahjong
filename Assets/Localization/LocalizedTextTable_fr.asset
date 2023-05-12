@@ -148,6 +148,30 @@ MonoBehaviour:
     m_Localized: "Red\xE9marrer\r"
     m_Metadata:
       m_Items: []
+  - m_Id: 2174930992103424
+    m_Localized: "F\xE9licitations!\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2179803905130496
+    m_Localized: Niveau suivant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2195846262292480
+    m_Localized: "R\xE9compense"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2197167124119552
+    m_Localized: Temps
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2205187317039104
+    m_Localized: "\xC9chou\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2211590089867264
+    m_Localized: "R\xE9essayer"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

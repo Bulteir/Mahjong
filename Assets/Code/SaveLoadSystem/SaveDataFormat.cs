@@ -1,6 +1,15 @@
+using System.Collections.Generic;
+
 public class SaveDataFormat
 {
-    public int unlockedLevelNumber;
-    public string test;
+    public int totalCoin;
+    public List<LevelProperties> levelProperties;
     public string saveTime;
+}
+
+public struct LevelProperties
+{
+    public string LevelName;
+    public string bestTime;
+    public bool levelPassed;
 }

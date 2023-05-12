@@ -25,10 +25,17 @@ public class InGame_MenuController : MonoBehaviour
         if (GlobalVariables.gameState == GlobalVariables.gameState_inGame)
         {
             pauseMenu.SetActive(false);
+            gameOverMenu.SetActive(false);
         }
         else if (GlobalVariables.gameState == GlobalVariables.gameState_gamePaused && pauseMenu.activeSelf == false)
         {
             pauseMenu.SetActive(true);
+            gameOverMenu.SetActive(false);
+        }
+        else if (GlobalVariables.gameState == GlobalVariables.gameState_gameOver && gameOverMenu.activeSelf == false)
+        {
+            pauseMenu.SetActive(false);
+            gameOverMenu.SetActive(true);
         }
     }
 }

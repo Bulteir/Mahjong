@@ -148,6 +148,30 @@ MonoBehaviour:
     m_Localized: "Neustart\r"
     m_Metadata:
       m_Items: []
+  - m_Id: 2174930992103424
+    m_Localized: "Herzlichen Gl\xFCckwunsch!\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2179803905130496
+    m_Localized: "N\xE4chste Stufe"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2195846262292480
+    m_Localized: Belohnung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2197167124119552
+    m_Localized: Zeit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2205187317039104
+    m_Localized: Fehlgeschlagen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2211590089867264
+    m_Localized: "Erneut versuchen\r"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

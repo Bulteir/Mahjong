@@ -147,6 +147,30 @@ MonoBehaviour:
     m_Localized: Restart
     m_Metadata:
       m_Items: []
+  - m_Id: 2174930992103424
+    m_Localized: "Congratulations!\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2179803905130496
+    m_Localized: Next Level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2195846262292480
+    m_Localized: Reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2197167124119552
+    m_Localized: Time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2205187317039104
+    m_Localized: Failed!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2211590089867264
+    m_Localized: Try Again
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -1,9 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 using System.Reflection;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
+using UnityEngine.SceneManagement;
 
 public class BlockBoardController : MonoBehaviour
 {
@@ -21,6 +25,10 @@ public class BlockBoardController : MonoBehaviour
     public Transform blockBoard;
     public Transform blockParent;
     public Transform blockCounter;
+    public GameObject GameOverMenu;
+    public GameObject LoadAnimation;
+    public GameObject Timer;
+    public GameObject generalControllers;
 
     public void PlaceBlock(Transform SelectedBlock)
     {
@@ -197,14 +205,17 @@ public class BlockBoardController : MonoBehaviour
         if (IsGameOver())
         {
             GlobalVariables.gameState = GlobalVariables.gameState_gameOver;
-            Debug.Log("Game Over");
+            GameOverMenu.GetComponent<InGame_GameOverMenuController>().SetContent(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Failed"), 0, false);
         }
         else if (IsGameWon())
         {
             GlobalVariables.gameState = GlobalVariables.gameState_gameOver;
-            Debug.Log("You Won");
+            GameOverMenu.GetComponent<InGame_GameOverMenuController>().SetContent(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Congratulations"), 100, true);
+
+            LoadAnimation.GetComponent<LoadSaveAnimationController>().StartAnimation(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Saving"));
+            StartCoroutine(SaveData(100, true));
         }
-        
+
         isSmoothMoveToSnapPointAnimationContinue = false;
     }
 
@@ -267,5 +278,72 @@ public class BlockBoardController : MonoBehaviour
             result = true;
 
         return result;
+    }
+
+    //Bölüm kazanýldýðýnda kullanýcý bilgileri save dosyasýna iþleniyor
+    IEnumerator SaveData(int reward, bool levelIsWon)
+    {
+        LoadAnimation.GetComponent<LoadSaveAnimationController>().StartAnimation(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Loading"));
+        yield return null;
+
+        SaveDataFormat saveFile = generalControllers.GetComponent<LocalSaveLoadController>().LoadGame();
+        if (saveFile.saveTime != null)//Kayýtlý save dosyasý varsa
+        {
+            saveFile.totalCoin += reward;
+            LevelProperties levelProperties = saveFile.levelProperties.Where(i => i.LevelName == SceneManager.GetActiveScene().name).FirstOrDefault();
+            saveFile.levelProperties.Remove(levelProperties);
+
+            if (levelProperties.LevelName != null) //kayýt 
+            {
+                levelProperties.levelPassed = levelIsWon;
+                //burada süreyi karþýlaþtýr.
+
+                string bestTimeFormat = "mm:ss:ff";
+                if (levelProperties.bestTime.Length > 8)//saatte gösterir
+                {
+                    bestTimeFormat = "HH:mm:ss:ff";
+                }
+
+                string currentTimeFormat = "mm:ss:ff";
+                if (Timer.GetComponent<Timer>().text.text.Length > 8)//saatte gösterir
+                {
+                    currentTimeFormat = "HH:mm:ss:ff";
+                }
+
+                DateTime currentTime;
+                DateTime.TryParseExact(Timer.GetComponent<Timer>().text.text, currentTimeFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out currentTime);
+
+                DateTime bestTime;
+                DateTime.TryParseExact(levelProperties.bestTime, bestTimeFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out bestTime);
+
+
+                if (currentTime.TimeOfDay.CompareTo(bestTime.TimeOfDay) < 0)
+                {
+                    levelProperties.bestTime = Timer.GetComponent<Timer>().text.text;
+                }
+            }
+            saveFile.levelProperties.Add(levelProperties);
+            saveFile.saveTime = DateTime.Now.ToString();
+            generalControllers.GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
+        }
+        else //save dosyasý yoktur. Ýlk kayýt dosyasý oluþturulur.
+        {
+            saveFile = new SaveDataFormat();
+            saveFile.totalCoin = reward;
+            saveFile.saveTime = DateTime.Now.ToString();
+
+            saveFile.levelProperties = new List<LevelProperties> { new LevelProperties
+            {
+                LevelName = SceneManager.GetActiveScene().name,
+                bestTime = Timer.GetComponent<Timer>().text.text,
+                levelPassed = levelIsWon
+            } };
+
+            generalControllers.GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
+        }
+        yield return null;
+
+        LoadAnimation.GetComponent<LoadSaveAnimationController>().StopAnimation();
+        yield return null;
     }
 }

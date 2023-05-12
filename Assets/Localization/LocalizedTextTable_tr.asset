@@ -148,6 +148,30 @@ MonoBehaviour:
     m_Localized: "Ana Men\xFC\r"
     m_Metadata:
       m_Items: []
+  - m_Id: 2174930992103424
+    m_Localized: Tebrikler!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2179803905130496
+    m_Localized: Sonraki Seviye
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2195846262292480
+    m_Localized: "\xD6d\xFCl"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2197167124119552
+    m_Localized: "S\xFCre"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2205187317039104
+    m_Localized: "Ba\u015Far\u0131s\u0131z"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2211590089867264
+    m_Localized: "Tekrar Dene\r"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

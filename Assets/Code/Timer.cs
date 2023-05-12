@@ -1,12 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using TMPro;
 using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
     public TMP_Text text;
+    //23:59:21:00
+    //float count = 86361;
     float count;
     float miliSecond;
     int second;

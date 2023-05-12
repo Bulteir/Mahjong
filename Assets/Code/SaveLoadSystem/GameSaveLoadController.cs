@@ -14,17 +14,10 @@ public class GameSaveLoadController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        saveData = new SaveDataFormat();
-        saveData.unlockedLevelNumber = 3;
-        saveData.test = "Save load sistemi tamamlandý";
-        saveData.saveTime = DateTime.Now.ToString();
-
-        ////local load örneði
-        //SaveDataFormat loadData = LoadGameLocal();
-        //string gameDataJson = JsonConvert.SerializeObject(loadData, Formatting.Indented);
 
     }
 
+    //örnek kod. Test butonlarýnda kullanýlýyor
     IEnumerator SaveGameLocal(SaveDataFormat data)
     {
         LoadAnimation.GetComponent<LoadSaveAnimationController>().StartAnimation(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Saving"));
@@ -35,6 +28,7 @@ public class GameSaveLoadController : MonoBehaviour
         yield return null;
     }
 
+    //örnek kod. Test butonlarýnda kullanýlýyor
     IEnumerator SaveGameCloud(SaveDataFormat data)
     {
         LoadAnimation.GetComponent<LoadSaveAnimationController>().StartAnimation(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Saving"));
@@ -57,12 +51,13 @@ public class GameSaveLoadController : MonoBehaviour
         return GetComponent<LocalSaveLoadController>().LoadGame();
     }
 
+    //örnek kod. Test butonlarýnda kullanýlýyor
     IEnumerator LoadGameLocalCorroutine()
     {
         LoadAnimation.GetComponent<LoadSaveAnimationController>().StartAnimation(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Loading"));
         yield return null;
         SaveDataFormat data = LoadGameLocal();
-        Debug.Log("Local Load data:"+(data.saveTime==null?false:data.saveTime)+" unlockedLevelNumber:" + data.unlockedLevelNumber + " test:" + data.test + " SaveTime:" + data.saveTime);
+        Debug.Log("Local Load data:" + (data.saveTime == null ? false : data.saveTime));
         yield return null;
         LoadAnimation.GetComponent<LoadSaveAnimationController>().StopAnimation();
         yield return null;
@@ -74,6 +69,7 @@ public class GameSaveLoadController : MonoBehaviour
         Debug.Log("Cloud Load Data:" + data);
     }
 
+    //örnek kod. Test butonlarýnda kullanýlýyor
     IEnumerator LoadGameCloudCorroutine()
     {
         LoadAnimation.GetComponent<LoadSaveAnimationController>().StartAnimation(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Loading"));

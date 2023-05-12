@@ -147,6 +147,30 @@ MonoBehaviour:
     m_Localized: "Reiniciar\r"
     m_Metadata:
       m_Items: []
+  - m_Id: 2174930992103424
+    m_Localized: "\xA1Felicidades!\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2179803905130496
+    m_Localized: Siguiente nivel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2195846262292480
+    m_Localized: Recompensa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2197167124119552
+    m_Localized: Tiempo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2205187317039104
+    m_Localized: Nivel fallido
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2211590089867264
+    m_Localized: "Intentar de nuevo\r"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
