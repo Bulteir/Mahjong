@@ -172,6 +172,10 @@ MonoBehaviour:
     m_Localized: "R\xE9essayer"
     m_Metadata:
       m_Items: []
+  - m_Id: 6542720188416000
+    m_Localized: Meilleur Temps
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

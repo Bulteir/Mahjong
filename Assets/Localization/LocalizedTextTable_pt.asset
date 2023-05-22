@@ -171,6 +171,10 @@ MonoBehaviour:
     m_Localized: Tente novamente
     m_Metadata:
       m_Items: []
+  - m_Id: 6542720188416000
+    m_Localized: Melhor Tempo
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

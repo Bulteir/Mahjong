@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 public static class GlobalVariables
 {
@@ -19,5 +20,16 @@ public static class GlobalVariables
     public const int gameState_StoreMenu = 7;
 
     public const string LeaderboardId_BestTimes = "BestTimes";
+
+    //bölüm bazlý puanlar
+    public static List<int> LevelRewards = new List<int>()
+    {
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+    }; 
 
 }

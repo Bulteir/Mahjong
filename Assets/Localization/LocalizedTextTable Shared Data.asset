@@ -167,6 +167,10 @@ MonoBehaviour:
     m_Key: TryAgain
     m_Metadata:
       m_Items: []
+  - m_Id: 6542720188416000
+    m_Key: Best Time
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

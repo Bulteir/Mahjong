@@ -172,6 +172,10 @@ MonoBehaviour:
     m_Localized: "Tekrar Dene\r"
     m_Metadata:
       m_Items: []
+  - m_Id: 6542720188416000
+    m_Localized: En iyi zaman
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

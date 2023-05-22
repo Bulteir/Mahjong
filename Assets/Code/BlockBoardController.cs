@@ -210,10 +210,10 @@ public class BlockBoardController : MonoBehaviour
         else if (IsGameWon())
         {
             GlobalVariables.gameState = GlobalVariables.gameState_gameOver;
-            GameOverMenu.GetComponent<InGame_GameOverMenuController>().SetContent(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Congratulations"), 100, true);
+            GameOverMenu.GetComponent<InGame_GameOverMenuController>().SetContent(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Congratulations"), GlobalVariables.LevelRewards[0] , true);
 
             LoadAnimation.GetComponent<LoadSaveAnimationController>().StartAnimation(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Saving"));
-            StartCoroutine(SaveData(100, true));
+            StartCoroutine(SaveData(GlobalVariables.LevelRewards[0], true));
         }
 
         isSmoothMoveToSnapPointAnimationContinue = false;
