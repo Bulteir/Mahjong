@@ -1,7 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenu_MenuController : MonoBehaviour
@@ -13,6 +17,7 @@ public class MainMenu_MenuController : MonoBehaviour
     public GameObject leaderboardMenu;
     
     public GameObject RateBox;
+    public List<TMP_Text> CoinBarText;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +42,37 @@ public class MainMenu_MenuController : MonoBehaviour
             GetComponent<GameSaveLoadController>().GameSaveDataSynchronization();
             GlobalVariables.firstSynchronisationOfGame = false;
         }
+
+        //Oyun baþlangýcýnda kullanýcnýnýn toplam coin'i save dosyasýndan okunur
+        SaveDataFormat saveFile = GetComponent<LocalSaveLoadController>().LoadGame();
+        if (saveFile.saveTime != null)//Kayýtlý save dosyasý varsa
+        {
+            foreach (TMP_Text coinBar in CoinBarText)
+            {
+                coinBar.text = saveFile.totalCoin.ToString();
+            }
+        }
+        else//kayýt dosyasý hiç oluþturulmamýþ. Kullanýnýn ilk giriþi olduðunu varsayabiliriz.
+        {
+            saveFile = new SaveDataFormat();
+            saveFile.totalCoin = GlobalVariables.FirstTotalCoin;
+            saveFile.saveTime = DateTime.Now.ToString();
+
+            saveFile.levelProperties = new List<LevelProperties> { new LevelProperties
+            {
+                LevelName = "level1",
+                levelPassed = false,
+                levelPurchased = true,
+            } };
+
+            GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
+
+            foreach (TMP_Text coinBar in CoinBarText)
+            {
+                coinBar.text = saveFile.totalCoin.ToString();
+            }
+        }
+
     }
 
     // Update is called once per frame

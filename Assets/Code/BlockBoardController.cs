@@ -298,8 +298,9 @@ public class BlockBoardController : MonoBehaviour
                 levelProperties.levelPassed = levelIsWon;
                 //burada süreyi karþýlaþtýr.
 
+
                 string bestTimeFormat = "mm:ss:ff";
-                if (levelProperties.bestTime.Length > 8)//saatte gösterir
+                if (levelProperties.bestTime != null && levelProperties.bestTime.Length > 8)//saatte gösterir
                 {
                     bestTimeFormat = "HH:mm:ss:ff";
                 }
@@ -314,8 +315,15 @@ public class BlockBoardController : MonoBehaviour
                 DateTime.TryParseExact(Timer.GetComponent<Timer>().text.text, currentTimeFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out currentTime);
 
                 DateTime bestTime;
-                DateTime.TryParseExact(levelProperties.bestTime, bestTimeFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out bestTime);
 
+                if (levelProperties.bestTime == null)
+                {
+                    DateTime.TryParseExact("59:59:99", bestTimeFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out bestTime);
+                }
+                else
+                {
+                    DateTime.TryParseExact(levelProperties.bestTime, bestTimeFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out bestTime);
+                }
 
                 if (currentTime.TimeOfDay.CompareTo(bestTime.TimeOfDay) < 0)
                 {

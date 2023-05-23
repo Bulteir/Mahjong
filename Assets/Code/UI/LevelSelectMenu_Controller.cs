@@ -10,6 +10,9 @@ public class LevelSelectMenu_Controller : MonoBehaviour
     public GameObject generalControllers;
     public Sprite LockImage;
     public Sprite UnlockImage;
+    public Sprite Background;
+    public GameObject Popup;
+
     [Tooltip("Oyunda kullanýcý kaç tane bölümü açtý.")]
     int UnlockedLevelNumber = 1;
 
@@ -18,6 +21,12 @@ public class LevelSelectMenu_Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        CreateLevelSelectMenu();
+    }
+
+    public void CreateLevelSelectMenu()
+    {
+        UnlockedLevelNumber = 1;
         //save dosyasý okunur.
         SaveDataFormat saveFile = generalControllers.GetComponent<LocalSaveLoadController>().LoadGame();
         levelButtons = GetComponentsInChildren<LevelSelectMenu_Level_Btn>();
@@ -32,13 +41,13 @@ public class LevelSelectMenu_Controller : MonoBehaviour
             }
 
             //eðer bölüm kazanýlmýþsa unlocked bölüm sayýsýný arttýr.
-            if (levelProperties.bestTime != null)
+            if (levelProperties.levelPassed == true)
             {
                 UnlockedLevelNumber++;
             }
 
             levelButtons[i].levelNumberText.text = (i + 1).ToString();
-            levelButtons[i].levelNumber = (i+1);
+            levelButtons[i].levelNumber = (i + 1);
 
             if (i >= UnlockedLevelNumber)
             {
@@ -50,29 +59,42 @@ public class LevelSelectMenu_Controller : MonoBehaviour
             }
             else
             {
-                levelButtons[i].GetComponent<Image>().sprite = UnlockImage;
-                levelButtons[i].GetComponent<Button>().enabled = true;
-                levelButtons[i].levelNumberText.gameObject.SetActive(true);
-                
-                //bölümler kazanýlnýþsa yapýlan en iyi sürenin gösterilmesi
-                if (levelProperties.bestTime != null)
+                //bölüm satýn alýnmýþ yada ilk bölüm
+                if ((levelProperties.levelPurchased && i > 0) || i == 0)
                 {
-                    levelButtons[i].bestTimeText.gameObject.SetActive(true);
-                    levelButtons[i].bestTimeText.text = levelProperties.bestTime;
-                }
-                else//o bölüm hiç kazanýlmadýðý için en iyi süresi yoktur
-                {
-                    levelButtons[i].bestTimeText.gameObject.SetActive(false);
-                }
+                    levelButtons[i].GetComponent<Image>().sprite = Background;
+                    levelButtons[i].GetComponent<Button>().enabled = true;
 
-                //bölümlere göre kazanýlacak puanlarýn gösterilmesi
-                if (i < GlobalVariables.LevelRewards.Count)
-                {
-                    levelButtons[i].rewardText.gameObject.SetActive(true);
-                    levelButtons[i].rewardText.text = GlobalVariables.LevelRewards[i].ToString();
+                    levelButtons[i].levelNumberText.gameObject.SetActive(true);
+
+                    //bölümler kazanýlnýþsa yapýlan en iyi sürenin gösterilmesi
+                    if (levelProperties.bestTime != null)
+                    {
+                        levelButtons[i].bestTimeText.gameObject.SetActive(true);
+                        levelButtons[i].bestTimeText.text = levelProperties.bestTime;
+                    }
+                    else//o bölüm hiç kazanýlmadýðý için en iyi süresi yoktur
+                    {
+                        levelButtons[i].bestTimeText.gameObject.SetActive(false);
+                    }
+
+                    //bölümlere göre kazanýlacak puanlarýn gösterilmesi
+                    if (i < GlobalVariables.LevelRewards.Count)
+                    {
+                        levelButtons[i].rewardText.gameObject.SetActive(true);
+                        levelButtons[i].rewardText.text = GlobalVariables.LevelRewards[i].ToString();
+                    }
+                    else
+                    {
+                        levelButtons[i].rewardText.gameObject.SetActive(false);
+                    }
                 }
-                else
+                else if (i > 0)//bölüm satýn alýnmamýþ
                 {
+                    levelButtons[i].GetComponent<Image>().sprite = UnlockImage;
+                    levelButtons[i].GetComponent<Button>().enabled = true;
+                    levelButtons[i].levelNumberText.gameObject.SetActive(false);
+                    levelButtons[i].bestTimeText.gameObject.SetActive(false);
                     levelButtons[i].rewardText.gameObject.SetActive(false);
                 }
             }
@@ -81,6 +103,23 @@ public class LevelSelectMenu_Controller : MonoBehaviour
 
     public void LoadLevel(int levelNumber)
     {
-        SceneManager.LoadScene("level" + levelNumber, LoadSceneMode.Single);
+        //save dosyasý okunur.
+        SaveDataFormat saveFile = generalControllers.GetComponent<LocalSaveLoadController>().LoadGame();
+        LevelProperties levelProperties = new LevelProperties();
+        if (saveFile.saveTime != null)//Kayýtlý save dosyasý varsa
+        {
+            string levelName = "level" + levelNumber.ToString();
+            levelProperties = saveFile.levelProperties.Where(i => i.LevelName == levelName).FirstOrDefault();
+        }
+
+        //týklanýlan bölüm daha önceden satýn alýnmýþsa ya da ilk bölümse
+        if (levelProperties.levelPurchased || levelNumber == 1)
+        {
+            SceneManager.LoadScene("level" + levelNumber, LoadSceneMode.Single);
+        }
+        else
+        {
+            Popup.GetComponent<LevelPurhasePopup_Controller>().ShowPopup(saveFile, levelNumber);
+        }
     }
 }
