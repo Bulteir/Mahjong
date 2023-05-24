@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: fr
   m_SharedData: {fileID: 11400000, guid: 3efb08f1c92d8c7428b8b503baca83a3, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 9143329240635408388
   m_TableData:
   - m_Id: 342451421184
     m_Localized: Commencer Le Jeu
@@ -176,6 +177,21 @@ MonoBehaviour:
     m_Localized: Meilleur Temps
     m_Metadata:
       m_Items: []
+  - m_Id: 7170511766421504
+    m_Localized: "Pour d\xE9bloquer le Niveau {levelName}, vous avez besoin de {coin}
+      pi\xE8ces d'or. Souhaitez-vous d\xE9bloquer le Niveau {levelName} ?"
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408388
+  - m_Id: 7191765466611712
+    m_Localized: "Vous n'avez pas assez d'or pour d\xE9bloquer le niveau {levelName}."
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408388
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 9143329240635408388
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 0000b2de8a7919000000f261df8c1900

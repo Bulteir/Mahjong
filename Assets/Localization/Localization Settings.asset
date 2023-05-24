@@ -69,7 +69,7 @@ MonoBehaviour:
         m_Sources:
         - rid: 9143328791284678665
         - rid: 9143328791284678666
-        - rid: 9143328791284678667
+        - rid: 9143329239386292236
         - rid: 9143328791284678668
         - rid: 9143328791284678669
         - rid: 9143328791284678670
@@ -116,8 +116,6 @@ MonoBehaviour:
       type: {class: PersistentVariablesSource, ns: UnityEngine.Localization.SmartFormat.Extensions, asm: Unity.Localization}
       data:
         m_Groups: []
-    - rid: 9143328791284678667
-      type: {class: DictionarySource, ns: UnityEngine.Localization.SmartFormat.Extensions, asm: Unity.Localization}
     - rid: 9143328791284678668
       type: {class: ValueTupleSource, ns: UnityEngine.Localization.SmartFormat.Extensions, asm: Unity.Localization}
     - rid: 9143328791284678669
@@ -185,3 +183,5 @@ MonoBehaviour:
         - default
         - d
         - 
+    - rid: 9143329239386292236
+      type: {class: DictionarySource, ns: UnityEngine.Localization.SmartFormat.Extensions, asm: Unity.Localization}

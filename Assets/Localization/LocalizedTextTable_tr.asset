@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: tr
   m_SharedData: {fileID: 11400000, guid: 3efb08f1c92d8c7428b8b503baca83a3, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 9143329240635408394
   m_TableData:
   - m_Id: 342451421184
     m_Localized: "Oyuna Ba\u015Fla"
@@ -176,6 +177,22 @@ MonoBehaviour:
     m_Localized: En iyi zaman
     m_Metadata:
       m_Items: []
+  - m_Id: 7170511766421504
+    m_Localized: "{levelName}. b\xF6l\xFCm\xFC a\xE7mak i\xE7in {coin} alt\u0131n
+      gerekmektedir. {levelName}. b\xF6l\xFCm\xFC a\xE7mak ister misiniz?"
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408394
+  - m_Id: 7191765466611712
+    m_Localized: "{levelName}. b\xF6l\xFCm\xFC a\xE7mak i\xE7in yeterli alt\u0131n\u0131n\u0131z
+      yok."
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408394
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 9143329240635408394
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 0000b2de8a7919000000f261df8c1900

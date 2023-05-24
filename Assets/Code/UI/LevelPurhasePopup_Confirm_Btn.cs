@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 
 public class LevelPurhasePopup_Confirm_Btn : MonoBehaviour
 {
@@ -51,7 +52,8 @@ public class LevelPurhasePopup_Confirm_Btn : MonoBehaviour
             }
             else//yeterli altýn yok
             {
-                Popup.GetComponent<LevelPurhasePopup_Controller>().Content.text = "Bölümü satýn almak için yeterli coin'iniz yok";
+                Dictionary<string, string> arguments = new Dictionary<string, string> { { "levelName", LevelNumber.ToString() } };
+                Popup.GetComponent<LevelPurhasePopup_Controller>().Content.text = LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Level Purchase Not Enough Gold", new object[] { arguments });
                 gameObject.SetActive(false);
             }
         }

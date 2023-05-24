@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: de
   m_SharedData: {fileID: 11400000, guid: 3efb08f1c92d8c7428b8b503baca83a3, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 9143329240635408389
   m_TableData:
   - m_Id: 342451421184
     m_Localized: Spiel Starten
@@ -176,6 +177,21 @@ MonoBehaviour:
     m_Localized: Beste Zeit
     m_Metadata:
       m_Items: []
+  - m_Id: 7170511766421504
+    m_Localized: "Um Level {levelName} freizuschalten, ben\xF6tigen Sie {coin} Goldm\xFCnzen.
+      M\xF6chten Sie Level {levelName} freischalten?"
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408389
+  - m_Id: 7191765466611712
+    m_Localized: Du hast nicht genug Gold, um Level {levelName} freizuschalten.
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408389
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 9143329240635408389
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 0000b2de8a7919000000f261df8c1900

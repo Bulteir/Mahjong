@@ -171,6 +171,14 @@ MonoBehaviour:
     m_Key: Best Time
     m_Metadata:
       m_Items: []
+  - m_Id: 7170511766421504
+    m_Key: Level Purchase Content
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7191765466611712
+    m_Key: Level Purchase Not Enough Gold
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
