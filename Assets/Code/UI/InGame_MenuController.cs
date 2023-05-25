@@ -1,17 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class InGame_MenuController : MonoBehaviour
 {
     public GameObject pauseMenu;
     public GameObject gameOverMenu;
+    public GameObject CoinBarText;
 
     // Start is called before the first frame update
     void Start()
     {
         GlobalVariables.gameState = GlobalVariables.gameState_inGame;
+
+        SaveDataFormat saveFile = GetComponent<LocalSaveLoadController>().LoadGame();
+        if (saveFile.saveTime != null)//Kayýtlý save dosyasý varsa
+        {
+            CoinBarText.GetComponent<CoinBar_Controller>().CoinBarText.text = saveFile.totalCoin.ToString();
+        }
     }
 
     // Update is called once per frame

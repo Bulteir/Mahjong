@@ -45,9 +45,9 @@ public class LevelPurhasePopup_Confirm_Btn : MonoBehaviour
                 Popup.SetActive(false);
                 levelSelectMenu.GetComponent<LevelSelectMenu_Controller>().CreateLevelSelectMenu();
 
-                foreach (TMP_Text coinBar in generalControllers.GetComponent<MainMenu_MenuController>().CoinBarText)
+                foreach (GameObject coinBar in generalControllers.GetComponent<MainMenu_MenuController>().CoinBarText)
                 {
-                    coinBar.text = SaveFile.totalCoin.ToString();
+                    coinBar.GetComponent<CoinBar_Controller>().AddRemoveCoin(-(GlobalVariables.LevelRewards[LevelNumber - 1] * 3), SaveFile.totalCoin);
                 }
             }
             else//yeterli altýn yok

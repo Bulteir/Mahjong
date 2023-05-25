@@ -196,10 +196,19 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 9143329240635408386
+  - m_Id: 7543509706997760
+    m_Localized: "\u0644\u064A\u0633 \u0644\u062F\u064A\u0643 \u0645\u0627 \u064A\u0643\u0641\u064A
+      \u0645\u0646 \u0627\u0644\u0630\u0647\u0628 \u0644\u0641\u062A\u062D \u0627\u0644\u0645\u0633\u062A\u0648\u0649
+      {levelName}. \u0644\u0641\u062A\u062D \u0627\u0644\u0645\u0633\u062A\u0648\u0649
+      {levelName} \u060C \u062A\u062D\u062A\u0627\u062C \u0625\u0644\u0649 {coin}
+      \u0639\u0645\u0644\u0629 \u0630\u0647\u0628\u064A\u0629"
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408386
   references:
     version: 2
     RefIds:
     - rid: 9143329240635408386
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 0000b2de8a7919000000f261df8c1900
+        m_Entries: 0000b2de8a7919000000f261df8c190000007238c8cc1a00

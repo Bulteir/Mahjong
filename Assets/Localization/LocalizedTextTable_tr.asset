@@ -154,7 +154,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2179803905130496
-    m_Localized: Sonraki Seviye
+    m_Localized: "Sonraki B\xF6l\xFCm"
     m_Metadata:
       m_Items: []
   - m_Id: 2195846262292480
@@ -189,10 +189,17 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 9143329240635408394
+  - m_Id: 7543509706997760
+    m_Localized: "{levelName}. seviyeyi a\xE7mak i\xE7in yeterli alt\u0131n\u0131n\u0131z
+      yok. {levelName}. seviyeyi a\xE7mak i\xE7in {coin} alt\u0131na ihtiyac\u0131n\u0131z
+      var."
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408394
   references:
     version: 2
     RefIds:
     - rid: 9143329240635408394
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 0000b2de8a7919000000f261df8c1900
+        m_Entries: 0000b2de8a7919000000f261df8c190000007238c8cc1a00

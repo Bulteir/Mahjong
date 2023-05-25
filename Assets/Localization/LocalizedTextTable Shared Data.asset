@@ -179,6 +179,10 @@ MonoBehaviour:
     m_Key: Level Purchase Not Enough Gold
     m_Metadata:
       m_Items: []
+  - m_Id: 7543509706997760
+    m_Key: Next Level Not Enough Gold
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

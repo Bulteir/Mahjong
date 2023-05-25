@@ -187,10 +187,16 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 9143329240635408393
+  - m_Id: 7543509706997760
+    m_Localized: No tienes suficiente oro para desbloquear el nivel {levelName}.
+      Para desbloquear el nivel {levelName}, necesitas {coin} monedas de oro.
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408393
   references:
     version: 2
     RefIds:
     - rid: 9143329240635408393
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 0000b2de8a7919000000f261df8c1900
+        m_Entries: 0000b2de8a7919000000f261df8c190000007238c8cc1a00

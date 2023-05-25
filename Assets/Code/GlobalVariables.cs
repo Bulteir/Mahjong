@@ -27,7 +27,7 @@ public static class GlobalVariables
     public static List<int> LevelRewards = new List<int>()
     {
         101,
-        102,
+        502,
         103,
         104,
         105,

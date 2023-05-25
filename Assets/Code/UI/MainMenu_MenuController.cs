@@ -1,11 +1,8 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenu_MenuController : MonoBehaviour
@@ -17,7 +14,7 @@ public class MainMenu_MenuController : MonoBehaviour
     public GameObject leaderboardMenu;
     
     public GameObject RateBox;
-    public List<TMP_Text> CoinBarText;
+    public List<GameObject> CoinBarText;
 
     // Start is called before the first frame update
     void Start()
@@ -47,9 +44,9 @@ public class MainMenu_MenuController : MonoBehaviour
         SaveDataFormat saveFile = GetComponent<LocalSaveLoadController>().LoadGame();
         if (saveFile.saveTime != null)//Kayýtlý save dosyasý varsa
         {
-            foreach (TMP_Text coinBar in CoinBarText)
+            foreach (GameObject coinBar in CoinBarText)
             {
-                coinBar.text = saveFile.totalCoin.ToString();
+                coinBar.GetComponent<CoinBar_Controller>().CoinBarText.text = saveFile.totalCoin.ToString();
             }
         }
         else//kayýt dosyasý hiç oluþturulmamýþ. Kullanýnýn ilk giriþi olduðunu varsayabiliriz.
@@ -67,9 +64,9 @@ public class MainMenu_MenuController : MonoBehaviour
 
             GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
 
-            foreach (TMP_Text coinBar in CoinBarText)
+            foreach (GameObject coinBar in CoinBarText)
             {
-                coinBar.text = saveFile.totalCoin.ToString();
+                coinBar.GetComponent<CoinBar_Controller>().CoinBarText.text = saveFile.totalCoin.ToString();
             }
         }
 

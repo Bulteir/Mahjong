@@ -349,6 +349,8 @@ public class BlockBoardController : MonoBehaviour
 
             generalControllers.GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
         }
+
+        generalControllers.GetComponent<InGame_MenuController>().CoinBarText.GetComponent<CoinBar_Controller>().AddRemoveCoin(reward, saveFile.totalCoin);
         yield return null;
 
         LoadAnimation.GetComponent<LoadSaveAnimationController>().StopAnimation();
