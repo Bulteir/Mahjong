@@ -5,6 +5,7 @@ public class SaveDataFormat
     public int totalCoin;
     public List<LevelProperties> levelProperties;
     public string saveTime;
+    public bool saveFileIsSyncEver;
 }
 
 public struct LevelProperties

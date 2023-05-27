@@ -196,10 +196,29 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 9143329240635408394
+  - m_Id: 7989258597040128
+    m_Localized: "Yerel Kay\u0131t Dosyas\u0131\n\nKay\u0131t Zaman\u0131:\n{saveTime}"
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408394
+  - m_Id: 8005288874606592
+    m_Localized: "Bulut Kay\u0131t Dosyas\u0131\n\nKay\u0131t Zaman\u0131:\n{saveTime}"
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408394
+  - m_Id: 8271874059534336
+    m_Localized: Senkronizasyon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8272072676605952
+    m_Localized: "L\xFCtfen devam etmek istedi\u011Finiz kay\u0131t dosyas\u0131n\u0131
+      se\xE7in."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
     - rid: 9143329240635408394
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 0000b2de8a7919000000f261df8c190000007238c8cc1a00
+        m_Entries: 0000b2de8a7919000000f261df8c190000007238c8cc1a000000b23830621c000000b28fc4701c00

@@ -545,6 +545,7 @@ struct U3CU3Ec__DisplayClass6_0_1_tA148CADC58FCBD0BE10E366F86E7D554F1720694;
 struct U3CU3Ec__DisplayClass6_0_1_t5F6A93C1B40D77FC511D16492C7C4DEA4F1DC366;
 struct U3CU3Ec__DisplayClass6_0_1_tC712342DB7C8345766C970DA1BD8B4D7168EBB05;
 struct U3CU3Ec__DisplayClass6_0_1_t26B8A93E1D0B3B043B156E2623FBF7D4002C799B;
+struct U3CU3Ec__DisplayClass6_0_1_t9F78E0A823D27B9F838205FCE5EA7C24DD2F8F36;
 struct U3CU3Ec__DisplayClass6_0_1_tA721F3FA3526198C198C53FD1DA29FD65DB5C162;
 struct U3CU3Ec__DisplayClass6_0_1_tC1219E7FF30E75FC86CFD6339736E06E22DAC884;
 struct U3CU3Ec__DisplayClass6_0_1_tE55BAA8F710B52E70FD7088CD314B782A20EA879;
@@ -820,6 +821,7 @@ struct Func_2_t63A057E8762189D8C22BF71360D00C1047680DFA;
 struct Func_2_t2FDA873D8482C79555CFB05233D610E8F1C7C354;
 struct Func_2_tB8444326CD91502B291E0988F04448A82D0F6552;
 struct Func_2_t1C8F983F9A1AA802D45E89037E2AA7ACD1094821;
+struct Func_2_t3F16A9934D51280E4BF55D36A89D17BBD49EF579;
 struct Func_2_tA9B0CD21E5F0D7A135DB347A8F95518941C1F675;
 struct Func_2_tE1F0D41563EE092E5E5540B061449FDE88F1DC00;
 struct Func_2_t9A0D493A82DCC47C9C819A3B045E02D9B5DDCE1B;
@@ -2179,6 +2181,11 @@ struct U3CU3Ec__DisplayClass6_0_1_t26B8A93E1D0B3B043B156E2623FBF7D4002C799B  : p
 {
 	Func_2_t1C8F983F9A1AA802D45E89037E2AA7ACD1094821* ___predicate1_0;
 	Func_2_t1C8F983F9A1AA802D45E89037E2AA7ACD1094821* ___predicate2_1;
+};
+struct U3CU3Ec__DisplayClass6_0_1_t9F78E0A823D27B9F838205FCE5EA7C24DD2F8F36  : public RuntimeObject
+{
+	Func_2_t3F16A9934D51280E4BF55D36A89D17BBD49EF579* ___predicate1_0;
+	Func_2_t3F16A9934D51280E4BF55D36A89D17BBD49EF579* ___predicate2_1;
 };
 struct U3CU3Ec__DisplayClass6_0_1_tA721F3FA3526198C198C53FD1DA29FD65DB5C162  : public RuntimeObject
 {
@@ -3807,6 +3814,27 @@ struct Length_t90BB06D47DD6DB461ED21BD3E3241FAB6C824256
 	float ___m_Value_1;
 	int32_t ___m_Unit_2;
 };
+struct LevelProperties_t9F0A52A32D65B9BF99674F9942AFA45C64F9F781 
+{
+	String_t* ___LevelName_0;
+	String_t* ___bestTime_1;
+	bool ___levelPassed_2;
+	bool ___levelPurchased_3;
+};
+struct LevelProperties_t9F0A52A32D65B9BF99674F9942AFA45C64F9F781_marshaled_pinvoke
+{
+	char* ___LevelName_0;
+	char* ___bestTime_1;
+	int32_t ___levelPassed_2;
+	int32_t ___levelPurchased_3;
+};
+struct LevelProperties_t9F0A52A32D65B9BF99674F9942AFA45C64F9F781_marshaled_com
+{
+	Il2CppChar* ___LevelName_0;
+	Il2CppChar* ___bestTime_1;
+	int32_t ___levelPassed_2;
+	int32_t ___levelPurchased_3;
+};
 struct LocaleIdentifier_t1C6758D6E05D8D5DBCD7FFEC16E8E55547595C18 
 {
 	String_t* ___m_Code_0;
@@ -5431,6 +5459,9 @@ struct Func_2_tB8444326CD91502B291E0988F04448A82D0F6552  : public MulticastDeleg
 {
 };
 struct Func_2_t1C8F983F9A1AA802D45E89037E2AA7ACD1094821  : public MulticastDelegate_t
+{
+};
+struct Func_2_t3F16A9934D51280E4BF55D36A89D17BBD49EF579  : public MulticastDelegate_t
 {
 };
 struct Func_2_tE1F0D41563EE092E5E5540B061449FDE88F1DC00  : public MulticastDelegate_t
@@ -7771,6 +7802,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Func_2_Invoke_m186F4854CBE22
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Func_2_Invoke_m61576CC501E5780E453E784D1E32CAC6026DDB33_gshared_inline (Func_2_t58F5E6206B6CF00A0F00A4CD79CC81D86162B6E1* __this, uint8_t ___0_arg, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Func_2_Invoke_m1543D7041BADF87D1F63EBF838B0DDCB40340C7E_gshared_inline (Func_2_t63A057E8762189D8C22BF71360D00C1047680DFA* __this, int32_t ___0_arg, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Func_2_Invoke_m095D2006A2DDB336987862DC15A7EFAED53E08EC_gshared_inline (Func_2_t1C8F983F9A1AA802D45E89037E2AA7ACD1094821* __this, int32_t ___0_arg, const RuntimeMethod* method) ;
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Func_2_Invoke_m8A609D57B04B0EBE2C04FA8F49865EAF6C14114C_gshared_inline (Func_2_t3F16A9934D51280E4BF55D36A89D17BBD49EF579* __this, LevelProperties_t9F0A52A32D65B9BF99674F9942AFA45C64F9F781 ___0_arg, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Func_2_Invoke_m2014423FB900F135C8FF994125604FF9E6AAE829_gshared_inline (Func_2_tE1F0D41563EE092E5E5540B061449FDE88F1DC00* __this, RuntimeObject* ___0_arg, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass71_1_1__ctor_mB743DDED95680B20A524293BF4CE337B43AC5937_gshared (U3CU3Ec__DisplayClass71_1_1_t00282D85A0C7FCBE8E4E6782E5E53BB1010E1C5D* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR AsyncOperationHandle_1_tDD1D892D87C7A0C3189DD56DDB997AB1A2089A74 AddressablesImpl_LoadAssetAsync_TisRuntimeObject_mE6DF20C4BA7D1C77E97BB82D7DFCD7505B94074C_gshared (AddressablesImpl_tD285C19BAF4079094A9A8FE5007ED1C57C256337* __this, RuntimeObject* ___0_location, const RuntimeMethod* method) ;
@@ -8692,6 +8724,10 @@ inline bool Func_2_Invoke_m1543D7041BADF87D1F63EBF838B0DDCB40340C7E_inline (Func
 inline bool Func_2_Invoke_m095D2006A2DDB336987862DC15A7EFAED53E08EC_inline (Func_2_t1C8F983F9A1AA802D45E89037E2AA7ACD1094821* __this, int32_t ___0_arg, const RuntimeMethod* method)
 {
 	return ((  bool (*) (Func_2_t1C8F983F9A1AA802D45E89037E2AA7ACD1094821*, int32_t, const RuntimeMethod*))Func_2_Invoke_m095D2006A2DDB336987862DC15A7EFAED53E08EC_gshared_inline)(__this, ___0_arg, method);
+}
+inline bool Func_2_Invoke_m8A609D57B04B0EBE2C04FA8F49865EAF6C14114C_inline (Func_2_t3F16A9934D51280E4BF55D36A89D17BBD49EF579* __this, LevelProperties_t9F0A52A32D65B9BF99674F9942AFA45C64F9F781 ___0_arg, const RuntimeMethod* method)
+{
+	return ((  bool (*) (Func_2_t3F16A9934D51280E4BF55D36A89D17BBD49EF579*, LevelProperties_t9F0A52A32D65B9BF99674F9942AFA45C64F9F781, const RuntimeMethod*))Func_2_Invoke_m8A609D57B04B0EBE2C04FA8F49865EAF6C14114C_gshared_inline)(__this, ___0_arg, method);
 }
 inline bool Func_2_Invoke_m2014423FB900F135C8FF994125604FF9E6AAE829_inline (Func_2_tE1F0D41563EE092E5E5540B061449FDE88F1DC00* __this, RuntimeObject* ___0_arg, const RuntimeMethod* method)
 {
@@ -19150,6 +19186,48 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec__DisplayClass6_0_1_U3CCombinePre
 		NullCheck(L_3);
 		bool L_5;
 		L_5 = Func_2_Invoke_m095D2006A2DDB336987862DC15A7EFAED53E08EC_inline(L_3, L_4, il2cpp_rgctx_method(method->klass->rgctx_data, 3));
+		return L_5;
+	}
+
+IL_001b:
+	{
+		return (bool)0;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass6_0_1__ctor_m4EC52E50867D0BC5C9ACC688535DC9A5FDC02BB4_gshared (U3CU3Ec__DisplayClass6_0_1_t9F78E0A823D27B9F838205FCE5EA7C24DD2F8F36* __this, const RuntimeMethod* method) 
+{
+	{
+		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2((RuntimeObject*)__this, NULL);
+		return;
+	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec__DisplayClass6_0_1_U3CCombinePredicatesU3Eb__0_m1F3505AF52E2025081AC9DA5B7749E80B8E772F8_gshared (U3CU3Ec__DisplayClass6_0_1_t9F78E0A823D27B9F838205FCE5EA7C24DD2F8F36* __this, LevelProperties_t9F0A52A32D65B9BF99674F9942AFA45C64F9F781 ___0_x, const RuntimeMethod* method) 
+{
+	{
+		Func_2_t3F16A9934D51280E4BF55D36A89D17BBD49EF579* L_0 = (Func_2_t3F16A9934D51280E4BF55D36A89D17BBD49EF579*)__this->___predicate1_0;
+		LevelProperties_t9F0A52A32D65B9BF99674F9942AFA45C64F9F781 L_1 = ___0_x;
+		NullCheck(L_0);
+		bool L_2;
+		L_2 = Func_2_Invoke_m8A609D57B04B0EBE2C04FA8F49865EAF6C14114C_inline(L_0, L_1, il2cpp_rgctx_method(method->klass->rgctx_data, 3));
+		if (!L_2)
+		{
+			goto IL_001b;
+		}
+	}
+	{
+		Func_2_t3F16A9934D51280E4BF55D36A89D17BBD49EF579* L_3 = (Func_2_t3F16A9934D51280E4BF55D36A89D17BBD49EF579*)__this->___predicate2_1;
+		LevelProperties_t9F0A52A32D65B9BF99674F9942AFA45C64F9F781 L_4 = ___0_x;
+		NullCheck(L_3);
+		bool L_5;
+		L_5 = Func_2_Invoke_m8A609D57B04B0EBE2C04FA8F49865EAF6C14114C_inline(L_3, L_4, il2cpp_rgctx_method(method->klass->rgctx_data, 3));
 		return L_5;
 	}
 
@@ -32441,6 +32519,11 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Func_2_Invoke_m1543D7041BADF
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Func_2_Invoke_m095D2006A2DDB336987862DC15A7EFAED53E08EC_gshared_inline (Func_2_t1C8F983F9A1AA802D45E89037E2AA7ACD1094821* __this, int32_t ___0_arg, const RuntimeMethod* method) 
 {
 	typedef bool (*FunctionPointerType) (RuntimeObject*, int32_t, const RuntimeMethod*);
+	return ((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___0_arg, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
+}
+IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Func_2_Invoke_m8A609D57B04B0EBE2C04FA8F49865EAF6C14114C_gshared_inline (Func_2_t3F16A9934D51280E4BF55D36A89D17BBD49EF579* __this, LevelProperties_t9F0A52A32D65B9BF99674F9942AFA45C64F9F781 ___0_arg, const RuntimeMethod* method) 
+{
+	typedef bool (*FunctionPointerType) (RuntimeObject*, LevelProperties_t9F0A52A32D65B9BF99674F9942AFA45C64F9F781, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___0_arg, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Func_2_Invoke_m2014423FB900F135C8FF994125604FF9E6AAE829_gshared_inline (Func_2_tE1F0D41563EE092E5E5540B061449FDE88F1DC00* __this, RuntimeObject* ___0_arg, const RuntimeMethod* method) 

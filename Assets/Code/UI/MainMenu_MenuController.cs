@@ -49,27 +49,13 @@ public class MainMenu_MenuController : MonoBehaviour
                 coinBar.GetComponent<CoinBar_Controller>().CoinBarText.text = saveFile.totalCoin.ToString();
             }
         }
-        else//kayýt dosyasý hiç oluþturulmamýþ. Kullanýnýn ilk giriþi olduðunu varsayabiliriz.
+        else//kayýt dosyasý hiç oluþturulmamýþ. 
         {
-            saveFile = new SaveDataFormat();
-            saveFile.totalCoin = GlobalVariables.FirstTotalCoin;
-            saveFile.saveTime = DateTime.Now.ToString();
-
-            saveFile.levelProperties = new List<LevelProperties> { new LevelProperties
-            {
-                LevelName = "level1",
-                levelPassed = false,
-                levelPurchased = true,
-            } };
-
-            GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
-
             foreach (GameObject coinBar in CoinBarText)
             {
-                coinBar.GetComponent<CoinBar_Controller>().CoinBarText.text = saveFile.totalCoin.ToString();
+                coinBar.GetComponent<CoinBar_Controller>().CoinBarText.text = GlobalVariables.FirstTotalCoin.ToString();
             }
         }
-
     }
 
     // Update is called once per frame

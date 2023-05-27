@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "5203ab16ecf86337",
         "name": "com.AlpayMobileGames.Mahjong",
-        "processId": 12386,
+        "processId": 20187,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -11,175 +11,49 @@
         {
             "deviceId": "5203ab16ecf86337",
             "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 28799,
+            "processId": 30498,
             "exited": true
         },
         {
             "deviceId": "5203ab16ecf86337",
             "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 30129,
+            "processId": 32278,
             "exited": true
         },
         {
             "deviceId": "5203ab16ecf86337",
             "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 6553,
+            "processId": 13287,
             "exited": true
         },
         {
             "deviceId": "5203ab16ecf86337",
             "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 13669,
+            "processId": 13998,
             "exited": true
         },
         {
             "deviceId": "5203ab16ecf86337",
-            "name": "com.sec.android.app.launcher",
-            "processId": 3386,
+            "name": "com.AlpayMobileGames.Mahjong",
+            "processId": 14279,
             "exited": false
         },
         {
             "deviceId": "5203ab16ecf86337",
             "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 14893,
+            "processId": 16286,
             "exited": false
         },
         {
             "deviceId": "5203ab16ecf86337",
             "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 18520,
+            "processId": 18191,
             "exited": false
         },
         {
             "deviceId": "5203ab16ecf86337",
             "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 13443,
-            "exited": false
-        },
-        {
-            "deviceId": "5203ab16ecf86337",
-            "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 15022,
-            "exited": false
-        },
-        {
-            "deviceId": "5203ab16ecf86337",
-            "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 16194,
-            "exited": false
-        },
-        {
-            "deviceId": "5203ab16ecf86337",
-            "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 18047,
-            "exited": false
-        },
-        {
-            "deviceId": "5203ab16ecf86337",
-            "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 19326,
-            "exited": false
-        },
-        {
-            "deviceId": "5203ab16ecf86337",
-            "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 21022,
-            "exited": false
-        },
-        {
-            "deviceId": "5203ab16ecf86337",
-            "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 23679,
-            "exited": false
-        },
-        {
-            "deviceId": "5203ab16ecf86337",
-            "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 25876,
-            "exited": false
-        },
-        {
-            "deviceId": "5203ab16ecf86337",
-            "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 27487,
-            "exited": false
-        },
-        {
-            "deviceId": "5203ab16ecf86337",
-            "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 30030,
-            "exited": false
-        },
-        {
-            "deviceId": "5203ab16ecf86337",
-            "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 31710,
-            "exited": false
-        },
-        {
-            "deviceId": "5203ab16ecf86337",
-            "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 1006,
-            "exited": false
-        },
-        {
-            "deviceId": "5203ab16ecf86337",
-            "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 2748,
-            "exited": false
-        },
-        {
-            "deviceId": "5203ab16ecf86337",
-            "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 11349,
-            "exited": false
-        },
-        {
-            "deviceId": "5203ab16ecf86337",
-            "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 12610,
-            "exited": false
-        },
-        {
-            "deviceId": "5203ab16ecf86337",
-            "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 13769,
-            "exited": false
-        },
-        {
-            "deviceId": "5203ab16ecf86337",
-            "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 14882,
-            "exited": false
-        },
-        {
-            "deviceId": "5203ab16ecf86337",
-            "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 12720,
-            "exited": false
-        },
-        {
-            "deviceId": "5203ab16ecf86337",
-            "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 19019,
-            "exited": false
-        },
-        {
-            "deviceId": "5203ab16ecf86337",
-            "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 23342,
-            "exited": false
-        },
-        {
-            "deviceId": "5203ab16ecf86337",
-            "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 12858,
-            "exited": false
-        },
-        {
-            "deviceId": "5203ab16ecf86337",
-            "name": "com.AlpayMobileGames.Mahjong",
-            "processId": 12386,
+            "processId": 20187,
             "exited": false
         },
         {

@@ -193,10 +193,38 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 9143329240635408393
+  - m_Id: 7989258597040128
+    m_Localized: 'Archivo de guardado local
+
+
+      Tiempo de guardado:
+
+      {saveTime}'
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408393
+  - m_Id: 8005288874606592
+    m_Localized: 'Archivo de guardado en la nube
+
+
+      Tiempo de guardado:
+
+      {saveTime}'
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408393
+  - m_Id: 8271874059534336
+    m_Localized: Sincronizar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8272072676605952
+    m_Localized: "Por favor, elige con qu\xE9 archivo de guardado deseas continuar."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
     - rid: 9143329240635408393
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 0000b2de8a7919000000f261df8c190000007238c8cc1a00
+        m_Entries: 0000b2de8a7919000000f261df8c190000007238c8cc1a000000b23830621c000000b28fc4701c00

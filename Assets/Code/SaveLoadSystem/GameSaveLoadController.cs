@@ -11,6 +11,7 @@ public class GameSaveLoadController : MonoBehaviour
 {
     SaveDataFormat saveData;
     public GameObject LoadAnimation;
+    public GameObject SaveFileSyncPopup;
     // Start is called before the first frame update
     void Start()
     {
@@ -100,26 +101,37 @@ public class GameSaveLoadController : MonoBehaviour
                 //local kayýt dosyasý da varsa
                 if (formattedLocalData.saveTime != null)
                 {
-                    DateTime cloudSaveTime;
-                    DateTime.TryParse(formattedCloudData.saveTime,out cloudSaveTime);
-
-                    DateTime localSaveTime;
-                    DateTime.TryParse(formattedLocalData.saveTime, out localSaveTime);
-
-                    //Local kayýt daha yeni
-                    if (cloudSaveTime.CompareTo(localSaveTime) < 0)
+                    if (formattedLocalData.saveFileIsSyncEver == false)//oyun daha önce buluta kaydedilmiþ ve silinip tekrar yüklenmiþse buraya gelir. Ya da cihaz deðiþtirme gibi durumda
                     {
-                        //local save dosyasýný buluta atýyoruz
-                        GetComponent<CloudSaveController>().SaveData(JsonConvert.SerializeObject(formattedLocalData));
+                        SaveFileSyncPopup.GetComponent<SaveFileSyncPopupController>().localSaveFile = formattedLocalData;
+                        SaveFileSyncPopup.GetComponent<SaveFileSyncPopupController>().cloudSaveFile = formattedCloudData;
+                        SaveFileSyncPopup.GetComponent<SaveFileSyncPopupController>().ShowPopup();
                     }
-                    else //Cloud kaydý daha yeni veya localle ayný
+                    else
                     {
-                        //Cloud kaydýný locale kaydediyoruz.
-                        GetComponent<LocalSaveLoadController>().SaveGame(formattedCloudData);
+                        //Bu kýsým save dosyalarýnýn sadece kayýt tarihilerini karþýlaþtýrarak en yeni olaný tutarak çalýþýr.
+                        DateTime cloudSaveTime;
+                        DateTime.TryParse(formattedCloudData.saveTime, out cloudSaveTime);
+
+                        DateTime localSaveTime;
+                        DateTime.TryParse(formattedLocalData.saveTime, out localSaveTime);
+
+                        //Local kayýt daha yeni
+                        if (cloudSaveTime.CompareTo(localSaveTime) < 0)
+                        {
+                            //local save dosyasýný buluta atýyoruz
+                            GetComponent<CloudSaveController>().SaveData(JsonConvert.SerializeObject(formattedLocalData));
+                        }
+                        else //Cloud kaydý daha yeni veya localle ayný
+                        {
+                            //Cloud kaydýný locale kaydediyoruz.
+                            GetComponent<LocalSaveLoadController>().SaveGame(formattedCloudData);
+                        }
                     }
                 }
                 else//local kayýt dosyasý yoksa
                 {
+                    formattedCloudData.saveFileIsSyncEver = true;
                     GetComponent<LocalSaveLoadController>().SaveGame(formattedCloudData);
                 }
             }
@@ -128,6 +140,7 @@ public class GameSaveLoadController : MonoBehaviour
                 //local save dosyasý varsa
                 if (formattedLocalData.saveTime != null)
                 {
+                    formattedLocalData.saveFileIsSyncEver = true;
                     //local save dosyasýný buluta atýyoruz
                     GetComponent<CloudSaveController>().SaveData(JsonConvert.SerializeObject(formattedLocalData));
                 }

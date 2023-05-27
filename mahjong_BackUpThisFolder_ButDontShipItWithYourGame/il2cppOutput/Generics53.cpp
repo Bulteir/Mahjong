@@ -498,6 +498,7 @@ struct Predicate_1_t5C52E5DEC72D8848A1024CF1E1E512DB092F800A;
 struct Predicate_1_t92F2E90B1EAD00A30D1CC5D15AB968FC7C1029AD;
 struct Predicate_1_t5805DB64113904AB19024DCCBF911D02BFAF1A18;
 struct Predicate_1_t56A91CF2D89FDD3659300B6A790B0CDEC442916A;
+struct Predicate_1_tDC89A90D3C518FA636B4EDC6A32923B95C6983EC;
 struct Predicate_1_t75A270EF719DA010F98BE7630ECAA21A66DD8FFE;
 struct Predicate_1_t8A36A16586A785169751044D47DFD03165CFBFA7;
 struct Predicate_1_t1A0605C87155DBCA6412C23F07D0AEBBDC65F25B;
@@ -1795,6 +1796,27 @@ struct Length_t90BB06D47DD6DB461ED21BD3E3241FAB6C824256
 {
 	float ___m_Value_1;
 	int32_t ___m_Unit_2;
+};
+struct LevelProperties_t9F0A52A32D65B9BF99674F9942AFA45C64F9F781 
+{
+	String_t* ___LevelName_0;
+	String_t* ___bestTime_1;
+	bool ___levelPassed_2;
+	bool ___levelPurchased_3;
+};
+struct LevelProperties_t9F0A52A32D65B9BF99674F9942AFA45C64F9F781_marshaled_pinvoke
+{
+	char* ___LevelName_0;
+	char* ___bestTime_1;
+	int32_t ___levelPassed_2;
+	int32_t ___levelPurchased_3;
+};
+struct LevelProperties_t9F0A52A32D65B9BF99674F9942AFA45C64F9F781_marshaled_com
+{
+	Il2CppChar* ___LevelName_0;
+	Il2CppChar* ___bestTime_1;
+	int32_t ___levelPassed_2;
+	int32_t ___levelPurchased_3;
 };
 struct LigatureSubstitutionRecord_t8660DC6B1D65C655D698216F72BFB3C85DDCAB94 
 {
@@ -3820,6 +3842,9 @@ struct Predicate_1_t5805DB64113904AB19024DCCBF911D02BFAF1A18  : public Multicast
 {
 };
 struct Predicate_1_t56A91CF2D89FDD3659300B6A790B0CDEC442916A  : public MulticastDelegate_t
+{
+};
+struct Predicate_1_tDC89A90D3C518FA636B4EDC6A32923B95C6983EC  : public MulticastDelegate_t
 {
 };
 struct Predicate_1_t75A270EF719DA010F98BE7630ECAA21A66DD8FFE  : public MulticastDelegate_t
@@ -9590,6 +9615,70 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Predicate_1__ctor_mB9878082E050D8A2BCCE8
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Predicate_1_Invoke_mD22D27C3BE47140BCD1963C42F76269752645BEE_gshared (Predicate_1_t56A91CF2D89FDD3659300B6A790B0CDEC442916A* __this, JsonPosition_t7788656A280615072710710E8C15D23285850E8E ___0_obj, const RuntimeMethod* method) 
 {
 	typedef bool (*FunctionPointerType) (RuntimeObject*, JsonPosition_t7788656A280615072710710E8C15D23285850E8E, const RuntimeMethod*);
+	return ((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___0_obj, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+bool Predicate_1_Invoke_m13909EF16F8021C1A1749CAB3626CB795351DC90_Multicast(Predicate_1_tDC89A90D3C518FA636B4EDC6A32923B95C6983EC* __this, LevelProperties_t9F0A52A32D65B9BF99674F9942AFA45C64F9F781 ___0_obj, const RuntimeMethod* method)
+{
+	il2cpp_array_size_t length = __this->___delegates_13->max_length;
+	Delegate_t** delegatesToInvoke = reinterpret_cast<Delegate_t**>(__this->___delegates_13->GetAddressAtUnchecked(0));
+	bool retVal = false;
+	for (il2cpp_array_size_t i = 0; i < length; i++)
+	{
+		Predicate_1_tDC89A90D3C518FA636B4EDC6A32923B95C6983EC* currentDelegate = reinterpret_cast<Predicate_1_tDC89A90D3C518FA636B4EDC6A32923B95C6983EC*>(delegatesToInvoke[i]);
+		typedef bool (*FunctionPointerType) (RuntimeObject*, LevelProperties_t9F0A52A32D65B9BF99674F9942AFA45C64F9F781, const RuntimeMethod*);
+		retVal = ((FunctionPointerType)currentDelegate->___invoke_impl_1)((Il2CppObject*)currentDelegate->___method_code_6, ___0_obj, reinterpret_cast<RuntimeMethod*>(currentDelegate->___method_3));
+	}
+	return retVal;
+}
+bool Predicate_1_Invoke_m13909EF16F8021C1A1749CAB3626CB795351DC90_OpenInst(Predicate_1_tDC89A90D3C518FA636B4EDC6A32923B95C6983EC* __this, LevelProperties_t9F0A52A32D65B9BF99674F9942AFA45C64F9F781 ___0_obj, const RuntimeMethod* method)
+{
+	typedef bool (*FunctionPointerType) (LevelProperties_t9F0A52A32D65B9BF99674F9942AFA45C64F9F781, const RuntimeMethod*);
+	return ((FunctionPointerType)__this->___method_ptr_0)(___0_obj, method);
+}
+bool Predicate_1_Invoke_m13909EF16F8021C1A1749CAB3626CB795351DC90_OpenStatic(Predicate_1_tDC89A90D3C518FA636B4EDC6A32923B95C6983EC* __this, LevelProperties_t9F0A52A32D65B9BF99674F9942AFA45C64F9F781 ___0_obj, const RuntimeMethod* method)
+{
+	typedef bool (*FunctionPointerType) (LevelProperties_t9F0A52A32D65B9BF99674F9942AFA45C64F9F781, const RuntimeMethod*);
+	return ((FunctionPointerType)__this->___method_ptr_0)(___0_obj, method);
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Predicate_1__ctor_mC072A34EF13BCA5170E1BD0078A44CE544967E84_gshared (Predicate_1_tDC89A90D3C518FA636B4EDC6A32923B95C6983EC* __this, RuntimeObject* ___0_object, intptr_t ___1_method, const RuntimeMethod* method) 
+{
+	__this->___method_ptr_0 = il2cpp_codegen_get_method_pointer((RuntimeMethod*)___1_method);
+	__this->___method_3 = ___1_method;
+	__this->___m_target_2 = ___0_object;
+	Il2CppCodeGenWriteBarrier((void**)(&__this->___m_target_2), (void*)___0_object);
+	int parameterCount = il2cpp_codegen_method_parameter_count((RuntimeMethod*)___1_method);
+	__this->___method_code_6 = (intptr_t)__this;
+	if (MethodIsStatic((RuntimeMethod*)___1_method))
+	{
+		bool isOpen = parameterCount == 1;
+		if (isOpen)
+			__this->___invoke_impl_1 = (intptr_t)&Predicate_1_Invoke_m13909EF16F8021C1A1749CAB3626CB795351DC90_OpenStatic;
+		else
+			{
+				__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+				__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+			}
+	}
+	else
+	{
+		if (___0_object == NULL)
+			il2cpp_codegen_raise_exception(il2cpp_codegen_get_argument_exception(NULL, "Delegate to an instance method cannot have null 'this'."), NULL);
+		__this->___invoke_impl_1 = (intptr_t)__this->___method_ptr_0;
+		__this->___method_code_6 = (intptr_t)__this->___m_target_2;
+	}
+	__this->___extra_arg_5 = (intptr_t)&Predicate_1_Invoke_m13909EF16F8021C1A1749CAB3626CB795351DC90_Multicast;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Predicate_1_Invoke_m13909EF16F8021C1A1749CAB3626CB795351DC90_gshared (Predicate_1_tDC89A90D3C518FA636B4EDC6A32923B95C6983EC* __this, LevelProperties_t9F0A52A32D65B9BF99674F9942AFA45C64F9F781 ___0_obj, const RuntimeMethod* method) 
+{
+	typedef bool (*FunctionPointerType) (RuntimeObject*, LevelProperties_t9F0A52A32D65B9BF99674F9942AFA45C64F9F781, const RuntimeMethod*);
 	return ((FunctionPointerType)__this->___invoke_impl_1)((Il2CppObject*)__this->___method_code_6, ___0_obj, reinterpret_cast<RuntimeMethod*>(__this->___method_3));
 }
 #ifdef __clang__

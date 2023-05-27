@@ -11,6 +11,7 @@
           {
             "name": "AnimationClip",
             "scenes": [
+              "Assets/Scenes/level1.unity",
               "Assets/Scenes/MainMenu.unity"
             ],
             "dependencyType": 0,
@@ -19,6 +20,7 @@
           {
             "name": "Animator",
             "scenes": [
+              "Assets/Scenes/level1.unity",
               "Assets/Scenes/MainMenu.unity"
             ],
             "dependencyType": 0,
@@ -27,6 +29,7 @@
           {
             "name": "AnimatorController",
             "scenes": [
+              "Assets/Scenes/level1.unity",
               "Assets/Scenes/MainMenu.unity"
             ],
             "dependencyType": 1,
@@ -433,6 +436,7 @@
           {
             "name": "SpriteRenderer",
             "scenes": [
+              "Assets/Scenes/level1.unity",
               "Assets/Scenes/MainMenu.unity"
             ],
             "dependencyType": 0,

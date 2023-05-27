@@ -205,10 +205,32 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 9143329240635408386
+  - m_Id: 7989258597040128
+    m_Localized: "\u0645\u0644\u0641 \u0627\u0644\u062D\u0641\u0638 \u0627\u0644\u0645\u062D\u0644\u064A\r\n\n\u0648\u0642\u062A
+      \u0627\u0644\u062D\u0641\u0638:\n{saveTime}"
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408386
+  - m_Id: 8005288874606592
+    m_Localized: "\u0645\u0644\u0641 \u0627\u0644\u062D\u0641\u0638 \u0627\u0644\u0633\u062D\u0627\u0628\u064A\n\n\u0648\u0642\u062A
+      \u0627\u0644\u062D\u0641\u0638:\n{saveTime}"
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408386
+  - m_Id: 8271874059534336
+    m_Localized: "\u0645\u0632\u0627\u0645\u0646\u0629"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8272072676605952
+    m_Localized: "\u064A\u0631\u062C\u0649 \u0627\u062E\u062A\u064A\u0627\u0631 \u0627\u0644\u0645\u0644\u0641
+      \u0627\u0644\u0645\u0631\u0627\u062F \u0627\u0644\u0627\u0633\u062A\u0645\u0631\u0627\u0631
+      \u0641\u064A\u0647"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
     - rid: 9143329240635408386
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 0000b2de8a7919000000f261df8c190000007238c8cc1a00
+        m_Entries: 0000b2de8a7919000000f261df8c190000007238c8cc1a000000b23830621c000000b28fc4701c00

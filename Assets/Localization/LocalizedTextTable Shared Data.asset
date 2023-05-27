@@ -183,6 +183,22 @@ MonoBehaviour:
     m_Key: Next Level Not Enough Gold
     m_Metadata:
       m_Items: []
+  - m_Id: 7989258597040128
+    m_Key: Save File Sync Local Info
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8005288874606592
+    m_Key: Save File Sync Cloud Info
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8271874059534336
+    m_Key: Save File Sync Panel Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8272072676605952
+    m_Key: Save File Sync Content
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

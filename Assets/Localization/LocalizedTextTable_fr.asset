@@ -195,10 +195,40 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 9143329240635408388
+  - m_Id: 7989258597040128
+    m_Localized: 'Fichier de sauvegarde local
+
+
+      Heure de sauvegarde :
+
+      {saveTime}'
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408388
+  - m_Id: 8005288874606592
+    m_Localized: 'Fichier de sauvegarde dans le cloud
+
+
+      Heure de sauvegarde
+      :
+
+      {saveTime}'
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408388
+  - m_Id: 8271874059534336
+    m_Localized: Synchronisation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8272072676605952
+    m_Localized: Veuillez choisir le fichier de sauvegarde avec lequel vous souhaitez
+      continuer
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
     - rid: 9143329240635408388
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 0000b2de8a7919000000f261df8c190000007238c8cc1a00
+        m_Entries: 0000b2de8a7919000000f261df8c190000007238c8cc1a000000b23830621c000000b28fc4701c00
