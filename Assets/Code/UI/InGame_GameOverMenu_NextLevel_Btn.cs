@@ -13,6 +13,10 @@ public class InGame_GameOverMenu_NextLevel_Btn : MonoBehaviour
     public GameObject nextLevelInfoPopup;
     public void OnClick()
     {
+        //sonraki bölüme geçmek için yeterli enerji yoksa
+        if (!generalControllers.GetComponent<EnergyBarController>().IsThereEnoughEnergyForLevel())
+            return;
+                
         LevelProperties levelProperties = new LevelProperties();
         SaveDataFormat saveFile = generalControllers.GetComponent<LocalSaveLoadController>().LoadGame();
         if (saveFile.saveTime != null)//Kayýtlý save dosyasý varsa
@@ -51,10 +55,6 @@ public class InGame_GameOverMenu_NextLevel_Btn : MonoBehaviour
             else//yeterli altýn yok
             {
                 nextLevelInfoPopup.GetComponent<InGame_NextLevelInfoPopup_Controller>().ShowPopup(levelNumber);
-
-                //Dictionary<string, string> arguments = new Dictionary<string, string> { { "levelName", LevelNumber.ToString() } };
-                //Popup.GetComponent<LevelPurhasePopup_Controller>().Content.text = LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Level Purchase Not Enough Gold", new object[] { arguments });
-                //gameObject.SetActive(false);
             }
         }
 

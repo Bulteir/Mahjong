@@ -115,7 +115,10 @@ public class LevelSelectMenu_Controller : MonoBehaviour
         //týklanýlan bölüm daha önceden satýn alýnmýþsa ya da ilk bölümse
         if (levelProperties.levelPurchased || levelNumber == 1)
         {
-            SceneManager.LoadScene("level" + levelNumber, LoadSceneMode.Single);
+            if (generalControllers.GetComponent<EnergyBarController>().IsThereEnoughEnergyForLevel())
+            {
+                SceneManager.LoadScene("level" + levelNumber, LoadSceneMode.Single);
+            }
         }
         else
         {

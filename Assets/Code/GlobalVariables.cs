@@ -27,11 +27,14 @@ public static class GlobalVariables
     public static List<int> LevelRewards = new List<int>()
     {
         101,
-        502,
+        102,
         103,
         104,
         105,
         106,
-    }; 
+    };
+
+    public const int maxEnergy = 100;
+    public const int requiredEnergyForlevel = 10;
 
 }

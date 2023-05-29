@@ -6,6 +6,8 @@ public class SaveDataFormat
     public List<LevelProperties> levelProperties;
     public string saveTime;
     public bool saveFileIsSyncEver;
+    public int totalEnergy;
+    public string lastEnergyGainTime;
 }
 
 public struct LevelProperties

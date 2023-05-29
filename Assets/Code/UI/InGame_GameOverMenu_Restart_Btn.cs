@@ -5,8 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class InGame_GameOverMenu_Restart_Btn : MonoBehaviour
 {
+    public GameObject generalControllers;
     public void OnClick()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+        if (generalControllers.GetComponent<EnergyBarController>().IsThereEnoughEnergyForLevel())
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+        }
     }
 }

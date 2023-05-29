@@ -11,10 +11,11 @@ public class LevelSelectMenu_Level_Btn : MonoBehaviour
     public TMP_Text rewardText;
     public TMP_Text bestTimeText;
 
+    public GameObject generalControllers;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     public void OnClick()

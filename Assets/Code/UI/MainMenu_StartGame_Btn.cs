@@ -9,11 +9,13 @@ public class MainMenu_StartGame_Btn : MonoBehaviour
     {
         //oyun açýldýðýnda local save dosyasý yoksa save dosyasý oluþturulur.
         SaveDataFormat saveFile = generalControllers.GetComponent<LocalSaveLoadController>().LoadGame();
-        if (saveFile.saveTime == null)//Kayýtlý save dosyasý varsa
+        if (saveFile.saveTime == null)//Kayýtlý save dosyasý yoksa
         {
             saveFile = new SaveDataFormat();
             saveFile.totalCoin = GlobalVariables.FirstTotalCoin;
             saveFile.saveFileIsSyncEver = false;
+            saveFile.totalEnergy = GlobalVariables.maxEnergy;
+            saveFile.lastEnergyGainTime = System.DateTime.Now.ToString();
             saveFile.saveTime = System.DateTime.Now.ToString();
 
             saveFile.levelProperties = new List<LevelProperties> { new LevelProperties

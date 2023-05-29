@@ -2524,6 +2524,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 756183239}
   rewardText: {fileID: 1181904168}
   bestTimeText: {fileID: 477528260}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &97162552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3642,6 +3643,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 96592194}
   rewardText: {fileID: 1755980835}
   bestTimeText: {fileID: 872884221}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &141833983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4845,6 +4847,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 900454672}
   rewardText: {fileID: 1577048990}
   bestTimeText: {fileID: 2014900940}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &169538518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4999,6 +5002,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 363788731}
   rewardText: {fileID: 276157598}
   bestTimeText: {fileID: 421582619}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &170486797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8531,6 +8535,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 791744011}
   rewardText: {fileID: 1901156729}
   bestTimeText: {fileID: 319133105}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &279338672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8685,6 +8690,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 937801832}
   rewardText: {fileID: 750788820}
   bestTimeText: {fileID: 2132478990}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &280607229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9575,6 +9581,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 812567332}
   rewardText: {fileID: 312971247}
   bestTimeText: {fileID: 429356494}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &318104057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10253,6 +10260,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 1713549047}
   rewardText: {fileID: 865949220}
   bestTimeText: {fileID: 1543885684}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &340688643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10501,6 +10509,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 1499528924}
   rewardText: {fileID: 1091753530}
   bestTimeText: {fileID: 1269424036}
+  generalControllers: {fileID: 1023075138}
 --- !u!1 &348156401
 GameObject:
   m_ObjectHideFlags: 0
@@ -12339,6 +12348,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 805298720}
   rewardText: {fileID: 1325753828}
   bestTimeText: {fileID: 1157523203}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &403594898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12704,6 +12714,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 1621264783}
   rewardText: {fileID: 1874697946}
   bestTimeText: {fileID: 673856756}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &420930762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14753,6 +14764,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 2095361636}
   rewardText: {fileID: 482986879}
   bestTimeText: {fileID: 1485247310}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &479842244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16881,6 +16893,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 930433692}
   rewardText: {fileID: 2128834251}
   bestTimeText: {fileID: 1564027530}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &588008345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20933,6 +20946,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 458688077}
   rewardText: {fileID: 1203601516}
   bestTimeText: {fileID: 1725570931}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &767603658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21764,6 +21778,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 121283930}
   rewardText: {fileID: 537300927}
   bestTimeText: {fileID: 1375681762}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &797606246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22512,6 +22527,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 1458569247}
   rewardText: {fileID: 1649888288}
   bestTimeText: {fileID: 1490541774}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &816285622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22618,6 +22634,7 @@ GameObject:
   - component: {fileID: 820013384}
   - component: {fileID: 820013383}
   - component: {fileID: 820013382}
+  - component: {fileID: 820013385}
   m_Layer: 5
   m_Name: Energy Bar
   m_TagString: Untagged
@@ -22728,6 +22745,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 820013380}
   m_CullTransparentMesh: 1
+--- !u!114 &820013385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820013380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e67a373f5bf6294991174daf4431f62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyBarText: {fileID: 168454785}
 --- !u!1 &822104238
 GameObject:
   m_ObjectHideFlags: 0
@@ -22788,6 +22818,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 228623331}
   rewardText: {fileID: 1130033887}
   bestTimeText: {fileID: 1462593079}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &822104241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23077,6 +23108,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 1517304691}
   rewardText: {fileID: 430510917}
   bestTimeText: {fileID: 181150677}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &835279194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24546,6 +24578,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 891027972}
   rewardText: {fileID: 1604871835}
   bestTimeText: {fileID: 1789755100}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &877060568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25966,6 +25999,7 @@ GameObject:
   - component: {fileID: 915496418}
   - component: {fileID: 915496417}
   - component: {fileID: 915496416}
+  - component: {fileID: 915496419}
   m_Layer: 5
   m_Name: Energy Bar
   m_TagString: Untagged
@@ -26076,6 +26110,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 915496414}
   m_CullTransparentMesh: 1
+--- !u!114 &915496419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915496414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e67a373f5bf6294991174daf4431f62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyBarText: {fileID: 2117160504}
 --- !u!1 &916928976
 GameObject:
   m_ObjectHideFlags: 0
@@ -27065,6 +27112,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 1153189762}
   rewardText: {fileID: 1336041069}
   bestTimeText: {fileID: 425547316}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &933455334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28072,6 +28120,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 1193438840}
   rewardText: {fileID: 1427103688}
   bestTimeText: {fileID: 1891747808}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &958643838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28649,6 +28698,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 272941299}
   rewardText: {fileID: 948103506}
   bestTimeText: {fileID: 1759001493}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &971597260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29668,6 +29718,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 255683889}
   rewardText: {fileID: 982383417}
   bestTimeText: {fileID: 1833685314}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &1011842140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30033,6 +30084,7 @@ GameObject:
   - component: {fileID: 1023075146}
   - component: {fileID: 1023075147}
   - component: {fileID: 1023075148}
+  - component: {fileID: 1023075149}
   m_Layer: 0
   m_Name: GeneralControllers
   m_TagString: Untagged
@@ -30169,6 +30221,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60bb276c55c77f849b55a7ff80642c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1023075149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023075138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c7f8208ca815c43874a294ef1d8d0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnergyBarText:
+  - {fileID: 915496414}
+  - {fileID: 820013380}
 --- !u!1 &1028596912
 GameObject:
   m_ObjectHideFlags: 0
@@ -32112,6 +32179,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 2021682534}
   rewardText: {fileID: 1594123038}
   bestTimeText: {fileID: 160855613}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &1109257188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32402,6 +32470,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 2139797358}
   rewardText: {fileID: 914082803}
   bestTimeText: {fileID: 1510800673}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &1112758666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35582,6 +35651,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 703248732}
   rewardText: {fileID: 1826258921}
   bestTimeText: {fileID: 912980092}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &1210203448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36950,6 +37020,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 1447450058}
   rewardText: {fileID: 1743788986}
   bestTimeText: {fileID: 1155216765}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &1261159065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37931,6 +38002,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 2009986487}
   rewardText: {fileID: 1772352232}
   bestTimeText: {fileID: 875679251}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &1303833630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38779,6 +38851,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 1119281186}
   rewardText: {fileID: 1500704095}
   bestTimeText: {fileID: 1675478769}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &1330756650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40932,6 +41005,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 96503783}
   rewardText: {fileID: 1844459261}
   bestTimeText: {fileID: 1744180328}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &1388504610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42893,6 +42967,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 399460197}
   rewardText: {fileID: 370544936}
   bestTimeText: {fileID: 907997246}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &1452395193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43529,6 +43604,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 1704996348}
   rewardText: {fileID: 1159108482}
   bestTimeText: {fileID: 22442005}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &1464082360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45514,6 +45590,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 1436331907}
   rewardText: {fileID: 1430550904}
   bestTimeText: {fileID: 968283211}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &1510419946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46326,6 +46403,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 419761402}
   rewardText: {fileID: 927196552}
   bestTimeText: {fileID: 519803419}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &1538010782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46614,6 +46692,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 1087278329}
   rewardText: {fileID: 1357593147}
   bestTimeText: {fileID: 582428457}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &1541084633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51056,6 +51135,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 201257820}
   rewardText: {fileID: 2008792213}
   bestTimeText: {fileID: 202240773}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &1753783504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51907,6 +51987,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 233359287}
   rewardText: {fileID: 76787528}
   bestTimeText: {fileID: 1164205506}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &1787105688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52410,6 +52491,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 285615925}
   rewardText: {fileID: 340488598}
   bestTimeText: {fileID: 595266657}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &1793382587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54149,6 +54231,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 731904019}
   rewardText: {fileID: 2076647441}
   bestTimeText: {fileID: 1895216750}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &1847553755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56702,6 +56785,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 1035440284}
   rewardText: {fileID: 1140405462}
   bestTimeText: {fileID: 845121662}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &1944449851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58101,6 +58185,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 315980778}
   rewardText: {fileID: 916928978}
   bestTimeText: {fileID: 363725376}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &1997485185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59229,6 +59314,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 494116468}
   rewardText: {fileID: 135950705}
   bestTimeText: {fileID: 227350361}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &2023822631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59718,6 +59804,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 392307556}
   rewardText: {fileID: 41070007}
   bestTimeText: {fileID: 1912835730}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &2046511123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60245,6 +60332,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 1444772425}
   rewardText: {fileID: 1112166057}
   bestTimeText: {fileID: 1968898298}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &2070736063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62053,6 +62141,7 @@ MonoBehaviour:
   levelNumberText: {fileID: 125414215}
   rewardText: {fileID: 1557362568}
   bestTimeText: {fileID: 1786929146}
+  generalControllers: {fileID: 1023075138}
 --- !u!114 &2138855888
 MonoBehaviour:
   m_ObjectHideFlags: 0
