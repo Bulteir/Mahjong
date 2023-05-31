@@ -22,6 +22,7 @@ public static class GlobalVariables
     public const string LeaderboardId_BestTimes = "BestTimes";
 
     public const int FirstTotalCoin = 1000;
+    public const int FirstShuffleJokerQuantity = 5;
 
     //bölüm bazlý puanlar
     public static List<int> LevelRewards = new List<int>()

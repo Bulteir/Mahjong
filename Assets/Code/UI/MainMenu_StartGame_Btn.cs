@@ -13,6 +13,7 @@ public class MainMenu_StartGame_Btn : MonoBehaviour
         {
             saveFile = new SaveDataFormat();
             saveFile.totalCoin = GlobalVariables.FirstTotalCoin;
+            saveFile.shuffleJokerQuantity = GlobalVariables.FirstShuffleJokerQuantity;
             saveFile.saveFileIsSyncEver = false;
             saveFile.totalEnergy = GlobalVariables.maxEnergy;
             saveFile.lastEnergyGainTime = System.DateTime.Now.ToString();

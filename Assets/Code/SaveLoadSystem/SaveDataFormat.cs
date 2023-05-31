@@ -8,6 +8,7 @@ public class SaveDataFormat
     public bool saveFileIsSyncEver;
     public int totalEnergy;
     public string lastEnergyGainTime;
+    public int shuffleJokerQuantity;
 }
 
 public struct LevelProperties
