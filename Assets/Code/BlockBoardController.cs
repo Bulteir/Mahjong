@@ -27,6 +27,7 @@ public class BlockBoardController : MonoBehaviour
     public GameObject LoadAnimation;
     public GameObject Timer;
     public GameObject generalControllers;
+    public int step = 0;
 
     public void PlaceBlock(Transform SelectedBlock)
     {
@@ -37,7 +38,11 @@ public class BlockBoardController : MonoBehaviour
             int avaibleSlotIndex = GetAvaibleBlockSlotIndex(SelectedBlock);
             if (avaibleSlotIndex != -1) //bloklarý ýstakaya yerleþtir
             {
+                Vector3 blockPos = SelectedBlock.position;
                 ReplaceBlocks(SelectedBlock, avaibleSlotIndex);
+                step++;
+                SelectedBlock.GetComponent<BlockProperties>().stepOfPlacedBlockBoard = step;
+                SelectedBlock.GetComponent<BlockProperties>().positionOfBlockTable = blockPos;
             }
         }
     }
@@ -118,7 +123,7 @@ public class BlockBoardController : MonoBehaviour
             };
             blockSlotsStruckList.Add(slot);
         }
-        
+
         BlockMatchControl();
     }
 
@@ -133,6 +138,8 @@ public class BlockBoardController : MonoBehaviour
 
                 if (MatchedBlocks.Count == 3)
                 {
+                    
+
                     foreach (BlockSlotStruct block in MatchedBlocks)
                     {
                         if (block.snappedBlock != null)
@@ -142,6 +149,7 @@ public class BlockBoardController : MonoBehaviour
 
                         block.snappedBlock = null;
                         block.snappedBlockType = -1;
+                        block.slot.GetComponent<BlockSlotProperties>().snappedBlock = null;
                     }
 
                     #region patlamasý gereken bloklar patladýktan sonra geriye kalan bloklar aralarýnda boþluk kalmayacak þekilde tekrar yerleþtirilir.
@@ -154,6 +162,7 @@ public class BlockBoardController : MonoBehaviour
                             {
                                 if (blockSlotsStruckList[y].snappedBlock != null)
                                 {
+
                                     StartCoroutine(SmoothMoveToSnapPointSimple(blockSlotsStruckList[y].snappedBlock, blockSlotsStruckList[x].slot, blockSlotsStruckList[x].index));
 
                                     //bulunan dolu slotu boþalan slota atýyoruz.
@@ -194,7 +203,7 @@ public class BlockBoardController : MonoBehaviour
         block.GetComponent<BlockProperties>().IsSnapped = true;
         block.SetParent(blockBoard);
 
-        ////ýstaka üzerine yerleþtirilen blocklar kontrol edilir/patlatýlýr vs...
+        //ýstaka üzerine yerleþtirilen blocklar kontrol edilir/patlatýlýr vs...
         FillBlockBoardStatus();
         yield return null;
         blockCounter.GetComponent<BlockCounterController>().RefreshBlockCount();
@@ -208,7 +217,7 @@ public class BlockBoardController : MonoBehaviour
         else if (IsGameWon())
         {
             GlobalVariables.gameState = GlobalVariables.gameState_gameOver;
-            GameOverMenu.GetComponent<InGame_GameOverMenuController>().SetContent(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Congratulations"), GlobalVariables.LevelRewards[0] , true);
+            GameOverMenu.GetComponent<InGame_GameOverMenuController>().SetContent(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Congratulations"), GlobalVariables.LevelRewards[0], true);
 
             LoadAnimation.GetComponent<LoadSaveAnimationController>().StartAnimation(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Saving"));
             StartCoroutine(SaveData(GlobalVariables.LevelRewards[0], true));
@@ -226,7 +235,7 @@ public class BlockBoardController : MonoBehaviour
         }
         block.position = snapPoint.position;
 
-        //ýstakada yer alan slota bloðun kendisi setlernir.
+        //ýstakada yer alan slota bloðun kendisi setlenir.
         BlockSlots[avaibleSlotIndex].transform.GetComponent<BlockSlotProperties>().snappedBlock = block;
         block.GetComponent<BlockProperties>().IsSnapped = true;
         block.SetParent(blockBoard);

@@ -9,6 +9,7 @@ public class InGame_MenuController : MonoBehaviour
     public GameObject gameOverMenu;
     public GameObject CoinBarText;
     public GameObject ShuffleJoker;
+    public GameObject UndoJoker;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class InGame_MenuController : MonoBehaviour
         {
             CoinBarText.GetComponent<CoinBar_Controller>().CoinBarText.text = saveFile.totalCoin.ToString();
             ShuffleJoker.GetComponent<Joker_Shuffle>().QuantityText.text = saveFile.shuffleJokerQuantity.ToString();
+            UndoJoker.GetComponent<Joker_Undo_Controller>().QuantityText.text = saveFile.undoJokerQuantity.ToString();
         }
 
     }
