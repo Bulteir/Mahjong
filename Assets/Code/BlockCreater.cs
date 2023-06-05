@@ -12,6 +12,7 @@ public class BlockCreater : MonoBehaviour
 {
     public List<Texture> UVs;
     public Transform BlockParent;
+    public GameObject StarController;
 
     [Tooltip("Bölümde yer alan bloklara yüzdesel olarak kaç farklý blok tipi atamasý yapýlsýn.")]
     [Range(0, 100)]
@@ -68,6 +69,7 @@ public class BlockCreater : MonoBehaviour
                     avaibleBlockIndexes.RemoveAt(randomBlockIndex);
                 }
 
+                StarController.GetComponent<InGame_StarController>().startBlockCount = BlockParent.childCount;
                 //maximum taþ sayýsý 144. Her blok tipinden en az 3 tane taþ olacak. En zor bölüm 144 taþ ve 144/3=48 farklý blok tipi yani %100 karmaþýklýk oraný ile oluþur.
                 float levelDifficultyRate = (((BlockParent.childCount / 3) * complexityPercentage) / (float)((144 / 3) * 100)) * 100;
                 Debug.Log("Bölüm " + BlockParent.childCount + " tane blok ve " + usableUVCount + " farklý blok tipi kullanýlarak oluþturuldu. \nBölümün toplam zorluk oraný: %" + levelDifficultyRate.ToString("#.00"));

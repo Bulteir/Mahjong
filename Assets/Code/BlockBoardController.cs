@@ -28,6 +28,7 @@ public class BlockBoardController : MonoBehaviour
     public GameObject Timer;
     public GameObject generalControllers;
     public int step = 0;
+    public GameObject StarController;
 
     public void PlaceBlock(Transform SelectedBlock)
     {
@@ -128,8 +129,9 @@ public class BlockBoardController : MonoBehaviour
     }
 
     //3 tane ayný bloktan varsa patlatýr
-    void BlockMatchControl()
+    bool BlockMatchControl()
     {
+        bool anyBlocksMatched = false;
         for (int i = 0; i < blockSlotsStruckList.Count; i++)
         {
             if (blockSlotsStruckList[i].snappedBlock != null)
@@ -138,8 +140,7 @@ public class BlockBoardController : MonoBehaviour
 
                 if (MatchedBlocks.Count == 3)
                 {
-                    
-
+                    anyBlocksMatched = true;
                     foreach (BlockSlotStruct block in MatchedBlocks)
                     {
                         if (block.snappedBlock != null)
@@ -182,6 +183,7 @@ public class BlockBoardController : MonoBehaviour
                 }
             }
         }
+        return anyBlocksMatched;
     }
 
     //bir bloðu uygun yere smooth þekilde yerleþmesini saðlar
@@ -207,6 +209,7 @@ public class BlockBoardController : MonoBehaviour
         FillBlockBoardStatus();
         yield return null;
         blockCounter.GetComponent<BlockCounterController>().RefreshBlockCount();
+        StarController.GetComponent<InGame_StarController>().SetStars();
 
         //her yerleþtirilen bloktan sonra oyununn bitip bitmedði kontrol edilir.
         if (IsGameOver())
@@ -303,8 +306,6 @@ public class BlockBoardController : MonoBehaviour
             if (levelProperties.LevelName != null) //kayýt 
             {
                 levelProperties.levelPassed = levelIsWon;
-                //burada süreyi karþýlaþtýr.
-
 
                 string bestTimeFormat = "mm:ss:ff";
                 if (levelProperties.bestTime != null && levelProperties.bestTime.Length > 8)//saatte gösterir
@@ -337,6 +338,12 @@ public class BlockBoardController : MonoBehaviour
                     levelProperties.bestTime = Timer.GetComponent<Timer>().text.text;
                 }
             }
+
+            if (StarController.GetComponent<InGame_StarController>().gainedStarQuantity > levelProperties.earnedStarQuantity)
+            {
+                levelProperties.earnedStarQuantity = StarController.GetComponent<InGame_StarController>().gainedStarQuantity;
+            }
+
             saveFile.levelProperties.Add(levelProperties);
             saveFile.saveTime = DateTime.Now.ToString();
             generalControllers.GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
@@ -351,7 +358,8 @@ public class BlockBoardController : MonoBehaviour
             {
                 LevelName = SceneManager.GetActiveScene().name,
                 bestTime = Timer.GetComponent<Timer>().text.text,
-                levelPassed = levelIsWon
+                levelPassed = levelIsWon,
+                earnedStarQuantity = StarController.GetComponent<InGame_StarController>().gainedStarQuantity
             } };
 
             generalControllers.GetComponent<LocalSaveLoadController>().SaveGame(saveFile);

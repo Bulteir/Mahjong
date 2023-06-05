@@ -31,12 +31,6 @@ public class Joker_Undo_Controller : MonoBehaviour
                 QuantityText.text = saveFile.undoJokerQuantity.ToString();
                 generalControllers.GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
             }
-            //else//test amaçlý
-            //{
-            //    saveFile.undoJokerQuantity = GlobalVariables.FirstUndoJokerQuantity;
-            //    QuantityText.text = saveFile.undoJokerQuantity.ToString();
-            //    generalControllers.GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
-            //}
         }
     }
 

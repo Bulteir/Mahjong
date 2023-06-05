@@ -12,6 +12,8 @@ public class LevelSelectMenu_Controller : MonoBehaviour
     public Sprite UnlockImage;
     public Sprite Background;
     public GameObject Popup;
+    public Sprite star_On;
+    public Sprite star_Off;
 
     [Tooltip("Oyunda kullanýcý kaç tane bölümü açtý.")]
     int UnlockedLevelNumber = 1;
@@ -56,6 +58,9 @@ public class LevelSelectMenu_Controller : MonoBehaviour
                 levelButtons[i].levelNumberText.gameObject.SetActive(false);
                 levelButtons[i].bestTimeText.gameObject.SetActive(false);
                 levelButtons[i].rewardText.gameObject.SetActive(false);
+                levelButtons[i].star1.gameObject.SetActive(false);
+                levelButtons[i].star2.gameObject.SetActive(false);
+                levelButtons[i].star3.gameObject.SetActive(false);
             }
             else
             {
@@ -88,6 +93,35 @@ public class LevelSelectMenu_Controller : MonoBehaviour
                     {
                         levelButtons[i].rewardText.gameObject.SetActive(false);
                     }
+
+                    //bölüm'e ait kazanýlan yýldýzlarýn gösterilmesi
+                    levelButtons[i].star1.gameObject.SetActive(true);
+                    levelButtons[i].star2.gameObject.SetActive(true);
+                    levelButtons[i].star3.gameObject.SetActive(true);
+                    if (levelProperties.earnedStarQuantity == 0)
+                    {
+                        levelButtons[i].star1.GetComponent<Image>().sprite = star_Off;
+                        levelButtons[i].star2.GetComponent<Image>().sprite = star_Off;
+                        levelButtons[i].star3.GetComponent<Image>().sprite = star_Off;
+                    }
+                    else if (levelProperties.earnedStarQuantity == 1)
+                    {
+                        levelButtons[i].star1.GetComponent<Image>().sprite = star_On;
+                        levelButtons[i].star2.GetComponent<Image>().sprite = star_Off;
+                        levelButtons[i].star3.GetComponent<Image>().sprite = star_Off;
+                    }
+                    else if (levelProperties.earnedStarQuantity == 2)
+                    {
+                        levelButtons[i].star1.GetComponent<Image>().sprite = star_On;
+                        levelButtons[i].star2.GetComponent<Image>().sprite = star_On;
+                        levelButtons[i].star3.GetComponent<Image>().sprite = star_Off;
+                    }
+                    else if (levelProperties.earnedStarQuantity == 3)
+                    {
+                        levelButtons[i].star1.GetComponent<Image>().sprite = star_On;
+                        levelButtons[i].star2.GetComponent<Image>().sprite = star_On;
+                        levelButtons[i].star3.GetComponent<Image>().sprite = star_On;
+                    }
                 }
                 else if (i > 0)//bölüm satýn alýnmamýþ
                 {
@@ -96,6 +130,9 @@ public class LevelSelectMenu_Controller : MonoBehaviour
                     levelButtons[i].levelNumberText.gameObject.SetActive(false);
                     levelButtons[i].bestTimeText.gameObject.SetActive(false);
                     levelButtons[i].rewardText.gameObject.SetActive(false);
+                    levelButtons[i].star1.gameObject.SetActive(false);
+                    levelButtons[i].star2.gameObject.SetActive(false);
+                    levelButtons[i].star3.gameObject.SetActive(false);
                 }
             }
         }

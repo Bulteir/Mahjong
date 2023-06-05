@@ -18,4 +18,5 @@ public struct LevelProperties
     public string bestTime;
     public bool levelPassed;
     public bool levelPurchased;
+    public int earnedStarQuantity;
 }

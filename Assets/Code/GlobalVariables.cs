@@ -25,7 +25,10 @@ public static class GlobalVariables
     public const int FirstShuffleJokerQuantity = 5;
     public const int FirstUndoJokerQuantity = 5;
 
-    //bölüm bazlý puanlar
+    public const int maxEnergy = 100;
+    public const int requiredEnergyForlevel = 10;
+
+    //bölümlerin kaç altýn kazandýracaðý. Ayný zamanda o bölümün açýlmasý için ne kadar alýtýn gerektiði x3 olarak bulunur. 
     public static List<int> LevelRewards = new List<int>()
     {
         101,
@@ -35,8 +38,5 @@ public static class GlobalVariables
         105,
         106,
     };
-
-    public const int maxEnergy = 100;
-    public const int requiredEnergyForlevel = 10;
 
 }
