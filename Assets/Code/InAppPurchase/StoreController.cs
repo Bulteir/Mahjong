@@ -5,9 +5,10 @@ using Unity.Services.Core;
 using Unity.Services.Core.Environments;
 using UnityEngine;
 using UnityEngine.Purchasing;
+using UnityEngine.Purchasing.Extension;
 using UnityEngine.UI;
 
-public class StoreController : MonoBehaviour, IStoreListener
+public class StoreController : MonoBehaviour, IDetailedStoreListener
 {
     public GameObject PurchasingMask;
     public List<GameObject> StoreItems;
@@ -142,4 +143,8 @@ public class StoreController : MonoBehaviour, IStoreListener
         return result;
     }
 
+    public void OnPurchaseFailed(Product product, PurchaseFailureDescription failureDescription)
+    {
+        throw new System.NotImplementedException();
+    }
 }

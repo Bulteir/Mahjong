@@ -11,52 +11,64 @@ public class InGame_GameOverMenu_NextLevel_Btn : MonoBehaviour
 {
     public GameObject generalControllers;
     public GameObject nextLevelInfoPopup;
+    public GameObject adMobControllers;
     public void OnClick()
     {
-        //sonraki bölüme geçmek için yeterli enerji yoksa
-        if (!generalControllers.GetComponent<EnergyBarController>().IsThereEnoughEnergyForLevel())
-            return;
-                
-        LevelProperties levelProperties = new LevelProperties();
-        SaveDataFormat saveFile = generalControllers.GetComponent<LocalSaveLoadController>().LoadGame();
-        if (saveFile.saveTime != null)//Kayýtlý save dosyasý varsa
+        //sonraki bölüme geçmek için yeterli enerji varsa
+        if (generalControllers.GetComponent<EnergyBarController>().IsThereEnoughEnergyForLevel())
         {
-            //bir sonraki bölümün numarasý
-            int levelNumber = Int32.Parse(SceneManager.GetActiveScene().name.Replace("level", "")) + 1;
-            //bir sonraki bölümün adý
-            string levelName = "level" + levelNumber.ToString();
-            levelProperties = saveFile.levelProperties.Where(i => i.LevelName == levelName).FirstOrDefault();
+            GlobalVariables.intersitialAd_CallingObject = gameObject;
+            adMobControllers.GetComponent<InterstitialAdController>().ShowAd();
+        }   
+    }
 
+    public void NextLevel()
+    {
+        if (GlobalVariables.intersitialAd_CallingObject == gameObject)
+        {
+            GlobalVariables.intersitialAd_CallingObject = null;
+            adMobControllers.GetComponent<InterstitialAdController>().DestroyAd();
 
-            if (levelProperties.LevelName != null && levelProperties.levelPurchased) //bir sonraki bölüm daha önceden satýn alýnmýþ.
+            LevelProperties levelProperties = new LevelProperties();
+            SaveDataFormat saveFile = generalControllers.GetComponent<LocalSaveLoadController>().LoadGame();
+            if (saveFile.saveTime != null)//Kayýtlý save dosyasý varsa
             {
-                SceneManager.LoadScene("level" + levelNumber, LoadSceneMode.Single);
-            }
-            else if (saveFile.totalCoin >= GlobalVariables.LevelRewards[levelNumber-1] * 3)//bölümü satýn almak için yeterli altýn var
-            {
-                saveFile.totalCoin = saveFile.totalCoin - (GlobalVariables.LevelRewards[levelNumber - 1] * 3);
+                //bir sonraki bölümün numarasý
+                int levelNumber = Int32.Parse(SceneManager.GetActiveScene().name.Replace("level", "")) + 1;
+                //bir sonraki bölümün adý
+                string levelName = "level" + levelNumber.ToString();
+                levelProperties = saveFile.levelProperties.Where(i => i.LevelName == levelName).FirstOrDefault();
 
-                saveFile.levelProperties.Remove(levelProperties);
 
-                //açýlacak bölüme ait bir kayýt yoktur.
-                if (levelProperties.LevelName == null)
+                if (levelProperties.LevelName != null && levelProperties.levelPurchased) //bir sonraki bölüm daha önceden satýn alýnmýþ.
                 {
-                    levelProperties.LevelName = "level" + levelNumber.ToString();
-                    levelProperties.levelPassed = false;
+                    SceneManager.LoadScene("level" + levelNumber, LoadSceneMode.Single);
                 }
+                else if (saveFile.totalCoin >= GlobalVariables.LevelRewards[levelNumber - 1] * 3)//bölümü satýn almak için yeterli altýn var
+                {
+                    saveFile.totalCoin = saveFile.totalCoin - (GlobalVariables.LevelRewards[levelNumber - 1] * 3);
 
-                levelProperties.levelPurchased = true;
-                saveFile.levelProperties.Add(levelProperties);
+                    saveFile.levelProperties.Remove(levelProperties);
 
-                generalControllers.GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
+                    //açýlacak bölüme ait bir kayýt yoktur.
+                    if (levelProperties.LevelName == null)
+                    {
+                        levelProperties.LevelName = "level" + levelNumber.ToString();
+                        levelProperties.levelPassed = false;
+                    }
 
-                generalControllers.GetComponent<InGame_MenuController>().CoinBarText.GetComponent<CoinBar_Controller>().AddRemoveCoin(-(GlobalVariables.LevelRewards[levelNumber - 1] * 3), saveFile.totalCoin);
-            }
-            else//yeterli altýn yok
-            {
-                nextLevelInfoPopup.GetComponent<InGame_NextLevelInfoPopup_Controller>().ShowPopup(levelNumber);
+                    levelProperties.levelPurchased = true;
+                    saveFile.levelProperties.Add(levelProperties);
+
+                    generalControllers.GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
+
+                    generalControllers.GetComponent<InGame_MenuController>().CoinBarText.GetComponent<CoinBar_Controller>().AddRemoveCoin(-(GlobalVariables.LevelRewards[levelNumber - 1] * 3), saveFile.totalCoin);
+                }
+                else//yeterli altýn yok
+                {
+                    nextLevelInfoPopup.GetComponent<InGame_NextLevelInfoPopup_Controller>().ShowPopup(levelNumber);
+                }
             }
         }
-
     }
 }

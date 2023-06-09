@@ -10,8 +10,8 @@ public class EnergyBarController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //test için 30 sn
-        //InvokeRepeating(nameof(UpdateEnergyBar), 30f, 30.0f);
+        //test için 10 sn
+        //InvokeRepeating(nameof(UpdateEnergyBar), 10f, 10.0f);
         //6dk'da 1
         InvokeRepeating(nameof(UpdateEnergyBar), 360f, 360f);
         EnergyBarInit();

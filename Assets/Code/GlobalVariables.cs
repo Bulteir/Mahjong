@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 public static class GlobalVariables
 {
@@ -27,6 +28,14 @@ public static class GlobalVariables
 
     public const int maxEnergy = 100;
     public const int requiredEnergyForlevel = 10;
+
+    public static GameObject intersitialAd_CallingObject = null;
+    public static GameObject rewardedAd_CallingObject = null;
+
+    public static int MainMenuRewardAdType = MainMenuRewardAdType_Coin;
+    public const int MainMenuRewardAdType_Coin = 0;
+    public const int MainMenuRewardAdType_Shuffle = 1;
+    public const int MainMenuRewardAdType_Undo = 2;
 
     //bölümlerin kaç altýn kazandýracaðý. Ayný zamanda o bölümün açýlmasý için ne kadar alýtýn gerektiði x3 olarak bulunur. 
     public static List<int> LevelRewards = new List<int>()

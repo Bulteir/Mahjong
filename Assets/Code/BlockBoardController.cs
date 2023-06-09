@@ -211,6 +211,7 @@ public class BlockBoardController : MonoBehaviour
         blockCounter.GetComponent<BlockCounterController>().RefreshBlockCount();
         StarController.GetComponent<InGame_StarController>().SetStars();
 
+        int currentLevelReward = GlobalVariables.LevelRewards[(Int32.Parse(SceneManager.GetActiveScene().name.Replace("level", "")) - 1)]; 
         //her yerleþtirilen bloktan sonra oyununn bitip bitmedði kontrol edilir.
         if (IsGameOver())
         {
@@ -220,10 +221,10 @@ public class BlockBoardController : MonoBehaviour
         else if (IsGameWon())
         {
             GlobalVariables.gameState = GlobalVariables.gameState_gameOver;
-            GameOverMenu.GetComponent<InGame_GameOverMenuController>().SetContent(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Congratulations"), GlobalVariables.LevelRewards[0], true);
+            GameOverMenu.GetComponent<InGame_GameOverMenuController>().SetContent(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Congratulations"), currentLevelReward, true);
 
             LoadAnimation.GetComponent<LoadSaveAnimationController>().StartAnimation(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Saving"));
-            StartCoroutine(SaveData(GlobalVariables.LevelRewards[0], true));
+            StartCoroutine(SaveData(currentLevelReward, true));
         }
 
         isSmoothMoveToSnapPointAnimationContinue = false;
