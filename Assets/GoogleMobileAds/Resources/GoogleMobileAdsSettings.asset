@@ -17,4 +17,4 @@ MonoBehaviour:
   delayAppMeasurementInit: 1
   optimizeInitialization: 1
   optimizeAdLoading: 1
-  userTrackingUsageDescription: 
+  userTrackingUsageDescription: "Test ios plist info user tracking massege (ben yazd\u0131m)."
