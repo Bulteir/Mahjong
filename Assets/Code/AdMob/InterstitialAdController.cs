@@ -9,6 +9,7 @@ using UnityEngine.Events;
 
 public class InterstitialAdController : MonoBehaviour
 {
+    public GameObject generalControllers;
     [Tooltip("Reklamýn para kazandýrdýðý tahmin edildiðinde tektiklenir.")]
     public UnityEvent OnAdPaidEvent;
     [Tooltip("Reklam gösterim/impression elde ettiðinde tetiklenir.")]
@@ -72,7 +73,7 @@ public class InterstitialAdController : MonoBehaviour
             }
 
             // The operation completed successfully.
-            Debug.Log("Interstitial ad loaded with response : " + ad.GetResponseInfo());
+            //Debug.Log("Interstitial ad loaded with response : " + ad.GetResponseInfo());
             _interstitialAd = ad;
 
             // Register to ad events to extend functionality.
@@ -88,15 +89,24 @@ public class InterstitialAdController : MonoBehaviour
     /// </summary>
     public void ShowAd()
     {
+        SaveDataFormat saveFile = generalControllers.GetComponent<LocalSaveLoadController>().LoadGame();
+        if (saveFile.saveTime != null)//Kayýtlý save dosyasý varsa
+        {
+            if (saveFile.noAdsJokerActive == true)//kullanýcý no ads eþyasý alýnmýþsa.
+            {
+                return;
+            }
+        }
+
         if (_interstitialAd != null && _interstitialAd.CanShowAd())
         {
-            Debug.Log("Showing interstitial ad.");
+            //Debug.Log("Showing interstitial ad.");
             _interstitialAd.Show();
             
         }
         else
         {
-            Debug.LogError("Interstitial ad is not ready yet.");
+            //Debug.LogError("Interstitial ad is not ready yet.");
         }
 
         // Inform the UI that the ad is not ready.
@@ -110,7 +120,7 @@ public class InterstitialAdController : MonoBehaviour
     {
         if (_interstitialAd != null)
         {
-            Debug.Log("Destroying interstitial ad.");
+            //Debug.Log("Destroying interstitial ad.");
             _interstitialAd.Destroy();
             _interstitialAd = null;
         }
@@ -136,40 +146,40 @@ public class InterstitialAdController : MonoBehaviour
         // Raised when the ad is estimated to have earned money.
         ad.OnAdPaid += (AdValue adValue) =>
         {
-            Debug.Log(String.Format("Interstitial ad paid {0} {1}.",
-                adValue.Value,
-                adValue.CurrencyCode));
+            //Debug.Log(String.Format("Interstitial ad paid {0} {1}.",
+            //    adValue.Value,
+            //    adValue.CurrencyCode));
             OnAdPaidEvent.Invoke();
         };
         // Raised when an impression is recorded for an ad.
         ad.OnAdImpressionRecorded += () =>
         {
-            Debug.Log("Interstitial ad recorded an impression.");
+            //Debug.Log("Interstitial ad recorded an impression.");
             OnAdImpressionRecordedEvent.Invoke();
         };
         // Raised when a click is recorded for an ad.
         ad.OnAdClicked += () =>
         {
-            Debug.Log("Interstitial ad was clicked.");
+            //Debug.Log("Interstitial ad was clicked.");
             OnAdClickedEvent.Invoke();
         };
         // Raised when an ad opened full screen content.
         ad.OnAdFullScreenContentOpened += () =>
         {
-            Debug.Log("Interstitial ad full screen content opened.");
+            //Debug.Log("Interstitial ad full screen content opened.");
             OnAdFullScreenContentOpenedEvent.Invoke();
         };
         // Raised when the ad closed full screen content.
         ad.OnAdFullScreenContentClosed += () =>
         {
-            Debug.Log("Interstitial ad full screen content closed.");
+            //Debug.Log("Interstitial ad full screen content closed.");
             OnAdFullScreenContentClosedEvent.Invoke();
         };
         // Raised when the ad failed to open full screen content.
         ad.OnAdFullScreenContentFailed += (AdError error) =>
         {
-            Debug.LogError("Interstitial ad failed to open full screen content with error : "
-                + error);
+            //Debug.LogError("Interstitial ad failed to open full screen content with error : "
+            //    + error);
             OnAdFullScreenContentFailedEvent.Invoke();
         };
     }

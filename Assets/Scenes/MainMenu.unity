@@ -36880,6 +36880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PurchasingMask: {fileID: 1465954018}
+  generalControllers: {fileID: 1023075138}
   StoreItems:
   - {fileID: 1149035431}
   - {fileID: 879515866}

@@ -7,11 +7,30 @@ using UnityEngine.SceneManagement;
 public class InGame_PauseMenu_Restart_Btn : MonoBehaviour
 {
     public GameObject adMobControllers;
+    public GameObject generalControllers;
+
     // Start is called before the first frame update
     public void OnClick()
     {
-        GlobalVariables.intersitialAd_CallingObject = gameObject;
-        adMobControllers.GetComponent<InterstitialAdController>().ShowAd();
+        bool noAdsJokerActive = false;
+        SaveDataFormat saveFile = generalControllers.GetComponent<LocalSaveLoadController>().LoadGame();
+        if (saveFile.saveTime != null)//Kayýtlý save dosyasý varsa
+        {
+            if (saveFile.noAdsJokerActive == true)//kullanýcý no ads eþyasý alýnmýþsa.
+            {
+                noAdsJokerActive = true;
+            }
+        }
+
+        if (noAdsJokerActive)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+        }
+        else
+        {
+            GlobalVariables.intersitialAd_CallingObject = gameObject;
+            adMobControllers.GetComponent<InterstitialAdController>().ShowAd();
+        }
     }
 
     public void Restart()
@@ -20,6 +39,7 @@ public class InGame_PauseMenu_Restart_Btn : MonoBehaviour
         {
             GlobalVariables.intersitialAd_CallingObject = null;
             adMobControllers.GetComponent<InterstitialAdController>().DestroyAd();
+            adMobControllers.GetComponent<BannerViewController>().DestroyAd();
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         }

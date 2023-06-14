@@ -6,11 +6,31 @@ using UnityEngine.SceneManagement;
 public class InGame_PauseMenu_MainMenu_Btn : MonoBehaviour
 {
     public GameObject adMobControllers;
+    public GameObject generalControllers;
+
 
     public void OnClick()
     {
-        GlobalVariables.intersitialAd_CallingObject = gameObject;
-        adMobControllers.GetComponent<InterstitialAdController>().ShowAd();
+        bool noAdsJokerActive = false;
+        SaveDataFormat saveFile = generalControllers.GetComponent<LocalSaveLoadController>().LoadGame();
+        if (saveFile.saveTime != null)//Kayýtlý save dosyasý varsa
+        {
+            if (saveFile.noAdsJokerActive == true)//kullanýcý no ads eþyasý alýnmýþsa.
+            {
+                noAdsJokerActive = true;
+            }
+        }
+
+        if (noAdsJokerActive)
+        {
+            GlobalVariables.gameState = GlobalVariables.gameState_MainMenu;
+            SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+        }
+        else
+        {
+            GlobalVariables.intersitialAd_CallingObject = gameObject;
+            adMobControllers.GetComponent<InterstitialAdController>().ShowAd();
+        }
     }
 
     public void MainMenu()
@@ -19,6 +39,7 @@ public class InGame_PauseMenu_MainMenu_Btn : MonoBehaviour
         {
             GlobalVariables.intersitialAd_CallingObject = null;
             adMobControllers.GetComponent<InterstitialAdController>().DestroyAd();
+            adMobControllers.GetComponent<BannerViewController>().DestroyAd();
 
             GlobalVariables.gameState = GlobalVariables.gameState_MainMenu;
             SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);

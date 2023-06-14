@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class AdMobControllers : MonoBehaviour
 {
+    public GameObject generalControllers;
+
     #region UNITY MONOBEHAVIOR METHODS
 
     public void Start()
@@ -52,8 +54,22 @@ public class AdMobControllers : MonoBehaviour
         MobileAdsEventExecutor.ExecuteInUpdate(() =>
         {
             //statusText.text = "Initialization complete.";
-            GetComponent<BannerViewController>().LoadAd();
-            GetComponent<InterstitialAdController>().LoadAd();
+
+            SaveDataFormat saveFile = generalControllers.GetComponent<LocalSaveLoadController>().LoadGame();
+            if (saveFile.saveTime != null)//Kayýtlý save dosyasý varsa
+            {
+                if (saveFile.noAdsJokerActive == false)//kullanýcý no ads eþyasý almamýþtýr.
+                {
+                    GetComponent<BannerViewController>().LoadAd();
+                    GetComponent<InterstitialAdController>().LoadAd();
+                }
+            }
+            else //save dosyasý yok. Default olarak banner ve geçiþ reklamý yükle
+            {
+                GetComponent<BannerViewController>().LoadAd();
+                GetComponent<InterstitialAdController>().LoadAd();
+            }
+
             GetComponent<RewardedAdController>().LoadAd();
         });
     }
@@ -74,6 +90,5 @@ public class AdMobControllers : MonoBehaviour
             }
         });
     }
-
 
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ using UnityEngine.UI;
 public class StoreController : MonoBehaviour, IDetailedStoreListener
 {
     public GameObject PurchasingMask;
+    public GameObject generalControllers;
     public List<GameObject> StoreItems;
     private IStoreController storeController;
     private IExtensionProvider storeExtensions;
@@ -69,8 +71,8 @@ public class StoreController : MonoBehaviour, IDetailedStoreListener
         {
             //ProductCatalogItem itemData = catalog.allProducts.Where(i => i.id == item.GetComponent<StoreItem>().Item_Id).FirstOrDefault();
 
-            Product product = storeController.products.all.Where(i => i.definition.id == item.GetComponent<StoreItem>().Item_Id).FirstOrDefault();
-            item.GetComponent<StoreItem>().SetItemMetaData(product.metadata.localizedTitle, product.metadata.localizedDescription, product.metadata.localizedPriceString+" "+ product.metadata.isoCurrencyCode);
+            Product product_ = storeController.products.all.Where(i => i.definition.id == item.GetComponent<StoreItem>().Item_Id).FirstOrDefault();
+            item.GetComponent<StoreItem>().SetItemMetaData(product_.metadata.localizedTitle, product_.metadata.localizedDescription, product_.metadata.localizedPriceString + " " + product_.metadata.isoCurrencyCode);
         }
     }
 
@@ -104,10 +106,12 @@ public class StoreController : MonoBehaviour, IDetailedStoreListener
         //do something, like give the player their currency, unlock the item 
         //update some metrics or analytics, etc...
 
+        ApplyPurchasedItemEffect(purchaseEvent.purchasedProduct.definition.id);
+
         return PurchaseProcessingResult.Complete;
     }
 
-    public void Purchase(string productId,Button button)
+    public void Purchase(string productId, Button button)
     {
         purchaseButton = button;
         purchaseButton.enabled = false;
@@ -121,30 +125,75 @@ public class StoreController : MonoBehaviour, IDetailedStoreListener
         purchaseButton.enabled = true;
     }
 
-    public string RestorePurchase()
+    public async void RestorePurchase()
     {
-        string result = "sonuç yok";
+
+        InitializationOptions options = new InitializationOptions()
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+.SetEnvironmentName("Test");
+#else
+            .SetEnvironmentName("Production");
+#endif
+
         if (UnityServices.State != ServicesInitializationState.Initialized || UnityServices.State != ServicesInitializationState.Initializing)
-            UnityServicesInitial();
+            await UnityServices.InitializeAsync(options);
 
-        Product product = storeController.products.all.Where(i => i.definition.id == "no_ads").FirstOrDefault();
+        LoadCatalog();
 
-        if (product.hasReceipt)
+        if (storeController != null)
         {
-            Debug.Log("Daha önce satýn aldýðýnýz reklam yok ürünü geri getirildi.");
-            result = "Daha önce satýn aldýðýnýz reklam yok ürünü geri getirildi.";
-        }
-        else
-        {
-            Debug.Log("Reklam yok ürünü satýn alýnmamýþ");
-            result = "Reklam yok ürünü satýn alýnmamýþ";
+            Product product = storeController.products.all.Where(i => i.definition.id == "no_ads").FirstOrDefault();
+            if (product != null)
+            {
+                if (product.hasReceipt)
+                {
+                    SaveDataFormat saveFile = generalControllers.GetComponent<LocalSaveLoadController>().LoadGame();
+                    if (saveFile.saveTime != null)//Kayýtlý save dosyasý varsa
+                    {
+                        saveFile.noAdsJokerActive = true;
+                    }
+                    saveFile.saveTime = DateTime.Now.ToString();
+                    generalControllers.GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
 
+                    Debug.Log("Daha önce satýn aldýðýnýz reklam yok ürünü geri getirildi.");
+                }
+                else
+                {
+                    Debug.Log("Reklam yok ürünü satýn alýnmamýþ");
+                }
+            }
         }
-        return result;
     }
 
     public void OnPurchaseFailed(Product product, PurchaseFailureDescription failureDescription)
     {
-        throw new System.NotImplementedException();
+
+        Debug.Log("Satýn almada hata meydana geldi. message:" + failureDescription.message + " reason:" + failureDescription.reason + " ýd:" + failureDescription.productId);
+
+        if (product.hasReceipt)
+        {
+            Debug.Log("Daha önce satýn alýnmýþ. id:" + product.definition.id);
+            ApplyPurchasedItemEffect(product.definition.id);
+        }
+
+        PurchaseCompleted();
+        PurchasingMask.SetActive(false);
+    }
+
+    //maðazadan bir ürün satýn alýndýðýnda oyuna nasýl etki edecekse ayarlamalar yapýlýr.
+    void ApplyPurchasedItemEffect(string itemId)
+    {
+        SaveDataFormat saveFile = generalControllers.GetComponent<LocalSaveLoadController>().LoadGame();
+        if (saveFile.saveTime != null)//Kayýtlý save dosyasý varsa
+        {
+            if (itemId == "no_ads")
+            {
+                saveFile.noAdsJokerActive = true;
+            }
+
+            saveFile.saveTime = DateTime.Now.ToString();
+            generalControllers.GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
+        }
+
     }
 }

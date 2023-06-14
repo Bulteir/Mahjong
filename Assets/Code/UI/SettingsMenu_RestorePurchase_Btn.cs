@@ -8,6 +8,6 @@ public class SettingsMenu_RestorePurchase_Btn : MonoBehaviour
     public GameObject storeController;
     public void OnClick()
     {
-        Debug.Log("Satýn almalar geri yükleniyor: " + storeController.GetComponent<StoreController>().RestorePurchase());
+        storeController.GetComponent<StoreController>().RestorePurchase();
     }
 }

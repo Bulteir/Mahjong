@@ -71,7 +71,7 @@ public class RewardedAdController : MonoBehaviour
             }
 
             // The operation completed successfully.
-            Debug.Log("Rewarded ad loaded with response : " + ad.GetResponseInfo());
+            //Debug.Log("Rewarded ad loaded with response : " + ad.GetResponseInfo());
             _rewardedAd = ad;
 
             // Register to ad events to extend functionality.
@@ -92,9 +92,9 @@ public class RewardedAdController : MonoBehaviour
             Debug.Log("Showing rewarded ad.");
             _rewardedAd.Show((Reward reward) =>
             {
-                Debug.Log(String.Format("Rewarded ad granted a reward: {0} {1}",
-                                        reward.Amount,
-                                        reward.Type));
+                //Debug.Log(String.Format("Rewarded ad granted a reward: {0} {1}",
+                //                        reward.Amount,
+                //                        reward.Type));
             });
         }
         else
@@ -139,40 +139,40 @@ public class RewardedAdController : MonoBehaviour
         // Raised when the ad is estimated to have earned money.
         ad.OnAdPaid += (AdValue adValue) =>
         {
-            Debug.Log(String.Format("Rewarded ad paid {0} {1}.",
-                adValue.Value,
-                adValue.CurrencyCode));
+            //Debug.Log(String.Format("Rewarded ad paid {0} {1}.",
+            //    adValue.Value,
+            //    adValue.CurrencyCode));
             OnAdPaidEvent.Invoke();
         };
         // Raised when an impression is recorded for an ad.
         ad.OnAdImpressionRecorded += () =>
         {
-            Debug.Log("Rewarded ad recorded an impression.");
+            //Debug.Log("Rewarded ad recorded an impression.");
             OnAdImpressionRecordedEvent.Invoke();
         };
         // Raised when a click is recorded for an ad.
         ad.OnAdClicked += () =>
         {
-            Debug.Log("Rewarded ad was clicked.");
+            //Debug.Log("Rewarded ad was clicked.");
             OnAdClickedEvent.Invoke();
         };
         // Raised when the ad opened full screen content.
         ad.OnAdFullScreenContentOpened += () =>
         {
-            Debug.Log("Rewarded ad full screen content opened.");
+            //Debug.Log("Rewarded ad full screen content opened.");
             OnAdFullScreenContentOpenedEvent.Invoke();
         };
         // Raised when the ad closed full screen content.
         ad.OnAdFullScreenContentClosed += () =>
         {
-            Debug.Log("Rewarded ad full screen content closed.");
+            //Debug.Log("Rewarded ad full screen content closed.");
             OnAdFullScreenContentClosedEvent.Invoke();
         };
         // Raised when the ad failed to open full screen content.
         ad.OnAdFullScreenContentFailed += (AdError error) =>
         {
-            Debug.LogError("Rewarded ad failed to open full screen content with error : "
-                + error);
+            //Debug.LogError("Rewarded ad failed to open full screen content with error : "
+            //    + error);
             OnAdFullScreenContentFailedEvent.Invoke();
         };
     }

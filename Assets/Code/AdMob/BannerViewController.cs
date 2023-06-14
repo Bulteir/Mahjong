@@ -71,7 +71,7 @@ private const string _adUnitId = "ca-app-pub-3475441178822227/5717168758";
 
 
         // Send the request to load the ad.
-        Debug.Log("Loading banner ad.");
+        //Debug.Log("Loading banner ad.");
         _bannerView.LoadAd(adRequest);
     }
 
@@ -82,7 +82,7 @@ private const string _adUnitId = "ca-app-pub-3475441178822227/5717168758";
     {
         if (_bannerView != null)
         {
-            Debug.Log("Showing banner view.");
+            //Debug.Log("Showing banner view.");
             _bannerView.Show();
         }
     }
@@ -94,7 +94,7 @@ private const string _adUnitId = "ca-app-pub-3475441178822227/5717168758";
     {
         if (_bannerView != null)
         {
-            Debug.Log("Hiding banner view.");
+            //Debug.Log("Hiding banner view.");
             _bannerView.Hide();
         }
     }
@@ -108,7 +108,7 @@ private const string _adUnitId = "ca-app-pub-3475441178822227/5717168758";
     {
         if (_bannerView != null)
         {
-            Debug.Log("Destroying banner view.");
+            //Debug.Log("Destroying banner view.");
             _bannerView.Destroy();
             _bannerView = null;
         }
@@ -124,7 +124,7 @@ private const string _adUnitId = "ca-app-pub-3475441178822227/5717168758";
             var responseInfo = _bannerView.GetResponseInfo();
             if (responseInfo != null)
             {
-                UnityEngine.Debug.Log(responseInfo);
+                Debug.Log(responseInfo);
             }
         }
     }
@@ -137,46 +137,46 @@ private const string _adUnitId = "ca-app-pub-3475441178822227/5717168758";
         // Raised when an ad is loaded into the banner view.
         _bannerView.OnBannerAdLoaded += () =>
         {
-            Debug.Log("Banner view loaded an ad with response : "
-                + _bannerView.GetResponseInfo());
+            //Debug.Log("Banner view loaded an ad with response : "
+            //    + _bannerView.GetResponseInfo());
             OnBannerAdLoadedEvent.Invoke();
         };
         // Raised when an ad fails to load into the banner view.
         _bannerView.OnBannerAdLoadFailed += (LoadAdError error) =>
         {
-            Debug.LogError("Banner view failed to load an ad with error : " + error);
+            //Debug.LogError("Banner view failed to load an ad with error : " + error);
             OnBannerAdLoadFailedEvent.Invoke();
         };
         // Raised when the ad is estimated to have earned money.
         _bannerView.OnAdPaid += (AdValue adValue) =>
         {
-            Debug.Log(String.Format("Banner view paid {0} {1}.",
-                adValue.Value,
-                adValue.CurrencyCode));
+            //Debug.Log(String.Format("Banner view paid {0} {1}.",
+            //    adValue.Value,
+            //    adValue.CurrencyCode));
             OnAdPaidEvent.Invoke();
         };
         // Raised when an impression is recorded for an ad.
         _bannerView.OnAdImpressionRecorded += () =>
         {
-            Debug.Log("Banner view recorded an impression.");
+            //Debug.Log("Banner view recorded an impression.");
             OnAdImpressionRecordedEvent.Invoke();
         };
         // Raised when a click is recorded for an ad.
         _bannerView.OnAdClicked += () =>
         {
-            Debug.Log("Banner view was clicked.");
+            //Debug.Log("Banner view was clicked.");
             OnAdClickedEvent.Invoke();
         };
         // Raised when an ad opened full screen content.
         _bannerView.OnAdFullScreenContentOpened += () =>
         {
-            Debug.Log("Banner view full screen content opened.");
+            //Debug.Log("Banner view full screen content opened.");
             OnAdFullScreenContentOpenedEvent.Invoke();
         };
         // Raised when the ad closed full screen content.
         _bannerView.OnAdFullScreenContentClosed += () =>
         {
-            Debug.Log("Banner view full screen content closed.");
+            //Debug.Log("Banner view full screen content closed.");
             OnAdFullScreenContentClosedEvent.Invoke();
         };
     }

@@ -10,10 +10,30 @@ public class InGame_GameOverMenu_Restart_Btn : MonoBehaviour
 
     public void OnClick()
     {
-        if (generalControllers.GetComponent<EnergyBarController>().IsThereEnoughEnergyForLevel())
+        bool noAdsJokerActive = false;
+        SaveDataFormat saveFile = generalControllers.GetComponent<LocalSaveLoadController>().LoadGame();
+        if (saveFile.saveTime != null)//Kayýtlý save dosyasý varsa
         {
-            GlobalVariables.intersitialAd_CallingObject = gameObject;
-            adMobControllers.GetComponent<InterstitialAdController>().ShowAd();
+            if (saveFile.noAdsJokerActive == true)//kullanýcý no ads eþyasý alýnmýþsa.
+            {
+                noAdsJokerActive = true;
+            }
+        }
+
+        if (noAdsJokerActive)
+        {
+            if (generalControllers.GetComponent<EnergyBarController>().IsThereEnoughEnergyForLevel())
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+            }
+        }
+        else
+        {
+            if (generalControllers.GetComponent<EnergyBarController>().IsThereEnoughEnergyForLevel())
+            {
+                GlobalVariables.intersitialAd_CallingObject = gameObject;
+                adMobControllers.GetComponent<InterstitialAdController>().ShowAd();
+            }
         }
     }
 
@@ -23,6 +43,7 @@ public class InGame_GameOverMenu_Restart_Btn : MonoBehaviour
         {
             GlobalVariables.intersitialAd_CallingObject = null;
             adMobControllers.GetComponent<InterstitialAdController>().DestroyAd();
+            adMobControllers.GetComponent<BannerViewController>().DestroyAd();
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         }

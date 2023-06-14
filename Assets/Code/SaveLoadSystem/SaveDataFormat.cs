@@ -10,6 +10,7 @@ public class SaveDataFormat
     public string lastEnergyGainTime;
     public int shuffleJokerQuantity;
     public int undoJokerQuantity;
+    public bool noAdsJokerActive;
 }
 
 public struct LevelProperties

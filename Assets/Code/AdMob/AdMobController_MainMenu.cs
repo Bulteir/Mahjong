@@ -73,7 +73,7 @@ public class AdMobController_MainMenu : MonoBehaviour
                 DateTime showTime;
                 DateTime.TryParseExact(lastShowTime, dateTimeFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out showTime);
 
-                if ((DateTime.Now - showTime).TotalMinutes >= 5)
+                if ((DateTime.Now - showTime).TotalMinutes >= 5 || (DateTime.Now - showTime).TotalMinutes < 0)
                 {
                     PlayerPrefs.SetString("MainMenuRewardAdTime", DateTime.Now.ToLongTimeString());
 
