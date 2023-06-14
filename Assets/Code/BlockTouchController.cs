@@ -22,7 +22,7 @@ public class BlockTouchController : MonoBehaviour
             }
             else
             {
-                //ControlWithTouch();
+                ControlWithTouch();
             }
         }
     }
@@ -49,4 +49,30 @@ public class BlockTouchController : MonoBehaviour
     }
     #endregion
 
+    #region dokunma ile kontrol etme
+    void ControlWithTouch()
+    {
+
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
+            {
+
+                RaycastHit raycastHit;
+                Ray ray = Camera.main.ScreenPointToRay(touch.position);
+                if (Physics.Raycast(ray, out raycastHit, Mathf.Infinity))
+                {
+                    if (raycastHit.collider.gameObject.tag == GlobalVariables.TagBlock
+                    && raycastHit.collider.gameObject.GetComponent<BlockProperties>().IsThereAnyBlockOnIt == false
+                    && raycastHit.collider.gameObject.GetComponent<BlockProperties>().IsSnapped == false
+                    && BlockTable.GetComponent<BlockTableControl>().BlocksRotating == false)
+                    {
+                        transform.GetComponent<BlockBoardController>().PlaceBlock(raycastHit.collider.transform);
+                    }
+                }
+            }
+        }
+    }
+    #endregion
 }

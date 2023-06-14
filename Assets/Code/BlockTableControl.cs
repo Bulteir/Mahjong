@@ -33,7 +33,15 @@ public class BlockTableControl : MonoBehaviour
     {
         if (GlobalVariables.gameState == GlobalVariables.gameState_inGame)
         {
-            BlockTableControlWithMouse();
+
+            if (Application.isEditor)
+            {
+                BlockTableControlWithMouse();
+            }
+            else
+            {
+                BlockTableControlWithTouch();
+            }
         }
     }
 
@@ -121,6 +129,112 @@ public class BlockTableControl : MonoBehaviour
         if (Input.GetMouseButtonUp(0) && cameraStatus == cameraStatus_Dragging)
         {
             cameraStatus = cameraStatus_DragEnd;
+        }
+
+        if (cameraStatus == cameraStatus_DragEnd)
+        {
+            if (Quaternion.Angle(transform.rotation, startRotation) > 0.5f)
+            {
+                transform.rotation = Quaternion.Lerp(transform.rotation, startRotation, Time.deltaTime * 5);
+            }
+            else
+            {
+                transform.rotation = startRotation;
+                cameraStatus = cameraStatus_idle;
+                BlocksRotating = false;
+            }
+
+        }
+    }
+
+    void BlockTableControlWithTouch()
+    {
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began && GeneralControllers.GetComponent<BlockBoardController>().isSmoothMoveToSnapPointAnimationContinue == false && BlocksRotating == false)
+            {
+                RaycastHit raycastHit;
+                Ray ray = Camera.main.ScreenPointToRay(touch.position);
+                if (Physics.Raycast(ray, out raycastHit, Mathf.Infinity))
+                {
+                    if (raycastHit.collider.gameObject.tag == GlobalVariables.TagBlock)
+                    {
+                        if (cameraStatus != cameraStatus_DragEnd)
+                        {
+                            cameraStatus = cameraStatus_idle;
+                            BlocksRotating = false;
+                        }
+                    }
+                    else // dokunduðumuz þey blok deðilse
+                    {
+                        cameraStatus = cameraStatus_DragBegin;
+                        BlocksRotating = true;
+                        prePosition = Camera.main.ScreenToViewportPoint(touch.position);
+                    }
+                }
+                else//hiçbirþeye dokunulmadýysa 
+                {
+                    cameraStatus = cameraStatus_DragBegin;
+                    BlocksRotating = true;
+                    prePosition = Camera.main.ScreenToViewportPoint(touch.position);
+                }
+            }
+
+            if (touch.phase == TouchPhase.Moved && cameraStatus == cameraStatus_DragBegin || cameraStatus == cameraStatus_Dragging)
+            {
+                cameraStatus = cameraStatus_Dragging;
+                Vector3 direction = prePosition - Camera.main.ScreenToViewportPoint(touch.position);
+                transform.Rotate(new Vector3(0, 0, -1), -direction.x * 180, Space.World);
+                transform.Rotate(new Vector3(-1, 0, 0), direction.y * 180);
+
+
+                if (transform.localEulerAngles.z > 170 && transform.localEulerAngles.x < 90)
+                {
+                    transform.localRotation = Quaternion.Euler(new Vector3(90, transform.localEulerAngles.y, transform.localEulerAngles.z));
+                }
+                else if (transform.localEulerAngles.z > 170 && transform.localEulerAngles.x >= 270)
+                {
+                    transform.localRotation = Quaternion.Euler(new Vector3(270, transform.localEulerAngles.y, transform.localEulerAngles.z));
+                }
+
+                if (transform.localEulerAngles.y >= 90 && transform.localEulerAngles.y < 180)
+                {
+                    transform.localRotation = Quaternion.Euler(new Vector3(transform.localEulerAngles.x, 90, 0));
+                }
+                else if (transform.localEulerAngles.y < 270 && transform.localEulerAngles.y > 90)
+                {
+                    transform.localRotation = Quaternion.Euler(new Vector3(transform.localEulerAngles.x, 270, 0));
+                }
+
+                #region çok iyi çalýþmasýna raðmen build edilmiyor. Mobilde çalýþacak þekilde inspectördeki açýlarý tam oalrak bulamýyoruz bir türlü
+
+                //if (TransformUtils.GetInspectorRotation(transform).x >= 90)
+                //{
+                //    transform.localRotation = Quaternion.Euler(new Vector3(90, TransformUtils.GetInspectorRotation(transform).y, TransformUtils.GetInspectorRotation(transform).z));
+                //}
+                //else if (TransformUtils.GetInspectorRotation(transform).x <= -90)
+                //{
+                //    transform.localRotation = Quaternion.Euler(new Vector3(-90, TransformUtils.GetInspectorRotation(transform).y, TransformUtils.GetInspectorRotation(transform).z));
+                //}
+
+                //if (TransformUtils.GetInspectorRotation(transform).y >= 90)
+                //{
+                //    transform.localRotation = Quaternion.Euler(new Vector3(TransformUtils.GetInspectorRotation(transform).x, 90, TransformUtils.GetInspectorRotation(transform).z));
+                //}
+                //else if (TransformUtils.GetInspectorRotation(transform).y <= -90)
+                //{
+                //    transform.localRotation = Quaternion.Euler(new Vector3(TransformUtils.GetInspectorRotation(transform).x, -90, TransformUtils.GetInspectorRotation(transform).z));
+                //}
+                #endregion
+
+                prePosition = Camera.main.ScreenToViewportPoint(touch.position);
+            }
+
+            if ((touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled) && cameraStatus == cameraStatus_Dragging)
+            {
+                cameraStatus = cameraStatus_DragEnd;
+            }
         }
 
         if (cameraStatus == cameraStatus_DragEnd)
