@@ -227,10 +227,61 @@ MonoBehaviour:
       \u0641\u064A\u0647"
     m_Metadata:
       m_Items: []
+  - m_Id: 16596001644216320
+    m_Localized: "{coin} \u0639\u0645\u0644\u0629 \u0630\u0647\u0628\u064A\u0629"
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408386
+  - m_Id: 16615070787305472
+    m_Localized: "\u064A\u0632\u064A\u0644 \u0627\u0644\u0625\u0639\u0644\u0627\u0646\u0627\u062A
+      \u0627\u0644\u0625\u0644\u0632\u0627\u0645\u064A\u0629 \u0641\u064A \u0627\u0644\u0644\u0639\u0628\u0629"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16655318728704000
+    m_Localized: "{energy} \u0637\u0627\u0642\u0629"
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408386
+  - m_Id: 16656412477358080
+    m_Localized: "\u0637\u0627\u0642\u0629 \u063A\u064A\u0631 \u0645\u062D\u062F\u0648\u062F\u0629
+      \u0644\u0645\u062F\u0629 {hour} \u0633\u0627\u0639\u0627\u062A"
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408386
+  - m_Id: 16656622721040384
+    m_Localized: "\u0637\u0627\u0642\u0629 \u063A\u064A\u0631 \u0645\u062D\u062F\u0648\u062F\u0629
+      \u0644\u0645\u062F\u0629 {day} \u0623\u064A\u0627\u0645"
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408386
+  - m_Id: 16656636465774592
+    m_Localized: "\u0637\u0627\u0642\u0629 \u063A\u064A\u0631 \u0645\u062D\u062F\u0648\u062F\u0629
+      \u0644\u0645\u062F\u0629 {day} \u0623\u064A\u0627\u0645"
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408386
+  - m_Id: 16668352167673856
+    m_Localized: "{quantity} \u062A\u062D\u0633\u064A\u0646 \u0644\u062E\u0627\u0635\u064A\u0629
+      \u0627\u0644\u062E\u0644\u0637"
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408386
+  - m_Id: 16668459176951808
+    m_Localized: "{quantity} \u062A\u062D\u0633\u064A\u0646 \u0644\u062E\u0627\u0635\u064A\u0629
+      \u0627\u0644\u062A\u0631\u0627\u062C\u0639"
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408386
+  - m_Id: 16980120672796672
+    m_Localized: "\u0637\u0627\u0642\u0629 \u063A\u064A\u0631 \u0645\u062D\u062F\u0648\u062F\u0629
+      \u0644\u0645\u062F\u0629 {minute} \u062F\u0642\u064A\u0642\u0629"
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408386
   references:
     version: 2
     RefIds:
     - rid: 9143329240635408386
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 0000b2de8a7919000000f261df8c190000007238c8cc1a000000b23830621c000000b28fc4701c00
+        m_Entries: 0000b2de8a7919000000f261df8c190000007238c8cc1a000000b23830621c000000b28fc4701c000000b2bef9f53a0000007294ec2b3b000000f23ceb2c3b00000072301c2d3b000000b2631f2d3b000000f229c7373b0000003214e0373b000000f26c54533c00

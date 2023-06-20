@@ -237,10 +237,62 @@ MonoBehaviour:
       \u043F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C."
     m_Metadata:
       m_Items: []
+  - m_Id: 16596001644216320
+    m_Localized: "{coin} \u0437\u043E\u043B\u043E\u0442\u044B\u0445 \u043C\u043E\u043D\u0435\u0442"
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408392
+  - m_Id: 16615070787305472
+    m_Localized: "\u0423\u0434\u0430\u043B\u044F\u0435\u0442 \u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0435
+      \u0440\u0435\u043A\u043B\u0430\u043C\u043D\u044B\u0435 \u043C\u0430\u0442\u0435\u0440\u0438\u0430\u043B\u044B
+      \u0432 \u0438\u0433\u0440\u0435"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16655318728704000
+    m_Localized: "{energy} \u044D\u043D\u0435\u0440\u0433\u0438\u0438"
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408392
+  - m_Id: 16656412477358080
+    m_Localized: "\u0411\u0435\u0437\u043B\u0438\u043C\u0438\u0442\u043D\u0430\u044F
+      \u044D\u043D\u0435\u0440\u0433\u0438\u044F \u043D\u0430 { \u0447\u0430\u0441"
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408392
+  - m_Id: 16656622721040384
+    m_Localized: "\u0411\u0435\u0437\u043B\u0438\u043C\u0438\u0442\u043D\u0430\u044F
+      \u044D\u043D\u0435\u0440\u0433\u0438\u044F \u043D\u0430 {day} \u0434\u0435\u043D\u044C"
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408392
+  - m_Id: 16656636465774592
+    m_Localized: "\u0411\u0435\u0437\u043B\u0438\u043C\u0438\u0442\u043D\u0430\u044F
+      \u044D\u043D\u0435\u0440\u0433\u0438\u044F \u043D\u0430 {day} \u0434\u043D\u0435\u0439"
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408392
+  - m_Id: 16668352167673856
+    m_Localized: "{quantity} \u0443\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u0439
+      \u043F\u0435\u0440\u0435\u0442\u0430\u0441\u043E\u0432\u043A\u0438"
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408392
+  - m_Id: 16668459176951808
+    m_Localized: "{quantity} \u0443\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u0439
+      \u043E\u0442\u043C\u0435\u043D\u044B"
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408392
+  - m_Id: 16980120672796672
+    m_Localized: "\u0411\u0435\u0437\u043B\u0438\u043C\u0438\u0442\u043D\u0430\u044F
+      \u044D\u043D\u0435\u0440\u0433\u0438\u044F \u043D\u0430 {minute} \u043C\u0438\u043D\u0443\u0442"
+    m_Metadata:
+      m_Items:
+      - rid: 9143329240635408392
   references:
     version: 2
     RefIds:
     - rid: 9143329240635408392
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 0000b2de8a7919000000f261df8c190000007238c8cc1a000000b23830621c000000b28fc4701c00
+        m_Entries: 0000b2de8a7919000000f261df8c190000007238c8cc1a000000b23830621c000000b28fc4701c000000b2bef9f53a0000007294ec2b3b000000f23ceb2c3b00000072301c2d3b000000b2631f2d3b000000f229c7373b0000003214e0373b000000f26c54533c00

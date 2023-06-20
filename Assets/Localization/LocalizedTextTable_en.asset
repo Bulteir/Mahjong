@@ -221,10 +221,54 @@ MonoBehaviour:
     m_Localized: Please choose which of the log files you want to continue with.
     m_Metadata:
       m_Items: []
+  - m_Id: 16596001644216320
+    m_Localized: '{coin} gold coins'
+    m_Metadata:
+      m_Items:
+      - rid: 9143329239386292227
+  - m_Id: 16615070787305472
+    m_Localized: Removes mandatory advertisements in the game.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16655318728704000
+    m_Localized: '{energy} energy'
+    m_Metadata:
+      m_Items:
+      - rid: 9143329239386292227
+  - m_Id: 16656412477358080
+    m_Localized: Unlimited energy for {hour} hour
+    m_Metadata:
+      m_Items:
+      - rid: 9143329239386292227
+  - m_Id: 16656622721040384
+    m_Localized: Unlimited energy for {day} day
+    m_Metadata:
+      m_Items:
+      - rid: 9143329239386292227
+  - m_Id: 16656636465774592
+    m_Localized: Unlimited energy for {day} days
+    m_Metadata:
+      m_Items:
+      - rid: 9143329239386292227
+  - m_Id: 16668352167673856
+    m_Localized: '{quantity} shuffle power-up'
+    m_Metadata:
+      m_Items:
+      - rid: 9143329239386292227
+  - m_Id: 16668459176951808
+    m_Localized: '{quantity} undo power-up'
+    m_Metadata:
+      m_Items:
+      - rid: 9143329239386292227
+  - m_Id: 16980120672796672
+    m_Localized: Unlimited energy for {minute} minutes
+    m_Metadata:
+      m_Items:
+      - rid: 9143329239386292227
   references:
     version: 2
     RefIds:
     - rid: 9143329239386292227
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 0000b2de8a7919000000f261df8c190000007238c8cc1a000000b23830621c000000b28fc4701c00
+        m_Entries: 0000b2de8a7919000000f261df8c190000007238c8cc1a000000b23830621c000000b28fc4701c000000b2bef9f53a0000007294ec2b3b000000f23ceb2c3b00000072301c2d3b000000b2631f2d3b000000f229c7373b0000003214e0373b000000f26c54533c00

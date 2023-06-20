@@ -199,6 +199,42 @@ MonoBehaviour:
     m_Key: Save File Sync Content
     m_Metadata:
       m_Items: []
+  - m_Id: 16596001644216320
+    m_Key: IAP_Coin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16615070787305472
+    m_Key: IAP_NoAds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16655318728704000
+    m_Key: IAP_energy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16656412477358080
+    m_Key: IAP_energy_unlimited1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16656622721040384
+    m_Key: IAP_energy_unlimited2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16656636465774592
+    m_Key: IAP_energy_unlimited3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16668352167673856
+    m_Key: IAP_Joker_Shuffle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16668459176951808
+    m_Key: IAP_Joker_Undo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16980120672796672
+    m_Key: IAP_energy_unlimited4
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -11,6 +11,8 @@ public class SaveDataFormat
     public int shuffleJokerQuantity;
     public int undoJokerQuantity;
     public bool noAdsJokerActive;
+    public bool unlimitedEnergyActive;
+    public string unlimitedEnergyEndTime;
 }
 
 public struct LevelProperties

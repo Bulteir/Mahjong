@@ -106,7 +106,7 @@ public class StoreController : MonoBehaviour, IDetailedStoreListener
         //do something, like give the player their currency, unlock the item 
         //update some metrics or analytics, etc...
 
-        ApplyPurchasedItemEffect(purchaseEvent.purchasedProduct.definition.id);
+        ApplyPurchasedItemEffect(purchaseEvent.purchasedProduct.definition.id, purchaseEvent.purchasedProduct.metadata.localizedDescription);
 
         return PurchaseProcessingResult.Complete;
     }
@@ -173,7 +173,7 @@ public class StoreController : MonoBehaviour, IDetailedStoreListener
         if (product.hasReceipt)
         {
             Debug.Log("Daha önce satýn alýnmýþ. id:" + product.definition.id);
-            ApplyPurchasedItemEffect(product.definition.id);
+            ApplyPurchasedItemEffect(product.definition.id, product.metadata.localizedDescription);
         }
 
         PurchaseCompleted();
@@ -181,7 +181,7 @@ public class StoreController : MonoBehaviour, IDetailedStoreListener
     }
 
     //maðazadan bir ürün satýn alýndýðýnda oyuna nasýl etki edecekse ayarlamalar yapýlýr.
-    void ApplyPurchasedItemEffect(string itemId)
+    void ApplyPurchasedItemEffect(string itemId, string description)
     {
         SaveDataFormat saveFile = generalControllers.GetComponent<LocalSaveLoadController>().LoadGame();
         if (saveFile.saveTime != null)//Kayýtlý save dosyasý varsa
@@ -189,6 +189,56 @@ public class StoreController : MonoBehaviour, IDetailedStoreListener
             if (itemId == "no_ads")
             {
                 saveFile.noAdsJokerActive = true;
+            }
+            else if (itemId.Contains("coin"))
+            {
+                saveFile.totalCoin += Int32.Parse(description);
+
+                foreach (GameObject coinBar in generalControllers.GetComponent<MainMenu_MenuController>().CoinBarText)
+                {
+                    coinBar.GetComponent<CoinBar_Controller>().AddRemoveCoin(Int32.Parse(description), saveFile.totalCoin);
+                }
+            }
+            else if (itemId.Contains("joker_shuffle"))
+            {
+                saveFile.shuffleJokerQuantity += Int32.Parse(description);
+            }
+            else if (itemId.Contains("joker_undo"))
+            {
+                saveFile.undoJokerQuantity += Int32.Parse(description);
+            }
+            else if (itemId.Contains("energy_unlimited_"))
+            {
+                saveFile.unlimitedEnergyActive = true;
+
+
+                DateTime unlimitedEnergyEndTime;
+                DateTime.TryParse(saveFile.unlimitedEnergyEndTime, out unlimitedEnergyEndTime);
+
+                //limitsiz enerji süresi bitmediyse
+                if (unlimitedEnergyEndTime.CompareTo(DateTime.Now) > 0)
+                {
+                    saveFile.unlimitedEnergyEndTime = unlimitedEnergyEndTime.AddHours(Int32.Parse(description)).ToString();
+                }
+                else
+                {
+                    saveFile.unlimitedEnergyEndTime = DateTime.Now.AddHours(Int32.Parse(description)).ToString();
+                } 
+
+                foreach (GameObject energyBar in generalControllers.GetComponent<EnergyBarController>().EnergyBarText)
+                {
+                    energyBar.GetComponent<EnergyBarProperties>().energyBarText.text = "\u221E ";
+                    energyBar.GetComponent<EnergyBarProperties>().energyBarText.enableAutoSizing = false;
+                    energyBar.GetComponent<EnergyBarProperties>().energyBarText.fontSize = 55;
+                }
+            }
+            else if (itemId.Contains("energy"))
+            {
+                saveFile.totalEnergy += Int32.Parse(description);
+                foreach (GameObject energyBar in generalControllers.GetComponent<EnergyBarController>().EnergyBarText)
+                {
+                    energyBar.GetComponent<EnergyBarProperties>().energyBarText.text = saveFile.totalEnergy.ToString();
+                }
             }
 
             saveFile.saveTime = DateTime.Now.ToString();

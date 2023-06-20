@@ -22,43 +22,78 @@ public class EnergyBarController : MonoBehaviour
         SaveDataFormat saveFile = GetComponent<LocalSaveLoadController>().LoadGame();
         if (saveFile.saveTime != null)//Kayýtlý save dosyasý varsa
         {
-            if (saveFile.totalEnergy < GlobalVariables.maxEnergy)
+            if (saveFile.unlimitedEnergyActive == true)
             {
-                DateTime lastEnergyGain;
-                DateTime.TryParse(saveFile.lastEnergyGainTime, out lastEnergyGain);
+                DateTime unlimitedEnergyEndTime;
+                DateTime.TryParse(saveFile.unlimitedEnergyEndTime, out unlimitedEnergyEndTime);
 
-                if (lastEnergyGain.CompareTo(DateTime.Now) < 0)
+                //limitsiz enerji süresi bittiyse
+                if (unlimitedEnergyEndTime.CompareTo(DateTime.Now) < 0)
                 {
-                    int gainedEnergy = (int)(DateTime.Now - lastEnergyGain).TotalMinutes / 6;
-                    //test için
-                    //int gainedEnergy = (int)((DateTime.Now - lastEnergyGain).TotalMinutes) * 2;
-
-                    if (gainedEnergy > 0)
+                    saveFile.unlimitedEnergyActive = false;
+                    GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
+                }
+                else
+                {
+                    foreach (GameObject energyBar in EnergyBarText)
                     {
-                        saveFile.totalEnergy += gainedEnergy;
-
-                        if (saveFile.totalEnergy > GlobalVariables.maxEnergy)
-                        {
-                            saveFile.totalEnergy = GlobalVariables.maxEnergy;
-                        }
-
-                        saveFile.lastEnergyGainTime = DateTime.Now.ToString();
-
-                        foreach (GameObject energyBar in EnergyBarText)
-                        {
-                            energyBar.GetComponent<EnergyBarProperties>().energyBarText.text = saveFile.totalEnergy.ToString();
-                        }
-
-                        GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
+                        energyBar.GetComponent<EnergyBarProperties>().energyBarText.text = "\u221E ";
+                        energyBar.GetComponent<EnergyBarProperties>().energyBarText.enableAutoSizing = false;
+                        energyBar.GetComponent<EnergyBarProperties>().energyBarText.fontSize = 55;
                     }
-                    else
+                }
+            }
+
+            if(saveFile.unlimitedEnergyActive == false)
+            {
+                if (saveFile.totalEnergy < GlobalVariables.maxEnergy)
+                {
+                    DateTime lastEnergyGain;
+                    DateTime.TryParse(saveFile.lastEnergyGainTime, out lastEnergyGain);
+
+                    if (lastEnergyGain.CompareTo(DateTime.Now) < 0)
                     {
-                        foreach (GameObject energyBar in EnergyBarText)
-                        {
-                            energyBar.GetComponent<EnergyBarProperties>().energyBarText.text = saveFile.totalEnergy.ToString();
-                        }
-                    }
+                        int gainedEnergy = (int)(DateTime.Now - lastEnergyGain).TotalMinutes / 6;
+                        //test için
+                        //int gainedEnergy = (int)((DateTime.Now - lastEnergyGain).TotalMinutes) * 2;
 
+                        if (gainedEnergy > 0)
+                        {
+                            saveFile.totalEnergy += gainedEnergy;
+
+                            if (saveFile.totalEnergy > GlobalVariables.maxEnergy)
+                            {
+                                saveFile.totalEnergy = GlobalVariables.maxEnergy;
+                            }
+
+                            saveFile.lastEnergyGainTime = DateTime.Now.ToString();
+
+                            foreach (GameObject energyBar in EnergyBarText)
+                            {
+                                energyBar.GetComponent<EnergyBarProperties>().energyBarText.enableAutoSizing = true;
+                                energyBar.GetComponent<EnergyBarProperties>().energyBarText.text = saveFile.totalEnergy.ToString();
+                            }
+
+                            GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
+                        }
+                        else
+                        {
+                            foreach (GameObject energyBar in EnergyBarText)
+                            {
+                                energyBar.GetComponent<EnergyBarProperties>().energyBarText.enableAutoSizing = true;
+                                energyBar.GetComponent<EnergyBarProperties>().energyBarText.text = saveFile.totalEnergy.ToString();
+                            }
+                        }
+
+                    }
+                }
+                else
+                {
+                    foreach (GameObject energyBar in EnergyBarText)
+                    {
+                        energyBar.GetComponent<EnergyBarProperties>().energyBarText.enableAutoSizing = true;
+                        energyBar.GetComponent<EnergyBarProperties>().energyBarText.text = saveFile.totalEnergy.ToString();
+                    }
                 }
             }
         }
@@ -66,30 +101,65 @@ public class EnergyBarController : MonoBehaviour
         {
             foreach (GameObject energyBar in EnergyBarText)
             {
+                energyBar.GetComponent<EnergyBarProperties>().energyBarText.enableAutoSizing = true;
                 energyBar.GetComponent<EnergyBarProperties>().energyBarText.text = GlobalVariables.maxEnergy.ToString();
             }
         }
     }
 
-    void UpdateEnergyBar()
+    public void UpdateEnergyBar()
     {
         SaveDataFormat saveFile = GetComponent<LocalSaveLoadController>().LoadGame();
         if (saveFile.saveTime != null)//Kayýtlý save dosyasý varsa
         {
-            if (saveFile.totalEnergy < GlobalVariables.maxEnergy)
+            if (saveFile.unlimitedEnergyActive == true)
             {
-                saveFile.totalEnergy++;
-                saveFile.lastEnergyGainTime = DateTime.Now.ToString();
+                DateTime unlimitedEnergyEndTime;
+                DateTime.TryParse(saveFile.unlimitedEnergyEndTime, out unlimitedEnergyEndTime);
 
-                StartCoroutine(ValueChangeAnimation(1, saveFile.totalEnergy));
+                //limitsiz enerji süresi bittiyse
+                if (unlimitedEnergyEndTime.CompareTo(DateTime.Now) < 0)
+                {
+                    saveFile.unlimitedEnergyActive = false;
+                    GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
+                }
+                else
+                {
+                    foreach (GameObject energyBar in EnergyBarText)
+                    {
+                        energyBar.GetComponent<EnergyBarProperties>().energyBarText.text = "\u221E ";
+                        energyBar.GetComponent<EnergyBarProperties>().energyBarText.enableAutoSizing = false;
+                        energyBar.GetComponent<EnergyBarProperties>().energyBarText.fontSize = 55;
+                    }
+                }
+            }
 
-                GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
+            if (saveFile.unlimitedEnergyActive == false)
+            {
+                if (saveFile.totalEnergy < GlobalVariables.maxEnergy)
+                {
+                    saveFile.totalEnergy++;
+                    saveFile.lastEnergyGainTime = DateTime.Now.ToString();
+
+                    StartCoroutine(ValueChangeAnimation(1, saveFile.totalEnergy));
+
+                    GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
+                }
+                else
+                {
+                    foreach (GameObject energyBar in EnergyBarText)
+                    {
+                        energyBar.GetComponent<EnergyBarProperties>().energyBarText.enableAutoSizing = true;
+                        energyBar.GetComponent<EnergyBarProperties>().energyBarText.text = saveFile.totalEnergy.ToString();
+                    }
+                }
             }
         }
         else
         {
             foreach (GameObject energyBar in EnergyBarText)
             {
+                energyBar.GetComponent<EnergyBarProperties>().energyBarText.enableAutoSizing = true;
                 energyBar.GetComponent<EnergyBarProperties>().energyBarText.text = GlobalVariables.maxEnergy.ToString();
             }
         }
@@ -101,17 +171,25 @@ public class EnergyBarController : MonoBehaviour
         SaveDataFormat saveFile = GetComponent<LocalSaveLoadController>().LoadGame();
         if (saveFile.saveTime != null)//Kayýtlý save dosyasý varsa
         {
-            if (saveFile.totalEnergy >= GlobalVariables.requiredEnergyForlevel)
+            if (saveFile.unlimitedEnergyActive == false)
             {
-                saveFile.totalEnergy -= GlobalVariables.requiredEnergyForlevel;
-                GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
-                StartCoroutine(ValueChangeAnimation(-GlobalVariables.requiredEnergyForlevel, saveFile.totalEnergy));
-                result = true;
+                if (saveFile.totalEnergy >= GlobalVariables.requiredEnergyForlevel)
+                {
+                    saveFile.totalEnergy -= GlobalVariables.requiredEnergyForlevel;
+                    GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
+                    StartCoroutine(ValueChangeAnimation(-GlobalVariables.requiredEnergyForlevel, saveFile.totalEnergy));
+                    result = true;
+                }
+                else
+                {
+                    StartCoroutine(vibrationAnimation());
+                }
             }
             else
             {
-                StartCoroutine(vibrationAnimation());
+                result = true;
             }
+
         }
 
         return result;
@@ -132,12 +210,14 @@ public class EnergyBarController : MonoBehaviour
 
         foreach (GameObject energyBar in EnergyBarText)
         {
+            energyBar.GetComponent<EnergyBarProperties>().energyBarText.enableAutoSizing = true;
             energyBar.GetComponent<EnergyBarProperties>().energyBarText.text = text;
         }
         yield return new WaitForSeconds(2);
 
         foreach (GameObject energyBar in EnergyBarText)
         {
+            energyBar.GetComponent<EnergyBarProperties>().energyBarText.enableAutoSizing = true;
             energyBar.GetComponent<EnergyBarProperties>().energyBarText.text = totalEnergy.ToString();
         }
         yield return null;

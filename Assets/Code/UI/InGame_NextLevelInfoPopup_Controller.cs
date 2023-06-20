@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 
 public class InGame_NextLevelInfoPopup_Controller : MonoBehaviour
 {
@@ -18,6 +19,6 @@ public class InGame_NextLevelInfoPopup_Controller : MonoBehaviour
         gameObject.SetActive(true);
 
         Dictionary<string, string> arguments = new Dictionary<string, string> { { "levelName", nextLevelNumber.ToString() }, { "coin", (GlobalVariables.LevelRewards[nextLevelNumber - 1] * 3).ToString() } };
-        Info.text = UnityEngine.Localization.Settings.LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Next Level Not Enough Gold", new object[] { arguments });
+        Info.text = LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Next Level Not Enough Gold", new object[] { arguments });
     }
 }

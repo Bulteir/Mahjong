@@ -22,6 +22,8 @@ public class MainMenu_StartGame_Btn : MonoBehaviour
             saveFile.totalEnergy = GlobalVariables.maxEnergy;
             saveFile.noAdsJokerActive = false;
             saveFile.lastEnergyGainTime = System.DateTime.Now.ToString();
+            saveFile.unlimitedEnergyActive = false;
+            saveFile.unlimitedEnergyEndTime = System.DateTime.Now.ToString();
 
             saveFile.saveTime = System.DateTime.Now.ToString();
 
