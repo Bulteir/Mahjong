@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -54,6 +55,39 @@ public class SaveFileSyncPopupController : MonoBehaviour
         {
             cloudSaveFile.saveFileIsSyncEver = true;
             generalControllers.GetComponent<LocalSaveLoadController>().SaveGame(cloudSaveFile);
+
+            #region cloud verisi kaydedildiði için coin bar ve enerji bar save dosayasýna göre düzenlenir.
+            //coinler setlenir
+            foreach (GameObject coinBar in generalControllers.GetComponent<MainMenu_MenuController>().CoinBarText)
+            {
+                coinBar.GetComponent<CoinBar_Controller>().CoinBarText.text = cloudSaveFile.totalCoin.ToString();
+            }
+
+            //enerji setlenir
+            foreach (GameObject energyBar in generalControllers.GetComponent<EnergyBarController>().EnergyBarText)
+            {
+                energyBar.GetComponent<EnergyBarProperties>().energyBarText.text = cloudSaveFile.totalEnergy.ToString();
+            }
+
+            DateTime unlimitedEnergyEndTime;
+            DateTime.TryParse(cloudSaveFile.unlimitedEnergyEndTime, out unlimitedEnergyEndTime);
+
+            if (cloudSaveFile.unlimitedEnergyActive == true)
+            {
+                //sýnýrsýz enerji süresi devam ediyorsa
+                if (unlimitedEnergyEndTime.CompareTo(DateTime.Now) > 0)
+                {
+                    //sýnýrsýz enerji varsa setlenir.
+                    foreach (GameObject energyBar in generalControllers.GetComponent<EnergyBarController>().EnergyBarText)
+                    {
+                        energyBar.GetComponent<EnergyBarProperties>().energyBarText.text = "\u221E ";
+                        energyBar.GetComponent<EnergyBarProperties>().energyBarText.enableAutoSizing = false;
+                        energyBar.GetComponent<EnergyBarProperties>().energyBarText.fontSize = 55;
+                    }
+
+                }
+            }
+            #endregion
         }
         gameObject.SetActive(false);
     }

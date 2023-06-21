@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using UnityEngine.UIElements;
 using System.IO;
 using UnityEngine.Localization.Settings;
+using Unity.VisualScripting;
 
 public class GameSaveLoadController : MonoBehaviour
 {
@@ -126,6 +127,40 @@ public class GameSaveLoadController : MonoBehaviour
                         {
                             //Cloud kaydýný locale kaydediyoruz.
                             GetComponent<LocalSaveLoadController>().SaveGame(formattedCloudData);
+
+                            # region cloud verisi kaydedildiði için coin bar ve enerji bar save dosayasýna göre düzenlenir.
+                            //coinler setlenir
+                            foreach (GameObject coinBar in GetComponent<MainMenu_MenuController>().CoinBarText)
+                            {
+                                coinBar.GetComponent<CoinBar_Controller>().CoinBarText.text = formattedCloudData.totalCoin.ToString();
+                            }
+
+                            //enerji setlenir
+                            foreach (GameObject energyBar in GetComponent<EnergyBarController>().EnergyBarText)
+                            {
+                                energyBar.GetComponent<EnergyBarProperties>().energyBarText.text = formattedCloudData.totalEnergy.ToString();
+                            }
+
+                            DateTime unlimitedEnergyEndTime;
+                            DateTime.TryParse(formattedCloudData.unlimitedEnergyEndTime, out unlimitedEnergyEndTime);
+
+                            if (formattedCloudData.unlimitedEnergyActive == true )
+                            {
+                                //sýnýrsýz enerji süresi devam ediyorsa
+                                if (unlimitedEnergyEndTime.CompareTo(DateTime.Now) > 0)
+                                {
+                                    //sýnýrsýz enerji varsa setlenir.
+                                    foreach (GameObject energyBar in GetComponent<EnergyBarController>().EnergyBarText)
+                                    {
+                                        energyBar.GetComponent<EnergyBarProperties>().energyBarText.text = "\u221E ";
+                                        energyBar.GetComponent<EnergyBarProperties>().energyBarText.enableAutoSizing = false;
+                                        energyBar.GetComponent<EnergyBarProperties>().energyBarText.fontSize = 55;
+                                    }
+
+                                }
+                            }
+                            #endregion
+
                         }
                     }
                 }
@@ -133,6 +168,39 @@ public class GameSaveLoadController : MonoBehaviour
                 {
                     formattedCloudData.saveFileIsSyncEver = true;
                     GetComponent<LocalSaveLoadController>().SaveGame(formattedCloudData);
+                   
+                    #region cloud verisi kaydedildiði için coin bar ve enerji bar save dosayasýna göre düzenlenir.
+                    //coinler setlenir
+                    foreach (GameObject coinBar in GetComponent<MainMenu_MenuController>().CoinBarText)
+                    {
+                        coinBar.GetComponent<CoinBar_Controller>().CoinBarText.text = formattedCloudData.totalCoin.ToString();
+                    }
+
+                    //enerji setlenir
+                    foreach (GameObject energyBar in GetComponent<EnergyBarController>().EnergyBarText)
+                    {
+                        energyBar.GetComponent<EnergyBarProperties>().energyBarText.text = formattedCloudData.totalEnergy.ToString();
+                    }
+
+                    DateTime unlimitedEnergyEndTime;
+                    DateTime.TryParse(formattedCloudData.unlimitedEnergyEndTime, out unlimitedEnergyEndTime);
+
+                    if (formattedCloudData.unlimitedEnergyActive == true)
+                    {
+                        //sýnýrsýz enerji süresi devam ediyorsa
+                        if (unlimitedEnergyEndTime.CompareTo(DateTime.Now) > 0)
+                        {
+                            //sýnýrsýz enerji varsa setlenir.
+                            foreach (GameObject energyBar in GetComponent<EnergyBarController>().EnergyBarText)
+                            {
+                                energyBar.GetComponent<EnergyBarProperties>().energyBarText.text = "\u221E ";
+                                energyBar.GetComponent<EnergyBarProperties>().energyBarText.enableAutoSizing = false;
+                                energyBar.GetComponent<EnergyBarProperties>().energyBarText.fontSize = 55;
+                            }
+
+                        }
+                    }
+                    #endregion
                 }
             }
             else//Cloudda herhangi bir kayýt yoksa
