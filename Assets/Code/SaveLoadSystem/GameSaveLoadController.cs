@@ -173,4 +173,35 @@ public class GameSaveLoadController : MonoBehaviour
     {
         StartCoroutine(LoadGameCloudCorroutine());
     }
+
+    public void CreateDefaultSaveFile()
+    {
+        SaveDataFormat saveFile = GetComponent<LocalSaveLoadController>().LoadGame();
+        if (saveFile.saveTime == null)//Kayýtlý save dosyasý yoksa
+        {
+            saveFile = new SaveDataFormat();
+
+            //default deðer atamalarý burada yapýlýr
+            saveFile.totalCoin = GlobalVariables.FirstTotalCoin;
+            saveFile.shuffleJokerQuantity = GlobalVariables.FirstShuffleJokerQuantity;
+            saveFile.undoJokerQuantity = GlobalVariables.FirstShuffleJokerQuantity;
+            saveFile.saveFileIsSyncEver = false;
+            saveFile.totalEnergy = GlobalVariables.maxEnergy;
+            saveFile.noAdsJokerActive = false;
+            saveFile.lastEnergyGainTime = DateTime.Now.ToString();
+            saveFile.unlimitedEnergyActive = false;
+            saveFile.unlimitedEnergyEndTime = DateTime.Now.ToString();
+
+            saveFile.saveTime = DateTime.Now.ToString();
+
+            saveFile.levelProperties = new List<LevelProperties> { new LevelProperties
+            {
+                LevelName = "level1",
+                levelPassed = false,
+                levelPurchased = true,
+            } };
+
+            GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
+        }
+    }
 }

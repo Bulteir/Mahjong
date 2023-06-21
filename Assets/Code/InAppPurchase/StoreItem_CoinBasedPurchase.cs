@@ -38,6 +38,10 @@ public class StoreItem_CoinBasedPurchase : MonoBehaviour
                     {
                         coinbar.GetComponent<CoinBar_Controller>().AddRemoveCoin(-price, saveFile.totalCoin);
                     }
+                    else
+                    {
+                        coinbar.GetComponent<CoinBar_Controller>().CoinBarText.text = saveFile.totalCoin.ToString();
+                    }
                 }
 
                 if (Item_Id == "coinBasedPurchase_shuffle")
@@ -83,6 +87,10 @@ public class StoreItem_CoinBasedPurchase : MonoBehaviour
                     if (coinbar.activeInHierarchy)
                     {
                         coinbar.GetComponent<CoinBar_Controller>().NotEnoughCoinAnim();
+                    }
+                    else
+                    {
+                        coinbar.GetComponent<CoinBar_Controller>().CoinBarText.text = saveFile.totalCoin.ToString();
                     }
                 }
             }
