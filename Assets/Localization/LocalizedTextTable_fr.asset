@@ -73,7 +73,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 366086645219328
-    m_Localized: Meilleurs scores mensuels
+    m_Localized: Les joueurs les plus riches mensuels
     m_Metadata:
       m_Items: []
   - m_Id: 366252202786816
@@ -269,6 +269,10 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 9143329240635408388
+  - m_Id: 17351388748185600
+    m_Localized: "Pi\xE8ce d'or"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

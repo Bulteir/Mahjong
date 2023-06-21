@@ -91,16 +91,16 @@ public class LeaderboardController : MonoBehaviour
         await AuthenticationService.Instance.UpdatePlayerNameAsync(playerName);
     }
 
-    public async void AddScore()
+    public async void AddScore(int score)
     {
-        var scoreResponse = await LeaderboardsService.Instance.AddPlayerScoreAsync(GlobalVariables.LeaderboardId_BestTimes, 110);
+        var scoreResponse = await LeaderboardsService.Instance.AddPlayerScoreAsync(GlobalVariables.LeaderboardId_Richest, score);
         Debug.Log(JsonConvert.SerializeObject(scoreResponse));
     }
 
     public async void GetScores()
     {
         var scoresResponse =
-            await LeaderboardsService.Instance.GetScoresAsync(GlobalVariables.LeaderboardId_BestTimes);
+            await LeaderboardsService.Instance.GetScoresAsync(GlobalVariables.LeaderboardId_Richest);
         Debug.Log(JsonConvert.SerializeObject(scoresResponse));
     }
 
@@ -109,7 +109,7 @@ public class LeaderboardController : MonoBehaviour
         int Offset = 10;
         int Limit = 10;
         var scoresResponse =
-            await LeaderboardsService.Instance.GetScoresAsync(GlobalVariables.LeaderboardId_BestTimes, new GetScoresOptions { Offset = Offset, Limit = Limit });
+            await LeaderboardsService.Instance.GetScoresAsync(GlobalVariables.LeaderboardId_Richest, new GetScoresOptions { Offset = Offset, Limit = Limit });
         Debug.Log(JsonConvert.SerializeObject(scoresResponse));
     }
 
@@ -117,14 +117,14 @@ public class LeaderboardController : MonoBehaviour
     public async void GetPlayerScore()
     {
         var scoreResponse =
-            await LeaderboardsService.Instance.GetPlayerScoreAsync(GlobalVariables.LeaderboardId_BestTimes);
+            await LeaderboardsService.Instance.GetPlayerScoreAsync(GlobalVariables.LeaderboardId_Richest);
         Debug.Log(JsonConvert.SerializeObject(scoreResponse));
     }
 
     //oyuncunun X üstü ile X altýndaki oyuncularý getirir
     public async void GetPlayerRange()
     {
-        var scoresResponse = await LeaderboardsService.Instance.GetPlayerRangeAsync(GlobalVariables.LeaderboardId_BestTimes, new GetPlayerRangeOptions { RangeLimit = 1 });
+        var scoresResponse = await LeaderboardsService.Instance.GetPlayerRangeAsync(GlobalVariables.LeaderboardId_Richest, new GetPlayerRangeOptions { RangeLimit = 1 });
         Debug.Log(JsonConvert.SerializeObject(scoresResponse));
     }
 
@@ -149,7 +149,7 @@ public class LeaderboardController : MonoBehaviour
                 //kullanýcýnýn kayýtlý puaný varmý kontrol ediyoruz. Puaný varsa sýralamasýna göre farklý þekilde gösterim yapýyoruz.
                 try
                 {
-                    scoreResponse = await LeaderboardsService.Instance.GetPlayerScoreAsync(GlobalVariables.LeaderboardId_BestTimes);
+                    scoreResponse = await LeaderboardsService.Instance.GetPlayerScoreAsync(GlobalVariables.LeaderboardId_Richest);
                 }
                 catch
                 {
@@ -165,7 +165,7 @@ public class LeaderboardController : MonoBehaviour
                     int page = 0;
                     int Offset = Limit * page;
 
-                    LeaderboardScoresPage topScores = await LeaderboardsService.Instance.GetScoresAsync(GlobalVariables.LeaderboardId_BestTimes, new GetScoresOptions { Offset = Offset, Limit = Limit });
+                    LeaderboardScoresPage topScores = await LeaderboardsService.Instance.GetScoresAsync(GlobalVariables.LeaderboardId_Richest, new GetScoresOptions { Offset = Offset, Limit = Limit });
 
                     for (int i = 0; i < topScores.Results.Count; i++)
                     {
@@ -197,7 +197,7 @@ public class LeaderboardController : MonoBehaviour
                     //oyuncu ilk 10 listesinde deðilse. +rangelimit dememizin sebebi kullanýcýnýn üstünde ve altýndaki 5 oyuncuyu daha listeleyecek olmamýz.
                     if (scoreResponse.Rank >= Limit + rangeLimit)
                     {
-                        LeaderboardScoresPage topScores = await LeaderboardsService.Instance.GetScoresAsync(GlobalVariables.LeaderboardId_BestTimes, new GetScoresOptions { Offset = Offset, Limit = Limit });
+                        LeaderboardScoresPage topScores = await LeaderboardsService.Instance.GetScoresAsync(GlobalVariables.LeaderboardId_Richest, new GetScoresOptions { Offset = Offset, Limit = Limit });
 
                         // top 10 bilgileri
                         for (int i = 0; i < topScores.Results.Count; i++)
@@ -212,14 +212,16 @@ public class LeaderboardController : MonoBehaviour
                         rowGroupSpacing = -(newBrace.GetComponent<RectTransform>().sizeDelta.y - (TemplateRow.GetComponent<RectTransform>().sizeDelta.y + LineSpacing));
 
                         // kullanýcý ve +- 5 mesafesi skorlarý
-                        LeaderboardScores rangedScores = await LeaderboardsService.Instance.GetPlayerRangeAsync(GlobalVariables.LeaderboardId_BestTimes, new GetPlayerRangeOptions { RangeLimit = rangeLimit });
+                        LeaderboardScores rangedScores = await LeaderboardsService.Instance.GetPlayerRangeAsync(GlobalVariables.LeaderboardId_Richest, new GetPlayerRangeOptions { RangeLimit = rangeLimit });
 
                         int tempIndex = LastRowIndex + 1;
                         for (int i = 0; i < rangedScores.Results.Count; i++)
                         {
                             if (scoreResponse.Rank == rangedScores.Results[i].Rank)
                             {
-                                FillLeaderboardRow(tempIndex + i, rangedScores.Results[i], new Color(232f / 255f, 243f / 255f, 63f / 255f));
+                                //kendi adýný farklý renkte göstermek için kullanýlýyordu. Ancak async çalýþtýðý için gösterirken sýralama deðiþebiliyor ve yanlýþ kiþi highlight edilebiliyor.
+                                //FillLeaderboardRow(tempIndex + i, rangedScores.Results[i], new Color(232f / 255f, 243f / 255f, 63f / 255f));
+                                FillLeaderboardRow(tempIndex + i, rangedScores.Results[i], new Color(0, 0, 0, 0));
                             }
                             else
                             {
@@ -250,13 +252,15 @@ public class LeaderboardController : MonoBehaviour
                         page = 0;
                         Offset = Limit * page;
 
-                        LeaderboardScoresPage topScores = await LeaderboardsService.Instance.GetScoresAsync(GlobalVariables.LeaderboardId_BestTimes, new GetScoresOptions { Offset = Offset, Limit = Limit });
+                        LeaderboardScoresPage topScores = await LeaderboardsService.Instance.GetScoresAsync(GlobalVariables.LeaderboardId_Richest, new GetScoresOptions { Offset = Offset, Limit = Limit });
 
                         for (int i = 0; i < topScores.Results.Count; i++)
                         {
                             if (topScores.Results[i].Rank == scoreResponse.Rank)
                             {
-                                FillLeaderboardRow(i, topScores.Results[i], new Color(232f / 255f, 243f / 255f, 63f / 255f));
+                                //kendi adýný farklý renkte göstermek için kullanýlýyordu. Ancak async çalýþtýðý için gösterirken sýralama deðiþebiliyor ve yanlýþ kiþi highlight edilebiliyor.
+                                //FillLeaderboardRow(i, topScores.Results[i], new Color(232f / 255f, 243f / 255f, 63f / 255f));
+                                FillLeaderboardRow(i, topScores.Results[i], new Color(0, 0, 0, 0));
                             }
                             else
                             {

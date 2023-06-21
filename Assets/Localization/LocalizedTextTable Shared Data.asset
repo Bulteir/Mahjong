@@ -235,6 +235,10 @@ MonoBehaviour:
     m_Key: IAP_energy_unlimited4
     m_Metadata:
       m_Items: []
+  - m_Id: 17351388748185600
+    m_Key: Coin
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

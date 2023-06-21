@@ -20,7 +20,7 @@ public static class GlobalVariables
     public const int gameState_LevelSelectmenu = 6;
     public const int gameState_StoreMenu = 7;
 
-    public const string LeaderboardId_BestTimes = "BestTimes";
+    public const string LeaderboardId_Richest = "richestMonthly";
 
     public const int FirstTotalCoin = 1000;
     public const int FirstShuffleJokerQuantity = 5;

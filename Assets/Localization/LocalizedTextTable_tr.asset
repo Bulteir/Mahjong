@@ -74,7 +74,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 366086645219328
-    m_Localized: "Ayl\u0131k En \u0130yi Skorlar"
+    m_Localized: "En Zengin Oyuncular Ayl\u0131k"
     m_Metadata:
       m_Items: []
   - m_Id: 366252202786816
@@ -259,6 +259,10 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 9143329240635408394
+  - m_Id: 17351388748185600
+    m_Localized: "Alt\u0131n"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

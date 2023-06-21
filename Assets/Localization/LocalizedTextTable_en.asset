@@ -45,7 +45,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 366086645219328
-    m_Localized: Monthly Best Scores
+    m_Localized: Richest Players Monthly
     m_Metadata:
       m_Items: []
   - m_Id: 365011452166144
@@ -265,6 +265,10 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 9143329239386292227
+  - m_Id: 17351388748185600
+    m_Localized: Coin
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

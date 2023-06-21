@@ -73,7 +73,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 366086645219328
-    m_Localized: Mejores Puntuaciones Mensuales
+    m_Localized: "Jugadores m\xE1s ricos mensuales"
     m_Metadata:
       m_Items: []
   - m_Id: 366252202786816
@@ -265,6 +265,10 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 9143329240635408393
+  - m_Id: 17351388748185600
+    m_Localized: Moneda
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
