@@ -43,7 +43,7 @@ public class StoreController : MonoBehaviour, IDetailedStoreListener
     {
         ProductCatalog catalog = JsonUtility.FromJson<ProductCatalog>((Resources.LoadAsync<TextAsset>("IAPProductCatalog").asset as TextAsset).text);
 
-        //StandardPurchasingModule.Instance().useFakeStoreUIMode = FakeStoreUIMode.StandardUser;
+        //StandardPurchasingModule.Instance().useFakeStoreUIMode = FakeStoreUIMode.DeveloperUser;
         //StandardPurchasingModule.Instance().useFakeStoreAlways = true;
 
 #if UNITY_ANDROID

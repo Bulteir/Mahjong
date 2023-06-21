@@ -18,7 +18,7 @@ public class MainMenu_RewardedAd_Btn : MonoBehaviour
 
     public int coinReward = 200;
     public int shuffleReward = 2;
-    public int undoReward = 3;
+    public int undoReward = 2;
 
     // Start is called before the first frame update
     void Start()

@@ -55,7 +55,7 @@ public class AdMobController_MainMenu : MonoBehaviour
             //statusText.text = "Initialization complete.";
 
             #region ana menüde gösterilen joker ve altýn kazandýran ödüllü reklamýn gösterilme sýklýðý ayarlamasý
-            //oyun ilk defa kuruldjuðunda ödüllü reklam gösterim zamaný setlenir.
+            //oyun ilk defa kurulduðunda ödüllü reklam gösterim zamaný setlenir.
             string lastShowTime = PlayerPrefs.GetString("MainMenuRewardAdTime");
             if (lastShowTime == "")
             {
@@ -73,7 +73,7 @@ public class AdMobController_MainMenu : MonoBehaviour
                 DateTime showTime;
                 DateTime.TryParseExact(lastShowTime, dateTimeFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out showTime);
 
-                if ((DateTime.Now - showTime).TotalMinutes >= 5 || (DateTime.Now - showTime).TotalMinutes < 0)
+                if ((DateTime.Now - showTime).TotalMinutes >= 10 || (DateTime.Now - showTime).TotalMinutes < 0)
                 {
                     PlayerPrefs.SetString("MainMenuRewardAdTime", DateTime.Now.ToLongTimeString());
 
