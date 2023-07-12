@@ -10,7 +10,7 @@ public static class GlobalVariables
     public const string TagBlock = "Block";
 
 
-    public static int gameState = gameState_MenuBackground;
+    public static int gameState = gameState_StartingLogo;
     public const int gameState_MainMenu = 0;
     public const int gameState_inGame = 1;
     public const int gameState_SettingsMenu = 2;
@@ -20,6 +20,7 @@ public static class GlobalVariables
     public const int gameState_LevelSelectmenu = 6;
     public const int gameState_StoreMenu = 7;
     public const int gameState_MenuBackground = 8;
+    public const int gameState_StartingLogo = 9;
 
     public const string LeaderboardId_Richest = "richestMonthly";
 
