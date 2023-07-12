@@ -12,6 +12,7 @@ public class MainMenu_MenuController : MonoBehaviour
     public GameObject settingsMenu;
     public GameObject storeMenu;
     public GameObject leaderboardMenu;
+    public GameObject menuBackground;
 
     public GameObject RateBox;
     public List<GameObject> CoinBarText;
@@ -56,6 +57,7 @@ public class MainMenu_MenuController : MonoBehaviour
                 coinBar.GetComponent<CoinBar_Controller>().CoinBarText.text = GlobalVariables.FirstTotalCoin.ToString();
             }
         }
+
     }
 
     // Update is called once per frame
@@ -73,6 +75,7 @@ public class MainMenu_MenuController : MonoBehaviour
             settingsMenu.SetActive(false);
             storeMenu.SetActive(false);
             leaderboardMenu.SetActive(false);
+            menuBackground.SetActive(false);
         }
         else if (GlobalVariables.gameState == GlobalVariables.gameState_LevelSelectmenu && levelSelectMenu.activeSelf == false)
         {
@@ -81,6 +84,7 @@ public class MainMenu_MenuController : MonoBehaviour
             settingsMenu.SetActive(false);
             storeMenu.SetActive(false);
             leaderboardMenu.SetActive(false);
+            menuBackground.SetActive(false);
         }
         else if (GlobalVariables.gameState == GlobalVariables.gameState_SettingsMenu && settingsMenu.activeSelf == false)
         {
@@ -89,6 +93,7 @@ public class MainMenu_MenuController : MonoBehaviour
             settingsMenu.SetActive(true);
             storeMenu.SetActive(false);
             leaderboardMenu.SetActive(false);
+            menuBackground.SetActive(false);
         }
         else if (GlobalVariables.gameState == GlobalVariables.gameState_StoreMenu && storeMenu.activeSelf == false)
         {
@@ -99,6 +104,7 @@ public class MainMenu_MenuController : MonoBehaviour
             //store sayfasý açýldýðýnda scroll en baþta çýksýn diye
             storeMenu.GetComponentInChildren<Scrollbar>().value = 1;
             leaderboardMenu.SetActive(false);
+            menuBackground.SetActive(false);
         }
         else if (GlobalVariables.gameState == GlobalVariables.gameState_LeaderboardMenu && leaderboardMenu.activeSelf == false)
         {
@@ -108,16 +114,18 @@ public class MainMenu_MenuController : MonoBehaviour
             storeMenu.SetActive(false);
             leaderboardMenu.SetActive(true);
             leaderboardMenu.GetComponent<LeaderboardController>().FillLeaderboardList();
+            menuBackground.SetActive(false);
             //Leaderboard sayfasý açýldýðýnda scroll en baþta çýksýn diye
             //leaderboardMenu.GetComponentInChildren<Scrollbar>().value = 1;
         }
-        else if (GlobalVariables.gameState == GlobalVariables.gameState_MenuBackground)
+        else if (GlobalVariables.gameState == GlobalVariables.gameState_MenuBackground && menuBackground.activeSelf == false)
         {
             mainMenu.SetActive(false);
             levelSelectMenu.SetActive(false);
             settingsMenu.SetActive(false);
             storeMenu.SetActive(false);
             leaderboardMenu.SetActive(false);
+            menuBackground.SetActive(true);
         }
     }
 }

@@ -9,6 +9,7 @@ using System.Linq;
 using UnityEngine.UI;
 using System.Threading.Tasks;
 using GooglePlayGames;
+using TMPro;
 
 public class CloudSaveController : MonoBehaviour
 {
@@ -59,7 +60,10 @@ public class CloudSaveController : MonoBehaviour
                     GlobalVariables.cloudSaveSystemIsReady = true;
 
                     GoogleLogin_Btn.interactable = false;
-                    GoogleLogin_Btn.image.color = Color.blue;
+                    Color PressTextColor = new Color(168.0f / 255, 145.0f / 255, 128.0f / 255);
+                    GoogleLogin_Btn.GetComponentInChildren<TMP_Text>().color = PressTextColor;
+                    Color PressButtonColor = new Color(115.0f / 255, 115.0f / 255, 115.0f / 255);
+                    GoogleLogin_Btn.image.color = PressButtonColor;
 
                     GetComponent<GameSaveLoadController>().GameSaveDataSynchronization();
                     LeaderBoardController.GetComponent<LeaderboardController>().SetPlayerName();
@@ -117,7 +121,10 @@ public class CloudSaveController : MonoBehaviour
                     GlobalVariables.cloudSaveSystemIsReady = true;
 
                     FacebookLogin_Btn.interactable = false;
-                    FacebookLogin_Btn.image.color = Color.blue;
+                    Color PressTextColor = new Color(168.0f / 255, 145.0f / 255, 128.0f / 255);                    
+                    FacebookLogin_Btn.GetComponentInChildren<TMP_Text>().color = PressTextColor;
+                    Color PressButtonColor = new Color(115.0f / 255, 115.0f / 255, 115.0f / 255);
+                    FacebookLogin_Btn.image.color = PressButtonColor;
 
                     PlayerPrefs.SetString("FacebookAutoLogin", "true");
                     PlayerPrefs.Save();

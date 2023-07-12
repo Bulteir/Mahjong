@@ -5,6 +5,7 @@ using Facebook.Unity;
 using UnityEngine.UI;
 using Unity.Services.Authentication;
 using System.Linq;
+using TMPro;
 
 public class FacebookLogIn : MonoBehaviour
 {
@@ -45,7 +46,10 @@ public class FacebookLogIn : MonoBehaviour
             {
                 //burada google ile giriþ yaptýysa üzerine birde facebook giriþi için beklemesin. Bu yüzden androidde facebook authentication google ile giriþte sýkýntý olursa yapýlsýn.
                 FacebookLogin_Btn.interactable = false;
-                FacebookLogin_Btn.image.color = Color.blue;
+                Color PressTextColor = new Color(168.0f / 255, 145.0f / 255, 128.0f / 255);
+                FacebookLogin_Btn.GetComponentInChildren<TMP_Text>().color = PressTextColor;
+                Color PressButtonColor = new Color(115.0f / 255, 115.0f / 255, 115.0f / 255);
+                FacebookLogin_Btn.image.color = PressButtonColor;
 #if UNITY_iOS
                 LoginFacebook();
 #endif
@@ -92,9 +96,13 @@ public class FacebookLogIn : MonoBehaviour
 
     public void CheckLoginButtonStatus()
     {
+        Color PressTextColor = new Color(168.0f / 255, 145.0f / 255, 128.0f / 255);
+        Color PressButtonColor = new Color(115.0f / 255, 115.0f / 255, 115.0f / 255);
+
         if (GlobalVariables.internetAvaible == false)
         {
             FacebookLogin_Btn.interactable = false;
+            FacebookLogin_Btn.GetComponentInChildren<TMP_Text>().color = Color.white;
             FacebookLogin_Btn.image.color = Color.white;
         }
         else
@@ -103,17 +111,20 @@ public class FacebookLogIn : MonoBehaviour
             if (!AuthenticationService.Instance.IsSignedIn)
             {
                 FacebookLogin_Btn.interactable = true;
+                FacebookLogin_Btn.GetComponentInChildren<TMP_Text>().color = Color.white;
                 FacebookLogin_Btn.image.color = Color.white;
 
             }//bir hesapla giriþ yapýlmýþ ve facebook hesabý baðlanmýþ
             else if (AuthenticationService.Instance.PlayerInfo.Identities.Where(i => i.TypeId.Contains("facebook.com")).ToList().Count > 0)
             {
                 FacebookLogin_Btn.interactable = false;
-                FacebookLogin_Btn.image.color = Color.blue;
+                FacebookLogin_Btn.GetComponentInChildren<TMP_Text>().color = PressTextColor;
+                FacebookLogin_Btn.image.color = PressButtonColor;
             }
             else//bir hesapla giriþ yapýlmýþ ancak facebook hesabý baðlanmamýþ.
             {
                 FacebookLogin_Btn.interactable = true;
+                FacebookLogin_Btn.GetComponentInChildren<TMP_Text>().color = Color.white;
                 FacebookLogin_Btn.image.color = Color.white;
             }
         }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using Unity.Services.Authentication;
 using System.Linq;
 using Unity.Services.Core;
+using TMPro;
 
 #if UNITY_ANDROID
 using GooglePlayGames;
@@ -134,9 +135,13 @@ public class GooglePlayGameSignIn : MonoBehaviour
 
     public void CheckLoginButtonStatus()
     {
+        Color PressTextColor = new Color(168.0f / 255, 145.0f / 255, 128.0f / 255);
+        Color PressButtonColor = new Color(115.0f / 255, 115.0f / 255, 115.0f / 255);
+
         if (GlobalVariables.internetAvaible == false)
         {
             GoogleLogin_Btn.interactable = false;
+            GoogleLogin_Btn.GetComponentInChildren<TMP_Text>().color = Color.white;
             GoogleLogin_Btn.image.color = Color.white;
         }
         else
@@ -145,17 +150,20 @@ public class GooglePlayGameSignIn : MonoBehaviour
             if (!AuthenticationService.Instance.IsSignedIn)
             {
                 GoogleLogin_Btn.interactable = true;
+                GoogleLogin_Btn.GetComponentInChildren<TMP_Text>().color = Color.white;
                 GoogleLogin_Btn.image.color = Color.white;
 
             }//bir hesapla giriþ yapýlmýþ ve google hesabý baðlanmýþ
             else if (AuthenticationService.Instance.PlayerInfo.Identities.Where(i => i.TypeId.Contains("google-play-games")).ToList().Count > 0)
             {
                 GoogleLogin_Btn.interactable = false;
-                GoogleLogin_Btn.image.color = Color.blue;
+                GoogleLogin_Btn.GetComponentInChildren<TMP_Text>().color = PressTextColor;
+                GoogleLogin_Btn.image.color = PressButtonColor;
             }
             else//bir hesapla giriþ yapýlmý ancak google hesabý baðlanmamýþ.
             {
                 GoogleLogin_Btn.interactable = true;
+                GoogleLogin_Btn.GetComponentInChildren<TMP_Text>().color = Color.white;
                 GoogleLogin_Btn.image.color = Color.white;
             }
         }
