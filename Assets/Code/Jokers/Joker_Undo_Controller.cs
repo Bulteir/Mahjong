@@ -23,19 +23,21 @@ public class Joker_Undo_Controller : MonoBehaviour
         {
             if (saveFile.undoJokerQuantity > 0 && generalControllers.GetComponent<BlockBoardController>().isSmoothMoveToSnapPointAnimationContinue == false)
             {
-                UndoBlock();
-
-                saveFile.undoJokerQuantity--;
-                QuantityText.text = saveFile.undoJokerQuantity.ToString();
-                generalControllers.GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
+                if(UndoBlock())
+                {
+                    saveFile.undoJokerQuantity--;
+                    QuantityText.text = saveFile.undoJokerQuantity.ToString();
+                    generalControllers.GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
+                }
             }
         }
     }
 
-    void UndoBlock()
+    bool UndoBlock()
     {
         int lastPlacedBlockStep = -1;
         int slotIndex = -1;
+        bool undoLastMove = false;
 
         List<Transform> blockSlots = generalControllers.GetComponent<BlockBoardController>().BlockSlots;
 
@@ -57,6 +59,7 @@ public class Joker_Undo_Controller : MonoBehaviour
         #region son konulan blok oyuna geri yerleþtirilir
         if (lastPlacedBlockStep > -1)
         {
+            undoLastMove = true;
             Transform block = blockSlots[slotIndex].GetComponent<BlockSlotProperties>().snappedBlock;
 
             block.SetParent(BlockParent);
@@ -71,6 +74,7 @@ public class Joker_Undo_Controller : MonoBehaviour
 
         //ýstakadaki bloklarý aralarýnda boþluk kalmayacak þekilde terkar yerleþtiriyoruz.
         FixBlockBoardSlotStatus();
+        return undoLastMove;
     }
 
     void FixBlockBoardSlotStatus()
