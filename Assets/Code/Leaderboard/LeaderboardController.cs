@@ -28,24 +28,24 @@ public class LeaderboardController : MonoBehaviour
     float rowGroupSpacing = 0;
 
     // Start is called before the first frame update
-    void Start()
+    //void Start()
+    //{
+    async void Start()
     {
-        //async void Start()
-        //{
-        //    //editörde test yapmak için
-        //    if (UnityServices.State != ServicesInitializationState.Initializing || UnityServices.State != ServicesInitializationState.Initialized)
-        //    {
-        //        await UnityServices.InitializeAsync();
-        //    }
+        //editörde test yapmak için
+        if (UnityServices.State != ServicesInitializationState.Initializing || UnityServices.State != ServicesInitializationState.Initialized)
+        {
+            await UnityServices.InitializeAsync();
+        }
 
-        //    //AuthenticationService.Instance.ClearSessionToken();
-        //    if (AuthenticationService.Instance.IsAuthorized == false)
-        //    {
-        //        await SignInAnonymously();
-        //    }
-        //    //await AuthenticationService.Instance.UpdatePlayerNameAsync("Özlem");
+        //AuthenticationService.Instance.ClearSessionToken();
+        if (AuthenticationService.Instance.IsAuthorized == false)
+        {
+            await SignInAnonymously();
+        }
+        //await AuthenticationService.Instance.UpdatePlayerNameAsync("Talha");
 
-        //    //FillLeaderboardList();
+        FillLeaderboardList();
     }
 
     //editörde test etmek için
@@ -94,6 +94,12 @@ public class LeaderboardController : MonoBehaviour
     public async void AddScore(int score)
     {
         var scoreResponse = await LeaderboardsService.Instance.AddPlayerScoreAsync(GlobalVariables.LeaderboardId_Richest, score);
+        Debug.Log(JsonConvert.SerializeObject(scoreResponse));
+    }
+
+    public async void AddScoreTestButton()
+    {
+        var scoreResponse = await LeaderboardsService.Instance.AddPlayerScoreAsync(GlobalVariables.LeaderboardId_Richest, 900);
         Debug.Log(JsonConvert.SerializeObject(scoreResponse));
     }
 
@@ -220,8 +226,8 @@ public class LeaderboardController : MonoBehaviour
                             if (scoreResponse.Rank == rangedScores.Results[i].Rank)
                             {
                                 //kendi adýný farklý renkte göstermek için kullanýlýyordu. Ancak async çalýþtýðý için gösterirken sýralama deðiþebiliyor ve yanlýþ kiþi highlight edilebiliyor.
-                                //FillLeaderboardRow(tempIndex + i, rangedScores.Results[i], new Color(232f / 255f, 243f / 255f, 63f / 255f));
-                                FillLeaderboardRow(tempIndex + i, rangedScores.Results[i], new Color(0, 0, 0, 0));
+                                FillLeaderboardRow(i, topScores.Results[i], new Color(83f / 255f, 159f / 255f, 91f / 255f));
+                                //FillLeaderboardRow(tempIndex + i, rangedScores.Results[i], Color.white);
                             }
                             else
                             {
@@ -259,8 +265,8 @@ public class LeaderboardController : MonoBehaviour
                             if (topScores.Results[i].Rank == scoreResponse.Rank)
                             {
                                 //kendi adýný farklý renkte göstermek için kullanýlýyordu. Ancak async çalýþtýðý için gösterirken sýralama deðiþebiliyor ve yanlýþ kiþi highlight edilebiliyor.
-                                //FillLeaderboardRow(i, topScores.Results[i], new Color(232f / 255f, 243f / 255f, 63f / 255f));
-                                FillLeaderboardRow(i, topScores.Results[i], new Color(0, 0, 0, 0));
+                                FillLeaderboardRow(i, topScores.Results[i], new Color(83f / 255f, 159f / 255f, 91f / 255f));
+                                //FillLeaderboardRow(i, topScores.Results[i], Color.white);
                             }
                             else
                             {
@@ -308,9 +314,9 @@ public class LeaderboardController : MonoBehaviour
         nextPosY = LastRowIndex * -1 * (TemplateRow.GetComponent<RectTransform>().sizeDelta.y + LineSpacing) + rowGroupSpacing;
         newRow.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, nextPosY);
         newRow.transform.GetChild(0).GetComponent<Image>().color = backgroundColor;
-        newRow.transform.GetChild(1).GetComponent<TMP_Text>().text = (content.Rank + 1).ToString();
-        newRow.transform.GetChild(2).GetComponent<TMP_Text>().text = content.PlayerName.Substring(0, content.PlayerName.IndexOf('#'));
-        newRow.transform.GetChild(3).GetComponent<TMP_Text>().text = content.Score.ToString();
+        newRow.transform.GetChild(1).transform.GetChild(0).GetComponent<TMP_Text>().text = (content.Rank + 1).ToString();
+        newRow.transform.GetChild(1).transform.GetChild(1).GetComponent<TMP_Text>().text = content.PlayerName.Substring(0, content.PlayerName.IndexOf('#'));
+        newRow.transform.GetChild(1).transform.GetChild(2).GetComponent<TMP_Text>().text = content.Score.ToString();
 
     }
 

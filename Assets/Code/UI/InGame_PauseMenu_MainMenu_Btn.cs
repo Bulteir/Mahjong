@@ -23,7 +23,7 @@ public class InGame_PauseMenu_MainMenu_Btn : MonoBehaviour
 
         if (noAdsJokerActive)
         {
-            GlobalVariables.gameState = GlobalVariables.gameState_MainMenu;
+            GlobalVariables.gameState = GlobalVariables.gameState_MenuBackground;
             SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
         }
         else
@@ -41,7 +41,7 @@ public class InGame_PauseMenu_MainMenu_Btn : MonoBehaviour
             adMobControllers.GetComponent<InterstitialAdController>().DestroyAd();
             adMobControllers.GetComponent<BannerViewController>().DestroyAd();
 
-            GlobalVariables.gameState = GlobalVariables.gameState_MainMenu;
+            GlobalVariables.gameState = GlobalVariables.gameState_MenuBackground;
             SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
         }
     }

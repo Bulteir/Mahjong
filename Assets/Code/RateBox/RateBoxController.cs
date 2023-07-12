@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 #if UNITY_IOS
 using UnityEngine.iOS;
@@ -15,6 +17,14 @@ public class RateBoxController : MonoBehaviour
 
     //Kaç kez giriþ yapýldýktan sonra oylama kutusu açýlacak 
     public int countToRate = 0;
+
+    //onay red daha sonra butonlarýnýn parentý
+    public Transform buttons;
+
+    void Awake()
+    {
+        SetMinFontSizeAllButtons();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -100,5 +110,29 @@ public class RateBoxController : MonoBehaviour
         PlayerPrefs.SetString("DoesPlayerRatedGame", ratedAlredy.ToString());
         PlayerPrefs.Save();
         gameObject.SetActive(false);
+    }
+
+    //ratebox butonlarýnýn font büyüklüðünü en düþük font büyüklüðünü bularak tüm butonlara uygular
+    void SetMinFontSizeAllButtons()
+    {
+        float minFontSize = Int32.MaxValue;
+
+        foreach (Transform button in buttons)
+        {
+            button.GetComponentInChildren<TMP_Text>().enableAutoSizing = true;
+            buttons.GetComponentInChildren<TMP_Text>().ForceMeshUpdate();
+
+
+            if (button.GetComponentInChildren<TMP_Text>().fontSize < minFontSize)
+            {
+                minFontSize = button.GetComponentInChildren<TMP_Text>().fontSize;
+            }
+        }
+
+        foreach (Transform button in buttons)
+        {
+            button.GetComponentInChildren<TMP_Text>().enableAutoSizing = false;
+            minFontSize = button.GetComponentInChildren<TMP_Text>().fontSize = minFontSize;
+        }
     }
 }

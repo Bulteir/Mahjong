@@ -12,7 +12,7 @@ public class MainMenu_MenuController : MonoBehaviour
     public GameObject settingsMenu;
     public GameObject storeMenu;
     public GameObject leaderboardMenu;
-    
+
     public GameObject RateBox;
     public List<GameObject> CoinBarText;
 
@@ -109,7 +109,15 @@ public class MainMenu_MenuController : MonoBehaviour
             leaderboardMenu.SetActive(true);
             leaderboardMenu.GetComponent<LeaderboardController>().FillLeaderboardList();
             //Leaderboard sayfasý açýldýðýnda scroll en baþta çýksýn diye
-            leaderboardMenu.GetComponentInChildren<Scrollbar>().value = 1;
+            //leaderboardMenu.GetComponentInChildren<Scrollbar>().value = 1;
+        }
+        else if (GlobalVariables.gameState == GlobalVariables.gameState_MenuBackground)
+        {
+            mainMenu.SetActive(false);
+            levelSelectMenu.SetActive(false);
+            settingsMenu.SetActive(false);
+            storeMenu.SetActive(false);
+            leaderboardMenu.SetActive(false);
         }
     }
 }

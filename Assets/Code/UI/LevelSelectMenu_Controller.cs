@@ -56,8 +56,8 @@ public class LevelSelectMenu_Controller : MonoBehaviour
                 levelButtons[i].GetComponent<Image>().sprite = LockImage;
                 levelButtons[i].GetComponent<Button>().enabled = false;
                 levelButtons[i].levelNumberText.gameObject.SetActive(false);
-                levelButtons[i].bestTimeText.gameObject.SetActive(false);
-                levelButtons[i].rewardText.gameObject.SetActive(false);
+                levelButtons[i].bestTimeText.transform.parent.gameObject.SetActive(false);
+                levelButtons[i].rewardText.transform.parent.gameObject.SetActive(false);
                 levelButtons[i].star1.gameObject.SetActive(false);
                 levelButtons[i].star2.gameObject.SetActive(false);
                 levelButtons[i].star3.gameObject.SetActive(false);
@@ -75,23 +75,23 @@ public class LevelSelectMenu_Controller : MonoBehaviour
                     //bölümler kazanýlnýþsa yapýlan en iyi sürenin gösterilmesi
                     if (levelProperties.bestTime != null)
                     {
-                        levelButtons[i].bestTimeText.gameObject.SetActive(true);
+                        levelButtons[i].bestTimeText.transform.parent.gameObject.SetActive(true);
                         levelButtons[i].bestTimeText.text = levelProperties.bestTime;
                     }
                     else//o bölüm hiç kazanýlmadýðý için en iyi süresi yoktur
                     {
-                        levelButtons[i].bestTimeText.gameObject.SetActive(false);
+                        levelButtons[i].bestTimeText.transform.parent.gameObject.SetActive(false);
                     }
 
                     //bölümlere göre kazanýlacak puanlarýn gösterilmesi
                     if (i < GlobalVariables.LevelRewards.Count)
                     {
-                        levelButtons[i].rewardText.gameObject.SetActive(true);
+                        levelButtons[i].rewardText.transform.parent.gameObject.SetActive(true);
                         levelButtons[i].rewardText.text = GlobalVariables.LevelRewards[i].ToString();
                     }
                     else
                     {
-                        levelButtons[i].rewardText.gameObject.SetActive(false);
+                        levelButtons[i].rewardText.transform.parent.gameObject.SetActive(false);
                     }
 
                     //bölüm'e ait kazanýlan yýldýzlarýn gösterilmesi
@@ -128,8 +128,8 @@ public class LevelSelectMenu_Controller : MonoBehaviour
                     levelButtons[i].GetComponent<Image>().sprite = UnlockImage;
                     levelButtons[i].GetComponent<Button>().enabled = true;
                     levelButtons[i].levelNumberText.gameObject.SetActive(false);
-                    levelButtons[i].bestTimeText.gameObject.SetActive(false);
-                    levelButtons[i].rewardText.gameObject.SetActive(false);
+                    levelButtons[i].bestTimeText.transform.parent.gameObject.SetActive(false);
+                    levelButtons[i].rewardText.transform.parent.gameObject.SetActive(false);
                     levelButtons[i].star1.gameObject.SetActive(false);
                     levelButtons[i].star2.gameObject.SetActive(false);
                     levelButtons[i].star3.gameObject.SetActive(false);

@@ -8,9 +8,9 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
-	"picker_window_position_offset.45F317DD" = "57,6001;192,8;320;550,4"
-	"picker_search_text.45F317DD" = "st: coin"
-	"last_search.45F317DD" = "st: coin"
+	"picker_window_position_offset.45F317DD" = "-3,199951;192,8;320;550,4"
+	"picker_search_text.45F317DD" = "st: next"
+	"last_search.45F317DD" = "st: next"
 	"OpenInspectorPreview.45F317DD" = "0"
 	"currentGroup.45F317DD" = "all"
 }

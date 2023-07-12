@@ -272,6 +272,14 @@ MonoBehaviour:
     m_Localized: Moeda
     m_Metadata:
       m_Items: []
+  - m_Id: 18890441758998528
+    m_Localized: "Compra de n\xEDvel"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24573666858762240
+    m_Localized: Toque
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
