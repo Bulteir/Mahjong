@@ -17,10 +17,10 @@ public class MenuBackground_StartAfterLogo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Invoke("StartMenuBackgroundAnimations", 3f);
     }
 
-    public void StartMenuBackgroundAnimations()
+    void StartMenuBackgroundAnimations()
     {
         MenuBackground.SetActive(true);
         gameObject.SetActive(false);

@@ -27,25 +27,42 @@ public class LeaderboardController : MonoBehaviour
     float nextPosY = 0;
     float rowGroupSpacing = 0;
 
-    // Start is called before the first frame update
-    //void Start()
-    //{
-    async void Start()
+    //Start is called before the first frame update
+    void Start()
     {
-        //editörde test yapmak için
-        if (UnityServices.State != ServicesInitializationState.Initializing || UnityServices.State != ServicesInitializationState.Initialized)
-        {
-            await UnityServices.InitializeAsync();
-        }
+        //aþaðýdaki metadu telefonlarda kullandýðýmýzda listeleme sýrasýnda bug oluþuyor. Satýrlar birden fazla kez yazýlýyor, hatalý kiþi highlight ediliyor vs. 
+        //Ancak editörde test amaçlý kullanýlabilir.
 
-        //AuthenticationService.Instance.ClearSessionToken();
+        //async void Start()
+        //{
+        //editörde test yapmak için
+        //if (UnityServices.State != ServicesInitializationState.Initializing || UnityServices.State != ServicesInitializationState.Initialized)
+        //{
+        //    await UnityServices.InitializeAsync();
+        //}
+
+        ////AuthenticationService.Instance.ClearSessionToken();
+        //if (AuthenticationService.Instance.IsAuthorized == false)
+        //{
+        //    await SignInAnonymously();
+        //}
+        //await AuthenticationService.Instance.UpdatePlayerNameAsync("Talha");
+
+        //FillLeaderboardList();
+    }
+
+    //leaderboardda meydana gelen listeleme bugýný çözmek için bu yapýya geçildi.
+    async void OnEnable()
+    {
         if (AuthenticationService.Instance.IsAuthorized == false)
         {
             await SignInAnonymously();
+            FillLeaderboardList();
         }
-        //await AuthenticationService.Instance.UpdatePlayerNameAsync("Talha");
-
-        FillLeaderboardList();
+        else
+        {
+            FillLeaderboardList();
+        }
     }
 
     //editörde test etmek için
@@ -301,6 +318,7 @@ public class LeaderboardController : MonoBehaviour
         {
             SetContentHeight();
             LoadAnimation.GetComponent<LoadSaveAnimationController>().StopAnimation();
+            Canvas.ForceUpdateCanvases();
         }
     }
 
@@ -317,7 +335,6 @@ public class LeaderboardController : MonoBehaviour
         newRow.transform.GetChild(1).transform.GetChild(0).GetComponent<TMP_Text>().text = (content.Rank + 1).ToString();
         newRow.transform.GetChild(1).transform.GetChild(1).GetComponent<TMP_Text>().text = content.PlayerName.Substring(0, content.PlayerName.IndexOf('#'));
         newRow.transform.GetChild(1).transform.GetChild(2).GetComponent<TMP_Text>().text = content.Score.ToString();
-
     }
 
     void SetContentHeight()
