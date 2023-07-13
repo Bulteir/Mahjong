@@ -29,7 +29,10 @@ public class InGame_PauseMenu_Restart_Btn : MonoBehaviour
         else
         {
             GlobalVariables.intersitialAd_CallingObject = gameObject;
-            adMobControllers.GetComponent<InterstitialAdController>().ShowAd();
+            if (adMobControllers.GetComponent<InterstitialAdController>().ShowAd() == false)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+            }
         }
     }
 

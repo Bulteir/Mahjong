@@ -32,7 +32,10 @@ public class InGame_GameOverMenu_Restart_Btn : MonoBehaviour
             if (generalControllers.GetComponent<EnergyBarController>().IsThereEnoughEnergyForLevel())
             {
                 GlobalVariables.intersitialAd_CallingObject = gameObject;
-                adMobControllers.GetComponent<InterstitialAdController>().ShowAd();
+                if (adMobControllers.GetComponent<InterstitialAdController>().ShowAd() == false)
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+                }
             }
         }
     }

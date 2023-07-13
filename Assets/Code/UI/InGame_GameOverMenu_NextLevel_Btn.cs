@@ -37,7 +37,10 @@ public class InGame_GameOverMenu_NextLevel_Btn : MonoBehaviour
             if (generalControllers.GetComponent<EnergyBarController>().IsThereEnoughEnergyForLevel())
             {
                 GlobalVariables.intersitialAd_CallingObject = gameObject;
-                adMobControllers.GetComponent<InterstitialAdController>().ShowAd();
+                if (adMobControllers.GetComponent<InterstitialAdController>().ShowAd() == false)
+                {
+                    GoNextLevel();
+                }
             }
         }
     }

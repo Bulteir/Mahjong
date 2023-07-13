@@ -87,30 +87,31 @@ public class InterstitialAdController : MonoBehaviour
     /// <summary>
     /// Shows the ad.
     /// </summary>
-    public void ShowAd()
+    public bool ShowAd()
     {
+        bool CanShowAd = false;
         SaveDataFormat saveFile = generalControllers.GetComponent<LocalSaveLoadController>().LoadGame();
         if (saveFile.saveTime != null)//Kayýtlý save dosyasý varsa
         {
-            if (saveFile.noAdsJokerActive == true)//kullanýcý no ads eþyasý alýnmýþsa.
+            if (saveFile.noAdsJokerActive == false)//kullanýcý no ads eþyasý almamýþsa.
             {
-                return;
+                if (_interstitialAd != null && _interstitialAd.CanShowAd())
+                {
+                    //Debug.Log("Showing interstitial ad.");
+                    _interstitialAd.Show();
+                    CanShowAd = true;
+                }
+                else
+                {
+                    CanShowAd = false;
+                    //Debug.LogError("Interstitial ad is not ready yet.");
+                }
             }
-        }
-
-        if (_interstitialAd != null && _interstitialAd.CanShowAd())
-        {
-            //Debug.Log("Showing interstitial ad.");
-            _interstitialAd.Show();
-            
-        }
-        else
-        {
-            //Debug.LogError("Interstitial ad is not ready yet.");
         }
 
         // Inform the UI that the ad is not ready.
         //AdLoadedStatus?.SetActive(false);
+        return CanShowAd;
     }
 
     /// <summary>

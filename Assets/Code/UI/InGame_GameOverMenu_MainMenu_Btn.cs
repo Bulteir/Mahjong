@@ -28,7 +28,10 @@ public class InGame_GameOverMenu_MainMenu_Btn : MonoBehaviour
         else
         {
             GlobalVariables.intersitialAd_CallingObject = gameObject;
-            adMobControllers.GetComponent<InterstitialAdController>().ShowAd();
+            if (adMobControllers.GetComponent<InterstitialAdController>().ShowAd() == false)
+            {
+                SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+            }
         }
     }
 
