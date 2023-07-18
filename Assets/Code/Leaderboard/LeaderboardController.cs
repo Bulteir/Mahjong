@@ -12,6 +12,8 @@ using Unity.Services.Leaderboards.Models;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Localization.Settings;
+using Unity.VisualScripting;
+using System;
 
 public class LeaderboardController : MonoBehaviour
 {
@@ -49,20 +51,6 @@ public class LeaderboardController : MonoBehaviour
         //await AuthenticationService.Instance.UpdatePlayerNameAsync("Talha");
 
         //FillLeaderboardList();
-    }
-
-    //leaderboardda meydana gelen listeleme bugýný çözmek için bu yapýya geçildi.
-    async void OnEnable()
-    {
-        if (AuthenticationService.Instance.IsAuthorized == false)
-        {
-            await SignInAnonymously();
-            FillLeaderboardList();
-        }
-        else
-        {
-            FillLeaderboardList();
-        }
     }
 
     //editörde test etmek için
@@ -110,8 +98,16 @@ public class LeaderboardController : MonoBehaviour
 
     public async void AddScore(int score)
     {
+        if (AuthenticationService.Instance.IsAuthorized == false)
+        {
+            await SignInAnonymously();
+        }
+
         var scoreResponse = await LeaderboardsService.Instance.AddPlayerScoreAsync(GlobalVariables.LeaderboardId_Richest, score);
         Debug.Log(JsonConvert.SerializeObject(scoreResponse));
+        //Ana menüdeki leaderboard butonuna týklandýðýnda hemen kullanýcýnýn totalcoini addscore ile unity'e gönderileyor. ve ardýndan leaderboard ekraný açýlýyor. Addscore iþlemi bitince listelemeye geçiliyor.
+        //kullanýcýnýn puaný ve higlight edilen kiþi'de sýkýntý olmamasý adýna score eklenmesi bittikten sonra listeyi dolduruyoruz.
+        FillLeaderboardList();
     }
 
     public async void AddScoreTestButton()
@@ -168,16 +164,10 @@ public class LeaderboardController : MonoBehaviour
                 rowGroupSpacing = 0;
 
                 LoadAnimation.GetComponent<LoadSaveAnimationController>().StartAnimation(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Loading"));
-                LeaderboardEntry scoreResponse;
+                LeaderboardEntry scoreResponse = null;
                 //kullanýcýnýn kayýtlý puaný varmý kontrol ediyoruz. Puaný varsa sýralamasýna göre farklý þekilde gösterim yapýyoruz.
-                try
-                {
-                    scoreResponse = await LeaderboardsService.Instance.GetPlayerScoreAsync(GlobalVariables.LeaderboardId_Richest);
-                }
-                catch
-                {
-                    scoreResponse = null;
-                }
+
+                scoreResponse = await LeaderboardsService.Instance.GetPlayerScoreAsync(GlobalVariables.LeaderboardId_Richest);
 
                 //Oyuncunun kayýtlý puaný yoktur ya da daha küçük ihtimalle ele almadýðýmýz baþka bir hata oluþmuþtur.
                 //bu durumda ilk 30 kaydý göster
