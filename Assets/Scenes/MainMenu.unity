@@ -34910,6 +34910,7 @@ MonoBehaviour:
   coinReward: 200
   shuffleReward: 2
   undoReward: 2
+  SuccesfulSound: {fileID: 1125027330}
 --- !u!114 &901153117
 MonoBehaviour:
   m_ObjectHideFlags: 0

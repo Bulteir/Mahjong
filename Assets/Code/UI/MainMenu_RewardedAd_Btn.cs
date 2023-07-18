@@ -20,6 +20,7 @@ public class MainMenu_RewardedAd_Btn : MonoBehaviour
     public int shuffleReward = 2;
     public int undoReward = 2;
 
+    public AudioSource SuccesfulSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +63,7 @@ public class MainMenu_RewardedAd_Btn : MonoBehaviour
 
                 saveFile.saveTime = DateTime.Now.ToString();
                 generalControllers.GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
+                SuccesfulSound.Play();
             }
 
             adMobControllers.GetComponent<RewardedAdController>().DestroyAd();
