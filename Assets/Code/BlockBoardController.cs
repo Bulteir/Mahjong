@@ -30,10 +30,21 @@ public class BlockBoardController : MonoBehaviour
     public int step = 0;
     public GameObject StarController;
 
+    public AudioSource BlockMatchSound;
+    public AudioSource BlockPlacingSound;
+    public AudioSource BlockSelectSound;
+    public AudioSource CoinSound;
+    public AudioSource GameWinSound;
+    public AudioSource GameLoseSound;
+
+    public Transform confetiParent;
+
+
     public void PlaceBlock(Transform SelectedBlock)
     {
         if (isSmoothMoveToSnapPointAnimationContinue == false)
         {
+            BlockSelectSound.Play();
             //ýstakanýn durumunu alýyoruz.
             FillBlockBoardStatus();
             int avaibleSlotIndex = GetAvaibleBlockSlotIndex(SelectedBlock);
@@ -44,6 +55,7 @@ public class BlockBoardController : MonoBehaviour
                 step++;
                 SelectedBlock.GetComponent<BlockProperties>().stepOfPlacedBlockBoard = step;
                 SelectedBlock.GetComponent<BlockProperties>().positionOfBlockTable = blockPos;
+                
             }
         }
     }
@@ -141,6 +153,8 @@ public class BlockBoardController : MonoBehaviour
                 if (MatchedBlocks.Count == 3)
                 {
                     anyBlocksMatched = true;
+                    BlockMatchSound.Play();
+
                     foreach (BlockSlotStruct block in MatchedBlocks)
                     {
                         if (block.snappedBlock != null)
@@ -217,6 +231,7 @@ public class BlockBoardController : MonoBehaviour
         {
             GlobalVariables.gameState = GlobalVariables.gameState_gameOver;
             GameOverMenu.GetComponent<InGame_GameOverMenuController>().SetContent(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Failed"), 0, false);
+            GameLoseSound.Play();
         }
         else if (IsGameWon())
         {
@@ -225,8 +240,11 @@ public class BlockBoardController : MonoBehaviour
 
             LoadAnimation.GetComponent<LoadSaveAnimationController>().StartAnimation(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Saving"));
             StartCoroutine(SaveData(currentLevelReward, true));
+            GameWinSound.Play();
+            StartCoroutine(MultipleConfetiAnimation());
         }
 
+        BlockPlacingSound.Play();
         isSmoothMoveToSnapPointAnimationContinue = false;
     }
 
@@ -242,7 +260,7 @@ public class BlockBoardController : MonoBehaviour
         //ýstakada yer alan slota bloðun kendisi setlenir.
         BlockSlots[avaibleSlotIndex].transform.GetComponent<BlockSlotProperties>().snappedBlock = block;
         block.GetComponent<BlockProperties>().IsSnapped = true;
-        block.SetParent(blockBoard);
+        block.SetParent(blockBoard); 
     }
 
     //seçilen bloðun yerleþmesi gerken index bulunduktan sonra o bloðun uygun indexe yerleþmesini saðlar. Gerekiyorsa diðer bloklarý birer kaydýrýr.
@@ -367,9 +385,23 @@ public class BlockBoardController : MonoBehaviour
         }
 
         generalControllers.GetComponent<InGame_MenuController>().CoinBarText.GetComponent<CoinBar_Controller>().AddRemoveCoin(reward, saveFile.totalCoin);
+        CoinSound.Play();
         yield return null;
 
         LoadAnimation.GetComponent<LoadSaveAnimationController>().StopAnimation();
         yield return null;
+    }
+
+    IEnumerator MultipleConfetiAnimation()
+    {
+        yield return new WaitForSeconds(5);
+
+        int confetiCount = confetiParent.childCount;
+        while (confetiCount > 0)
+        {
+            confetiCount--;
+            confetiParent.GetChild(confetiCount).gameObject.SetActive(true);
+            yield return new WaitForSeconds(2);
+        }
     }
 }

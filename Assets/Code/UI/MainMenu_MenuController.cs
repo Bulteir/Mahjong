@@ -17,6 +17,9 @@ public class MainMenu_MenuController : MonoBehaviour
     public GameObject RateBox;
     public List<GameObject> CoinBarText;
 
+    public Transform musics;
+    public Transform sfx;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +61,65 @@ public class MainMenu_MenuController : MonoBehaviour
             }
         }
 
+        #region oyun baþlangýcý müzik tercihi kontrolü
+        string musicPref = PlayerPrefs.GetString("Music");
+        if (musicPref != "")
+        {
+            if (musicPref == "on")
+            {
+                foreach (Transform item in musics)
+                {
+                    item.GetComponent<AudioSource>().mute = false;
+                }
+            }
+            else
+            {
+                foreach (Transform item in musics)
+                {
+                    item.GetComponent<AudioSource>().mute = true;
+                }
+            }
+        }
+        else
+        {
+            PlayerPrefs.SetString("Music", "on");
+            foreach (Transform item in musics)
+            {
+                item.GetComponent<AudioSource>().mute = false;
+            }
+        }
+        PlayerPrefs.Save();
+        #endregion
+
+        #region oyun baþlangýcý ses efektleri tercihi kontrolü
+        string soundPref = PlayerPrefs.GetString("Sound");
+        if (soundPref != "")
+        {
+            if (soundPref == "on")
+            {
+                foreach (Transform item in sfx)
+                {
+                    item.GetComponent<AudioSource>().mute = false;
+                }
+            }
+            else
+            {
+                foreach (Transform item in sfx)
+                {
+                    item.GetComponent<AudioSource>().mute = true;
+                }
+            }
+        }
+        else
+        {
+            PlayerPrefs.SetString("Sound", "on");
+            foreach (Transform item in sfx)
+            {
+                item.GetComponent<AudioSource>().mute = false;
+            }
+        }
+        PlayerPrefs.Save();
+        #endregion
     }
 
     // Update is called once per frame

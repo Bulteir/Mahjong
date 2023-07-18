@@ -5,6 +5,8 @@ using UnityEngine;
 public class MenuBackground_StartAfterLogo : MonoBehaviour
 {
     public GameObject MenuBackground;
+    public AudioSource MenuMusic;
+    public AudioSource ForestMusic;
 
     private void Awake()
     {
@@ -24,5 +26,7 @@ public class MenuBackground_StartAfterLogo : MonoBehaviour
     {
         MenuBackground.SetActive(true);
         gameObject.SetActive(false);
+        //MenuMusic.Play();
+        ForestMusic.Play();
     }
 }

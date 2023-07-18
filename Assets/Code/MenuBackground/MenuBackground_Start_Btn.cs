@@ -7,6 +7,7 @@ public class MenuBackground_Start_Btn : MonoBehaviour
 {
     public GameObject menuBackgroundController;
     public List<GameObject> animatedButtons;
+    public AudioSource MenuMusic;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class MenuBackground_Start_Btn : MonoBehaviour
         {
             button.GetComponent<Animator>().enabled = true;
         }
+        MenuMusic.Play();
     }
 
 }

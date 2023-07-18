@@ -28,7 +28,9 @@ public class InGame_StarController : MonoBehaviour
     bool phase1Passed = false;
     bool phase2Passed = false;
     bool phase3Passed = false;
-    string phasePassTime = "00:00:00"; 
+    string phasePassTime = "00:00:00";
+
+    public AudioSource StarGainSound;
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +65,7 @@ public class InGame_StarController : MonoBehaviour
             }
             phase1Passed = true;
             phasePassTime = timer.text;
+            StarGainSound.Play();
         }
         else if (status > 0.5f && status <= 0.75f && phase2Passed == false)
         {
@@ -72,6 +75,8 @@ public class InGame_StarController : MonoBehaviour
             }
             phase2Passed = true;
             phasePassTime = timer.text;
+            StarGainSound.Play();
+
         }
         else if (status > 0.75f && status <= 1 && phase3Passed == false)
         {
@@ -81,6 +86,8 @@ public class InGame_StarController : MonoBehaviour
             }
             phase3Passed = true;
             phasePassTime = timer.text;
+            StarGainSound.Play();
+
         }
 
         if (gainedStarQuantity == 1)

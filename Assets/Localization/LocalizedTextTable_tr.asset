@@ -271,6 +271,14 @@ MonoBehaviour:
     m_Localized: Dokun
     m_Metadata:
       m_Items: []
+  - m_Id: 27112143269789696
+    m_Localized: "\u221E"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27128757973286912
+    m_Localized: "T\xFCrk\xE7e"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

@@ -9,6 +9,7 @@ public class InGame_GameOverMenu_x2Ad_Btn : MonoBehaviour
 {
     public GameObject AdMobController;
     public GameObject generalControllers;
+    public AudioSource coinSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,7 @@ public class InGame_GameOverMenu_x2Ad_Btn : MonoBehaviour
                 generalControllers.GetComponent<InGame_MenuController>().CoinBarText.GetComponent<CoinBar_Controller>().AddRemoveCoin(currentLevelReward, saveFile.totalCoin);
                 saveFile.saveTime = DateTime.Now.ToString();
                 generalControllers.GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
+                coinSound.Play();
             }
         }
     }

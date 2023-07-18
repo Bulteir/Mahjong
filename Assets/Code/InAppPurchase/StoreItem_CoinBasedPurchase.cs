@@ -15,6 +15,7 @@ public class StoreItem_CoinBasedPurchase : MonoBehaviour
     public TMP_Text ContentText;
     public int price;
 
+    public AudioSource successfulPurchaseSound;
 
     // Start is called before the first frame update
     void Start()
@@ -79,6 +80,7 @@ public class StoreItem_CoinBasedPurchase : MonoBehaviour
 
                 saveFile.saveTime = DateTime.Now.ToString();
                 generalControllers.GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
+                successfulPurchaseSound.Play();
             }
             else
             {

@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +17,8 @@ public class StoreController : MonoBehaviour, IDetailedStoreListener
     private IStoreController storeController;
     private IExtensionProvider storeExtensions;
     private Button purchaseButton;
+
+    public AudioSource successfulPurchaseSound;
 
 
     void Start()
@@ -62,7 +64,7 @@ public class StoreController : MonoBehaviour, IDetailedStoreListener
         UnityPurchasing.Initialize(this, builder);
     }
 
-    //IAP baþarýlý þekilde baþlatýldýðýnda girer
+    //IAP baÅŸarÄ±lÄ± ÅŸekilde baÅŸlatÄ±ldÄ±ÄŸÄ±nda girer
     public void OnInitialized(IStoreController controller, IExtensionProvider extensions)
     {
         this.storeController = controller;
@@ -76,19 +78,19 @@ public class StoreController : MonoBehaviour, IDetailedStoreListener
         }
     }
 
-    //IAP baþlatýlmasýnda hata ile karþýlaþýlýrsa
+    //IAP baÅŸlatÄ±lmasÄ±nda hata ile karÅŸÄ±laÅŸÄ±lÄ±rsa
     public void OnInitializeFailed(InitializationFailureReason error)
     {
         throw new System.NotImplementedException();
     }
 
-    //IAP baþlatýlmasýnda hata ile karþýlaþýlýrsa
+    //IAP baÅŸlatÄ±lmasÄ±nda hata ile karÅŸÄ±laÅŸÄ±lÄ±rsa
     public void OnInitializeFailed(InitializationFailureReason error, string message)
     {
         Debug.LogError($"Error initializing IAP because of {error}. \r\nError message: {message}");
     }
 
-    //Satýn almada hata meydana gelirse
+    //SatÄ±n almada hata meydana gelirse
     public void OnPurchaseFailed(Product product, PurchaseFailureReason failureReason)
     {
         Debug.Log($"Failed to purchase {product.definition.id} because {failureReason}");
@@ -96,7 +98,7 @@ public class StoreController : MonoBehaviour, IDetailedStoreListener
         PurchasingMask.SetActive(false);
     }
 
-    //satýn alma baþarýlý olursa
+    //satÄ±n alma baÅŸarÄ±lÄ± olursa
     public PurchaseProcessingResult ProcessPurchase(PurchaseEventArgs purchaseEvent)
     {
         Debug.Log($"Successfully purchased {purchaseEvent.purchasedProduct.definition.id}");
@@ -148,18 +150,18 @@ public class StoreController : MonoBehaviour, IDetailedStoreListener
                 if (product.hasReceipt)
                 {
                     SaveDataFormat saveFile = generalControllers.GetComponent<LocalSaveLoadController>().LoadGame();
-                    if (saveFile.saveTime != null)//Kayýtlý save dosyasý varsa
+                    if (saveFile.saveTime != null)//KayÄ±tlÄ± save dosyasÄ± varsa
                     {
                         saveFile.noAdsJokerActive = true;
                     }
                     saveFile.saveTime = DateTime.Now.ToString();
                     generalControllers.GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
 
-                    Debug.Log("Daha önce satýn aldýðýnýz reklam yok ürünü geri getirildi.");
+                    Debug.Log("Daha Ã¶nce satÄ±n aldÄ±ÄŸÄ±nÄ±z reklam yok Ã¼rÃ¼nÃ¼ geri getirildi.");
                 }
                 else
                 {
-                    Debug.Log("Reklam yok ürünü satýn alýnmamýþ");
+                    Debug.Log("Reklam yok Ã¼rÃ¼nÃ¼ satÄ±n alÄ±nmamÄ±ÅŸ");
                 }
             }
         }
@@ -168,11 +170,11 @@ public class StoreController : MonoBehaviour, IDetailedStoreListener
     public void OnPurchaseFailed(Product product, PurchaseFailureDescription failureDescription)
     {
 
-        Debug.Log("Satýn almada hata meydana geldi. message:" + failureDescription.message + " reason:" + failureDescription.reason + " ýd:" + failureDescription.productId);
+        Debug.Log("SatÄ±n almada hata meydana geldi. message:" + failureDescription.message + " reason:" + failureDescription.reason + " Ä±d:" + failureDescription.productId);
 
         if (product.hasReceipt)
         {
-            Debug.Log("Daha önce satýn alýnmýþ. id:" + product.definition.id);
+            Debug.Log("Daha Ã¶nce satÄ±n alÄ±nmÄ±ÅŸ. id:" + product.definition.id);
             ApplyPurchasedItemEffect(product.definition.id, product.metadata.localizedDescription);
         }
 
@@ -180,11 +182,11 @@ public class StoreController : MonoBehaviour, IDetailedStoreListener
         PurchasingMask.SetActive(false);
     }
 
-    //maðazadan bir ürün satýn alýndýðýnda oyuna nasýl etki edecekse ayarlamalar yapýlýr.
+    //maÄŸazadan bir Ã¼rÃ¼n satÄ±n alÄ±ndÄ±ÄŸÄ±nda oyuna nasÄ±l etki edecekse ayarlamalar yapÄ±lÄ±r.
     void ApplyPurchasedItemEffect(string itemId, string description)
     {
         SaveDataFormat saveFile = generalControllers.GetComponent<LocalSaveLoadController>().LoadGame();
-        if (saveFile.saveTime != null)//Kayýtlý save dosyasý varsa
+        if (saveFile.saveTime != null)//KayÄ±tlÄ± save dosyasÄ± varsa
         {
             if (itemId == "no_ads")
             {
@@ -215,7 +217,7 @@ public class StoreController : MonoBehaviour, IDetailedStoreListener
                 DateTime unlimitedEnergyEndTime;
                 DateTime.TryParse(saveFile.unlimitedEnergyEndTime, out unlimitedEnergyEndTime);
 
-                //limitsiz enerji süresi bitmediyse
+                //limitsiz enerji sÃ¼resi bitmediyse
                 if (unlimitedEnergyEndTime.CompareTo(DateTime.Now) > 0)
                 {
                     saveFile.unlimitedEnergyEndTime = unlimitedEnergyEndTime.AddHours(Int32.Parse(description)).ToString();
@@ -243,6 +245,7 @@ public class StoreController : MonoBehaviour, IDetailedStoreListener
 
             saveFile.saveTime = DateTime.Now.ToString();
             generalControllers.GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
+            successfulPurchaseSound.Play();
         }
 
     }

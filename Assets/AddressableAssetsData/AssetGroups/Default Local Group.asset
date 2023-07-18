@@ -17,9 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: e2019a2cd5e16ed4cb1ade8e9178cb9f
   m_SerializeEntries:
-  - m_GUID: 4f938e818d18a91459bdca68043e1f63
-    m_Address: Assets/TextMesh Pro/Resources_moved/Fonts & Materials/LiberationSans
-      SDF.mat
+  - m_GUID: d22306c8ceb025a43a48959db3f4aa54
+    m_Address: Fonts/NotoSans-Regular SDF
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

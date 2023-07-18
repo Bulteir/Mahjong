@@ -254,7 +254,7 @@ MonoBehaviour:
       - rid: 9143329240635408392
   - m_Id: 16656412477358080
     m_Localized: "\u0411\u0435\u0437\u043B\u0438\u043C\u0438\u0442\u043D\u0430\u044F
-      \u044D\u043D\u0435\u0440\u0433\u0438\u044F \u043D\u0430 { \u0447\u0430\u0441"
+      \u044D\u043D\u0435\u0440\u0433\u0438\u044F \u043D\u0430 {hour} \u0447\u0430\u0441"
     m_Metadata:
       m_Items:
       - rid: 9143329240635408392
@@ -298,6 +298,14 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 24573666858762240
     m_Localized: "\u041D\u0430\u0436\u043C\u0438\u0442\u0435"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27112143269789696
+    m_Localized: "\u221E"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27128757973286912
+    m_Localized: "\u0420\u0443\u0441\u0441\u043A\u0438\u0439"
     m_Metadata:
       m_Items: []
   references:
