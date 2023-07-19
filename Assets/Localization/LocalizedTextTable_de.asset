@@ -287,6 +287,15 @@ MonoBehaviour:
     m_Localized: Deutsch
     m_Metadata:
       m_Items: []
+  - m_Id: 27524293859606528
+    m_Localized: "Dieses Spiel erfordert eine Internetverbindung. Stellen Sie bitte
+      sicher, dass Ihr Ger\xE4t mit dem Internet verbunden ist."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27524652225134592
+    m_Localized: Achtung
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

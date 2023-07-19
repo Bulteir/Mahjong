@@ -59,6 +59,7 @@ public class RateBoxController : MonoBehaviour
         #endregion
 
         #region oyunu belirli miktar tekrar açtýktan sonra kullanýcýnýn karþýsýna oy verme ekraný çýkart
+
         string playCountString = PlayerPrefs.GetString("PlayCountForRate");
         if (playCountString == "")
         {
@@ -68,20 +69,23 @@ public class RateBoxController : MonoBehaviour
         int playCount = -1;
         int.TryParse(playCountString, out playCount);
 
-        if (playCount != -1)
+        if (GlobalVariables.internetAvaible)
         {
-            playCount++;
-
-            if (playCount % countToRate == 0 && ratedAlredy == false && doesPlayerWantToRate == true)
+            if (playCount != -1)
             {
+                playCount++;
+
+                if (playCount % countToRate == 0 && ratedAlredy == false && doesPlayerWantToRate == true)
+                {
 #if UNITY_ANDROID
-                gameObject.SetActive(true);
+                    gameObject.SetActive(true);
 #elif UNITY_IOS
                 Device.RequestStoreReview();
                 ratedAlredy = true;
                 PlayerPrefs.SetString("DoesPlayerRatedGame", ratedAlredy.ToString());
                 PlayerPrefs.Save();     
 #endif
+                }
             }
         }
         #endregion

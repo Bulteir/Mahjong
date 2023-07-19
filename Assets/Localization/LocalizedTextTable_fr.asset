@@ -289,6 +289,15 @@ MonoBehaviour:
     m_Localized: "Fran\xE7ais"
     m_Metadata:
       m_Items: []
+  - m_Id: 27524293859606528
+    m_Localized: "Ce jeu n\xE9cessite une connexion internet. Veuillez vous assurer
+      que votre appareil est connect\xE9 \xE0 internet."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27524652225134592
+    m_Localized: Attention
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

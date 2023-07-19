@@ -279,6 +279,16 @@ MonoBehaviour:
     m_Localized: "T\xFCrk\xE7e"
     m_Metadata:
       m_Items: []
+  - m_Id: 27524293859606528
+    m_Localized: "Bu oyunun oynanmas\u0131 i\xE7in internet ba\u011Flant\u0131s\u0131
+      gerekmektedir. L\xFCtfen cihaz\u0131n\u0131z\u0131n internete ba\u011Fl\u0131
+      oldu\u011Fundan emin olun."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27524652225134592
+    m_Localized: Dikkat
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
