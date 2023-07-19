@@ -17,8 +17,10 @@ public class AdMobUMPController : MonoBehaviour
             #if UNITY_IPHONE
                 "DF229BBF2B1642998DFF3FFA52D9CD30",
             #elif UNITY_ANDROID
-                "d8680638de874f76b5395ce4a5f5ad66"
+                "6D5FF19D7D159049F551197DCDBCA3FA"
             #endif
+
+
         };
 
     private void Awake()
