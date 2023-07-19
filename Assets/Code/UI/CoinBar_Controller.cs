@@ -54,25 +54,23 @@ public class CoinBar_Controller : MonoBehaviour
     {
         Vector3 startPos = new Vector3();
 
-        startPos = CoinBarText.GetComponent<RectTransform>().localPosition;
+        startPos = gameObject.GetComponent<RectTransform>().localPosition;
 
         for (int i = 0; i < 6; i++)
         {
             if (i % 2 == 0)
             {
-
-                CoinBarText.GetComponent<RectTransform>().localPosition = new Vector3(startPos.x + 10, startPos.y, startPos.z);
+                gameObject.GetComponent<RectTransform>().localPosition = new Vector3(startPos.x + 10, startPos.y, startPos.z);
             }
             else
             {
-
-                CoinBarText.GetComponent<RectTransform>().localPosition = new Vector3(startPos.x - 10, startPos.y, startPos.z);
+                gameObject.GetComponent<RectTransform>().localPosition = new Vector3(startPos.x - 10, startPos.y, startPos.z);
 
             }
             yield return new WaitForSeconds(0.05f);
         }
 
-        CoinBarText.GetComponent<RectTransform>().localPosition = new Vector3(startPos.x, startPos.y, startPos.z);
+        gameObject.GetComponent<RectTransform>().localPosition = new Vector3(startPos.x, startPos.y, startPos.z);
 
         yield return null;
     }
