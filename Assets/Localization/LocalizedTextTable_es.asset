@@ -294,6 +294,84 @@ MonoBehaviour:
     m_Localized: "Atenci\xF3n"
     m_Metadata:
       m_Items: []
+  - m_Id: 27855665451106304
+    m_Localized: Tutorial
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27857249270628352
+    m_Localized: Intenta emparejar los mismos bloques
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27857369135448064
+    m_Localized: Solo se pueden seleccionar bloques que no tengan otro bloque encima
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27859522407235584
+    m_Localized: "Puedes girar los bloques arrastrando un \xE1rea vac\xEDa"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27860605892427776
+    m_Localized: Cuando 3 bloques coinciden, los bloques explotan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27860652897992704
+    m_Localized: Cuando no hay lugar para colocar los bloques, pierdes el nivel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27861651389808640
+    m_Localized: Potenciador de mezcla
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27861674022273024
+    m_Localized: Mezcla los patrones de los bloques
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27863527497793536
+    m_Localized: Potenciador deshacer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27863551254331392
+    m_Localized: "Deshacer el \xFAltimo movimiento"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27864483769745408
+    m_Localized: Cantidad total de monedas de oro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27864503180984320
+    m_Localized: Se utiliza para desbloquear nuevos niveles y comprar objetos en
+      la tienda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27865818774765568
+    m_Localized: "Cantidad total de energ\xEDa"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27865840559980544
+    m_Localized: "Debes tener suficiente energ\xEDa para jugar un nivel"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27866940507815936
+    m_Localized: Cantidad de bloques restantes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27866964390182912
+    m_Localized: "Cuando llegues a cero, ganar\xE1s el nivel"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27867841159102464
+    m_Localized: Tiempo transcurrido en el nivel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27868307297271808
+    m_Localized: "N\xFAmero de estrellas ganadas en el nivel"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27868343301177344
+    m_Localized: "Puedes ganar todas las estrellas explotando r\xE1pidamente los
+      bloques"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

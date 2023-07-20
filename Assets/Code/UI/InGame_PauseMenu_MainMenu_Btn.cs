@@ -32,6 +32,7 @@ public class InGame_PauseMenu_MainMenu_Btn : MonoBehaviour
             //reklam gösteremeyecekse
             if(adMobControllers.GetComponent<InterstitialAdController>().ShowAd() == false)
             {
+                GlobalVariables.gameState = GlobalVariables.gameState_MenuBackground;
                 SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
             }
         }

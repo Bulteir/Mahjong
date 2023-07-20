@@ -296,6 +296,87 @@ MonoBehaviour:
     m_Localized: Achtung
     m_Metadata:
       m_Items: []
+  - m_Id: 27855665451106304
+    m_Localized: Anleitung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27857249270628352
+    m_Localized: "Versuche, die gleichen Bl\xF6cke zu kombinieren"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27857369135448064
+    m_Localized: "Nur Bl\xF6cke ohne anderen Block oben drauf k\xF6nnen ausgew\xE4hlt
+      werden"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27859522407235584
+    m_Localized: "Sie k\xF6nnen die Bl\xF6cke drehen, indem Sie einen leeren Bereich
+      ziehen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27860605892427776
+    m_Localized: "Wenn 3 Bl\xF6cke \xFCbereinstimmen, explodieren sie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27860652897992704
+    m_Localized: "Wenn kein Platz mehr zum Platzieren der Bl\xF6cke ist, verlieren
+      Sie das Level"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27861651389808640
+    m_Localized: Shuffle Power-Up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27861674022273024
+    m_Localized: "Mischt die Muster der Bl\xF6cke"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27863527497793536
+    m_Localized: "R\xFCckg\xE4ngig-Macher-Power-Up"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27863551254331392
+    m_Localized: "Mache den letzten Zug r\xFCckg\xE4ngig"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27864483769745408
+    m_Localized: "Gesamtanzahl der Goldm\xFCnzen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27864503180984320
+    m_Localized: "Wird verwendet, um neue Level freizuschalten und Gegenst\xE4nde
+      im Laden zu kaufen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27865818774765568
+    m_Localized: Gesamtenergiemenge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27865840559980544
+    m_Localized: "Sie m\xFCssen gen\xFCgend Energie haben, um ein Level zu spielen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27866940507815936
+    m_Localized: Verbleibende Blockanzahl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27866964390182912
+    m_Localized: Wenn Sie null erreichen, gewinnen Sie das Level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27867841159102464
+    m_Localized: Zeit im Level verbracht
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27868307297271808
+    m_Localized: Anzahl der Sterne, die im Level verdient wurden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27868343301177344
+    m_Localized: "Sie k\xF6nnen alle Sterne gewinnen, indem Sie die Bl\xF6cke schnell
+      platzen lassen"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

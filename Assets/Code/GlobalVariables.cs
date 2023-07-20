@@ -21,6 +21,7 @@ public static class GlobalVariables
     public const int gameState_StoreMenu = 7;
     public const int gameState_MenuBackground = 8;
     public const int gameState_StartingLogo = 9;
+    public const int gameState_tutorial = 10;
 
     public const string LeaderboardId_Richest = "richestMonthly";
 
@@ -38,6 +39,9 @@ public static class GlobalVariables
     public const int MainMenuRewardAdType_Coin = 0;
     public const int MainMenuRewardAdType_Shuffle = 1;
     public const int MainMenuRewardAdType_Undo = 2;
+
+    public static bool tutorialCalledSettingMenu = false;
+
 
     //bölümlerin kaç altýn kazandýracaðý. Ayný zamanda o bölümün açýlmasý için ne kadar alýtýn gerektiði x3 olarak bulunur. 
     public static List<int> LevelRewards = new List<int>()

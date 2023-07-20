@@ -289,6 +289,87 @@ MonoBehaviour:
     m_Localized: Dikkat
     m_Metadata:
       m_Items: []
+  - m_Id: 27855665451106304
+    m_Localized: "E\u011Fitim"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27857249270628352
+    m_Localized: "Ayn\u0131 bloklar\u0131 e\u015Fle\u015Ftirmeye \xE7al\u0131\u015F\u0131n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27857369135448064
+    m_Localized: "Sadece \xFCzerinde ba\u015Fka bir blok olmayan bloklar se\xE7ilebilir"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27859522407235584
+    m_Localized: "Bo\u015F bir b\xF6lgeyi s\xFCr\xFCkleyerek bloklar\u0131 d\xF6nd\xFCrebilirsiniz"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27860605892427776
+    m_Localized: "3 blok e\u015Fle\u015Fti\u011Finde bloklar patlar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27860652897992704
+    m_Localized: "Blok yerle\u015Ftirecek yer kalmad\u0131\u011F\u0131nda b\xF6l\xFCm\xFC
+      kaybedersiniz."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27861651389808640
+    m_Localized: "Kar\u0131\u015Ft\u0131rma jokeri"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27861674022273024
+    m_Localized: "Bloklar\u0131n desenlerini kar\u0131\u015Ft\u0131r\u0131r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27863527497793536
+    m_Localized: Geri alma jokeri
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27863551254331392
+    m_Localized: "Son yap\u0131lan hamleyi geri al\u0131r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27864483769745408
+    m_Localized: "Toplam alt\u0131n miktar\u0131n\u0131z"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27864503180984320
+    m_Localized: "Yeni seviyeleri a\xE7mak ve ma\u011Fazadan e\u015Fya sat\u0131n
+      almak i\xE7in kullan\u0131l\u0131r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27865818774765568
+    m_Localized: "Toplam enerji miktar\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27865840559980544
+    m_Localized: "Bir b\xF6l\xFCm\xFC oynamak i\xE7in yeterli enerjiniz olmal\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27866940507815936
+    m_Localized: "Kalan blok say\u0131s\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27866964390182912
+    m_Localized: "S\u0131f\u0131ra ula\u015Ft\u0131\u011F\u0131n\u0131zda b\xF6l\xFCm\xFC
+      kazan\u0131rs\u0131n\u0131z"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27867841159102464
+    m_Localized: "B\xF6l\xFCmde ge\xE7en s\xFCre"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27868307297271808
+    m_Localized: "B\xF6l\xFCmde kazand\u0131\u011F\u0131n\u0131z y\u0131ld\u0131z
+      say\u0131s\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27868343301177344
+    m_Localized: "Bloklar\u0131 h\u0131zl\u0131ca patlatarak t\xFCm y\u0131ld\u0131zlar\u0131
+      kazanabilirsiniz"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

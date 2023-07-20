@@ -259,6 +259,7 @@ public class GameSaveLoadController : MonoBehaviour
             saveFile.lastEnergyGainTime = DateTime.Now.ToString();
             saveFile.unlimitedEnergyActive = false;
             saveFile.unlimitedEnergyEndTime = DateTime.Now.ToString();
+            saveFile.tutorialPassed = false;
 
             saveFile.saveTime = DateTime.Now.ToString();
 

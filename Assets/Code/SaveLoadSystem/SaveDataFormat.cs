@@ -13,6 +13,7 @@ public class SaveDataFormat
     public bool noAdsJokerActive;
     public bool unlimitedEnergyActive;
     public string unlimitedEnergyEndTime;
+    public bool tutorialPassed;
 }
 
 public struct LevelProperties

@@ -294,6 +294,82 @@ MonoBehaviour:
     m_Localized: Attention
     m_Metadata:
       m_Items: []
+  - m_Id: 27855665451106304
+    m_Localized: Tutorial
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27857249270628352
+    m_Localized: Try to match the same blocks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27857369135448064
+    m_Localized: Only blocks with no other block on top can be selected
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27859522407235584
+    m_Localized: You can rotate the blocks by dragging an empty area
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27860605892427776
+    m_Localized: When 3 blocks match, the blocks explode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27860652897992704
+    m_Localized: When there is no place to put the blocks, you lose the level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27861651389808640
+    m_Localized: Shuffle power-up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27861674022273024
+    m_Localized: Shuffles the patterns of the blocks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27863527497793536
+    m_Localized: Undo power-up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27863551254331392
+    m_Localized: Undo the last move
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27864483769745408
+    m_Localized: Total gold coin amount
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27864503180984320
+    m_Localized: Used to unlock new levels and purchase items from the store
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27865818774765568
+    m_Localized: Total energy amount
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27865840559980544
+    m_Localized: You must have enough energy to play a level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27866940507815936
+    m_Localized: Remaining block count
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27866964390182912
+    m_Localized: When you reach zero, you win the level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27867841159102464
+    m_Localized: Time spent in the level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27868307297271808
+    m_Localized: Number of stars earned in the level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27868343301177344
+    m_Localized: You can win all the stars by quickly popping the blocks
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

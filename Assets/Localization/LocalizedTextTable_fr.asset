@@ -298,6 +298,85 @@ MonoBehaviour:
     m_Localized: Attention
     m_Metadata:
       m_Items: []
+  - m_Id: 27855665451106304
+    m_Localized: Tutoriel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27857249270628352
+    m_Localized: "Essayez de faire correspondre les m\xEAmes blocs"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27857369135448064
+    m_Localized: "Seuls les blocs sans autre bloc au-dessus peuvent \xEAtre s\xE9lectionn\xE9s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27859522407235584
+    m_Localized: Vous pouvez faire pivoter les blocs en faisant glisser une zone
+      vide
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27860605892427776
+    m_Localized: Lorsque 3 blocs correspondent, les blocs explosent
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27860652897992704
+    m_Localized: Quand il n'y a plus d'espace pour placer les blocs, vous perdez
+      le niveau
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27861651389808640
+    m_Localized: "Power-up de m\xE9lange"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27861674022273024
+    m_Localized: "M\xE9lange les motifs des blocs"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27863527497793536
+    m_Localized: Annuler la fonction d'aide
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27863551254331392
+    m_Localized: Annuler le dernier coup
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27864483769745408
+    m_Localized: "Montant total de pi\xE8ces d'or"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27864503180984320
+    m_Localized: "Utilis\xE9 pour d\xE9bloquer de nouveaux niveaux et acheter des
+      objets dans la boutique"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27865818774765568
+    m_Localized: "Montant total d'\xE9nergie"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27865840559980544
+    m_Localized: "Vous devez avoir suffisamment d'\xE9nergie pour jouer un niveau"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27866940507815936
+    m_Localized: Nombre de blocs restants
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27866964390182912
+    m_Localized: "Quand vous atteignez z\xE9ro, vous gagnez le niveau"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27867841159102464
+    m_Localized: "Temps pass\xE9 dans le niveau"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27868307297271808
+    m_Localized: "Nombre d'\xE9toiles gagn\xE9es dans le niveau"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27868343301177344
+    m_Localized: You can win all the stars by quickly popping the blocks
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

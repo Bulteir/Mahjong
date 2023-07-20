@@ -149,17 +149,25 @@ public class LevelSelectMenu_Controller : MonoBehaviour
             levelProperties = saveFile.levelProperties.Where(i => i.LevelName == levelName).FirstOrDefault();
         }
 
-        //týklanýlan bölüm daha önceden satýn alýnmýþsa ya da ilk bölümse
-        if (levelProperties.levelPurchased || levelNumber == 1)
+        //Oyuncu 1. leveli týkladýðýnda daha önce tutoriali görmediyse önce tutorial açýlýr.
+        if (levelNumber == 1 && saveFile.tutorialPassed == false)
         {
-            if (generalControllers.GetComponent<EnergyBarController>().IsThereEnoughEnergyForLevel())
-            {
-                SceneManager.LoadScene("level" + levelNumber, LoadSceneMode.Single);
-            }
+            SceneManager.LoadScene("Tutorial", LoadSceneMode.Single);
         }
         else
         {
-            Popup.GetComponent<LevelPurhasePopup_Controller>().ShowPopup(saveFile, levelNumber);
+            //týklanýlan bölüm daha önceden satýn alýnmýþsa ya da ilk bölümse
+            if (levelProperties.levelPurchased || levelNumber == 1)
+            {
+                if (generalControllers.GetComponent<EnergyBarController>().IsThereEnoughEnergyForLevel())
+                {
+                    SceneManager.LoadScene("level" + levelNumber, LoadSceneMode.Single);
+                }
+            }
+            else
+            {
+                Popup.GetComponent<LevelPurhasePopup_Controller>().ShowPopup(saveFile, levelNumber);
+            }
         }
     }
 }
