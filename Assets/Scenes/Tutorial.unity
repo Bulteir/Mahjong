@@ -18058,8 +18058,10 @@ MonoBehaviour:
   - {fileID: 148907412}
   ShuffleJokers:
   - {fileID: 1561089577}
+  - {fileID: 1614329603}
   UndoJokers:
   - {fileID: 1147662427}
+  - {fileID: 1418322429}
   musics: {fileID: 77520226}
   sfx: {fileID: 1208394581}
 --- !u!114 &1971993765
