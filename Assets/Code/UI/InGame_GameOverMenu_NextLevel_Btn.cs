@@ -93,6 +93,7 @@ public class InGame_GameOverMenu_NextLevel_Btn : MonoBehaviour
                 generalControllers.GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
 
                 generalControllers.GetComponent<InGame_MenuController>().CoinBarText.GetComponent<CoinBar_Controller>().AddRemoveCoin(-(GlobalVariables.LevelRewards[levelNumber - 1] * 3), saveFile.totalCoin);
+                SceneManager.LoadScene("level" + levelNumber, LoadSceneMode.Single);
             }
             else//yeterli altýn yok
             {
