@@ -30,7 +30,7 @@ public static class GlobalVariables
     public const int FirstUndoJokerQuantity = 5;
 
     public const int maxEnergy = 100;
-    public const int requiredEnergyForlevel = 10;
+    public const int requiredEnergyForlevel = 5;
 
     public static GameObject intersitialAd_CallingObject = null;
     public static GameObject rewardedAd_CallingObject = null;
