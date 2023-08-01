@@ -46,16 +46,17 @@ public static class GlobalVariables
     //bölümlerin kaç altýn kazandýracaðý. Ayný zamanda o bölümün açýlmasý için ne kadar alýtýn gerektiði x3 olarak bulunur. 
     public static List<int> LevelRewards = new List<int>()
     {
-        100,
-        120,
-        150,
-        130,
-        100,
-        170,
-        200,
-        250,
-        270,
-        300
+        10,10,10,
+        10,10,10,
+        10,10,10,
+        10,10,10,
+        10,10,10,
+        10,10,10,
+        10,10,10,
+        10,10,10,
+        10,10,10,
+        10,10,10,
+        10,10
     };
 
 }
