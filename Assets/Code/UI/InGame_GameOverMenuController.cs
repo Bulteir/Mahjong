@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
+using UnityEngine.SceneManagement;
 
 public class InGame_GameOverMenuController : MonoBehaviour
 {
@@ -19,13 +21,22 @@ public class InGame_GameOverMenuController : MonoBehaviour
 
     public void SetContent(string title, int reward, bool levelIsWon)
     {
+        int currentlevelIndex = Int32.Parse(SceneManager.GetActiveScene().name.Replace("level", ""));
+
         Title.text = title;
         string contentString = LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Time") + ": " + Timer.GetComponent<Timer>().text.text;
         Content.text = LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Time") + ": " + Timer.GetComponent<Timer>().text.text;
         
         if (levelIsWon)//bölüm kazanýlmýþ
         {
-            NextLevelButton.SetActive(true);
+            if (currentlevelIndex < GlobalVariables.LevelRewards.Count)
+            {
+                NextLevelButton.SetActive(true);
+            }
+            else
+            {
+                NextLevelButton.SetActive(false);
+            }
             contentString += "\n" + LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Reward") + ": " + reward.ToString();
         }
         else//bölüm kaybedilmiþ

@@ -13251,7 +13251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4641556593617d48a632ee63d8d0484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredSecondForGainStar: 30
+  requiredSecondForGainStar: 60
   gainedStarQuantity: 0
   startBlockCount: 0
   Star1: {fileID: 1226167266}
@@ -21410,15 +21410,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2aec2dce876e1694a93090f342b9d7a2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 228.38501
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2aec2dce876e1694a93090f342b9d7a2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -138.36282
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2aec2dce876e1694a93090f342b9d7a2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.000023480154
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2aec2dce876e1694a93090f342b9d7a2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -24132,7 +24132,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 4461891f2911dda42ba7079045a58a55, type: 3}
   BlockParent: {fileID: 1318437585}
   StarController: {fileID: 1157078088}
-  complexityPercentage: 100
+  complexityPercentage: 64.1
 --- !u!114 &1971993761
 MonoBehaviour:
   m_ObjectHideFlags: 0
