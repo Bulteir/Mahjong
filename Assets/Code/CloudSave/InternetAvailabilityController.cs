@@ -26,7 +26,9 @@ public class InternetAvailabilityController : MonoBehaviour
             GlobalVariables.internetAvaible = true;
             InternetRequiredPopup.SetActive(false);
         }
+#if UNITY_ANDROID
         GetComponent<GooglePlayGameSignIn>().CheckLoginButtonStatus();
+#endif
         GetComponent<FacebookLogIn>().CheckLoginButtonStatus();
 
     }

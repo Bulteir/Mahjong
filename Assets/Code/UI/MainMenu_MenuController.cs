@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Advertisement.IosSupport;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
@@ -24,6 +25,7 @@ public class MainMenu_MenuController : MonoBehaviour
     void Start()
     {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
+
         menuActiveControl();
         RateBox.GetComponent<RateBoxController>().RateBoxControlAtStartGame();
 

@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using TMPro;
 using Unity.Services.Core;
 using Unity.Services.Core.Environments;
 using UnityEngine;
@@ -19,7 +21,7 @@ public class StoreController : MonoBehaviour, IDetailedStoreListener
     private Button purchaseButton;
 
     public AudioSource successfulPurchaseSound;
-
+    public TMP_Text testConsoleOutput;
 
     void Start()
     {
@@ -127,6 +129,7 @@ public class StoreController : MonoBehaviour, IDetailedStoreListener
         purchaseButton.enabled = true;
     }
 
+#if UNITY_ANDROID
     public async void RestorePurchase()
     {
 
@@ -164,7 +167,32 @@ public class StoreController : MonoBehaviour, IDetailedStoreListener
                     Debug.Log("Reklam yok ürünü satın alınmamış");
                 }
             }
+        }       
+#elif UNITY_IOS
+    public void RestorePurchase()
+    {
+#endif
+        testConsoleOutput.text = "eski metoda girdi.";
+    }
+
+    //ios platformlar için restore purchase butonu basılıp geri döndürme başarılı olduğunda çağrılır.
+    public void OnTransactionsRestored(bool success, string error)
+    {
+        testConsoleOutput.text = "yeni metoda girdi.";
+#if UNITY_IOS
+        testConsoleOutput.text = $"TransactionsRestored: {success} {error}";
+        Debug.Log($"TransactionsRestored: {success} {error}");
+        if (success)
+        {
+            testConsoleOutput.text += "\n success true";
+
+            //burayı test edelim. satın alınmış bir noads jokeri olamasa bile buraya girecek mi yoksa geçekten sadece satın alınmışsa mı girecek.
         }
+        else
+        {
+            testConsoleOutput.text += "\n success true";
+        }
+#endif
     }
 
     public void OnPurchaseFailed(Product product, PurchaseFailureDescription failureDescription)

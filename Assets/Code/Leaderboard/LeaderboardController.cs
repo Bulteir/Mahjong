@@ -6,7 +6,9 @@ using Newtonsoft.Json;
 using Unity.Services.Core;
 using Unity.Services.Authentication;
 using System.Threading.Tasks;
+#if UNITY_ANDROID
 using GooglePlayGames;
+#endif
 using Facebook.Unity;
 using Unity.Services.Leaderboards.Models;
 using TMPro;
@@ -72,6 +74,7 @@ public class LeaderboardController : MonoBehaviour
     public async void SetPlayerName()
     {
         string playerName = "";
+#if UNITY_ANDROID
         //google ile giriþ yapmýþtýr
         if (PlayGamesPlatform.Instance.IsAuthenticated())
         {
@@ -83,10 +86,21 @@ public class LeaderboardController : MonoBehaviour
             playerName = FB.Mobile.CurrentProfile().Name;
             Debug.Log("Facebook ile giriþ yapýlmýþ. Oyuncu ismi:" + playerName);
         }
-
+#elif UNITY_IOS
+        if (FB.IsLoggedIn) //facebook ile giriþ yapmýþsa
+        {
+            playerName = FB.Mobile.CurrentProfile().Name;
+            Debug.Log("Facebook ile giriþ yapýlmýþ. Oyuncu ismi:" + playerName);
+        }
+#endif
         playerName = playerName.Replace(" ", "_");
         Debug.Log("Oyuncu adý güncelleniyor");
-        await AuthenticationService.Instance.UpdatePlayerNameAsync(playerName);
+        
+        //hiçbirþey ile giriþ yapmadýysa veya baþka bir sebeple boþ kullanýcý adý setlememek adýna
+        if (playerName.Length > 1)
+        {
+            await AuthenticationService.Instance.UpdatePlayerNameAsync(playerName);
+        }
     }
 
     public async void SetFalsePlayerName()

@@ -8,7 +8,9 @@ using System;
 using System.Linq;
 using UnityEngine.UI;
 using System.Threading.Tasks;
+#if UNITY_ANDROID
 using GooglePlayGames;
+#endif
 using TMPro;
 
 public class CloudSaveController : MonoBehaviour
