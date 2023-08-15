@@ -377,6 +377,10 @@ MonoBehaviour:
     m_Localized: You can win all the stars by quickly popping the blocks
     m_Metadata:
       m_Items: []
+  - m_Id: 37003054787198976
+    m_Localized: "\u20AC"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

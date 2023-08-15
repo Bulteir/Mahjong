@@ -339,6 +339,10 @@ MonoBehaviour:
     m_Key: Tutorial Step 10 Subinfo
     m_Metadata:
       m_Items: []
+  - m_Id: 37003054787198976
+    m_Key: Currencies symbols
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
