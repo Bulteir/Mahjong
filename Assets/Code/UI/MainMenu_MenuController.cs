@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using TMPro;
+#if UNITY_IOS
 using Unity.Advertisement.IosSupport;
+#endif
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UI;

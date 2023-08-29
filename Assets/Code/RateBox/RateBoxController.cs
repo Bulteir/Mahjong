@@ -108,7 +108,7 @@ public class RateBoxController : MonoBehaviour
     public void ClickRateNowBtn()
     {
         //burasý oyun markete çýkýnca deðiþecek
-        Application.OpenURL("market://details?id=com.Alpay.BlockPuzzle");
+        Application.OpenURL("market://details?id=com.AlpayMobileGames.Mahjong");
 
         ratedAlredy = true;
         PlayerPrefs.SetString("DoesPlayerRatedGame", ratedAlredy.ToString());

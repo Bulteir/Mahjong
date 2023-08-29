@@ -225,7 +225,7 @@ public class BlockBoardController : MonoBehaviour
         blockCounter.GetComponent<BlockCounterController>().RefreshBlockCount();
         StarController.GetComponent<InGame_StarController>().SetStars();
 
-        int currentLevelReward = GlobalVariables.LevelRewards[(Int32.Parse(SceneManager.GetActiveScene().name.Replace("level", "")) - 1)]; 
+        int currentLevelReward = GlobalVariables.LevelRewards[(Int32.Parse(SceneManager.GetActiveScene().name.Replace("level", "")) - 1)];
         //her yerleþtirilen bloktan sonra oyununn bitip bitmedði kontrol edilir.
         if (IsGameOver())
         {
