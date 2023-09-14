@@ -343,6 +343,18 @@ MonoBehaviour:
     m_Key: Currencies symbols
     m_Metadata:
       m_Items: []
+  - m_Id: 48153612222857216
+    m_Key: ChangeUserNameInfo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48153684956282880
+    m_Key: User Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48153721446727680
+    m_Key: EnterText
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

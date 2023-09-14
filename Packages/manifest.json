@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "com.apple.unityplugin.core": "file:E:/Program Files/Unity Projeler/Genel/Apple Unity Plug-in'ler/Apple Muzzkat Plug-in'ler/com.apple.unityplugin.core-1.0.2.tgz",
+    "com.apple.unityplugin.gamekit": "file:E:/Program Files/Unity Projeler/Genel/Apple Unity Plug-in'ler/Apple Muzzkat Plug-in'ler/com.apple.unityplugin.gamekit-1.0.3.tgz",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.ads.ios-support": "1.0.0",
     "com.unity.device-simulator.devices": "1.0.0",

@@ -17,6 +17,7 @@ public class CloudSaveController : MonoBehaviour
 {
     public Button GoogleLogin_Btn;
     public Button FacebookLogin_Btn;
+    public Button AppleGameCenterLogin_Btn;
     public GameObject LeaderBoardController;
 
     // Start is called before the first frame update
@@ -68,7 +69,6 @@ public class CloudSaveController : MonoBehaviour
                     GoogleLogin_Btn.image.color = PressButtonColor;
 
                     GetComponent<GameSaveLoadController>().GameSaveDataSynchronization();
-                    LeaderBoardController.GetComponent<LeaderboardController>().SetPlayerName();
                 }
             }
         }
@@ -131,7 +131,6 @@ public class CloudSaveController : MonoBehaviour
                     PlayerPrefs.SetString("FacebookAutoLogin", "true");
                     PlayerPrefs.Save();
                     GetComponent<GameSaveLoadController>().GameSaveDataSynchronization();
-                    LeaderBoardController.GetComponent<LeaderboardController>().SetPlayerName();
                 }
             }
         }
@@ -185,5 +184,66 @@ public class CloudSaveController : MonoBehaviour
             Debug.Log("Unity Cloud Save sistemi Hazýr deðil. Veri getirilemedi.");
         }
         return json;
+    }
+
+    async public void LogInUnityCloudSaveServiceWithAppleGameCenter(string signature, string teamPlayerId, string publicKeyURL, string salt, ulong timestamp)
+    {
+        try
+        {
+            if (GlobalVariables.internetAvaible == false)
+            {
+                Debug.Log("Ýnternet baðlantýsý yok.");
+            }
+            else
+            {
+                if (signature == null || signature == "" || teamPlayerId == null || teamPlayerId == "" || publicKeyURL == null || publicKeyURL == "" || salt == null || salt == "" || timestamp.ToString() == null || timestamp.ToString() == "")
+                {
+                    Debug.Log("Apple game center authentication için gerekli parametreler boþ geldi.");
+                }
+                else
+                {
+                    if (!AuthenticationService.Instance.IsSignedIn) //kullanýcý sign in olmadýysa 
+                    {
+                        Debug.Log("Unit cloud Authentication baþladý. apple parametreler: signature:" + signature + "\nteamPlayerId:" + teamPlayerId + "\npublicKeyURL:" + publicKeyURL + "\nsalt:" + salt + "\ntimeStamp:" + timestamp);
+                        await AuthenticationService.Instance.SignInWithAppleGameCenterAsync(signature, teamPlayerId, publicKeyURL, salt, timestamp);
+
+                        if (this == null) return;
+                    }
+                    else if (AuthenticationService.Instance.PlayerInfo.Identities.Where(i => i.TypeId.Contains("apple-game-center")).ToList().Count == 0)//kullanýcýnýn hesabýna apple game center baðlanmamýþtýr
+                    {
+                        Debug.Log("kullanýcýnýn hesabýna Apple Game Center baðlanmamýþ. Game center hesabý baðlanýyor.");
+
+                        try
+                        {
+                            await AuthenticationService.Instance.LinkWithAppleGameCenterAsync(signature, teamPlayerId, publicKeyURL, salt, timestamp);
+                        }
+                        catch (AuthenticationException ex) when (ex.ErrorCode == AuthenticationErrorCodes.AccountAlreadyLinked)
+                        {
+                            Debug.LogError("Kullanýcnýn Game Center hesabý baþka bir hesap ile iliþkilendirilmiþ.");
+                            await AuthenticationService.Instance.DeleteAccountAsync();
+                            await AuthenticationService.Instance.SignInWithAppleGameCenterAsync(signature, teamPlayerId, publicKeyURL, salt, timestamp);
+                        }
+                    }
+
+                    Debug.Log($"Player id: {AuthenticationService.Instance.PlayerId}");
+
+                    GlobalVariables.cloudSaveSystemIsReady = true;
+
+                    AppleGameCenterLogin_Btn.interactable = false;
+                    Color PressTextColor = new Color(168.0f / 255, 145.0f / 255, 128.0f / 255);
+                    AppleGameCenterLogin_Btn.GetComponentInChildren<TMP_Text>().color = PressTextColor;
+                    Color PressButtonColor = new Color(115.0f / 255, 115.0f / 255, 115.0f / 255);
+                    AppleGameCenterLogin_Btn.image.color = PressButtonColor;
+
+                    PlayerPrefs.SetString("GameCenterAutoLogin", "true");
+                    PlayerPrefs.Save();
+                    GetComponent<GameSaveLoadController>().GameSaveDataSynchronization();
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogException(e);
+        }
     }
 }

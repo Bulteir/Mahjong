@@ -28,6 +28,8 @@ public class InternetAvailabilityController : MonoBehaviour
         }
 #if UNITY_ANDROID
         GetComponent<GooglePlayGameSignIn>().CheckLoginButtonStatus();
+#elif UNITY_IOS
+        GetComponent<AppleGameCenterLogIn>().CheckLoginButtonStatus();
 #endif
         GetComponent<FacebookLogIn>().CheckLoginButtonStatus();
 

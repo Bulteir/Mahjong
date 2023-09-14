@@ -381,6 +381,18 @@ MonoBehaviour:
     m_Localized: "\u20AC"
     m_Metadata:
       m_Items: []
+  - m_Id: 48153612222857216
+    m_Localized: "Benutzername \xE4ndern"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48153684956282880
+    m_Localized: Benutzername
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48153721446727680
+    m_Localized: Text eingeben
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

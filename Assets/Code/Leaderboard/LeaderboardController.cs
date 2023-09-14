@@ -71,33 +71,15 @@ public class LeaderboardController : MonoBehaviour
         await AuthenticationService.Instance.SignInAnonymouslyAsync();
     }
 
-    public async void SetPlayerName()
+    public async void SetPlayerName(string name)
     {
-        string playerName = "";
-#if UNITY_ANDROID
-        //google ile giriþ yapmýþtýr
-        if (PlayGamesPlatform.Instance.IsAuthenticated())
-        {
-            playerName = PlayGamesPlatform.Instance.GetUserDisplayName();
-            Debug.Log("Google ile giriþ yapýlmýþ. Oyuncu ismi:" + playerName);
-        }
-        else if (FB.IsLoggedIn) //facebook ile giriþ yapmýþsa
-        {
-            playerName = FB.Mobile.CurrentProfile().Name;
-            Debug.Log("Facebook ile giriþ yapýlmýþ. Oyuncu ismi:" + playerName);
-        }
-#elif UNITY_IOS
-        if (FB.IsLoggedIn) //facebook ile giriþ yapmýþsa
-        {
-            playerName = FB.Mobile.CurrentProfile().Name;
-            Debug.Log("Facebook ile giriþ yapýlmýþ. Oyuncu ismi:" + playerName);
-        }
-#endif
+        string playerName = name;
+
         playerName = playerName.Replace(" ", "_");
         Debug.Log("Oyuncu adý güncelleniyor");
         
         //hiçbirþey ile giriþ yapmadýysa veya baþka bir sebeple boþ kullanýcý adý setlememek adýna
-        if (playerName.Length > 1)
+        if (playerName.Length > 1 && playerName.Length < 50)
         {
             await AuthenticationService.Instance.UpdatePlayerNameAsync(playerName);
         }
@@ -247,7 +229,7 @@ public class LeaderboardController : MonoBehaviour
                             if (scoreResponse.Rank == rangedScores.Results[i].Rank)
                             {
                                 //kendi adýný farklý renkte göstermek için kullanýlýyordu. Ancak async çalýþtýðý için gösterirken sýralama deðiþebiliyor ve yanlýþ kiþi highlight edilebiliyor.
-                                FillLeaderboardRow(i, topScores.Results[i], new Color(83f / 255f, 159f / 255f, 91f / 255f));
+                                FillLeaderboardRow(tempIndex + i, rangedScores.Results[i], new Color(83f / 255f, 159f / 255f, 91f / 255f));
                                 //FillLeaderboardRow(tempIndex + i, rangedScores.Results[i], Color.white);
                             }
                             else

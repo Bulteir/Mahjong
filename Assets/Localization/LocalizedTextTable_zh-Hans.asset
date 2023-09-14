@@ -360,6 +360,18 @@ MonoBehaviour:
     m_Localized: "\xA5"
     m_Metadata:
       m_Items: []
+  - m_Id: 48153612222857216
+    m_Localized: "\u66F4\u6539\u7528\u6237\u540D"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48153684956282880
+    m_Localized: "\u7528\u6237\u540D"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48153721446727680
+    m_Localized: "\u8F93\u5165\u6587\u672C"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

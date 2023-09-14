@@ -31,7 +31,7 @@ public class SocialShareController : MonoBehaviour
         //	.Share();
 
         new NativeShare().AddFile(filePath)
-            .SetUrl("https://alpaymobilegames.com/")
+            //.SetUrl("https://alpaymobilegames.com/")
             .SetCallback((result, shareTarget) => Debug.Log("Share result: " + result + ", selected app: " + shareTarget))
             .Share();
 

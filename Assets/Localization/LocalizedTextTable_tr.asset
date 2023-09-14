@@ -374,6 +374,18 @@ MonoBehaviour:
     m_Localized: "\u20BA"
     m_Metadata:
       m_Items: []
+  - m_Id: 48153612222857216
+    m_Localized: "Kullan\u0131c\u0131 Ad\u0131n\u0131 De\u011Fi\u015Ftir"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48153684956282880
+    m_Localized: "Kullan\u0131c\u0131 Ad\u0131"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48153721446727680
+    m_Localized: Metin Girin
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

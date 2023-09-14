@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "562590514881",
+    "project_id": "mahjong-firebase-project",
+    "storage_bucket": "mahjong-firebase-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562590514881:android:ec236532c8908bb1651e40",
+        "android_client_info": {
+          "package_name": "com.AlpayMobileGames.Mahjong"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "562590514881-0g94lu08dgtqn8cq1ujtkaduern9k76c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwIkV6rdyy4m2NXraIV8byjA0Ftn982RI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "562590514881-0g94lu08dgtqn8cq1ujtkaduern9k76c.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "562590514881-ocl4gj1sjllf6g7u5esnqc05ords86gr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.alpaymobilegames.mahjong"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

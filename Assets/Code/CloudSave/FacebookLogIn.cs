@@ -50,8 +50,11 @@ public class FacebookLogIn : MonoBehaviour
                 FacebookLogin_Btn.GetComponentInChildren<TMP_Text>().color = PressTextColor;
                 Color PressButtonColor = new Color(115.0f / 255, 115.0f / 255, 115.0f / 255);
                 FacebookLogin_Btn.image.color = PressButtonColor;
-#if UNITY_iOS
-                LoginFacebook();
+
+#if UNITY_iOS || UNITY_EDITOR
+                //ios cihazlarda kullanýcý için önceliðimiz game center ile giriþ.
+                if (PlayerPrefs.GetString("GameCenterAutoLogin") != "true")
+                    LoginFacebook();
 #endif
             }
         }
