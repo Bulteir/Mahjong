@@ -21,6 +21,8 @@ public class MainMenu_RewardedAd_Btn : MonoBehaviour
     public int undoReward = 2;
 
     public AudioSource SuccesfulSound;
+
+    public GameObject RewardedAdResult;
     // Start is called before the first frame update
     void Start()
     {
@@ -66,6 +68,8 @@ public class MainMenu_RewardedAd_Btn : MonoBehaviour
                 SuccesfulSound.Play();
             }
 
+            RewardedAdResult.SetActive(true);
+            RewardedAdResult.GetComponent<RewardedAdResultController>().ShowEarnedReward(gameObject.GetComponentInChildren<TMP_Text>().text);
             adMobControllers.GetComponent<RewardedAdController>().DestroyAd();
         }
     }
@@ -88,4 +92,6 @@ public class MainMenu_RewardedAd_Btn : MonoBehaviour
             gameObject.GetComponentInChildren<TMP_Text>().text = undoReward.ToString();
         }
     }
+
+
 }

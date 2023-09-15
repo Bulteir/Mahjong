@@ -2,6 +2,7 @@ using GoogleMobileAds.Api;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,7 @@ public class InGame_GameOverMenu_x2Ad_Btn : MonoBehaviour
     public GameObject AdMobController;
     public GameObject generalControllers;
     public AudioSource coinSound;
+    public GameObject RewardedAdResult;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,10 @@ public class InGame_GameOverMenu_x2Ad_Btn : MonoBehaviour
                 saveFile.saveTime = DateTime.Now.ToString();
                 generalControllers.GetComponent<LocalSaveLoadController>().SaveGame(saveFile);
                 coinSound.Play();
+
+                GlobalVariables.MainMenuRewardAdType = GlobalVariables.MainMenuRewardAdType_Coin;
+                RewardedAdResult.SetActive(true);
+                RewardedAdResult.GetComponent<RewardedAdResultController>().ShowEarnedReward(currentLevelReward.ToString());
             }
         }
     }
