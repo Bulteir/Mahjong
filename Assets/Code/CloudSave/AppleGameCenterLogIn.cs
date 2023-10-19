@@ -5,7 +5,9 @@ using UnityEngine;
 using System.Threading.Tasks;
 using Unity.Services.Authentication;
 using Unity.Services.Core;
+#if UNITY_EDITOR_OSX || (UNITY_EDITOR && UNITY_IOS)
 using Apple.GameKit;
+#endif
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
@@ -18,10 +20,12 @@ public class AppleGameCenterLogIn : MonoBehaviour
     string PublicKeyUrl;
     string Timestamp;
 
+#if UNITY_EDITOR_OSX || (UNITY_EDITOR && UNITY_IOS)
     bool buttonClickFlag = false;
-
+#endif
     public Button AppleGameCenterLogin_Btn;
 
+#if UNITY_EDITOR_OSX || (UNITY_EDITOR && UNITY_IOS)
     // Start is called before the first frame update
     async void Start()
     {
@@ -31,16 +35,28 @@ public class AppleGameCenterLogIn : MonoBehaviour
         }
     }
 
+
     async void Update()
     {
         if (buttonClickFlag)
         {
             buttonClickFlag = false;
-
             await Login();
         }
     }
+#else
+    private void Start()
+    {
+        
+    }
 
+    private void Update()
+    {
+        
+    }
+#endif
+
+#if UNITY_EDITOR_OSX || (UNITY_EDITOR && UNITY_IOS)
     public async Task Login()
     {
         try
@@ -145,5 +161,5 @@ public class AppleGameCenterLogIn : MonoBehaviour
             }
         }
     }
-
+#endif
 }

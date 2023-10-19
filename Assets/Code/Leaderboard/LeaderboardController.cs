@@ -161,9 +161,17 @@ public class LeaderboardController : MonoBehaviour
 
                 LoadAnimation.GetComponent<LoadSaveAnimationController>().StartAnimation(LocalizationSettings.StringDatabase.GetLocalizedString("LocalizedTextTable", "Loading"));
                 LeaderboardEntry scoreResponse = null;
-                //kullanýcýnýn kayýtlý puaný varmý kontrol ediyoruz. Puaný varsa sýralamasýna göre farklý þekilde gösterim yapýyoruz.
 
-                scoreResponse = await LeaderboardsService.Instance.GetPlayerScoreAsync(GlobalVariables.LeaderboardId_Richest);
+                //kullanýcýnýn kayýtlý puaný varmý kontrol ediyoruz. Puaný varsa sýralamasýna göre farklý þekilde gösterim yapýyoruz.
+                //Kullanýcýnýn kayýtlý puaný yoksa hata dönüyor. Hata aldýðýmýzda kullanýcýn skoru yok diye kabul edebiliriz.
+                try
+                {
+                    scoreResponse = await LeaderboardsService.Instance.GetPlayerScoreAsync(GlobalVariables.LeaderboardId_Richest);
+                }
+                catch (Exception)
+                {
+
+                }
 
                 //Oyuncunun kayýtlý puaný yoktur ya da daha küçük ihtimalle ele almadýðýmýz baþka bir hata oluþmuþtur.
                 //bu durumda ilk 30 kaydý göster
